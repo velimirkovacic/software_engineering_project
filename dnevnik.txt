@@ -31,3 +31,5 @@ Dnevnik sastajanja
 	- detaljna skica funkcionalnosti stranice
 	- daljnja podjela rada
 	- dizajn originalnog logotipa
+
+5. sastanak
