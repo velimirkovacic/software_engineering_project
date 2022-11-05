@@ -6,6 +6,8 @@
 /dokumentacija/*.pdf
 /dokumentacija/*.synctex.gz
 /dokumentacija/*.toc
+/dokumentacija/dijagrami/*.lock
+
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
