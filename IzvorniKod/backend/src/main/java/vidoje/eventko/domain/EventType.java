@@ -1,14 +1,12 @@
 package vidoje.eventko.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Vrsta")
 public class EventType {
     @Id
+    @GeneratedValue
     @Column(name = "id_vrsta", insertable = false, updatable = false)
     private Long id;
 

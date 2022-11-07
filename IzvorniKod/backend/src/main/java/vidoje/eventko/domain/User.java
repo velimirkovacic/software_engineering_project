@@ -1,5 +1,8 @@
 package vidoje.eventko.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -23,6 +26,7 @@ public class User {
     @Column(name = "nadimak", nullable = false)
     private String nickname;
 
+    @JsonIgnore
     @Column(name = "lozinka", nullable = false)
     private String password;
 
@@ -30,15 +34,22 @@ public class User {
     private Boolean isSuspended;
 
     @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "imaulogu", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_uloga"))
     private Set<Role> roles;
 
+    @JsonIgnore
     @ManyToMany
+    @JoinTable(name = "jeprijatelj", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_prijatelj"))
     private Set<User> friends;
 
+    @JsonIgnore
     @ManyToMany
+    @JoinTable(name = "jeblokiranod", joinColumns = @JoinColumn(name = "id_blokiran"), inverseJoinColumns = @JoinColumn(name = "id_blokiran_od"))
     private Set<User> blockedBy;
 
+    @JsonIgnore
     @ManyToMany
+    @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_pohadjatelj"), inverseJoinColumns = @JoinColumn(name = "id_dogadjaj"))
     private Set<Event> attends;
 
     public Long getId() {

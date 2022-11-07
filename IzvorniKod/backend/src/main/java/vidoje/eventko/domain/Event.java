@@ -1,11 +1,20 @@
 package vidoje.eventko.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.annotations.Formula;
+
 import javax.persistence.*;
 import java.sql.Date;
+import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 
 @Entity
 @Table(name = "Dogadjaj")
+//@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "organizer", "attendees"})
 public class Event {
     @Id
     @GeneratedValue
@@ -19,20 +28,38 @@ public class Event {
     private String location;
 
     @Column(name = "vrijeme", nullable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private Date timestamp;
+    private LocalDateTime timestamp;
 
     @Column(name = "opis", nullable = false)
     private String description;
 
+
+    @JsonIgnore
     @ManyToOne
+    @JoinColumn(name = "id_organizator")
     private User organizer;
 
     @ManyToOne
+    @JoinColumn(name = "id_vrsta")
     private EventType type;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    //@JoinTable(name = "imaOznaku", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_oznaka"))
+    @JoinTable(name = "imaoznaku", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_oznaka"))
     private Set<Tag> tags;
+
+    @JsonIgnore
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_pohadjatelj"))
+    private Set<User> attendees;
+
+
+    public Set<User> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(Set<User> attendees) {
+        this.attendees = attendees;
+    }
 
     public Long getId() {
         return id;
@@ -58,11 +85,11 @@ public class Event {
         this.location = location;
     }
 
-    public Date getTimestamp() {
+    public LocalDateTime getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(Date timestamp) {
+    public void setTimestamp(LocalDateTime timestamp) {
         this.timestamp = timestamp;
     }
 
@@ -74,6 +101,7 @@ public class Event {
         this.description = description;
     }
 
+    @JsonBackReference
     public User getOrganizer() {
         return organizer;
     }

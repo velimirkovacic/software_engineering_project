@@ -1,15 +1,13 @@
 package vidoje.eventko.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "Uloga")
 public class Role {
     @Id
-    @Column(name = "id_role", insertable = false, updatable = false)
+    @GeneratedValue
+    @Column(name = "id_uloga", insertable = false, updatable = false)
     private Long id;
 
     @Column(name = "naziv_uloga", insertable = false, updatable = false)
