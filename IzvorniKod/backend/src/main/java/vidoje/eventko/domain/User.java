@@ -30,19 +30,15 @@ public class User {
     private Boolean isSuspended;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "imaUlogu", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_uloga"))
     private Set<Role> roles;
 
     @ManyToMany
-    @JoinTable(name = "jePrijatelj", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_prijatelj"))
     private Set<User> friends;
 
     @ManyToMany
-    @JoinTable(name = "jeBlokiranOd", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_blokiran_od"))
     private Set<User> blockedBy;
 
     @ManyToMany
-    @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_dogadjaj"))
     private Set<Event> attends;
 
     public Long getId() {

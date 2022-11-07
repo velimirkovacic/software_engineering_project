@@ -31,7 +31,7 @@ public class Event {
     private EventType type;
 
     @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(name = "imaOznaku", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_oznaka"))
+    //@JoinTable(name = "imaOznaku", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_oznaka"))
     private Set<Tag> tags;
 
     public Long getId() {
