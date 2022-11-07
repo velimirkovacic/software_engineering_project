@@ -33,7 +33,7 @@ public class Vrsta {
     @Column(nullable = false)
     private String opisVrsta;
 
-    @OneToMany
+    @OneToMany(mappedBy = "vrsta")
     private Set<Dogadjaj> vrstaDogadjajs;
 
     public Integer getIdVrsta() {

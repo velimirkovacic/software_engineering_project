@@ -33,7 +33,7 @@ public class Oznaka {
     @Column(nullable = false, length = 7)
     private String bojaHex;
 
-    @ManyToMany()
+    @ManyToMany(mappedBy = "imaOznakuOznakas")
     private Set<Dogadjaj> imaOznakuDogadjajs;
 
     public Integer getIdOznaka() {
