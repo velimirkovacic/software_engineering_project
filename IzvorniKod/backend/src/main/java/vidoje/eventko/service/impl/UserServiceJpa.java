@@ -18,4 +18,14 @@ public class UserServiceJpa implements UserService {
 
         return userRepo.findAll();
     }
+
+    @Override
+    public boolean validate(String username, String password) {
+        if (username != null) {
+            if (userRepo.findByUsername(username).size() == 1 && userRepo.findByUsername(username).get(0).getPassword().equals(password)) { //TODO DODATI HASHIRANJE
+                return true;
+            }
+        }
+        return false;
+    }
 }
