@@ -27,8 +27,11 @@ public class Event {
     @Column(name = "mjesto", nullable = false)
     private String location;
 
-    @Column(name = "vrijeme", nullable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
-    private LocalDateTime timestamp;
+    @Column(name = "vrijeme_poc", nullable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime beginningTimestamp;
+
+    @Column(name = "vrijeme_kraj", nullable = false, columnDefinition="TIMESTAMP DEFAULT CURRENT_TIMESTAMP")
+    private LocalDateTime endTimestamp;
 
     @Column(name = "opis", nullable = false)
     private String description;
@@ -51,15 +54,6 @@ public class Event {
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_pohadjatelj"))
     private Set<User> attendees;
-
-
-    public Set<User> getAttendees() {
-        return attendees;
-    }
-
-    public void setAttendees(Set<User> attendees) {
-        this.attendees = attendees;
-    }
 
     public Long getId() {
         return id;
@@ -85,12 +79,20 @@ public class Event {
         this.location = location;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
+    public LocalDateTime getBeginningTimestamp() {
+        return beginningTimestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    public void setBeginningTimestamp(LocalDateTime beginningTimestamp) {
+        this.beginningTimestamp = beginningTimestamp;
+    }
+
+    public LocalDateTime getEndTimestamp() {
+        return endTimestamp;
+    }
+
+    public void setEndTimestamp(LocalDateTime endTimestamp) {
+        this.endTimestamp = endTimestamp;
     }
 
     public String getDescription() {
@@ -101,7 +103,6 @@ public class Event {
         this.description = description;
     }
 
-    @JsonBackReference
     public User getOrganizer() {
         return organizer;
     }
@@ -126,17 +127,11 @@ public class Event {
         this.tags = tags;
     }
 
-    @Override
-    public String toString() {
-        return "Event{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", location='" + location + '\'' +
-                ", timestamp=" + timestamp +
-                ", description='" + description + '\'' +
-                ", organizer=" + organizer +
-                ", type=" + type +
-                ", tags=" + tags +
-                '}';
+    public Set<User> getAttendees() {
+        return attendees;
+    }
+
+    public void setAttendees(Set<User> attendees) {
+        this.attendees = attendees;
     }
 }

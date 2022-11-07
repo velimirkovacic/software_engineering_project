@@ -52,6 +52,10 @@ public class User {
     @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_pohadjatelj"), inverseJoinColumns = @JoinColumn(name = "id_dogadjaj"))
     private Set<Event> attends;
 
+
+
+
+
     public Long getId() {
         return id;
     }

@@ -1,6 +1,9 @@
 package vidoje.eventko.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "Vrsta")
@@ -15,6 +18,7 @@ public class EventType {
 
     @Column(name = "opis_vrsta", insertable = false, updatable = false)
     private String description;
+
 
     public Long getId() {
         return id;
