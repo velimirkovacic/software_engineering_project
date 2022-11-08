@@ -4,22 +4,21 @@ import LoginForm from './components/LoginForm';
 function App() {
   //napravljeno s jednim korisnikom za pocetak
   const adminUser = {
-    email: 'admin@admin.com',
+    name: 'admin',
     password: 'admin123'
   }
 
-  const [user, setUser] = useState({name: '', email: ''});
+  const [user, setUser] = useState({name: ''});
   const [error, setError] = useState('');
 
   const Login = details => {
     console.log(details);
 
     //handelanje forme
-    if (details.email === adminUser.email && details.password === adminUser.password) {
+    if ((details.name === adminUser.name) && details.password === adminUser.password) {
       console.log('Admin je ulogiran');
       setUser({
         name: details.name, 
-        email: details.email
       })
     } else {
       setError('Uneseni podaci su neispravni!')
@@ -27,14 +26,14 @@ function App() {
   }
 
   const Logout = () => {
-    setUser({name: '', email: ''});
+    setUser({name: ''});
     setError('');
   }
 
   //samo pocetni primjer da negdje vodi taj login
   return (
     <div className='App'> 
-      {(user.email !== '') ? (
+      {(user.name !== '') ? (
         <div className='welcome'>
           <h2>Welcome, <span>{user.name}</span></h2>
           <button onClick={Logout}>Logout</button>

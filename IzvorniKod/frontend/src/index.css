@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 
-input, button {
+input, button, label {
   appearance: none;
   background: none;
   border: none;
@@ -82,8 +82,10 @@ form .form-inner .form-group input {
   border-radius: 8px;
 }
 
-form .form-inner input[type='submit'] {
-  display: inline-block;
+form .form-inner input[name='login'] {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
   padding: 10px 15px;
   border-radius: 8px;
   background-image: linear-gradient(to right, #05457c, #487aa4);
@@ -94,6 +96,20 @@ form .form-inner input[type='submit'] {
   font-weight: 600;
 }
 
-form .form-inner input[type='submit']:hover {
+form .form-inner input[name='login']:hover {
   background-position: 100%;
+}
+
+form .form-inner input[name='signup'] {
+  display: inline-block;  
+  text-decoration: underline #05457c;
+  color: #05457c;
+}
+
+form .form-inner input[name='signup']:hover {
+  cursor: pointer;
+}
+
+form .form-inner label {
+  font-size: 13px;
 }

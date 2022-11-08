@@ -1,14 +1,16 @@
 import React, {useState} from 'react';
 
 function LoginForm({Login, error}) {
-    const [details, setDetails] = useState({name:'', email:'', password:''});
+    const [details, setDetails] = useState({name:'', password:''});
 
     const submitHandler = e => {
         e.preventDefault();
         Login(details);
+        
     }
 
 //onChange se odvija (ovdje postavlja nove vrijednosti) svakom promjenom vrijednosti elementa
+//submitHandler da vodi na taj LogIn
   return (
     <form onSubmit={submitHandler}>
         <div className='form-inner'>
@@ -19,14 +21,13 @@ function LoginForm({Login, error}) {
                 <input type='text' name='name' id='name' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/> 
             </div> 
             <div className='form-group'>
-                <label htmlFor='email'>Email: </label>
-                <input type='text' name='email' id='email' onChange={e => setDetails({...details, email:e.target.value})} value={details.email}/>        
-            </div>    
-            <div className='form-group'>
                 <label htmlFor='password'>Zaporka: </label>
                 <input type='password' name='password' id='password' onChange={e => setDetails({...details, password:e.target.value})} value={details.password}/>        
             </div> 
-            <input type='submit' value='Prijavi se'/>
+            <input type='submit' name='login' value='Prijava'/>
+            <label htmlFor='or'>Ukoliko nemate račun, </label>
+            <input type='submit' name='signup' value='registrirajte se'/>
+            <button class='sign-up' onclick='submitHandler()'>Registracija </button>
         </div>
     </form>
   )
