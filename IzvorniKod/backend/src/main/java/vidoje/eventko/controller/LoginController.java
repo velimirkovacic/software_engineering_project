@@ -21,12 +21,12 @@ public class LoginController {
     public UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<LoginResponseDTO> performLogin(@Valid @RequestBody LoginRequestDTO loginRequestDTO) {
+    public ResponseEntity<?> performLogin(@Valid @RequestBody LoginRequestDTO loginRequestDTO) {
 
         if (userService.validate(loginRequestDTO.getUsername(), loginRequestDTO.getPassword())) {
 
              return ResponseEntity.ok(new LoginResponseDTO("Uspješna prijava"));
         }
-        return ResponseEntity.ok(new LoginResponseDTO("Neuspješna prijava")); //TODO Stavi da nije 200 OK nego kod 401
+        return new ResponseEntity<LoginResponseDTO>(new LoginResponseDTO("Neuspješna prijava"), HttpStatus.UNAUTHORIZED);
     }
 }
