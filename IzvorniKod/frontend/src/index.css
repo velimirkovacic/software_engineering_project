@@ -113,3 +113,144 @@ form .form-inner input[name='signup']:hover {
 form .form-inner label {
   font-size: 13px;
 }
+
+
+
+/* css za homepage */
+
+img{
+  width: 150px;
+}
+
+
+.nav{
+  background-color:#00477F;
+  display: flex;
+  color:white;
+  justify-content:space-between;
+  align-items:center;
+  padding: 5px;
+}
+
+.nav a{
+  color:inherit;
+  text-decoration: none;
+}
+
+.nav  ul{
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+
+
+}
+nav img{
+  float: left;
+
+}
+
+.nav a:hover{
+  color: #777;
+}
+
+.outerLeft{
+  display: block;
+  float: left;
+  width:230px;
+ 
+}
+
+.outerRight{
+  margin-top: 10px;
+  display: block;
+  float:right;
+  width: 230px;
+}
+
+.innerRight button{
+  width: 60%;
+}
+
+.innerRight{
+  flex-direction: column;
+  display: flex;
+  justify-content:end;
+  align-items: center;
+  
+}
+
+.activeUsers{
+  background-color:white;
+  height: 100px;
+  margin: 2px;
+  margin-bottom:10px ;
+}
+.promoEvents{
+  background-color:white;
+  height: 100px;
+  margin: 2px;
+}
+
+.outerLeft{
+  margin-top: 10px;
+  background-color: #EEEEEE;
+}
+.inner{
+ 
+  margin: 2px;
+ 
+  padding: 5px;
+}
+h3, h4{
+  font-weight: normal;
+}
+
+.btnAdd{
+  width: 100%;
+  height: 40px;
+  background-color: #00477F;
+  color: white;
+  border: #00477F;
+}
+.btnAdd:hover{
+  background-color:#1a6198d2 ;
+
+}
+
+.dropdown{
+  position: relative;
+  width: 70%;
+
+}
+
+
+.dropdown .dropdown-btn{ 
+    padding: 10px;
+    background: #fff;
+    box-shadow: 3px 3px 10px 6px rgba(0,0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropdown .dropdown-content{
+  position: absolute;
+  top:110%;
+  padding: 5px;
+  background: #fff;
+  box-shadow: 3px 3px 10px 6px rgba(0,0, 0, 0.06);
+  width: 100%;
+
+}
+
+.dropdown .dropdown-content .dropdown-item{
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s;
+ 
+}
+
+.dropdown .dropdown-content .dropdown-item:hover{
+  background: #EEEEEE;;
+}
+
+
