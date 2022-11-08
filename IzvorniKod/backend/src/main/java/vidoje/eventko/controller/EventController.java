@@ -1,21 +1,22 @@
 package vidoje.eventko.controller;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import vidoje.eventko.domain.User;
-import vidoje.eventko.service.UserService;
+import vidoje.eventko.domain.Event;
+import vidoje.eventko.service.EventService;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
-public class UserController {
+@RequestMapping("/events")
+public class EventController {
     @Autowired
-    private UserService userService;
+    private EventService eventService;
     @GetMapping("")
-    public List<User> listUsers() {
-        return userService.listAll();
+    public List<Event> listEvents() {
+        return eventService.listAll();
     }
 }

@@ -1,40 +1,59 @@
 package vidoje.eventko.domain;
 
-import com.sun.istack.NotNull;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.Set;
 
-@Entity(name = "Korisnik")
+@Entity
+@Table(name = "Korisnik")
 public class User {
     @Id
     @GeneratedValue
+    @Column(name = "id_korisnik")
     private Long id;
 
-    @Column(unique = true)
+
+    @Column(name = "korisnicko_ime", nullable = false, unique = true)
     private String username;
 
-    @Column(unique = true)
+    @Column(nullable = false, unique = true)
     private String email;
 
+    //private QR_code qr_code;
 
+    @Column(name = "nadimak", nullable = false)
     private String nickname;
 
-    @NotNull
-    private Long role;
+    @JsonIgnore
+    @Column(name = "lozinka", nullable = false)
+    private String password;
 
-    private boolean suspended;
+    @Column(name = "suspendiran", nullable = false)
+    private Boolean isSuspended;
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", role=" + role +
-                ", suspended=" + suspended +
-                '}';
-    }
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(name = "imaulogu", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_uloga"))
+    private Set<Role> roles;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "jeprijatelj", joinColumns = @JoinColumn(name = "id_korisnik"), inverseJoinColumns = @JoinColumn(name = "id_prijatelj"))
+    private Set<User> friends;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "jeblokiranod", joinColumns = @JoinColumn(name = "id_blokiran"), inverseJoinColumns = @JoinColumn(name = "id_blokiran_od"))
+    private Set<User> blockedBy;
+
+    @JsonIgnore
+    @ManyToMany
+    @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_pohadjatelj"), inverseJoinColumns = @JoinColumn(name = "id_dogadjaj"))
+    private Set<Event> attends;
+
+
+
 
 
     public Long getId() {
@@ -69,19 +88,67 @@ public class User {
         this.nickname = nickname;
     }
 
-    public Long getRole() {
-        return role;
+    public String getPassword() {
+        return password;
     }
 
-    public void setRole(Long role) {
-        this.role = role;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
-    public boolean isSuspended() {
-        return suspended;
+    public Boolean getSuspended() {
+        return isSuspended;
     }
 
-    public void setSuspended(boolean suspended) {
-        this.suspended = suspended;
+    public void setSuspended(Boolean suspended) {
+        isSuspended = suspended;
+    }
+
+    public Set<Role> getRoles() {
+        return roles;
+    }
+
+    public void setRoles(Set<Role> roles) {
+        this.roles = roles;
+    }
+
+    public Set<User> getFriends() {
+        return friends;
+    }
+
+    public void setFriends(Set<User> friends) {
+        this.friends = friends;
+    }
+
+    public Set<User> getBlockedBy() {
+        return blockedBy;
+    }
+
+    public void setBlockedBy(Set<User> blockedBy) {
+        this.blockedBy = blockedBy;
+    }
+
+    public Set<Event> getAttends() {
+        return attends;
+    }
+
+    public void setAttends(Set<Event> attends) {
+        this.attends = attends;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", password='" + password + '\'' +
+                ", isSuspended=" + isSuspended +
+                ", roles=" + roles +
+                ", friends=" + friends +
+                ", blockedBy=" + blockedBy +
+                ", attends=" + attends +
+                '}';
     }
 }
