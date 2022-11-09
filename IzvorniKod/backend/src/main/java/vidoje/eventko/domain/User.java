@@ -4,11 +4,36 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
+
+import static org.hibernate.id.PersistentIdentifierGenerator.TABLE;
 
 @Entity
 @Table(name = "Korisnik")
 public class User {
+    public User(String username, String email, String nickname, String password) {
+        this.username = username;
+        this.email = email;
+        if (nickname == null) {
+            this.nickname = username;
+        } else {
+            this.nickname = nickname;
+        }
+        this.password = password;
+
+        this.isSuspended = false;
+        this.roles = new HashSet<Role>();
+        this.blockedBy = new HashSet<User>();
+        this.friends = new HashSet<User>();
+        this.attends = new HashSet<Event>();
+
+    }
+
+    public User() {}
+
+
+
     @Id
     @GeneratedValue
     @Column(name = "id_korisnik")
