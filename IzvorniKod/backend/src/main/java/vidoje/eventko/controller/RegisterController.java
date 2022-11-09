@@ -12,6 +12,8 @@ import vidoje.eventko.service.UserService;
 import vidoje.eventko.service.impl.UserServiceJpa;
 
 import javax.validation.Valid;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 @RestController
 @RequestMapping("/register")
@@ -21,7 +23,7 @@ public class RegisterController {
     public UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<RegisterResponseDTO> performRegister(@Valid @RequestBody RegisterRequestDTO dto) {
+    public ResponseEntity<RegisterResponseDTO> performRegister(@Valid @RequestBody RegisterRequestDTO dto) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
         User newUser = new User(dto.getUsername(), dto.getEmail(), dto.getNickname(), dto.getPassword());
         try {

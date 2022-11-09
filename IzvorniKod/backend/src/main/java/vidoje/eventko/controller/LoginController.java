@@ -12,6 +12,8 @@ import vidoje.eventko.service.UserService;
 import vidoje.eventko.service.impl.UserServiceJpa;
 
 import javax.validation.Valid;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
 
 @RestController
 @RequestMapping("/login")
@@ -21,12 +23,12 @@ public class LoginController {
     public UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<LoginResponseDTO> performLogin(@Valid @RequestBody LoginRequestDTO loginRequestDTO) {
+    public ResponseEntity<LoginResponseDTO> performLogin(@Valid @RequestBody LoginRequestDTO loginRequestDTO) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
         if (userService.validate(loginRequestDTO.getUsername(), loginRequestDTO.getPassword())) {
 
              return ResponseEntity.ok(new LoginResponseDTO("Uspješna prijava"));
         }
-        return new ResponseEntity<LoginResponseDTO>(new LoginResponseDTO("Neuspješna prijava"), HttpStatus.UNAUTHORIZED); //TODO Stavi da nije 200 OK nego kod 401
+        return new ResponseEntity<>(new LoginResponseDTO("Neuspješna prijava"), HttpStatus.UNAUTHORIZED);
     }
 }

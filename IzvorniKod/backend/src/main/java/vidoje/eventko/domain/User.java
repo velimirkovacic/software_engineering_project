@@ -3,7 +3,14 @@ package vidoje.eventko.domain;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
 import javax.persistence.*;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,15 +19,25 @@ import static org.hibernate.id.PersistentIdentifierGenerator.TABLE;
 @Entity
 @Table(name = "Korisnik")
 public class User {
-    public User(String username, String email, String nickname, String password) {
+    public User(String username, String email, String nickname, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
         this.username = username;
         this.email = email;
+
         if (nickname == null) {
             this.nickname = username;
         } else {
             this.nickname = nickname;
         }
-        this.password = password;
+
+        SecureRandom random = new SecureRandom();
+        byte[] salt = new byte[16];
+        random.nextBytes(salt);
+        this.salt = salt;
+
+        KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
+        SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+        byte[] hash = factory.generateSecret(spec).getEncoded();
+        this.password = hash;
 
         this.isSuspended = false;
         this.roles = new HashSet<Role>();
@@ -40,6 +57,7 @@ public class User {
     private Long id;
 
 
+
     @Column(name = "korisnicko_ime", nullable = false, unique = true)
     private String username;
 
@@ -51,9 +69,12 @@ public class User {
     @Column(name = "nadimak", nullable = false)
     private String nickname;
 
+    @Column(name = "salt", nullable = false)
+    private byte[] salt;
+
     @JsonIgnore
     @Column(name = "lozinka", nullable = false)
-    private String password;
+    private byte[] password;
 
     @Column(name = "suspendiran", nullable = false)
     private Boolean isSuspended;
@@ -78,8 +99,21 @@ public class User {
     private Set<Event> attends;
 
 
+    public byte[] getSalt() {
+        return salt;
+    }
 
+    public void setSalt(byte[] salt) {
+        this.salt = salt;
+    }
 
+    public byte[] getPassword() {
+        return password;
+    }
+
+    public void setPassword(byte[] password) {
+        this.password = password;
+    }
 
     public Long getId() {
         return id;
@@ -113,13 +147,6 @@ public class User {
         this.nickname = nickname;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 
     public Boolean getSuspended() {
         return isSuspended;
@@ -168,7 +195,8 @@ public class User {
                 ", username='" + username + '\'' +
                 ", email='" + email + '\'' +
                 ", nickname='" + nickname + '\'' +
-                ", password='" + password + '\'' +
+                ", salt=" + Arrays.toString(salt) +
+                ", password=" + Arrays.toString(password) +
                 ", isSuspended=" + isSuspended +
                 ", roles=" + roles +
                 ", friends=" + friends +

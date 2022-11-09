@@ -6,6 +6,12 @@ import vidoje.eventko.domain.User;
 import vidoje.eventko.repos.UserRepo;
 import vidoje.eventko.service.UserService;
 
+import javax.crypto.SecretKeyFactory;
+import javax.crypto.spec.PBEKeySpec;
+import java.security.NoSuchAlgorithmException;
+import java.security.spec.InvalidKeySpecException;
+import java.security.spec.KeySpec;
+import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -20,10 +26,18 @@ public class UserServiceJpa implements UserService {
     }
 
     @Override
-    public boolean validate(String username, String password) {
+    public boolean validate(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (username != null) {
-            if (userRepo.findByUsername(username).size() == 1 && userRepo.findByUsername(username).get(0).getPassword().equals(password)) { //TODO DODATI HASHIRANJE
-                return true;
+            if (userRepo.findByUsername(username).size() == 1) {
+
+                byte[] salt = userRepo.findByUsername(username).get(0).getSalt();
+                byte[] hashedPassword = userRepo.findByUsername(username).get(0).getPassword();
+
+                KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
+                SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
+                byte[] newHash = factory.generateSecret(spec).getEncoded();
+
+                return Arrays.equals(newHash, hashedPassword);
             }
         }
         return false;
