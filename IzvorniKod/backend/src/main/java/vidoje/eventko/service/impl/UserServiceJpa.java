@@ -28,4 +28,14 @@ public class UserServiceJpa implements UserService {
         }
         return false;
     }
+
+    @Override
+    public void add(User user) {
+        userRepo.save(user);
+    }
+
+    @Override
+    public boolean exists(User user) {
+        return (userRepo.findByUsername(user.getUsername()).size() > 0 || userRepo.findByEmail(user.getEmail()).size() > 0);
+    }
 }
