@@ -194,6 +194,7 @@ nav img{
 .outerLeft{
   margin-top: 10px;
   background-color: #EEEEEE;
+  margin-right: 10px;
 }
 .inner{
  
@@ -211,6 +212,7 @@ h3, h4{
   background-color: #00477F;
   color: white;
   border: #00477F;
+  border-radius: 0.25rem;
 }
 .btnAdd:hover{
   background-color:#1a6198d2 ;

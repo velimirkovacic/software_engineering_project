@@ -1,8 +1,9 @@
 import React from 'react';
-import '../App';
+
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
-import Navbar from './Navbar';
+import Navbar from './components/Navbar';
+import Calendar from './components/Calendar'
 
 const welcome = () => {
   return (
@@ -10,6 +11,7 @@ const welcome = () => {
       <Navbar />
       <LeftPanel />
       <RightPanel />
+      <Calendar />
 
     </div>
   )
