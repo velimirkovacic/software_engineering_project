@@ -25,6 +25,11 @@ public interface UserService {
      */
     void add(User user);
 
+    /**
+     * Provjera postoji li korisnik s istim UNIQUE atributima u sustavu
+     * @param user User objekt
+     * @return true ako postoji, false ako ne postoji
+     */
     boolean exists(User user);
 
 }
