@@ -1,0 +1,18 @@
+Zapisnik sastanka Backend tima 10.11.
+
+- štitimo lozinke hashiranjem i saltom
+- klasa Controller je zadužena za slanje podataka frontendu
+
+- treba razraditi pravila oko definiranja usernamea (Korisničko ime) i nickname (Nadimak): 
+	npr. u usernameu korisnici smiju koristiti samo slova, brojke i "_" znak
+
+- koristimo JPA repository pomoću kojeg Springboot samostalno provodi nad bazom željene SQL upite
+
+- ako korisnik ne definira nickname, automatski će mu se definirati nickname jednak usernameu
+
+- za slanje podataka u bazu (prilikom ulogiravanja ili izrade računa) trenutno koristimo Postman
+
+TO DO za ponedjeljak:
+- catch up s frontend timom
+- povezivanje frontenda s bazom podataka
+- zajedničko definiranje pravila za username i nickname
