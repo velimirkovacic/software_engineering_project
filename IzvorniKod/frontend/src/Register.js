@@ -22,7 +22,7 @@ function Register() {
     }
 
     return (
-        <div>
+        <div className='App'>
             {(user.name !== '') ? (
                 navigate('/')
             ) : (

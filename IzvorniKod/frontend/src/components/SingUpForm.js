@@ -32,7 +32,7 @@ const SingUpForm = ({submitSignup}) => {
             </div>
             <div className='form-group'>
                 <label htmlFor='nickname'>Nadimak: </label>
-                <input type='text' name='nickname' id='nickname' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/> 
+                <input type='text' name='nickname' id='nickname' onChange={e => setDetails({...details, nickname:e.target.value})} value={details.nickname}/> 
                 {errors.nickname && <p className='error'>{errors.nickname}</p>}
             </div>
             <div className='form-group'>
@@ -47,7 +47,7 @@ const SingUpForm = ({submitSignup}) => {
             </div> 
             <div className='form-group'>
                 <label htmlFor='rePassword'>Ponovite lozinku: </label>
-                <input type='password' name='rePassword' id='rePassword' onChange={e => setDetails({...details, password:e.target.value})} value={details.password}/>        
+                <input type='password' name='rePassword' id='rePassword' onChange={e => setDetails({...details, rePassword:e.target.value})} value={details.rePassword}/>        
                 {errors.rePassword && <p className='error'>{errors.rePassword}</p>}
             </div> 
             <input type='submit' name='register' value='Registrirajte se'/>

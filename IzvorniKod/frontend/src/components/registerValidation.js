@@ -11,7 +11,7 @@ const registerValidation = (values) => {
     }
 
     if (!values.email) {
-        errors.nickname = "Unesite email adresu!"
+        errors.email = "Unesite email adresu!"
     }
 
     if (!values.password) {

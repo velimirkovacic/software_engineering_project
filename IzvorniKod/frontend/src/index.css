@@ -114,7 +114,25 @@ form .form-inner label {
   font-size: 13px;
 }
 
+/*css za button za signup na register stranici*/
 
+form .form-inner input[name='register'] {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #05457c, #487aa4);
+  background-size: 200%;
+  background-position: 0%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+}
+
+form .form-inner input[name='register']:hover {
+  background-position: 100%;
+}
 
 /* css za homepage */
 
