@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import LoginForm from './components/LoginForm';
 import { useNavigate } from 'react-router-dom'
 
-//anin login premjesten s prijasnjeg App.js
 function Login() {
     //napravljeno s jednim korisnikom za pocetak
     const adminUser = {
@@ -32,7 +31,6 @@ function Login() {
         setError('');
     }
 
-    //samo pocetni primjer da negdje vodi taj login
     return (
         <div className='App'>
             {(user.name !== '') ? (

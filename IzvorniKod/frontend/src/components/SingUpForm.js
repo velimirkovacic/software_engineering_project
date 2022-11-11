@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import Register from '../Register';
 import registerValidation from './registerValidation';
 
 const SingUpForm = ({submitSignup}) => {
@@ -11,6 +12,7 @@ const SingUpForm = ({submitSignup}) => {
         e.preventDefault();
         setErrors(registerValidation(details));
         setDataIsCorrect(true);
+        Register(details);
     };
 
     useEffect(() => {
@@ -49,7 +51,6 @@ const SingUpForm = ({submitSignup}) => {
                 {errors.rePassword && <p className='error'>{errors.rePassword}</p>}
             </div> 
             <input type='submit' name='register' value='Registrirajte se'/>
-            <button class='sign-up' onclick='handleSignUpForm()'>Registracija</button>
         </div>
     </form>
   )
