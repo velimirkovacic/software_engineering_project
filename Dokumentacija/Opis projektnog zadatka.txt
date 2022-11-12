@@ -51,7 +51,7 @@ događajima.
 Na sredini stranici nalazi se veliki kalendar koji zauzima trećinu prikaza
 stranice. Na njemu su lako vidljivi trenutni događaji na koje želimo ili moramo otići.
 S desne strane stranice nalazi se prozor s Javnim eventima. Potrebno je samo stisnuti gumb
-"Izbornik" kako bi se otvorio //drop down menu prikaz svih trenutnih javnih evenata?//.
+"Izbornik" kako bi se otvorio drop down menu prikaz svih trenutnih javnih evenata.
 
 Ako stisnemo karticu "Obavijesti" prikazat će nam se prozorčići s obavijestima inicijalno poredanim od najnovijih prema starijim.
 
@@ -72,7 +72,7 @@ Kao što imamo premium korisnika i običnog korisnika, što je bilo napisano u l
 -	Premium korisnik
 -	Moderator
 -	Administrator
--	//Pregledavač???//
+-	Pregledavač
 
 Običan korisnik ima sve već navedene inicijalne funkcionalnosti aplikacije i još uz to gumb za kupnju premium profila prikazan nakon korištenja kartice „Korisnik“.
 
