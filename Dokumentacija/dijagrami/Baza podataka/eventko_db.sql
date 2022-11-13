@@ -10,21 +10,25 @@ DROP TABLE IF EXISTS Oznaka;
 DROP TABLE IF EXISTS Vrsta;
 DROP TABLE IF EXISTS SPRING_SESSION CASCADE;
 DROP TABLE IF EXISTS SPRING_SESSION_ATTRIBUTES;
+DROP SEQUENCE IF EXISTS hibernate_sequence;
 
 
 
 CREATE TABLE Korisnik
 (
   id_korisnik BIGINT NOT NULL,
-  nadimak VARCHAR(255) NOT NULL,
-  korisnicko_ime VARCHAR(255) NOT NULL,
+  nadimak VARCHAR(25) NOT NULL,
+  korisnicko_ime VARCHAR(25) NOT NULL,
   email VARCHAR(255) NOT NULL,
-  lozinka VARCHAR(255) NOT NULL,
+  salt BYTEA NOT NULL, 
+  lozinka BYTEA NOT NULL,
   suspendiran BOOLEAN NOT NULL,
   PRIMARY KEY (id_korisnik),
   UNIQUE (korisnicko_ime),
   UNIQUE (email),
-  CHECK (email like '%_@__%.__%')
+  CHECK (email LIKE '%_@__%.__%'), --Provjera formata emaila
+  CHECK (nadimak NOT LIKE ' *' AND nadimak NOT LIKE '* '), --Provjera da nadimak ne pocinje ili zavrsava s razmakom
+  CHECK (korisnicko_ime ~ '^[A-Za-z0-9_]+$') --Provjera da korisnicko ime ima samo alfanumeričke simbole
 );
 
 CREATE TABLE Uloga
@@ -49,7 +53,7 @@ CREATE TABLE Oznaka
   naziv_oznaka VARCHAR(255) NOT NULL,
   boja_hex CHAR(7) NOT NULL,
   PRIMARY KEY (id_oznaka),
-  CHECK (boja_hex IS NULL OR boja_hex ~* '^#[a-f0-9]{6}$')
+  CHECK (boja_hex IS NULL OR boja_hex ~* '^#[a-f0-9]{6}$') --Provjera formata hex boje
 );
 
 CREATE TABLE imaUlogu
@@ -93,7 +97,8 @@ CREATE TABLE Dogadjaj
   id_vrsta INT NOT NULL,
   PRIMARY KEY (id_dogadjaj),
   FOREIGN KEY (id_organizator) REFERENCES Korisnik(id_korisnik),
-  FOREIGN KEY (id_vrsta) REFERENCES Vrsta(id_vrsta)
+  FOREIGN KEY (id_vrsta) REFERENCES Vrsta(id_vrsta),
+  CHECK (vrijeme_poc < vrijeme_kraj)
 );
 
 CREATE TABLE pohadja
@@ -103,7 +108,8 @@ CREATE TABLE pohadja
   id_dogadjaj BIGINT NOT NULL,
   PRIMARY KEY (id_pohadjatelj, id_dogadjaj),
   FOREIGN KEY (id_pohadjatelj) REFERENCES Korisnik(id_korisnik),
-  FOREIGN KEY (id_dogadjaj) REFERENCES Dogadjaj(id_dogadjaj)
+  FOREIGN KEY (id_dogadjaj) REFERENCES Dogadjaj(id_dogadjaj),
+  CHECK ((recenzija = 1) OR (recenzija = -1) OR (recenzija = 0)) 
 );
 
 CREATE TABLE imaOznaku
@@ -129,20 +135,6 @@ INSERT INTO oznaka VALUES (1, 'Kava', '#6f4e37');
 INSERT INTO oznaka VALUES (2, 'Piva', '#f28e1c');
 --Treba dodat još oznaka...
 
-
-
-INSERT into Korisnik VALUES (1, 'Admin', 'admin', 'admin.adminic@fer.hr', '1234', FALSE);
-INSERT into imaulogu VALUES (1, 1);
-INSERT into imaulogu VALUES (1, 2);
-INSERT into imaulogu VALUES (1, 3);
-INSERT into imaulogu VALUES (1, 4);
-
-
---Testni podaci
-INSERT INTO dogadjaj VALUES(1, 'Testni dogadjaj', 'FER', NOW(), NOW() + '23 HOURS'::INTERVAL, 'opis dogadjaja', FALSE, '0, 0', 1, 1);
-INSERT INTO pohadja VALUES (1, 1, 1);
-INSERT INTO imaoznaku VALUES (1, 1);
-
 --Spring session
 
 CREATE TABLE SPRING_SESSION (
@@ -167,3 +159,26 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
 	CONSTRAINT SPRING_SESSION_ATTRIBUTES_PK PRIMARY KEY (SESSION_PRIMARY_ID, ATTRIBUTE_NAME),
 	CONSTRAINT SPRING_SESSION_ATTRIBUTES_FK FOREIGN KEY (SESSION_PRIMARY_ID) REFERENCES SPRING_SESSION(PRIMARY_ID) ON DELETE CASCADE
 );
+
+CREATE SEQUENCE hibernate_sequence MINVALUE 2;
+
+
+
+
+
+
+
+--Testni podaci
+
+
+INSERT into Korisnik VALUES (1, 'Admin', 'admin', 'admin.adminic@fer.hr',CONVERT_TO('sol', 'UTF8'), '1234', FALSE);
+INSERT into imaulogu VALUES (1, 1);
+INSERT into imaulogu VALUES (1, 2);
+INSERT into imaulogu VALUES (1, 3);
+INSERT into imaulogu VALUES (1, 4);
+
+
+INSERT INTO dogadjaj VALUES(1, 'Testni dogadjaj', 'FER', NOW(), NOW() + '23 HOURS'::INTERVAL, 'opis dogadjaja', FALSE, '0, 0', 1, 1);
+INSERT INTO pohadja VALUES (1, 1, 1);
+INSERT INTO imaoznaku VALUES (1, 1);
+
