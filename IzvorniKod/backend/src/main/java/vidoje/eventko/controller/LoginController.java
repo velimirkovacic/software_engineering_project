@@ -24,7 +24,6 @@ public class LoginController {
 
     @PostMapping("")
     public ResponseEntity<LoginResponseDTO> performLogin(@Valid @RequestBody LoginRequestDTO loginRequestDTO) throws NoSuchAlgorithmException, InvalidKeySpecException {
-
         if (userService.validate(loginRequestDTO.getUsername(), loginRequestDTO.getPassword())) {
              return ResponseEntity.ok(new LoginResponseDTO("Uspješna prijava"));
         }
