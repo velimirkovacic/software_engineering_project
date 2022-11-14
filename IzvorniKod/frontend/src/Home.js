@@ -7,7 +7,7 @@ import Calendar from './components/Calendar'
 
 const welcome = () => {
   return (
-    <div classname=''>
+    <div className=''>
       <Navbar />
       <LeftPanel />
       <RightPanel />

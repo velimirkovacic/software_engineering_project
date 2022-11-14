@@ -12,6 +12,7 @@ function Login() {
     const [user, setUser] = useState({ name: '' });
     const [error, setError] = useState('');
     const navigate = useNavigate();
+
     const Login = details => {
         console.log(details);
 
