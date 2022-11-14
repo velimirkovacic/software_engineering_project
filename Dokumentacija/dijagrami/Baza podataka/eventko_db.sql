@@ -28,7 +28,9 @@ CREATE TABLE Korisnik
   UNIQUE (email),
   CHECK (email LIKE '%_@__%.__%'), --Provjera formata emaila
   CHECK (nadimak NOT LIKE ' *' AND nadimak NOT LIKE '* '), --Provjera da nadimak ne pocinje ili zavrsava s razmakom
-  CHECK (korisnicko_ime ~ '^[A-Za-z0-9_]+$') --Provjera da korisnicko ime ima samo alfanumeričke simbole
+  CHECK (korisnicko_ime ~ '^[A-Za-z0-9_]+$'), --Provjera da korisnicko ime ima samo alfanumeričke simbole
+  CHECK (LENGTH(korisnicko_ime) >= 2), --Provjera minimalne duljine korisnickog imena
+  CHECK (LENGTH(nadimak) >= 2) -- Provjera minimalne duljine nadimka
 );
 
 CREATE TABLE Uloga
