@@ -1,35 +1,39 @@
 import React, { useState } from 'react';
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 function LoginForm(props) {
     const [details, setDetails] = useState({ name: '', password: '' });
-    //const navigate = useNavigate();
+    const navigate = useNavigate();
     const [error, setError] = useState(''); //initial state
 
     function onSubmit(e) {
         e.preventDefault();
         setError("");
-        //Login(details);
-        /*const body = `username=${details.name}&password=${details.password}`;
-        console.log(body);
+        const data = {
+            username: details.name,
+            password: details.password
+        };
         const options = {
             method: 'POST',
-            body: body
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
         };
-        fetch("/api/login", options)
+        fetch('/api/login', options)
             .then(response => {
                 console.log(response);
-                if (response.status === 401) {
-                    setError("Login failed");
+                if (response.ok) {
+                    props.onLoginForm()
                 } else {
-                    props.onLoginForm();
+                    setError("Neuspješna prijava");
                 }
-            });*/
+        });
     }
 
-    //const navRegister = () => {
-    //    navigate('/register');
-    //}
+    const navRegister = () => {
+        navigate('/register');
+    }
 
     //onChange se odvija (ovdje postavlja nove vrijednosti) svakom promjenom vrijednosti elementa
     //submitHandler da vodi na taj LogIn
@@ -49,12 +53,12 @@ function LoginForm(props) {
                 </div>
                 <input type='submit' name='login' value='Prijava' />
                 <label htmlFor='or'>Ukoliko nemate račun, </label>
-    
+                <button type='signUp' name='signup' onClick={navRegister}>registrirajte se </button>
             </div>
         </form>
         </div>
     )
 }
-//<button type='signUp' name='signup' onClick={navRegister}>registrirajte se </button>
+
 
 export default LoginForm;

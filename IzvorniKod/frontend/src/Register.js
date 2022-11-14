@@ -11,14 +11,31 @@ function Register() {
     const Register = details => {
         console.log(details);
         //handelanje forme
-        if ((details.name !== '') && details.password !== '') {
-            console.log('Registriran je novi korisnik');
-            prijelaz = 'da';
-            console.log(prijelaz);
-
-        } else {
-            setErrors('Nisu uneseni podaci!')
-        }
+        setErrors("");
+        const data = {
+            username: details.name,
+            password: details.password,
+            email: details.email,
+            nickname: details.nickname
+        };
+      
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        fetch('/api/register', options)
+        .then(response => {
+            console.log(response);
+            if (response.ok) {
+                prijelaz = 'da';
+                navigate('/');
+            } else {
+                setErrors("Neispravno uneseni podaci");
+            }
+        });
     }
 
     return (

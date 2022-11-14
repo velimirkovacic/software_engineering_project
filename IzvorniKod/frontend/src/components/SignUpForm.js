@@ -3,12 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 const SignUpForm = ({Register, errors}) => {
 
-    const [details, setDetails] = useState({name:'', email:'', password:''});
+    const [details, setDetails] = useState({name:'', email:'', password:'', nickname:'', rePassword:''});
     const navigate = useNavigate();
-
-    const navReg = () => {
-        navigate("/");
-    };
 
     const handleSignUpForm = e => {
         e.preventDefault();
@@ -40,7 +36,7 @@ const SignUpForm = ({Register, errors}) => {
                 <label htmlFor='rePassword'>Ponovite lozinku: </label>
                 <input type='password' name='rePassword' id='rePassword' onChange={e => setDetails({...details, rePassword:e.target.value})} value={details.rePassword}/>        
             </div> 
-            <button name='register' onClick={navReg}>Registrirajte se</button>
+            <button type='submit' name='register'>Registrirajte se</button>
         </div>
     </form>
   )

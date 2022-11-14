@@ -15,9 +15,12 @@ function App () {
 
   if (!isLoggedIn) {
     return (
-      <div>
-        <LoginForm onLoginForm={onLoginForm}/> 
-      </div>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/register' element={<Register />}/>
+        <Route path='/*' element={<LoginForm onLoginForm={onLoginForm}/>} />
+      </Routes>
+    </BrowserRouter>
     )
   }
 
