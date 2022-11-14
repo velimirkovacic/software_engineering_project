@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import { InputHTMLAttributes } from 'react';
 
 function LoginForm({Login, error}) {
     const [details, setDetails] = useState({name:'', password:''});
@@ -8,17 +7,6 @@ function LoginForm({Login, error}) {
         e.preventDefault();
         Login(details);
         
-    }
-
-    function onSignUp(e) {
-        e.preventDefault();
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded'
-            }
-        }
-        //fetch(input: '/SignUpForm', options);
     }
 
 //onChange se odvija (ovdje postavlja nove vrijednosti) svakom promjenom vrijednosti elementa

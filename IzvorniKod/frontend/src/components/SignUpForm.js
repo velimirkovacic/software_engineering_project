@@ -1,6 +1,4 @@
 import React, {useState} from 'react';
-import Register from '../Register';
-import registerValidation from './registerValidation';
 
 const SignUpForm = ({Register, errors}) => {
 
