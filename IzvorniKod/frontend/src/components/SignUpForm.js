@@ -1,30 +1,29 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import Register from '../Register';
 import registerValidation from './registerValidation';
 
-const SingUpForm = ({submitSignup}) => {
+const SignUpForm = ({Register, errors}) => {
 
     const [details, setDetails] = useState({name:'', email:'', password:''});
-    const [errors, setErrors] = useState({});
-    const [dataIsCorrect, setDataIsCorrect] = useState(false);
+    /*const [dataIsCorrect, setDataIsCorrect] = useState(false);*/
 
     const handleSignUpForm = e => {
         e.preventDefault();
-        setErrors(registerValidation(details));
-        setDataIsCorrect(true);
+        /*setDataIsCorrect(true);*/
         Register(details);
     };
 
-    useEffect(() => {
+   /*useEffect(() => {
         if (Object.keys(errors).length === 0 && dataIsCorrect) {
-            submitSignup(true);
+            submitSignUp(true);
         }
-    }, [errors]);
+    }, [errors]);*/
 
   return (
     <form onSubmit={handleSignUpForm}>
         <div className='form-inner'>
             <h2>Kreiraj korisnički račun</h2>
+            {(errors !== '') ? (<div className='errors'>{errors}</div>) : ''}
             <div className='form-group'>
                 <label htmlFor='name'>Korisničko ime: </label>
                 <input type='text' name='name' id='name' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/> 
@@ -56,4 +55,4 @@ const SingUpForm = ({submitSignup}) => {
   )
 }
 
-export default SingUpForm;
+export default SignUpForm;

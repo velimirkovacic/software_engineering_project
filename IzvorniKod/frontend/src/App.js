@@ -6,7 +6,6 @@ import Register from './Register';
 
 const App = () => {
 
-
   return (
     <BrowserRouter>
       <Routes>
