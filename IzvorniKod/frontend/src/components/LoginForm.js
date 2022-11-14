@@ -3,13 +3,13 @@ import { useNavigate } from 'react-router-dom'
 function LoginForm({ Login, error }) {
     const [details, setDetails] = useState({ name: '', password: '' });
     const navigate = useNavigate();
+
     const submitHandler = e => {
         e.preventDefault();
         Login(details);
-
     }
-    const navRegister = () => {
 
+    const navRegister = () => {
         navigate('/register');
     }
 
@@ -30,8 +30,7 @@ function LoginForm({ Login, error }) {
                 </div>
                 <input type='submit' name='login' value='Prijava' />
                 <label htmlFor='or'>Ukoliko nemate račun, </label>
-                <input type='submit' name='signup' value='registrirajte se' />
-                <button type='signUp' onClick={navRegister}>Registracija </button>
+                <button type='signUp' name='signup' onClick={navRegister}>registrirajte se </button>
             </div>
         </form>
     )

@@ -100,13 +100,13 @@ form .form-inner input[name='login']:hover {
   background-position: 100%;
 }
 
-form .form-inner input[name='signup'] {
-  display: inline-block;  
+form .form-inner button[name='signup'] {
+  display: inline-block;
   text-decoration: underline #05457c;
   color: #05457c;
 }
 
-form .form-inner input[name='signup']:hover {
+form .form-inner button[name='signup']:hover {
   cursor: pointer;
 }
 
