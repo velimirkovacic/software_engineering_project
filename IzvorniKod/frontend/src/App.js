@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import Home from './Home';
 import LoginForm from './components/LoginForm';
 import Register from './Register';
@@ -13,22 +13,11 @@ function App () {
     setIsLoggedIn(true);
   }
 
-  if (!isLoggedIn) {
-    return (
-      <BrowserRouter>
-      <Routes>
-        <Route path='/register' element={<Register />}/>
-        <Route path='/*' element={<LoginForm onLoginForm={onLoginForm}/>} />
-      </Routes>
-    </BrowserRouter>
-    )
-  }
-
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/login' element={<LoginForm />} />
+        <Route path='/' element={isLoggedIn ? <Home /> : <Navigate to='/login'/>} />
+        <Route path='/login' element={<LoginForm onLoginForm={onLoginForm}/>} />
         <Route path='/register' element={<Register />}/>
       </Routes>
     </BrowserRouter>
