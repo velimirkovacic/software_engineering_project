@@ -6,7 +6,7 @@ Dnevnik sastajanja
  - Teme sastanka:
 	- sastanak s asistentom i demonstratorom
 	- raščišćavanje elemenata projektnog zadatka
-	- predaja alternativnog "Eventko"
+	- predaja alternativnog "Eventko" projekta
 
 2. sastanak
  - Datum: 24. listopada 2022.
@@ -36,4 +36,6 @@ Dnevnik sastajanja
  - Datum: 14. studenog 2022.
  - Prisustvovali: svi članovi tima
  - Teme sastanka:
-	- 
+	- priprema za demonstraciju osnovnih funkcionalnosti
+	- povezivanje backenda i frontenda
+	- usklađivanje ograničenja
