@@ -8,11 +8,13 @@ function Navbar() {
             <div className='navComp'>
                 <ul>
 
-                    <li><a href="/obavijesti">Obavijesti</a></li>
-                    <li><a href="/mojiPrijatelji">Moji Prijatelji</a></li>
-                    <li><a href="/pohadaniEventi">Pohađani Eventi</a></li>
-                    <li><a href="/korisnik">Korisnik</a></li>
-                    <li><a href="/login">Odjava</a></li>
+                    <li><a href="/">Obavijesti</a></li>
+                    <li><a href="/">Moji Prijatelji</a></li>
+                    <li><a href="/">Pohađani Eventi</a></li>
+                    <div className='userInfo'>
+                        <li><a href="/">Korisnik</a></li>
+                        <li><a href="/">Odjava</a></li>
+                    </div>
                 </ul>
             </div>
         </nav>
