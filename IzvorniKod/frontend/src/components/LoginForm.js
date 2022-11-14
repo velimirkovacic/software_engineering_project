@@ -24,7 +24,8 @@ function LoginForm(props) {
             .then(response => {
                 console.log(response);
                 if (response.ok) {
-                    props.onLoginForm()
+                    props.onLoginForm();
+                    navigate('/');
                 } else {
                     setError("Neuspješna prijava");
                 }
