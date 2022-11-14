@@ -1,22 +1,41 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-function LoginForm({ Login, error }) {
+//import { useNavigate } from 'react-router-dom'
+
+function LoginForm(props) {
     const [details, setDetails] = useState({ name: '', password: '' });
-    const navigate = useNavigate();
+    //const navigate = useNavigate();
+    const [error, setError] = useState(''); //initial state
 
-    const submitHandler = e => {
+    function onSubmit(e) {
         e.preventDefault();
-        Login(details);
+        setError("");
+        //Login(details);
+        /*const body = `username=${details.name}&password=${details.password}`;
+        console.log(body);
+        const options = {
+            method: 'POST',
+            body: body
+        };
+        fetch("/api/login", options)
+            .then(response => {
+                console.log(response);
+                if (response.status === 401) {
+                    setError("Login failed");
+                } else {
+                    props.onLoginForm();
+                }
+            });*/
     }
 
-    const navRegister = () => {
-        navigate('/register');
-    }
+    //const navRegister = () => {
+    //    navigate('/register');
+    //}
 
     //onChange se odvija (ovdje postavlja nove vrijednosti) svakom promjenom vrijednosti elementa
     //submitHandler da vodi na taj LogIn
     return (
-        <form onSubmit={submitHandler}>
+        <div className='App'>
+        <form onSubmit={onSubmit}>
             <div className='form-inner'>
                 <h2>Prijava</h2>
                 {(error !== '') ? (<div className='error'>{error}</div>) : ''}
@@ -30,10 +49,12 @@ function LoginForm({ Login, error }) {
                 </div>
                 <input type='submit' name='login' value='Prijava' />
                 <label htmlFor='or'>Ukoliko nemate račun, </label>
-                <button type='signUp' name='signup' onClick={navRegister}>registrirajte se </button>
+    
             </div>
         </form>
+        </div>
     )
 }
+//<button type='signUp' name='signup' onClick={navRegister}>registrirajte se </button>
 
 export default LoginForm;

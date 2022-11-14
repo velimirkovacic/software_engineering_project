@@ -12,7 +12,7 @@ function Navbar() {
                     <li><a href="/mojiPrijatelji">Moji Prijatelji</a></li>
                     <li><a href="/pohadaniEventi">Pohađani Eventi</a></li>
                     <li><a href="/korisnik">Korisnik</a></li>
-                    <li><a href="/odjava">Odjava</a></li>
+                    <li><a href="/login">Odjava</a></li>
                 </ul>
             </div>
         </nav>
