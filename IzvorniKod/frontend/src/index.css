@@ -116,7 +116,7 @@ form .form-inner label {
 
 /*css za button za signup na register stranici*/
 
-form .form-inner input[name='register'] {
+form .form-inner button[name='register'] {
   display: block;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -130,7 +130,7 @@ form .form-inner input[name='register'] {
   font-weight: 600;
 }
 
-form .form-inner input[name='register']:hover {
+form .form-inner button[name='register']:hover {
   background-position: 100%;
 }
 

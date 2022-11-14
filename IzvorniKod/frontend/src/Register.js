@@ -5,14 +5,16 @@ import { useNavigate } from 'react-router-dom'
 function Register() {
 
     const [errors, setErrors] = useState('');
+    let prijelaz = 'ne';
     const navigate = useNavigate();
-    const prezime = 'nes';
 
     const Register = details => {
         console.log(details);
         //handelanje forme
         if ((details.name !== '') && details.password !== '') {
             console.log('Registriran je novi korisnik');
+            prijelaz = 'da';
+            console.log(prijelaz);
 
         } else {
             setErrors('Nisu uneseni podaci!')
@@ -21,7 +23,7 @@ function Register() {
 
     return (
         <div className='App'>
-            {(prezime !== '') ? (
+            {(prijelaz === 'da') ? (
                 navigate('/')
             ) : (
                 <SignUpForm Register={Register} errors={errors} />

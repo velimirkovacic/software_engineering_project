@@ -22,14 +22,11 @@ function Login() {
             setUser({
                 name: details.name,
             })
+            console.log(user.name)
         } else {
             setError('Uneseni podaci su neispravni!')
+            console.log(user.name)
         }
-    }
-
-    const Logout = () => {
-        setUser({ name: '' });
-        setError('');
     }
 
     return (
