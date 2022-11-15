@@ -23,8 +23,12 @@ function LoginForm(props) {
         fetch('/api/login', options)
             .then(response => {
                 console.log(response);
+                console.log(props);
                 if (response.ok) {
-                    props.onLoginForm()
+                    if (props.onLoginForm){ //check that the instance is still mounted
+                        props.onLoginForm();
+                    }
+                    //props.onLoginForm()
                 } else {
                     setError("Neuspješna prijava");
                 }
