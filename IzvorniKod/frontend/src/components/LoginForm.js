@@ -25,10 +25,8 @@ function LoginForm(props) {
                 console.log(response);
                 console.log(props);
                 if (response.ok) {
-                    if (props.onLoginForm){ //check that the instance is still mounted
-                        props.onLoginForm();
-                    }
-                    //props.onLoginForm()
+                    props.onLoginForm();
+                    navigate('/');
                 } else {
                     setError("Neuspješna prijava");
                 }

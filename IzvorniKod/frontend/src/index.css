@@ -140,13 +140,27 @@ img{
   width: 150px;
 }
 
+.userInfo{
+  display: flex;
+  float: right;
+  right: 0;
+  position: absolute;
+  margin-right: 20px;
+  font-size: small;
+  text-align: center;
+  gap: 0.5rem;
+  border-left:solid thin ;
+  padding-left: 5px;
+}
+
+
 
 .nav{
   background-color:#00477F;
   display: flex;
   color:white;
-  justify-content:space-between;
-  align-items:center;
+  vertical-align: middle;
+  align-items: center;
   padding: 5px;
 }
 
@@ -156,6 +170,7 @@ img{
 }
 
 .nav  ul{
+  margin-top: 7px;
   list-style: none;
   display: flex;
   gap: 1rem;
@@ -164,6 +179,8 @@ img{
 }
 nav img{
   float: left;
+  margin-left: 10px;
+  margin-right: 10px;
 
 }
 
