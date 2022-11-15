@@ -733,13 +733,29 @@
 				\subsubsection{Dijagrami obrazaca uporabe}
 					
 					\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
+					
+					\includegraphics{slike/UseCase.jpg}
+					
+					
 				\eject		
 				
 			\subsection{Sekvencijski dijagrami}
 				
 				\textbf{\textit{dio 1. revizije}}\\
 				
-				\textit{Nacrtati sekvencijske dijagrame koji modeliraju najvažnije dijelove sustava (max. 4 dijagrama). Ukoliko postoji nedoumica oko odabira, razjasniti s asistentom. Uz svaki dijagram napisati detaljni opis dijagrama.}
+			
+				
+				\noindent \textbf {Obrazac uporabe UC1 -Registracija}\\
+				\noindent {Korisnik šalje zahtjev za prikaz Prijava stranice da bi mogao odabrati gumb za registraciju. Korisnik onda šalje zahtjev za prikaz Registracija stranice. Upisuje podatke potrebne za izradu računa koje Web aplikacija šalje bazi podataka koja radi profil. Baza vraća potvrdu nakon izrađenog profila i korisnik je vraćen na prikaz Prijava stranice.}
+				
+				\includegraphics{slike/UC1 -Prijava}
+				\eject
+				
+				\noindent \textbf {Obrazac uporabe UC1 -Registracija}\\
+				\noindent {Korisnik šalje zahtjev za prikaz Prijava stranice nakon kojeg upisuje potrebne podatke za prijavu. Web aplikacija šalje podatke bazi podataka koja dohvaća korisnike i traži zadanog korisnika prema imenu profila. Baza podataka vraća profil korisnika nakon kojeg je korisniku prikazana Početna stranica }
+				
+				\includegraphics{slike/UC2 -Registracija.png}
+				
 				\eject
 	
 		\section{Ostali zahtjevi}
@@ -747,7 +763,13 @@
 			\textbf{\textit{dio 1. revizije}}\\
 		 
 			 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
-			 
-			 
-			 
+			 \begin{packed_item}
+			 \item  Sustav treba omogućiti rad više korisnika u stvarnom vremenu
+			 \item Izvršavanje dijela programa u kojem se pristupa bazi podataka ne smije trajati duže od nekoliko sekundi
+			 \item Sustav treba biti implementiran kao web aplikacija koristeći objektno-orijentirane jezike
+			 \item Neispravno korištenje korisničkog sučelja ne smije narušiti funkcionalnost i rad sustava
+			 \item Sustav treba biti jednostavan za korištenje, korisnici se moraju znati koristit sučeljem bez opširnih uputa
+			 \item Nadogradnja sustava ne smije narušavati postojeće funkcionalnosti sustava
+			 \item Veza s bazom podataka mora biti kvalitetno zaštićena, brza i otporna na vanjske greške
+			 \end{packed_item}
 	
