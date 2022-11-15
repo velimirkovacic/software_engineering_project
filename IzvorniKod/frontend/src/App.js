@@ -11,13 +11,9 @@ function App() {
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
   function onLoginForm() {
     setIsLoggedIn(true);
     ReactSession.set("isLoggedIn", "true");
-  }
-  if (ReactSession.get("isLoggedIn") === "true") {
-    console.log("AAAAAAAAAAAAAAAAA")
   }
 
   return (

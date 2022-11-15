@@ -30,9 +30,7 @@ function Register() {
             .then(response => {
                 console.log(response);
                 if (response.ok) {
-                    ReactSession.set("isLoggedIn", "true")
-                    ReactSession.set("username", details.name)
-                    console.log(ReactSession.get("isLoggedIn"))
+                    alert("Uspješna registracija, možete se prijaviti...");
                     navigate('/');
                 } else {
 
@@ -43,7 +41,7 @@ function Register() {
 
     return (
         <div className='App'>
-            {(ReactSession.get("isLoggedIn") === "true") ? (
+            {errors!='' ? (
                 navigate('/')
             ) : (
                 <SignUpForm Register={Register} errors={errors} />
