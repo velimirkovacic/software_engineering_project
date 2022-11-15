@@ -28,10 +28,12 @@ public class UserServiceJpa implements UserService {
     @Override
     public boolean validate(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (username != null) {
-            if (userRepo.findByUsername(username).size() == 1) {
+            List<User> users = userRepo.findByUsername(username);
+            if (users.size() == 1) {
+                User user = users.get(0);
 
-                byte[] salt = userRepo.findByUsername(username).get(0).getSalt();
-                byte[] hashedPassword = userRepo.findByUsername(username).get(0).getPassword();
+                byte[] salt = user.getSalt();
+                byte[] hashedPassword = user.getPassword();
 
                 KeySpec spec = new PBEKeySpec(password.toCharArray(), salt, 65536, 128);
                 SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1");
