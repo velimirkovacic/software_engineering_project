@@ -31,12 +31,14 @@
 			
 			
 			\begin{packed_enum}
-				\item  \underbar{Pregledavač/ neprijavljen korisnik (inicijator) može:}
+				\item  \underbar{Pregledavač/neprijavljen korisnik (inicijator) može:}
 				
 				\begin{packed_enum}
 					
 					\item 	Otvoriti stranicu za prijavu
+					\item   Izvršiti prijavu
 					\item 	Otvoriti stranicu za registraciju
+					\item   Izvršiti registraciju
 					
 					
 				\end{packed_enum}
@@ -45,13 +47,14 @@
 				
 				\begin{packed_enum}
 					
-					\item Dodati obveze
-					\item Dodati javne i privatne događaje te ih ocjenjivati
+					\item Dodati obveze, javne i privatne događaje
+					\item Ocjenjivati posjećene događaje
 					\item Prijavljivati se na događaje
-					\item Generirati svoj QR kod
-					\item Preko QR koda dodati prijatelje
-					\item Preko nadimka dodati, blokirati i ukloniti prijatelje
-					\item Promjena nadimka profila
+					\item Preko nadimka ili QR koda dodati prijatelje
+					\item Ukloniti prijatelje
+					\item Blokirati korisnike
+					\item Promijeniti nadimak profila
+					\item Pretplatiti se na premium račun
 					
 				\end{packed_enum}
 			
@@ -70,7 +73,7 @@
 					
 					\item Suspendirati korisnika
 					\item Uređivati oznake javnih događaja
-					\item Brisanje događaje
+					\item Brisati događaje
 					
 				\end{packed_enum}
 			
@@ -107,627 +110,391 @@
 					
 					
 
-					\noindent \underbar{\textbf{UC1 -Dodavanje obveze}}
+					\noindent \underbar{\textbf{UC1 - Registracija}}
 					\begin{packed_item}
-	
-						\item \textbf{Glavni sudionik: }Korisnik
-						\item  \textbf{Cilj:} dodavanje vlastitih obaveza u kalendar(npr. Predavanja)
+						
+						\item \textbf{Glavni sudionik: }Pregledavač
+						\item  \textbf{Cilj:} registracija
 						\item  \textbf{Sudionici:}
 						Baza podataka
-						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Preduvjet:} korisnik nije prijavljen u aplikaciji
 						\item  \textbf{Opis osnovnog tijeka:}
 						
 						\item[] \begin{packed_enum}
-	
-							\item 	Sa lijeve strane Početne stranice je prikazan gumb „Dodaj u kalendar“
-							\item	Pritiskom na gumb otvara  se prozor za dodavanje u kalendar
-							\item	Odabir obveze kao podatak za dodavanje u kalendar
 							
+							\item	Otvaranjem aplikacije otvara se stranica za prijavu
+							\item	Pritisne se gumb \textit{Izradi račun}
+							\item	Unesu se potrebni podaci i pritisne gumb \textit{Izradi}
 							
 						\end{packed_enum}
 						
 						\item  \textbf{Opis mogućih odstupanja:}
 						
 						\item[] \begin{packed_item}
-	
-							\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-							\item[] \begin{packed_enum}
-								
-								\item $<$opis rješenja mogućeg scenarija korak 1$>$
-								\item $<$opis rješenja mogućeg scenarija korak 2$>$
-								
-							\end{packed_enum}
-							\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-							\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
+							
+							\item[3.a] Korisnik ne unese pravilno potrebne podatke
 							
 						\end{packed_item}
 					\end{packed_item}
-				
-					\noindent \underbar{\textbf{UC2 -Plaćanje za premium}}
-				\begin{packed_item}
 					
-					\item \textbf{Glavni sudionik: }Korisnik
-					\item  \textbf{Cilj:} Pretplaćivanje na premium profil
-					\item  \textbf{Sudionici:}
-					Baza podataka
-					\item  \textbf{Preduvjet:} korisnik prijavljen kao običan korisnik
-					\item  \textbf{Opis osnovnog tijeka:}
-					
-					\item[] \begin{packed_enum}
+					\noindent \underbar{\textbf{UC2 - Prijava}}
+					\begin{packed_item}
 						
-						\item	Pritiskom na karticu „Korisnik“ na alatnoj traci otvara se profil korisnika
-						\item Pritiskom na gumb  „Kupi Premium“  dobiva se premium profil
+						\item \textbf{Glavni sudionik: }Pregledavač
+						\item  \textbf{Cilj:} prijava
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik nije prijavljen u aplikaciji, ali je registriran
+						\item  \textbf{Opis osnovnog tijeka:}
 						
-					\end{packed_enum}
-					
-					\item  \textbf{Opis mogućih odstupanja:}
-					
-					\item[] \begin{packed_item}
-						
-						\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
 						\item[] \begin{packed_enum}
 							
-							\item $<$opis rješenja mogućeg scenarija korak 1$>$
-							\item $<$opis rješenja mogućeg scenarija korak 2$>$
+							\item	Otvaranjem aplikacije otvara se stranica za prijavu
+							\item	Upišu se potrebni podaci
+							\item	Pritisne se gumb \textit{Prijava}
 							
 						\end{packed_enum}
-						\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-						\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Korisnik ne unese pravilno potrebne podatke 
+							
+						\end{packed_item}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC3 - Promocija vlastitih događaja}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Premium korisnik
+						\item  \textbf{Cilj:} isticanje svojih događaja drugim korisnicima
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen i kupljen je premium profil
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na Početnoj stranici pritisne se gumb \textit{Dodaj u kalendar}
+							\item	Stvori se novi događaj i klikne se gumb \textit{Promoviraj događaj}
+							
+						\end{packed_enum}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC4 - Blokiranje korisnika}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} blokiranje korisničkog računa
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Pritiskom na karticu \textit{Moji prijatelji} na alatnoj traci otvara se stranica za dodavanje prijatelja
+							\item	Na sekciji \textit{Pretraži korisnike} unosi se željeno korisničko ime
+							\item	Pritiskom na opciju \textit{Blokiraj korisnika} željeni korisnik je blokiran.
+							
+						\end{packed_enum}
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Uneseno nepostojeće korisničko ime
+							
+						\end{packed_item}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC5 - Pretplata za premium}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} Pretplata na premium profil
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen kao običan korisnik
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Pritiskom na karticu \textit{Korisnik} na alatnoj traci otvara se profil korisnika
+							\item Pritiskom na gumb \textit{Pretplati se na Premium} dobiva se premium profil
+							
+						\end{packed_enum}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC6 - Izmjena nadimka}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} izmijeniti korisnički nadimak
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Klikom na vlastito korisničko ime na alatnoj traci korisnik je prebačen na stranicu svog profila
+							\item	Odabire \textit{Promjeni nadimak} i upisuje novi željeni nadimak koji ne mora biti jedinstven
+							
+						\end{packed_enum}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC7 - Dodavanje prijatelja korisničkim imenom}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} dodavanje prijatelja
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Pritiskom na karticu \textit{Moji prijatelji} na alatnoj traci otvara se stranica za dodavanje prijatelja
+							\item	Prijatelja se može dodati upisivanjem korisničkog imena korisnika
+							
+						\end{packed_enum}
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Unesen nepostojeći korisnik
+							
+						\end{packed_item}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC8 - Dodavanje prijatelja QR kodom}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} lakši i brži način dodavanja prijatelja QR kodom
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Pritiskom na karticu \textit{Moji prijatelji} na alatnoj traci na početnoj stranici otvara se stranica
+							\item	Prikazan je vlastiti QR kod preko API-a
+							\item	Prijatelj preko svog mobitela skenira QR kod i dodaje prijatelja
+							
+						\end{packed_enum}
 						
 					\end{packed_item}
-				\end{packed_item}
-			
-				\noindent \underbar{\textbf{UC3 -Stvaranje javnog događaja}}
-			\begin{packed_item}
-				
-				\item \textbf{Glavni sudionik: }Korisnik
-				\item  \textbf{Cilj:} Stvaranje javno vidljivog događaja u kalendaru
-				\item  \textbf{Sudionici:}
-				Baza podataka
-				\item  \textbf{Preduvjet:} korisnik prijavljen
-				\item  \textbf{Opis osnovnog tijeka:}
-				
-				\item[] \begin{packed_enum}
 					
-					\item	Sa lijeve strane Početne stranice je prikazan gumb „Dodaj u kalendar“
-					\item Pritiskom na gumb otvara se prozor za dodavanje u kalendar
-					\item	Odabir javnog događaja kao podatak za dodavanje u kalendar
-					
-				\end{packed_enum}
-				
-				\item  \textbf{Opis mogućih odstupanja:}
-				
-				\item[] \begin{packed_item}
-					
-					\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-					\item[] \begin{packed_enum}
+					\noindent \underbar{\textbf{UC9 - Uklanjanje prijatelja}}
+					\begin{packed_item}
 						
-						\item $<$opis rješenja mogućeg scenarija korak 1$>$
-						\item $<$opis rješenja mogućeg scenarija korak 2$>$
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} uklanjanje prijatelja
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
 						
-					\end{packed_enum}
-					\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-					\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
+						\item[] \begin{packed_enum}
+							
+							\item	Pritiskom na karticu \textit{Moji prijatelji} na alatnoj traci otvara se stranica za dodavanje prijatelja
+							\item	Prijatelja se može ukloniti s liste izborom \textit{Ukloni prijatelja}
+							
+						\end{packed_enum}
+					\end{packed_item}
 					
-				\end{packed_item}
-			\end{packed_item}
-		
-			\noindent \underbar{\textbf{UC4 -Stvaranje privatnog događaja}}
-		\begin{packed_item}
-			
-			\item \textbf{Glavni sudionik: }Korisnik
-			\item  \textbf{Cilj:} Stvaranje privatno vidljivog događaja u kalendaru
-			\item  \textbf{Sudionici:}
-			Baza podataka
-			\item  \textbf{Preduvjet:} korisnik prijavljen
-			\item  \textbf{Opis osnovnog tijeka:}
-			
-			\item[] \begin{packed_enum}
-				
-				\item	Sa lijeve strane Početne stranice je prikazan gumb „Dodaj u kalendar“
-				\item 	Pritiskom na gumb otvara  se prozor za dodavanje u kalendar
-				\item	Odabir privatnog događaja kao podatak za dodavanje u kalendar
-				
-			\end{packed_enum}
-			
-			\item  \textbf{Opis mogućih odstupanja:}
-			
-			\item[] \begin{packed_item}
-				
-				\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-				\item[] \begin{packed_enum}
+					\noindent \underbar{\textbf{UC10 - Stvaranje događaja}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} stvaranje događaja u kalendaru
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Sa lijeve strane Početne stranice prikazan je gumb \textit{Dodaj u kalendar}
+							\item 	Otvara se prozor u koji se unose potrebni podaci i oznake
+							\item[] \begin{packed_enum}
+								\item Ukoliko je odabran privatan događaj poziva se željene prijatelje
+							\end{packed_enum}
+							
+						\end{packed_enum}
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Pogrešno uneseni podaci
+							
+						\end{packed_item}
+					\end{packed_item}
 					
-					\item $<$opis rješenja mogućeg scenarija korak 1$>$
-					\item $<$opis rješenja mogućeg scenarija korak 2$>$
+					\noindent \underbar{\textbf{UC11 - Prijava na događaj}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} prijavljivanje na događaj
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na Početnoj stranici odabire se gumb \textit{Izbornik} 
+							\item	Otvara se padajući izbornik sa svim javnim događajima
+							\item	Pritiskom na događaj on se privremeno prikazuje u kalendaru
+							\item	Klikom na događaj u kalendaru otvara se prozor za prijavu na njega
+							\item	Klikom na gumb \textit{Prijavi se} moguća je prijava na događaj
+							
+						\end{packed_enum}
+					\end{packed_item}
 					
-				\end{packed_enum}
-				\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-				\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-				
-			\end{packed_item}
-		\end{packed_item}
-	
-		\noindent \underbar{\textbf{UC5 -Dodavanje prijatelja}}
-	\begin{packed_item}
-		
-		\item \textbf{Glavni sudionik: }Korisnik
-		\item  \textbf{Cilj:} dodavanje prijatelja
-		\item  \textbf{Sudionici:}
-		Baza podataka
-		\item  \textbf{Preduvjet:} korisnik prijavljen
-		\item  \textbf{Opis osnovnog tijeka:}
-		
-		\item[] \begin{packed_enum}
-			
-			\item	Pritiskom na karticu „Moji prijatelji“ na alatnoj traci otvara se stranica za dodavanje prijatelja
-			\item	Prijatelja se može dodati upisivanje korisničkog imena korisnika
-			
-		\end{packed_enum}
-		
-		\item  \textbf{Opis mogućih odstupanja:}
-		
-		\item[] \begin{packed_item}
-			
-			\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-			\item[] \begin{packed_enum}
-				
-				\item $<$opis rješenja mogućeg scenarija korak 1$>$
-				\item $<$opis rješenja mogućeg scenarija korak 2$>$
-				
-			\end{packed_enum}
-			\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-			\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-			
-		\end{packed_item}
-	\end{packed_item}
-
-	\noindent \underbar{\textbf{UC6 -Blokiranje korisnika}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Korisnik
-	\item  \textbf{Cilj:} blokiranje korisničkog računa
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Pritiskom na karticu „Moji prijatelji“ na alatnoj traci otvara se stranica za dodavanje prijatelja
-		\item	Prijatelja se može dodati upisivanje korisničkog imena korisnika
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC7 -Prijava na događaj}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Korisnik
-	\item  \textbf{Cilj:} prijavljivanje na događaj
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici odabire se gumb „Izbornik“ 
-		\item	Otvara se padajući izbornik sa svim javnim događajima
-		\item	Pritiskom na događaj, događaj se prikazuje u kalendaru
-		\item	Klikom na događaj u kalendaru otvara se prozor za prijavu na događaj
-		\item	Klikom na gumb „Prijava se“  je moguća prijava na događaj
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC8 -Ocjenjivanje pohađanih javnih događaja}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Korisnik
-	\item  \textbf{Cilj:} ocjenjivanje pohađanog događaja
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} : korisnik prijavljen i događaj dodan u kalendar
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici stisne se kartica „Pohađani događaji“
-		\item	Otvara se stranici sa svim pohađanim događajima i mogućnosti uz svaki događaj da se odabere tipka sviđa mi se ili ne sviđa mi se
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC9 -Generiranje QR koda}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Korisnik
-	\item  \textbf{Cilj:} generiranje vlastitog QR koda
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Generiranje QR koda u opisu profila preko API-a
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC10 -Dodavanje prijatelja QR kodom}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Korisnik
-	\item  \textbf{Cilj:} lakši i brži način dodavanje prijatelja QR kodom
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Pritiskom na karticu „Moji prijatelji“ na alatnoj traci na Početnoj stranici otvara se stranica
-		\item	Prikazan je vlastiti QR kod preko API-a
-		\item	Prijatelj preko svog mobitela skenira QR kod i dodaje prijatelja
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC11 -Promocija vlastitih događaja}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Premium korisnik
-	\item  \textbf{Cilj:} isticanje svojih događaja drugim korisnicima
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen i kupljen je premium profil
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici pritisne se gumb „Dodaj u kalendar“
-		\item	Stvori se novi događaj i klikne se gumb „Promoviraj“
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC12 -Suspendiranje korisnika}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Moderator i korisnik
-	\item  \textbf{Cilj:} suspendiranje korisnika koji nedolično ponašaju
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti moderatora
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici odaberemo karticu „Upravljanje korisnicima“ na alatnoj traci
-		\item	Otvara se stranica sa imenima korisnika i gumb za suspendiranje desno od imena
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC13 -Brisanje događaja}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Moderator
-	\item  \textbf{Cilj:} brisanje događaja koji nisu u skladu sa pravilima aplikacije
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti moderatora
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici odaberemo karticu „Upravljanje korisnicima“ na alatnoj traci
-		\item	Otvara se stranica sa imenima korisnika i gumb za suspendiranje desno od imena
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC14 -Uređivanje oznaka javnih događaja}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Moderator
-	\item  \textbf{Cilj:} mijenjanje oznaka javnih događaja koje nisu adekvatno napisane
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti moderatora
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici pritisne se prvo gumb „Izbornik“
-		\item	Stisne se željeni događaj
-		\item	U kalendaru se odabere željeni događaj
-		\item	Pritisne se gumb „Izmijeni“
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC15 -Brisanje korisničkih računa}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Administrator
-	\item  \textbf{Cilj:} Brisanje korisničkih računa osoba koje se ne adekvatno ponašaju na aplikaciji
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti administratora
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici odaberemo karticu „Upravljanje korisnicima“ na alatnoj traci
-		\item	Otvara se stranica sa imenima korisnika i gumb „Izbriši“ desno od gumba „Suspendiraj“ 
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC16 -Promocija korisnika na moderatora}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Administrator i običan korisnik/premium korisnik
-	\item  \textbf{Cilj:} promocija korisnika u moderatora
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti administratora
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Na Početnoj stranici odaberemo karticu „Upravljanje korisnicima“ na alatnoj traci
-		\item	Otvara se stranica sa imenima korisnika i gumb „Promoviraj“ desno od gumba „Izbriši“ 
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC17 -Registracija}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Pregledavač
-	\item  \textbf{Cilj:} registracija
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik nije prijavljen u aplikaciji
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Otvaranjem aplikacija otvara se Login stranica
-		\item	Pritisne se gumb „Izradi račun“
-		\item	Unesu se potrebni podaci i pritisne gumb „Izradi“
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
-
-	\noindent \underbar{\textbf{UC18 -Prijava}}
-\begin{packed_item}
-	
-	\item \textbf{Glavni sudionik: }Pregledavač
-	\item  \textbf{Cilj:} prijava
-	\item  \textbf{Sudionici:}
-	Baza podataka
-	\item  \textbf{Preduvjet:} korisnik nije prijavljen u aplikaciji, ali je registriran
-	\item  \textbf{Opis osnovnog tijeka:}
-	
-	\item[] \begin{packed_enum}
-		
-		\item	Otvaranjem aplikacije otvara se Login stranica
-		\item	Upišu se potrebni podaci
-		\item	Pritisne se gumb „Prijava“
-		
-	\end{packed_enum}
-	
-	\item  \textbf{Opis mogućih odstupanja:}
-	
-	\item[] \begin{packed_item}
-		
-		\item[2.a] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[] \begin{packed_enum}
-			
-			\item $<$opis rješenja mogućeg scenarija korak 1$>$
-			\item $<$opis rješenja mogućeg scenarija korak 2$>$
-			
-		\end{packed_enum}
-		\item[2.b] $<$opis mogućeg scenarija odstupanja u koraku 2$>$
-		\item[3.a] $<$opis mogućeg scenarija odstupanja  u koraku 3$>$
-		
-	\end{packed_item}
-\end{packed_item}
+					\noindent \underbar{\textbf{UC12 - Ocjenjivanje pohađanih javnih događaja}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Korisnik
+						\item  \textbf{Cilj:} ocjenjivanje pohađanog događaja
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} : korisnik prijavljen i događaj dodan u kalendar
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na Početnoj stranici stisne se kartica \textit{Pohađani događaji}
+							\item	Otvara se stranica sa svim pohađanim događajima i mogućnosti da se uz svaki odabere tipka \textit{Sviđa mi se} ili \textit{Ne sviđa mi se}
+							
+						\end{packed_enum}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC13 - Brisanje događaja}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Moderator
+						\item  \textbf{Cilj:} brisanje događaja koji nisu u skladu sa pravilima aplikacije
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti moderatora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na početnoj stranici moderator željeni događaj na kalendaru
+							\item	Otvara se prozorčić s informacijama o događaju uz opciju \textit{Obriši događaj}
+							
+						\end{packed_enum}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC14 - Uređivanje oznaka javnih događaja}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Moderator
+						\item  \textbf{Cilj:} mijenjanje oznaka javnih događaja koje nisu adekvatno postavljene
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti moderatora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na početnoj stranici moderator bira \textit{Izbornik} i klikće željeni događaj
+							\item	U kalendaru odabere događaj
+							\item	Pritisne gumb \textit{Izmijeni oznake} te ih proizvoljno dodaje i miče
+							
+						\end{packed_enum}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC15 - Suspendiranje korisnika}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Moderator i korisnik
+						\item  \textbf{Cilj:} suspendiranje korisnika koji se nedolično ponašaju
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti moderatora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na početnoj stranici moderator bira karticu \textit{Upravljanje korisnicima} na alatnoj traci
+							\item	Otvara se stranica s pretragom korisnika po korisničkom imenu
+							\item	Moderator bira opciju \textit{Suspendiraj korisnika} desno od korisničkog imena što ga blokira od korištenja profila na tjedan dana
+							
+						\end{packed_enum}
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Pogrešan unos korisničkog imena
+							
+						\end{packed_item}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC16 - Promocija korisnika u moderatora}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Administrator i običan korisnik/premium korisnik
+						\item  \textbf{Cilj:} promidžba korisnika u moderatora
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti administratora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na početnoj stranici moderator bira karticu \textit{Upravljanje korisnicima} na alatnoj traci
+							\item	Otvara se stranica s pretragom korisnika po korisničkom imenu
+							\item	Administrator bira opciju \textit{Promoviraj korisnika} desno od korisničkog imena što mu dodaje ulogu i sposobnosti moderatora
+							
+						\end{packed_enum}
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Pogrešan unos korisničkog imena
+							\item[3.a] Korisnik je već moderator
+							
+						\end{packed_item}
+					\end{packed_item}
+					
+					\noindent \underbar{\textbf{UC17 - Brisanje korisničkih računa}}
+					\begin{packed_item}
+						
+						\item \textbf{Glavni sudionik: }Administrator
+						\item  \textbf{Cilj:} Brisanje korisničkih računa osoba koje se neadekvatno ponašaju na aplikaciji
+						\item  \textbf{Sudionici:}
+						Baza podataka
+						\item  \textbf{Preduvjet:} korisnik prijavljen i ima ovlasti administratora
+						\item  \textbf{Opis osnovnog tijeka:}
+						
+						\item[] \begin{packed_enum}
+							
+							\item	Na početnoj stranici moderator bira karticu \textit{Upravljanje korisnicima} na alatnoj traci
+							\item	Otvara se stranica s pretragom korisnika po korisničkom imenu
+							\item	Administrator bira opciju \textit{Obriši korisnika} desno od korisničkog imena što briše račun iz baze podataka
+							
+						\end{packed_enum}
+						
+						\item  \textbf{Opis mogućih odstupanja:}
+						
+						\item[] \begin{packed_item}
+							
+							\item[2.a] Pogrešan unos korisničkog imena
+							
+						\end{packed_item}
+					\end{packed_item}
 				
 					
 				\subsubsection{Dijagrami obrazaca uporabe}
