@@ -5,7 +5,6 @@ import org.springframework.data.relational.core.mapping.Table;
 import org.springframework.stereotype.Repository;
 import vidoje.eventko.domain.Event;
 
-@Table("Dogadjaj")
 public interface EventRepo extends JpaRepository<Event, Long> {
 
 }

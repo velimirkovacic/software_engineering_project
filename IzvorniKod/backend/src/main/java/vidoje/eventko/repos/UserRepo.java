@@ -8,7 +8,6 @@ import vidoje.eventko.domain.User;
 import javax.validation.constraints.Size;
 import java.util.List;
 
-@Table("Korisnik")
 public interface UserRepo extends JpaRepository<User, Long> {
     List<User> findByUsername(String username);
 
