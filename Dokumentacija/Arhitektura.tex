@@ -1,15 +1,27 @@
 \chapter{Arhitektura i dizajn sustava}
 		
-		\textbf{\textit{dio 1. revizije}}\\
-
-		\textit{ Potrebno je opisati stil arhitekture te identificirati: podsustave, preslikavanje na radnu platformu, spremišta podataka, mrežne protokole, globalni upravljački tok i sklopovsko-programske zahtjeve. Po točkama razraditi i popratiti odgovarajućim skicama:}
-	\begin{itemize}
-		\item 	\textit{izbor arhitekture temeljem principa oblikovanja pokazanih na predavanjima (objasniti zašto ste baš odabrali takvu arhitekturu)}
-		\item 	\textit{organizaciju sustava s najviše razine apstrakcije (npr. klijent-poslužitelj, baza podataka, datotečni sustav, grafičko sučelje)}
-		\item 	\textit{organizaciju aplikacije (npr. slojevi frontend i backend, MVC arhitektura) }		
-	\end{itemize}
-
+	\vspace{-1cm}
+	\begin{figure}[h]
+		\begin{center}
+			\includegraphics{slike/arhitektura_skica.png}
+			\caption{Arhitektura sustava}
+		\end{center}	
+	\end{figure}
 	
+	\indent Arhitekturu tvore tri podsustava: web poslužitelj, web aplikacija te baza podataka. \textit{Web preglednik} je program za pregledavanje i navigaciju web-stranicama. Kada korisnik pošalje zahtjev za web-stranicom, preglednik dohvaća potrebne datoteke s \textit{web poslužitelja} i prikazuje stranicu na korisnikovom ekranu u namijenjenom obliku. Poslužitelj omogućuje komunikaciju klijenta s \textit{web aplikacijom} koja je na njemu pokrenuta, a prosljeđuje joj zahtjeve HTTP-om (engl. \textit{Hyper Text Transfer Protocol}). Web aplikacija odgovara na zahtjeve klijenta pristupajući po potrebi bazi podataka i vraćajući HTML dokument čitljiv u web pregledniku. \\
+	
+	\indent Za izradu ovog projekta koristili smo se Spring Boot frameworkom u Javi kroz razvojno okruženje IntelliJ Community Edition, Javascriptom uz React u Visual Studio Code-u te nizom drugih programa za dizajn slika i grafova (GIMP, AstahUML itd.). \\
+	
+	\indent Arhitektura sustava prati MVC obrazac, odnosno Model-Pogled-Nadglednik (engl. \textit{Model View Controller}), stilističku varijaciju arhitekture zasnovane na događajima. Takve arhitekture odlikuje to što se komponente međusobno ne pozivaju eksplicitno, već neke od njih generiraju signale (događaje) ne znajući koja druga "osluškuje" tj. očekuje takav signal i na njega reagira. Kod MVC-a pogodno je što smanjuje međuovisnost korisničkog sučelja i ostatka sustava, a omogućuje i nezavisan razvoj, nadogradnje i dodavanje različitih dijelova aplikacije. Sadrži različite gotove predloške za klase koji nam olakšavaju proces izrade.\\
+	
+	\indent MVC model sastoji se od komponenti:
+	\begin{packed_item}
+		\item 	\textbf{Model} - Središnja komponenta sustava, sadrži razrede čiji se objekti obrađuju. Rukuje s podatkovnom logikom i bazom podataka. Prima podatke od nadglednika.
+		\item 	\textbf{Pogled} - Predstavlja model korisniku na čitljiv način. Sadrži razrede čiji objekti služe za prikaz podataka. Dinamički se osvježava.
+		\item	\textbf{Nadglednik} - Razumije naputke korisnika i pretvara ih u upute ka modelu. Sadrži razrede koji upravljaju i rukuju korisničkom interakcijom s pogledom i modelom, poput poslovne logike i odgovora na događaje.
+	\end{packed_item}
+
+	\eject
 		
 
 		
@@ -52,12 +64,35 @@
 			
 			
 		\section{Dijagram razreda}
+			
+			\indent Na naredne tri slike nalaze se dijagrami razreda podijeljeni logički po srodnosti. Neki razredi povezani su i s onima na odvojenim slikama što se da zaključiti po nazivima njihovih metoda. \\
+			
+			\indent Razredi na slici ??? uokvireni plavom bojom su controlleri. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects})  prema frontendu u obliku JSON datoteka s html statusnim kodom. Razlikuju se controlleri za korisnike, događaje te postupke prijave i registracije. Sami DTO razredi nalaze se na slici ???, a to su zahtjevi i odgovori za prijavu i registraciju.\\
+			
+			\indent Razredi na slici ??? su modeli. Njihove metode izravno barataju s bazom podataka i dohvaćaju željene podatke iz nje. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje.
+			
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=\textwidth]{dijagrami/UML dtoovi.png}
+					\caption{Dijagram razreda - data transfer objects}
+				\end{center}	
+			\end{figure}
 		
-			\textit{Potrebno je priložiti dijagram razreda s pripadajućim opisom. Zbog preglednosti je moguće dijagram razlomiti na više njih, ali moraju biti grupirani prema sličnim razinama apstrakcije i srodnim funkcionalnostima.}\\
-			
-			\textbf{\textit{dio 1. revizije}}\\
-			
-			\textit{Prilikom prve predaje projekta, potrebno je priložiti potpuno razrađen dijagram razreda vezan uz \textbf{generičku funkcionalnost} sustava. Ostale funkcionalnosti trebaju biti idejno razrađene u dijagramu sa sljedećim komponentama: nazivi razreda, nazivi metoda i vrste pristupa metodama (npr. javni, zaštićeni), nazivi atributa razreda, veze i odnosi između razreda.}\\
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=\textwidth]{dijagrami/UML kontroleri, servisi, repozitoriji.png}
+					\caption{Dijagram razreda - nadglednici, servisi, repozitoriji}
+				\end{center}	
+			\end{figure}
+		
+			\begin{figure}[h]
+				\begin{center}
+					\includegraphics[width=\textwidth]{dijagrami/UML modeli.png}
+					\caption{Dijagram razreda - modeli}
+				\end{center}	
+			\end{figure}
+		
+			\eject
 			
 			\iffalse
 			
