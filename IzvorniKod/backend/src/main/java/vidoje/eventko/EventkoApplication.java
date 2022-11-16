@@ -8,8 +8,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 import java.io.Console;
 
-@EnableJpaRepositories(basePackages = {"vidoje.eventko.repos"})
-@SpringBootApplication//(exclude={DataSourceAutoConfiguration.class})
+//@EnableJpaRepositories(basePackages = {"vidoje.eventko.repos"})
+@SpringBootApplication
 public class EventkoApplication {
 
 	public static void main(String[] args) {
