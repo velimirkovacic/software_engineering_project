@@ -99,22 +99,6 @@ public class User {
     private Set<Event> attends;
 
 
-    public byte[] getSalt() {
-        return salt;
-    }
-
-    public void setSalt(byte[] salt) {
-        this.salt = salt;
-    }
-
-    public byte[] getPassword() {
-        return password;
-    }
-
-    public void setPassword(byte[] password) {
-        this.password = password;
-    }
-
     public Long getId() {
         return id;
     }
@@ -147,6 +131,21 @@ public class User {
         this.nickname = nickname;
     }
 
+    public byte[] getSalt() {
+        return salt;
+    }
+
+    public void setSalt(byte[] salt) {
+        this.salt = salt;
+    }
+
+    public byte[] getPassword() {
+        return password;
+    }
+
+    public void setPassword(byte[] password) {
+        this.password = password;
+    }
 
     public Boolean getSuspended() {
         return isSuspended;

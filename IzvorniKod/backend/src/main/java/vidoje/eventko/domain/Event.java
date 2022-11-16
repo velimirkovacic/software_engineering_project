@@ -134,4 +134,20 @@ public class Event {
     public void setAttendees(Set<User> attendees) {
         this.attendees = attendees;
     }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", beginningTimestamp=" + beginningTimestamp +
+                ", endTimestamp=" + endTimestamp +
+                ", description='" + description + '\'' +
+                ", organizer=" + organizer +
+                ", type=" + type +
+                ", tags=" + tags +
+                ", attendees=" + attendees +
+                '}';
+    }
 }
