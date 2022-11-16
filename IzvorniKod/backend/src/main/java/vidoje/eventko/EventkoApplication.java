@@ -13,7 +13,6 @@ import java.io.Console;
 public class EventkoApplication {
 
 	public static void main(String[] args) {
-	System.out.println(System.getenv());
 		SpringApplication.run(EventkoApplication.class, args);
 	}
 
