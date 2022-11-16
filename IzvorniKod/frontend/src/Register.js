@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import SignUpForm from './components/SignUpForm';
 import { useNavigate } from 'react-router-dom'
-import { ReactSession } from 'react-client-session';
+
 function Register() {
 
     const [errors, setErrors] = useState('');
-
+    let prijelaz = 'ne';
     const navigate = useNavigate();
 
     const Register = details => {
@@ -18,7 +18,6 @@ function Register() {
             email: details.email,
             nickname: details.nickname
         };
-
         const options = {
             method: 'POST',
             headers: {
@@ -30,10 +29,10 @@ function Register() {
             .then(response => {
                 console.log(response);
                 if (response.ok) {
+                    prijelaz = 'da';
                     alert("Uspješna registracija, možete se prijaviti...");
                     navigate('/');
                 } else {
-
                     setErrors("Neispravno uneseni podaci");
                 }
             });
@@ -41,7 +40,7 @@ function Register() {
 
     return (
         <div className='App'>
-            {errors!='' ? (
+            {prijelaz==='da' ? (
                 navigate('/')
             ) : (
                 <SignUpForm Register={Register} errors={errors} />
