@@ -14,8 +14,6 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.hibernate.id.PersistentIdentifierGenerator.TABLE;
-
 @Entity
 @Table(name = "Korisnik")
 public class User {
