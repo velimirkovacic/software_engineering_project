@@ -495,41 +495,42 @@
 							
 						\end{packed_item}
 					\end{packed_item}
+				\eject
+					
+				\subsubsection{Dijagram obrazaca uporabe} 
 				
-					
-				\subsubsection{Dijagrami obrazaca uporabe}
-					
-					\textit{Prikazati odnos aktora i obrazaca uporabe odgovarajućim UML dijagramom. Nije nužno nacrtati sve na jednom dijagramu. Modelirati po razinama apstrakcije i skupovima srodnih funkcionalnosti.}
-					
-					\includegraphics{slike/UseCase.jpg}
-					
-					
+					\begin{figure}[h]
+						\includegraphics[width=\textwidth]{slike/UseCase.jpg}
+						\caption{Dijagram obrazaca uporabe, funkcionalnosti različitih korisnika stranice}
+					\end{figure}
+														
 				\eject		
 				
 			\subsection{Sekvencijski dijagrami}
 				
-				\textbf{\textit{dio 1. revizije}}\\
 				
-			
-				
-				\noindent \textbf {Obrazac uporabe UC1 -Registracija}\\
-				\noindent {Korisnik šalje zahtjev za prikaz Prijava stranice da bi mogao odabrati gumb za registraciju. Korisnik onda šalje zahtjev za prikaz Registracija stranice. Upisuje podatke potrebne za izradu računa koje Web aplikacija šalje bazi podataka koja radi profil. Baza vraća potvrdu nakon izrađenog profila i korisnik je vraćen na prikaz Prijava stranice.}
-				
-				\includegraphics{slike/UC1 -Prijava}
+				\noindent \textbf {Obrazac uporabe UC1 - Registracija}\\
+				\indent {Korisnik šalje zahtjev za prikaz stranice za prijavu kako bi mogao odabrati gumb za registraciju. Korisnik onda šalje zahtjev za prikaz stranice za registraciju. Upisuje podatke potrebne za izradu računa koje Web aplikacija šalje bazi podataka koja radi profil. Baza vraća potvrdu nakon izrađenog profila i korisnik je vraćen na prikaz stranice za prijavu.} \\
+
+				\begin{figure}[h]
+					\includegraphics[width=\textwidth]{slike/UC1 -Registracija.png}
+					\caption{Sekvencijski dijagram za UC1}
+				\end{figure}
+						
 				\eject
 				
-				\noindent \textbf {Obrazac uporabe UC1 -Registracija}\\
-				\noindent {Korisnik šalje zahtjev za prikaz Prijava stranice nakon kojeg upisuje potrebne podatke za prijavu. Web aplikacija šalje podatke bazi podataka koja dohvaća korisnike i traži zadanog korisnika prema imenu profila. Baza podataka vraća profil korisnika nakon kojeg je korisniku prikazana Početna stranica }
+				\noindent \textbf {Obrazac uporabe UC2 - Prijava}\\
+				\indent {Korisnik šalje zahtjev za prikaz stranice za prijavu nakon kojeg upisuje potrebne podatke. Web aplikacija šalje podatke bazi podataka koja dohvaća korisnike i traži zadanog korisnika prema imenu profila. Baza podataka vraća profil korisnika nakon kojeg je korisniku prikazana početna stranica. }\\
 				
-				\includegraphics{slike/UC2 -Registracija.png}
+				\begin{figure}[h]
+					\includegraphics[width=\textwidth]{slike/UC2 -Prijava.png}
+					\caption{Sekvencijski dijagram za UC2}
+				\end{figure}
 				
 				\eject
 	
 		\section{Ostali zahtjevi}
-		
-			\textbf{\textit{dio 1. revizije}}\\
 		 
-			 \textit{Nefunkcionalni zahtjevi i zahtjevi domene primjene dopunjuju funkcionalne zahtjeve. Oni opisuju \textbf{kako se sustav treba ponašati} i koja \textbf{ograničenja} treba poštivati (performanse, korisničko iskustvo, pouzdanost, standardi kvalitete, sigurnost...). Primjeri takvih zahtjeva u Vašem projektu mogu biti: podržani jezici korisničkog sučelja, vrijeme odziva, najveći mogući podržani broj korisnika, podržane web/mobilne platforme, razina zaštite (protokoli komunikacije, kriptiranje...)... Svaki takav zahtjev potrebno je navesti u jednoj ili dvije rečenice.}
 			 \begin{packed_item}
 			 \item  Sustav treba omogućiti rad više korisnika u stvarnom vremenu
 			 \item Izvršavanje dijela programa u kojem se pristupa bazi podataka ne smije trajati duže od nekoliko sekundi

@@ -20,6 +20,7 @@
 \usepackage[classicReIm]{kpfonts}
 \usepackage{hyperref}
 \usepackage{fancyhdr}
+\usepackage[justification=centering]{caption}
 
 \usepackage{float}
 \usepackage{setspace}
@@ -123,8 +124,10 @@
 	\include{Opis_projektnog_zadatka}
 	\include{Specifikacija_programske_potpore}
 	\include{Arhitektura}
-	\include{Implementacija}
-	\include{Zakljucak}
+	\iffalse
+		\include{Implementacija}
+		\include{Zakljucak}
+	\fi
 	\include{Literatura}
 	
 	
