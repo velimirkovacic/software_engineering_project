@@ -33,7 +33,7 @@
 			
 		\textit{Potrebno je opisati koju vrstu i implementaciju baze podataka ste odabrali, glavne komponente od kojih se sastoji i slično.}
 		
-		Za potrebe našeg sustava koristit ćemo relacijsku bazu podataka koja svojom strukturom olakšava modeliranje stvarnog svijeta. Gradivna jedinka baze je relacija, odnosno tablica koja je definirana svojim imenom i skupom atributa. Zadaća baze podataka je brza i jednostavna pohrana, izmjena i dohvat podataka za daljnju obradu.Baza podataka ove aplikacije sastoji se od sljedećih entiteta:
+		Za potrebe našeg sustava koristit ćemo relacijsku bazu podataka koja svojom strukturom olakšava modeliranje stvarnog svijeta. Gradivna jedinka baze je relacija, odnosno tablica koja je definirana svojim imenom i skupom atributa. Zadaća baze podataka je brza i jednostavna pohrana, izmjena i dohvat podataka za daljnju obradu. Baza podataka ove aplikacije sastoji se od sljedećih entiteta:
 		
 		\begin{itemize}
 			\item Korisnik
@@ -53,9 +53,9 @@
 			\subsection{Opis tablica}
 			
 
-				\textit{Svaku tablicu je potrebno opisati po zadanom predlošku. Lijevo se nalazi točno ime varijable u bazi podataka, u sredini se nalazi tip podataka, a desno se nalazi opis varijable. Svjetlozelenom bojom označite primarni ključ. Svjetlo plavom označite strani ključ}
 				
-				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran.
+				
+				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ovaj entitet u vezi je One-to-One s ImaUlogu preko korisničkog identifikatora, u vezi One-to-One s JePrijatelj preko korisničkog identifikatora, u vezi One-to-One s JeBlokiranOd preko korisničkog identifikatora, te u vezi  One-to-Many s entitetom Događaj preko korisničkog identifikatora i u vezi One-to-One s entitetom Pohadja preko korisničkog identifikatora.
 				
 				\begin{longtblr}[
 					label=none,
@@ -65,19 +65,19 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{Korisnik}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id korisnik & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					nadimak	& VARCHAR(25) NOT NULL &   	\\ \hline
-					korisnicko ime & VARCHAR(25) NOT NULL &   \\ \hline  
-					email & VARCHAR(255) NOT NULL &   \\ \hline 
-					salt & BYTEA NOT NULL	&  		\\ \hline 
-					lozinka & BYTEA NOT NULL	&  		\\ \hline 
-					suspendiran & BOOLEAN NOT NULL	&  		\\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{Korisnik}} & tip podataka & opis varijable	 \\ \hline[3pt]
+					\SetCell{LightGreen}id korisnik & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator korisnika	\\ \hline
+					nadimak	& VARCHAR(25) NOT NULL &   nadimak korisnika	\\ \hline
+					korisnicko ime & VARCHAR(25) NOT NULL & ime korisnika  \\ \hline  
+					email & VARCHAR(255) NOT NULL & email korisnika  \\ \hline 
+					salt & BYTEA NOT NULL	&  salt za hashiranje lozinke		\\ \hline 
+					lozinka & BYTEA NOT NULL	&  	hash lozinke	\\ \hline 
+					suspendiran & BOOLEAN NOT NULL	& oznaka je li korisnik suspendiran 		\\ \hline 
 					
 				\end{longtblr}
 			
 			
-				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga.
+				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je One-to-One s imaUloga preko identifikatora uloge.
 				
 				\begin{longtblr}[
 					label=none,
@@ -87,14 +87,14 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{Uloga}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id uloga & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					naziv uloga	& VARCHAR(255) NOT NULL &   	\\ \hline 
-					opis uloga & VARCHAR(255) NOT NULL &   \\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{Uloga}}& tip podataka & opis varijable	 \\ \hline[3pt]
+					\SetCell{LightGreen}id uloga & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator uloge korisnika	\\ \hline
+					naziv uloga	& VARCHAR(255) NOT NULL &  naziv uloge korisnika	\\ \hline 
+					opis uloga & VARCHAR(255) NOT NULL & opis uloge korisnika  \\ \hline 
 					
 				\end{longtblr}
 			
-				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta.
+				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je One-to-One s entitetom Dogadjaj preko identifikatora vrste.
 				
 				\begin{longtblr}[
 					label=none,
@@ -104,14 +104,14 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{Vrsta}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id vrsta & INT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					naziv vrsta	& VARCHAR(255) NOT NULL &   	\\ \hline 
-					opis vrsta & VARCHAR(255) NOT NULL &   \\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{Vrsta}}& tip podataka & opis varijable	 \\ \hline[3pt]
+					\SetCell{LightGreen}id vrsta & INT NOT NULL	&  jedinstveni brojčani identifikator vrste događaja	\\ \hline
+					naziv vrsta	& VARCHAR(255) NOT NULL &  naziv vrste događaja	\\ \hline 
+					opis vrsta & VARCHAR(255) NOT NULL &  opis vrste događaja \\ \hline 
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex.
+				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je One-to-One s ImaOznaku preko identifikatora oznake.
 				
 				\begin{longtblr}[
 					label=none,
@@ -121,15 +121,15 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{Oznaka}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id oznaka & INT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					naziv oznaka	& VARCHAR(255) NOT NULL &   	\\ \hline 
-					boja hex & CHAR(7) NOT NULL &   \\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{Oznaka}}& tip podataka & opis varijable	 \\ \hline[3pt]
+					\SetCell{LightGreen}id oznaka & INT NOT NULL	& jedinstveni brojčani identifikator oznake događaja	\\ \hline
+					naziv oznaka	& VARCHAR(255) NOT NULL &  naziv oznake događaja  	\\ \hline 
+					boja hex & CHAR(7) NOT NULL & boja oznake  \\ \hline 
 					
 				\end{longtblr}
 				
 				
-				\noindent\textbf{ImaUlogu} Ovaj entitet sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga.
+				\noindent\textbf{ImaUlogu} Ovaj entitet sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Ovaj entitet u vezi je One-to-One s entitetom Uloga preko identifikatora uloge te u Many-to-One vezi s entitetom Korisnik preko identifikatora korisnika.
 				
 				\begin{longtblr}[
 					label=none,
@@ -139,13 +139,13 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{ImaUlogu}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id korisnik & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					\SetCell{LightGreen}id uloga	& BIGINT NOT NULL &   	\\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{ImaUlogu}}& tip podataka & opis varijable	 \\ \hline[3pt]
+					\SetCell{LightGreen}id korisnik & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator korisnika (korisnik.id korisnik)	\\ \hline
+					\SetCell{LightGreen}id uloga	& BIGINT NOT NULL &   jedinstveni brojčani identifikator uloga korisnika (uloga.id uloga)	\\ \hline 
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{JePrijatelj} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj.
+				\noindent\textbf{JePrijatelj} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Ovaj entitet u vezi je Many-to-One s entitetom Korisnik preko identifikatora korisnika.
 				
 				\begin{longtblr}[
 					label=none,
@@ -155,13 +155,13 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{JePrijatelj}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id korisnik & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					\SetCell{LightGreen}id prijatelj	& BIGINT NOT NULL	& 	\\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{JePrijatelj}}	& tip podataka & opis varijable \\ \hline[3pt]
+					\SetCell{LightGreen}id korisnik & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator korisnika (korisnik.id korisnik)	\\ \hline
+					\SetCell{LightGreen}id prijatelj	& BIGINT NOT NULL	& jedinstveni brojčani identifikator drugog korisnika prijatelja (korisnik.id korisnik)	\\ \hline 
 				\end{longtblr}
 			
 			
-				\noindent\textbf{JeBlokiranOd} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od.
+				\noindent\textbf{JeBlokiranOd} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od. Ovaje entitet u vezi je Many-to-One s entitetom korisnik preko identifikatora korisnika.
 				
 				\begin{longtblr}[
 					label=none,
@@ -171,14 +171,14 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{JeBlokiranOd}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id blokiran & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					\SetCell{LightGreen}id blokiran od	& BIGINT NOT NULL &   	\\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{JeBlokiranOd}}	& tip podataka & opis varijable \\ \hline[3pt]
+					\SetCell{LightGreen}id blokiran & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator korisnika koji je blokiran (korisnik.id korisnik)	\\ \hline
+					\SetCell{LightGreen}id blokiran od	& BIGINT NOT NULL &   jedinstveni brojčani identifikator korisnika koji blokira (korisnik.id korisnik)	\\ \hline 
 				 
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta.
+				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je One-to-One s entitetom Vrsta preko identifikatora vrste, u vezi Many-to-One s entitetom Korisnik preko identifikatora korisnika, u vezi One-to-Many s Pohadja i s ImaOznaku preko identifikatora dogadjaja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -188,22 +188,22 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{Dogadjaj}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id dogadjaj & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					naziv	& VARCHAR(255) NOT NULL &   	\\ \hline 
-					mjesto & VARCHAR(255) NOT NULL &   \\ \hline 
-					vrijeme poc & TIMESTAMP NOT NULL	&  		\\ \hline 
-					vrijeme kraj & TIMESTAMP NOT NULL	&  		\\ \hline
-					opis & VARCHAR(255) NOT NULL &  \\ \hline
-					promoviran & BOOLEAN NOT NULL &   \\ \hline 
-					koordinate & VARCHAR(255) NOT NULL &  \\ \hline
-					\SetCell{LightBlue}id organizator & BIGINT NOT NULL &   \\ \hline 
-					\SetCell{LightBlue}id vrsta & INT NOT NULL & 
+					\hline \multicolumn{3}{|c|}{\textbf{Dogadjaj}}	& tip podataka & opis varijable \\ \hline[3pt]
+					\SetCell{LightGreen}id dogadjaj & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator događaja  	\\ \hline
+					naziv	& VARCHAR(255) NOT NULL & naziv događaja  	\\ \hline 
+					mjesto & VARCHAR(255) NOT NULL & mjesto zbivanja događaja  \\ \hline 
+					vrijeme poc & TIMESTAMP NOT NULL	& vrijeme počinjanja događaja 		\\ \hline 
+					vrijeme kraj & TIMESTAMP NOT NULL	&  	vrijeme završetka događaja	\\ \hline
+					opis & VARCHAR(255) NOT NULL & opis događaja \\ \hline
+					promoviran & BOOLEAN NOT NULL &  oznaka je li događaj promoviran \\ \hline 
+					koordinate & VARCHAR(255) NOT NULL & koordinate događaja \\ \hline
+					\SetCell{LightBlue}id organizator & BIGINT NOT NULL &   jedinstveni brojčani identifikator organizatora događaja (korisnik.id korisnik) \\ \hline 
+					\SetCell{LightBlue}id vrsta & INT NOT NULL & jedinstveni brojčani identifikator vrste događaja (vrsta.id vrsta)
 					\\ \hline
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Pohadja} Ovaj entitet sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja.
+				\noindent\textbf{Pohadja} Ovaj entitet sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Ovaj entitet u vezi je Many-to-One s entitetom Korisnik preko identifikatora korisnika te u vezi Many-to-One s entitetom Dogadjaj preko identifikatora dogadjaja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -213,15 +213,15 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{Pohadja}}	 \\ \hline[3pt]
-					recenzija & SMALLINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-				    \SetCell{LightGreen} id pohadjatelja	& BIGINT NOT NULL &   	\\ \hline 
-					\SetCell{LightGreen} id dogadjaja & BIGINT NOT NULL &   \\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{Pohadja}}	& tip podataka & opis varijable \\ \hline[3pt]
+					recenzija & SMALLINT NOT NULL	&  recenzija korisnika za događaj	\\ \hline
+				    \SetCell{LightGreen} id pohadjatelja	& BIGINT NOT NULL &  jedinstveni brojčani identifikator pohađatelja (korisnik.id korisnik)	\\ \hline 
+					\SetCell{LightGreen} id dogadjaja & BIGINT NOT NULL &  jedinstveni brojčani identifikator događaja (dogadjaj.id dogadjaj) \\ \hline 
 					 
 				\end{longtblr}
 			
 				
-				\noindent\textbf{ImaOznaku} Ovaj entitet sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka.
+				\noindent\textbf{ImaOznaku} Ovaj entitet sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Ovaj entitet u vezi je One-to-One s entitetom Oznaka preko identifikatora oznake te u vezi Many-to-One s entitetom Dogadjaj preko identifikatora dogadjaja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -231,9 +231,9 @@
 						colspec={|X[6,l]|X[6, l]|X[20, l]|}, 
 						rowhead = 1,
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
-					\hline \multicolumn{3}{|c|}{\textbf{ImaOznaku}}	 \\ \hline[3pt]
-					\SetCell{LightGreen}id dogadjaj & BIGINT NOT NULL	&  	Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod  	\\ \hline
-					\SetCell{LightGreen}id oznaka	& INT NOT NULL &   	\\ \hline 
+					\hline \multicolumn{3}{|c|}{\textbf{ImaOznaku}}	& tip podataka & opis varijable \\ \hline[3pt]
+					\SetCell{LightGreen}id dogadjaj & BIGINT NOT NULL	&  	jedinstveni brojčani identifikator događaja (dogadjaj.id dogadjaj)	\\ \hline
+					\SetCell{LightGreen}id oznaka	& INT NOT NULL &   jedinstveni brojčani identifikator oznake (oznaka.id oznaka)	\\ \hline 
 				
 				\end{longtblr}
 			
