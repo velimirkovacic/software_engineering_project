@@ -1,3 +1,14 @@
+QR kod
+Generiranje QR koda u Java Springu
+https://medium.com/nerd-for-tech/how-to-generate-qr-code-in-java-spring-boot-134adb81f10d
+
+
+Indijac programira generator i čitač qr kodova
+https://www.youtube.com/watch?v=UN8Vwjs_b38
+
+
+
+
 Zapisnik sastanka Backend tima 10.11.
 
 - štitimo lozinke hashiranjem i saltom
