@@ -2,8 +2,7 @@
   "name": "frontend",
   "version": "0.1.0",
   "private": true,
-  "build": "yarn install && react-scripts build",
-  "start-prod": "node src/app.js",
+  
   "dependencies": {
     "@fullcalendar/core": "^5.11.3",
     "@fullcalendar/react": "^5.11.2",
@@ -23,7 +22,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm install && react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
