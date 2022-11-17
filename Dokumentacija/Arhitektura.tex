@@ -55,7 +55,7 @@
 
 				
 				
-				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ovaj entitet u vezi je One-to-One s ImaUlogu preko korisničkog identifikatora, u vezi One-to-One s JePrijatelj preko korisničkog identifikatora, u vezi One-to-One s JeBlokiranOd preko korisničkog identifikatora, te u vezi  One-to-Many s entitetom Događaj preko korisničkog identifikatora i u vezi One-to-One s entitetom Pohadja preko korisničkog identifikatora.
+				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ovaj entitet u vezi je Many-to-Many s ImaUlogu preko korisničkog identifikatora, u vezi Many-to-Many s JePrijatelj preko korisničkog identifikatora, u vezi Many-to-Many s JeBlokiranOd preko korisničkog identifikatora, te u vezi  One-to-Many s entitetom Događaj preko korisničkog identifikatora i u vezi Many-to-Many s entitetom Pohadja preko korisničkog identifikatora.
 				
 				\begin{longtblr}[
 					label=none,
@@ -77,7 +77,7 @@
 				\end{longtblr}
 			
 			
-				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je One-to-One s imaUloga preko identifikatora uloge.
+				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je Many-to-Many s imaUloga preko identifikatora uloge.
 				
 				\begin{longtblr}[
 					label=none,
@@ -94,7 +94,7 @@
 					
 				\end{longtblr}
 			
-				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je One-to-One s entitetom Dogadjaj preko identifikatora vrste.
+				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je One-to-Many s entitetom Dogadjaj preko identifikatora vrste.
 				
 				\begin{longtblr}[
 					label=none,
@@ -111,7 +111,7 @@
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je One-to-One s ImaOznaku preko identifikatora oznake.
+				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je Many-to-Many s ImaOznaku preko identifikatora oznake.
 				
 				\begin{longtblr}[
 					label=none,
@@ -129,7 +129,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{ImaUlogu} Ovaj entitet sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Ovaj entitet u vezi je One-to-One s entitetom Uloga preko identifikatora uloge te u Many-to-One vezi s entitetom Korisnik preko identifikatora korisnika.
+				\noindent\textbf{ImaUlogu} Ovaj entitet sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Ovaj entitet u vezi je Mnay-to-Many s entitetom Uloga preko identifikatora uloge te u Many-to-Many vezi s entitetom Korisnik preko identifikatora korisnika.
 				
 				\begin{longtblr}[
 					label=none,
@@ -145,7 +145,7 @@
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{JePrijatelj} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Ovaj entitet u vezi je Many-to-One s entitetom Korisnik preko identifikatora korisnika.
+				\noindent\textbf{JePrijatelj} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Ovaj entitet u vezi je Many-to-Many s entitetom Korisnik preko identifikatora korisnika.
 				
 				\begin{longtblr}[
 					label=none,
@@ -161,7 +161,7 @@
 				\end{longtblr}
 			
 			
-				\noindent\textbf{JeBlokiranOd} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od. Ovaje entitet u vezi je Many-to-One s entitetom korisnik preko identifikatora korisnika.
+				\noindent\textbf{JeBlokiranOd} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od. Ovaje entitet u vezi je Many-to-Many s entitetom korisnik preko identifikatora korisnika.
 				
 				\begin{longtblr}[
 					label=none,
@@ -178,7 +178,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je One-to-One s entitetom Vrsta preko identifikatora vrste, u vezi Many-to-One s entitetom Korisnik preko identifikatora korisnika, u vezi One-to-Many s Pohadja i s ImaOznaku preko identifikatora dogadjaja.
+				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je Many-to-One s entitetom Vrsta preko identifikatora vrste, u vezi Many-to-Many s entitetom Korisnik preko identifikatora korisnika, u vezi Many-to-Many s Pohadja i s ImaOznaku preko identifikatora dogadjaja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -203,7 +203,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Pohadja} Ovaj entitet sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Ovaj entitet u vezi je Many-to-One s entitetom Korisnik preko identifikatora korisnika te u vezi Many-to-One s entitetom Dogadjaj preko identifikatora dogadjaja.
+				\noindent\textbf{Pohadja} Ovaj entitet sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Ovaj entitet u vezi je Many-to-Many s entitetom Korisnik preko identifikatora korisnika te u vezi Many-to-Many s entitetom Dogadjaj preko identifikatora dogadjaja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -221,7 +221,7 @@
 				\end{longtblr}
 			
 				
-				\noindent\textbf{ImaOznaku} Ovaj entitet sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Ovaj entitet u vezi je One-to-One s entitetom Oznaka preko identifikatora oznake te u vezi Many-to-One s entitetom Dogadjaj preko identifikatora dogadjaja.
+				\noindent\textbf{ImaOznaku} Ovaj entitet sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Ovaj entitet u vezi je Many-to-Many s entitetom Oznaka preko identifikatora oznake te u vezi Many-to-Many s entitetom Dogadjaj preko identifikatora dogadjaja.
 				
 				\begin{longtblr}[
 					label=none,
