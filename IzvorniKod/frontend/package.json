@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "build": "yarn install && react-scripts build",
-  "start-prod": "node app.js",
+  "start-prod": "node src/app.js",
   "dependencies": {
     "@fullcalendar/core": "^5.11.3",
     "@fullcalendar/react": "^5.11.2",
