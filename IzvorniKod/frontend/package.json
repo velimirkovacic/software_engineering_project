@@ -10,6 +10,8 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
     "react": "^18.2.0",
     "react-client-session": "^0.0.8",
     "react-dom": "^18.2.0",
@@ -42,5 +44,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:8080/"
+  "proxy": "https://eventko-backend.onrender.com",
+  "devDependencies": {
+    "http-proxy-middleware": "^2.0.6"
+  }
 }
