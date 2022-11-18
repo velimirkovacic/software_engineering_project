@@ -29,9 +29,7 @@
 				
 		\section{Baza podataka}
 			
-			\textbf{\textit{dio 1. revizije}}\\
-			
-		\textit{Potrebno je opisati koju vrstu i implementaciju baze podataka ste odabrali, glavne komponente od kojih se sastoji i slično.}
+
 		
 		Za potrebe našeg sustava koristit ćemo relacijsku bazu podataka koja svojom strukturom olakšava modeliranje stvarnog svijeta. Gradivna jedinka baze je relacija, odnosno tablica koja je definirana svojim imenom i skupom atributa. Zadaća baze podataka je brza i jednostavna pohrana, izmjena i dohvat podataka za daljnju obradu. Baza podataka ove aplikacije sastoji se od sljedećih entiteta:
 		
@@ -55,7 +53,7 @@
 
 				
 				
-				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ovaj entitet u vezi je Many-to-Many s ImaUlogu preko korisničkog identifikatora, u vezi Many-to-Many s JePrijatelj preko korisničkog identifikatora, u vezi Many-to-Many s JeBlokiranOd preko korisničkog identifikatora, te u vezi  One-to-Many s entitetom Događaj preko korisničkog identifikatora i u vezi Many-to-Many s entitetom Pohadja preko korisničkog identifikatora.
+				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ovaj entitet u vezi je Many-to-Many s Uloga preko veze imaUlogu, u vezi Many-to-Many s Korisnik preko veze jePrijatelj, u vezi Many-to-Many s Korisnik preko veze JeBlokiranOd, te u vezi  One-to-Many s entitetom Događaj preko i u vezi Many-to-Many s entitetom Dogadjaj preko veze Pohadja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -77,7 +75,7 @@
 				\end{longtblr}
 			
 			
-				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je Many-to-Many s imaUloga preko identifikatora uloge.
+				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je Many-to-Many s Korisnik preko veze imaUlogu.
 				
 				\begin{longtblr}[
 					label=none,
@@ -94,7 +92,7 @@
 					
 				\end{longtblr}
 			
-				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je One-to-Many s entitetom Dogadjaj preko identifikatora vrste.
+				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je Many-to-On s entitetom Dogadjaj preko identifikatora vrste u entitetu Dogadjaj.
 				
 				\begin{longtblr}[
 					label=none,
@@ -111,7 +109,7 @@
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je Many-to-Many s ImaOznaku preko identifikatora oznake.
+				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je Many-to-Many s Oznaka preko veze imaOznaku.
 				
 				\begin{longtblr}[
 					label=none,
@@ -129,7 +127,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{ImaUlogu} Ovaj entitet sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Ovaj entitet u vezi je Mnay-to-Many s entitetom Uloga preko identifikatora uloge te u Many-to-Many vezi s entitetom Korisnik preko identifikatora korisnika.
+				\noindent\textbf{ImaUlogu} Ova veza sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Povezuje entitete Korisnik i Uloga. 
 				
 				\begin{longtblr}[
 					label=none,
@@ -145,7 +143,7 @@
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{JePrijatelj} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Ovaj entitet u vezi je Many-to-Many s entitetom Korisnik preko identifikatora korisnika.
+				\noindent\textbf{JePrijatelj} Ova veza sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Povezuje entitet Korisnik sa samim sobom.
 				
 				\begin{longtblr}[
 					label=none,
@@ -161,7 +159,7 @@
 				\end{longtblr}
 			
 			
-				\noindent\textbf{JeBlokiranOd} Ovaj entitet sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od. Ovaje entitet u vezi je Many-to-Many s entitetom korisnik preko identifikatora korisnika.
+				\noindent\textbf{JeBlokiranOd} Ova veza sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od. Povezuje entitet Korisnik sa samim sobom.
 				
 				\begin{longtblr}[
 					label=none,
@@ -178,7 +176,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je Many-to-One s entitetom Vrsta preko identifikatora vrste, u vezi Many-to-Many s entitetom Korisnik preko identifikatora korisnika, u vezi Many-to-Many s Pohadja i s ImaOznaku preko identifikatora dogadjaja.
+				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je Many-to-One s entitetom Vrsta preko identifikatora vrste, u vezi Many-to-One s entitetom Korisnik preko identifikatora korisnika, u vezi Many-to-Many s entitetom Korisnik preko veze Pohadja i u vezi Many-to-Many s Oznaka preko veze imaOznaku.
 				
 				\begin{longtblr}[
 					label=none,
@@ -203,7 +201,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Pohadja} Ovaj entitet sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Ovaj entitet u vezi je Many-to-Many s entitetom Korisnik preko identifikatora korisnika te u vezi Many-to-Many s entitetom Dogadjaj preko identifikatora dogadjaja.
+				\noindent\textbf{Pohadja} Ova veza sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Povezuje entitete Korisnik i Dogadjaj.
 				
 				\begin{longtblr}[
 					label=none,
@@ -221,7 +219,7 @@
 				\end{longtblr}
 			
 				
-				\noindent\textbf{ImaOznaku} Ovaj entitet sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Ovaj entitet u vezi je Many-to-Many s entitetom Oznaka preko identifikatora oznake te u vezi Many-to-Many s entitetom Dogadjaj preko identifikatora dogadjaja.
+				\noindent\textbf{ImaOznaku} Ovaa veza sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Povezuje entitete Oznaka i Dogadajaj.
 				
 				\begin{longtblr}[
 					label=none,
@@ -258,9 +256,13 @@
 			
 			\indent Na naredne tri slike nalaze se dijagrami razreda podijeljeni logički po srodnosti. Neki razredi povezani su i s onima na odvojenim slikama što se da zaključiti po nazivima njihovih metoda. \\
 			
-			\indent Razredi na slici 4.4 uokvireni plavom bojom su controlleri. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects})  prema frontendu u obliku JSON datoteka s html statusnim kodom. Razlikuju se controlleri za korisnike, događaje te postupke prijave i registracije. Sami DTO razredi nalaze se na slici 4.3, a to su zahtjevi i odgovori za prijavu i registraciju.\\
+			\indent Razredi na slici 4.4 uokvireni plavom bojom su kontroleri. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects})  prema frontendu u obliku JSON datoteka s html statusnim kodom. Pozivaju funkcije servisa. Razlikuju se kontroleri za korisnike, događaje te postupke prijave i registracije. Sami DTO razredi nalaze se na slici 4.3, a to su zahtjevi i odgovori za prijavu i registraciju.\\
 			
-			\indent Razredi na slici 4.5 su modeli. Njihove metode izravno barataju s bazom podataka i dohvaćaju željene podatke iz nje. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje.
+			\indent Razredi na slici 4.4 uokvireni crvenom bojom su servisi. Služe za komunikaciju između repozitorija i kontrolera.\\
+			
+			\indent Razredi na slici 4.4 uokvireni zelenom bojom su repozitoriji. Služe za pozivanje SQL upita nad bazom podataka.\\
+			
+			\indent Razredi na slici 4.5 su modeli. Modeliraju potrebne razrede iz baze podataka. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje.
 			
 			
 			\begin{figure}[h]
