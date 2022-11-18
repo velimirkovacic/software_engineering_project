@@ -1,0 +1,41 @@
+Dnevnik sastajanja
+
+1. sastanak
+ - Datum: 20. listopada 2022.
+ - Prisustvovali: svi članovi tima
+ - Teme sastanka:
+	- sastanak s asistentom i demonstratorom
+	- raščišćavanje elemenata projektnog zadatka
+	- predaja alternativnog "Eventko" projekta
+
+2. sastanak
+ - Datum: 24. listopada 2022.
+ - Prisustvovali: svi članovi tima
+ - Teme sastanka:
+	- razrada koncepta projekta
+	- dodavanje dodatnih funkcionalnosti, aktera
+	- prijedlog podjele uloga
+
+3. sastanak
+ - Datum: 27. listopada 2022.
+ - Prisustvovali: svi članovi tima
+ - Teme sastanka:
+	- finalna podjela uloga
+	- odabir radnog okruženja
+
+4. sastanak
+ - Datum: 3. studenog 2022.
+ - Prisustvovali: svi članovi tima
+ - Teme sastanka:
+	- instalacija potrebne programske potpore
+	- detaljna skica funkcionalnosti stranice
+	- daljnja podjela rada
+	- dizajn originalnog logotipa
+
+5. sastanak
+ - Datum: 14. studenog 2022.
+ - Prisustvovali: svi članovi tima
+ - Teme sastanka:
+	- priprema za demonstraciju osnovnih funkcionalnosti
+	- povezivanje backenda i frontenda
+	- usklađivanje ograničenja
