@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.31)  18 NOV 2022 22:26
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  7 DEC 2022 16:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija.tex
 (./PROGI_ProjektnaDokumentacija.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-10-26>
+LaTeX2e <2022-11-01>
+L3 programming layer <2022-11-02>
 (c:/texlive/2022/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
+Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
 (c:/texlive/2022/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -22,12 +22,12 @@ File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \c@table=\count193
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen138
+\bibindent=\dimen140
 )
 (c:/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2022/10/23 3.82 The Babel package
 \babel@savecnt=\count194
-\U@D=\dimen139
+\U@D=\dimen141
 \l@unhyphenated=\language87
 
 (c:/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
@@ -64,11 +64,11 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
-\ex@=\dimen140
+\ex@=\dimen142
 ))
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen141
+\pmbraise@=\dimen143
 )
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
@@ -90,7 +90,7 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen142
+\big@size=\dimen144
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count267
@@ -108,12 +108,12 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \column@=\count272
 \maxfields@=\count273
 \andhelp@=\toks19
-\eqnshift@=\dimen143
-\alignsep@=\dimen144
-\tagshift@=\dimen145
-\tagwidth@=\dimen146
-\totwidth@=\dimen147
-\lineht@=\dimen148
+\eqnshift@=\dimen145
+\alignsep@=\dimen146
+\tagshift@=\dimen147
+\tagwidth@=\dimen148
+\totwidth@=\dimen149
+\lineht@=\dimen150
 \@envbody=\toks20
 \multlinegap=\skip50
 \multlinetaggap=\skip51
@@ -210,7 +210,7 @@ LaTeX Info: Redefining \not on input line 1043.
 (c:/texlive/2022/texmf-dist/tex/generic/mathdots/mathdots.sty
 Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in ma
 th.
-\MDo@unit=\dimen149
+\MDo@unit=\dimen151
 \MDo@dotsbox=\box53
 \MDoprekern=\muskip17
 \MDopostkern=\muskip18
@@ -221,18 +221,18 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box54
 \beforetitleunit=\skip52
 \aftertitleunit=\skip53
-\ttl@plus=\dimen150
-\ttl@minus=\dimen151
+\ttl@plus=\dimen152
+\ttl@minus=\dimen153
 \ttl@toksa=\toks22
-\titlewidth=\dimen152
-\titlewidthlast=\dimen153
-\titlewidthfirst=\dimen154
+\titlewidth=\dimen154
+\titlewidthlast=\dimen155
+\titlewidthfirst=\dimen156
 )
 (c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
-Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
-\col@sep=\dimen155
+Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
+\col@sep=\dimen157
 \ar@mcellbox=\box55
-\extrarowheight=\dimen156
+\extrarowheight=\dimen158
 \NC@list=\toks23
 \extratabsurround=\skip54
 \backup@length=\skip55
@@ -247,27 +247,27 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 )
 (c:/texlive/2022/texmf-dist/tex/latex/tabularray/tabularray.sty
 (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-10-26 L3 programming layer (loader) 
+Package: expl3 2022-11-02 L3 programming layer (loader) 
 
 (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count275
 \l__pdf_internal_box=\box57
 ))
-Package: tabularray 2022-07-01 v2022C Typeset tabulars and arrays with LaTeX3
+Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
 \l__tblr_a_int=\count276
 \l__tblr_c_int=\count277
 \l__tblr_r_int=\count278
-\l__tblr_d_dim=\dimen157
-\l__tblr_h_dim=\dimen158
-\l__tblr_o_dim=\dimen159
-\l__tblr_p_dim=\dimen160
-\l__tblr_q_dim=\dimen161
-\l__tblr_r_dim=\dimen162
-\l__tblr_s_dim=\dimen163
-\l__tblr_t_dim=\dimen164
-\l__tblr_v_dim=\dimen165
-\l__tblr_w_dim=\dimen166
+\l__tblr_d_dim=\dimen159
+\l__tblr_h_dim=\dimen160
+\l__tblr_o_dim=\dimen161
+\l__tblr_p_dim=\dimen162
+\l__tblr_q_dim=\dimen163
+\l__tblr_r_dim=\dimen164
+\l__tblr_s_dim=\dimen165
+\l__tblr_t_dim=\dimen166
+\l__tblr_v_dim=\dimen167
+\l__tblr_w_dim=\dimen168
 \l__tblr_a_box=\box58
 \l__tblr_b_box=\box59
 \l__tblr_c_box=\box60
@@ -277,10 +277,10 @@ Package: tabularray 2022-07-01 v2022C Typeset tabulars and arrays with LaTeX3
 \c@colnum=\count281
 \c@rowcount=\count282
 \c@colcount=\count283
-\abovesep=\dimen167
-\belowsep=\dimen168
-\leftsep=\dimen169
-\rightsep=\dimen170
+\abovesep=\dimen169
+\belowsep=\dimen170
+\leftsep=\dimen171
+\rightsep=\dimen172
 \g_tblr_level_int=\count284
 \g__tblr_data_row_key_count_int=\count285
 \g__tblr_data_column_key_count_int=\count286
@@ -291,27 +291,27 @@ Package: tabularray 2022-07-01 v2022C Typeset tabulars and arrays with LaTeX3
 \l__tblr_key_quotient_two_int=\count291
 \l__tblr_key_remainder_int=\count292
 \g__tblr_data_str_value_count_int=\count293
-\rulewidth=\dimen171
-\l__tblr_strut_dp_dim=\dimen172
-\l__tblr_strut_ht_dim=\dimen173
-\g__tblr_cell_wd_dim=\dimen174
-\g__tblr_cell_ht_dim=\dimen175
-\g__tblr_cell_head_dim=\dimen176
-\g__tblr_cell_foot_dim=\dimen177
-\l__column_target_dim=\dimen178
+\rulewidth=\dimen173
+\l__tblr_strut_dp_dim=\dimen174
+\l__tblr_strut_ht_dim=\dimen175
+\g__tblr_cell_wd_dim=\dimen176
+\g__tblr_cell_ht_dim=\dimen177
+\g__tblr_cell_head_dim=\dimen178
+\g__tblr_cell_foot_dim=\dimen179
+\l__column_target_dim=\dimen180
 \l__tblr_caption_box=\box62
 \l__tblr_caption_left_box=\box63
 \l__tblr_row_head_box=\box64
 \l__tblr_row_foot_box=\box65
-\l__tblr_row_head_foot_dim=\dimen179
-\tablewidth=\dimen180
+\l__tblr_row_head_foot_dim=\dimen181
+\tablewidth=\dimen182
 \l__tblr_table_firsthead_box=\box66
 \l__tblr_table_middlehead_box=\box67
 \l__tblr_table_lasthead_box=\box68
 \l__tblr_table_firstfoot_box=\box69
 \l__tblr_table_middlefoot_box=\box70
 \l__tblr_table_lastfoot_box=\box71
-\l__tblr_remain_height_dim=\dimen181
+\l__tblr_remain_height_dim=\dimen183
 \l__tblr_long_from_int=\count294
 \l__tblr_long_to_int=\count295
 \l__tblr_curr_i_int=\count296
@@ -319,30 +319,30 @@ Package: tabularray 2022-07-01 v2022C Typeset tabulars and arrays with LaTeX3
 \l__tblr_table_page_int=\count298
 \l__tblr_table_head_box=\box72
 \l__tblr_table_foot_box=\box73
-\l__tblr_table_head_foot_dim=\dimen182
-\l__tblr_table_head_body_foot_dim=\dimen183
+\l__tblr_table_head_foot_dim=\dimen184
+\l__tblr_table_head_body_foot_dim=\dimen185
 \l__tblr_table_box=\box74
 \l__tblr_table_hlines_box=\box75
 \l__tblr_hline_box=\box76
 \l__tblr_row_box=\box77
-\l__tblr_col_o_wd_dim=\dimen184
-\l__tblr_col_b_wd_dim=\dimen185
-\l__tblr_hline_leftskip_dim=\dimen186
-\l__tblr_hline_rightskip_dim=\dimen187
-\l__tblr_row_ht_dim=\dimen188
-\l__tblr_row_dp_dim=\dimen189
-\l__tblr_row_abovesep_dim=\dimen190
-\l__tblr_row_belowsep_dim=\dimen191
+\l__tblr_col_o_wd_dim=\dimen186
+\l__tblr_col_b_wd_dim=\dimen187
+\l__tblr_hline_leftskip_dim=\dimen188
+\l__tblr_hline_rightskip_dim=\dimen189
+\l__tblr_row_ht_dim=\dimen190
+\l__tblr_row_dp_dim=\dimen191
+\l__tblr_row_abovesep_dim=\dimen192
+\l__tblr_row_belowsep_dim=\dimen193
 \l__tblr_row_vlines_box=\box78
 \l__tblr_vline_box=\box79
 \l__tblr_cell_box=\box80
-\l__row_upper_dim=\dimen192
-\l__row_lower_dim=\dimen193
-\l__row_vpace_dim=\dimen194
-\l__tblr_vline_aboveskip_dim=\dimen195
-\l__tblr_vline_belowskip_dim=\dimen196
-\l__tblr_cell_wd_dim=\dimen197
-\l__tblr_cell_ht_dim=\dimen198
+\l__row_upper_dim=\dimen194
+\l__row_lower_dim=\dimen195
+\l__row_vpace_dim=\dimen196
+\l__tblr_vline_aboveskip_dim=\dimen197
+\l__tblr_vline_belowskip_dim=\dimen198
+\l__tblr_cell_wd_dim=\dimen199
+\l__tblr_cell_ht_dim=\dimen256
 \l__tblr_diag_box=\box81
 )
 (c:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
@@ -355,8 +355,6 @@ Package color Info: Driver file: pdftex.def on input line 149.
 
 (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
-\stockwidth=\dimen199
-\stockheight=\dimen256
 )
 (c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 (c:/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
@@ -973,9 +971,13 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
 \@float@every@table=\toks30
-Package hyperref Info: Option `colorlinks' set `true' on input line 41.
+
+(c:/texlive/2022/texmf-dist/tex/latex/tools/indentfirst.sty
+Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 43.
 LaTeX Font Info:    Trying to load font information for OT1+jkp on input line 8
-6.
+8.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
@@ -985,51 +987,51 @@ File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 (./Arhitektura.aux) (./Literatura.aux) (./Dodatak.aux))
 \openout1 = `PROGI_ProjektnaDokumentacija.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 86.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 88.
 LaTeX Font Info:    Trying to load font information for OML+jkp on input line 8
-6.
+8.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 88.
 LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 8
-6.
+8.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 88.
 LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 8
-6.
+8.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 86.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 88.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-86.
+88.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 86.
-LaTeX Font Info:    ... okay on input line 86.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 88.
+LaTeX Font Info:    ... okay on input line 88.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 86.
+(lastpage)             ! on input line 88.
 
 (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1087,7 +1089,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 86.
+Package hyperref Info: Link coloring ON on input line 88.
 (./PROGI_ProjektnaDokumentacija.out) (./PROGI_ProjektnaDokumentacija.out)
 \@outlinefile=\write3
 \openout3 = `PROGI_ProjektnaDokumentacija.out'.
@@ -1147,7 +1149,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.123 	\include{Dnevnik_promjena_dokumentacije}
+l.125 	\include{Dnevnik_promjena_dokumentacije}
                                                 [1
 
 ]
@@ -1536,11 +1538,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 512--514
 
  []
 
-<slike/Registracija.png, id=251, 420.3705pt x 452.892pt>
+<slike/Registracija.png, id=251, 525.46312pt x 566.115pt>
 File: slike/Registracija.png Graphic file (type png)
 <use slike/Registracija.png>
 Package pdftex.def Info: slike/Registracija.png  used on input line 516.
-(pdftex.def)             Requested size: 435.6108pt x 469.33803pt.
+(pdftex.def)             Requested size: 435.6108pt x 469.33113pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 520--521
 
@@ -1564,11 +1566,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 523--525
 
  []
 
-<slike/Prijava.png, id=260, 482.40225pt x 403.5075pt>
+<slike/Prijava.png, id=259, 603.0028pt x 504.38437pt>
 File: slike/Prijava.png Graphic file (type png)
 <use slike/Prijava.png>
 Package pdftex.def Info: slike/Prijava.png  used on input line 527.
-(pdftex.def)             Requested size: 435.6108pt x 364.3848pt.
+(pdftex.def)             Requested size: 435.6108pt x 364.36478pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -1600,7 +1602,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Arhitektura.tex
 Poglavlje 4.
-<slike/arhitektura_skica.png, id=274, 375.4025pt x 277.035pt>
+<slike/arhitektura_skica.png, id=272, 375.4025pt x 277.035pt>
 File: slike/arhitektura_skica.png Graphic file (type png)
 <use slike/arhitektura_skica.png>
 Package pdftex.def Info: slike/arhitektura_skica.png  used on input line 6.
@@ -2076,12 +2078,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [25]
-<dijagrami/Baza podataka/REL shema.png, id=312, 3581.38pt x 2059.695pt>
-File: dijagrami/Baza podataka/REL shema.png Graphic file (type png)
-<use dijagrami/Baza podataka/REL shema.png>
-Package pdftex.def Info: dijagrami/Baza podataka/REL shema.png  used on input l
-ine 248.
-(pdftex.def)             Requested size: 435.6108pt x 250.51558pt.
+<dijagrami/Baza podataka/ER model.png, id=310, 4669.445pt x 3928.6775pt>
+File: dijagrami/Baza podataka/ER model.png Graphic file (type png)
+<use dijagrami/Baza podataka/ER model.png>
+Package pdftex.def Info: dijagrami/Baza podataka/ER model.png  used on input li
+ne 247.
+(pdftex.def)             Requested size: 435.6108pt x 366.45427pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2091,46 +2093,71 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[26 <./dijagrami/Baza podataka/REL shema.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 257--258
+[26 <./dijagrami/Baza podataka/ER model.png>]
+<dijagrami/Baza podataka/ER model (bez atributa).png, id=318, 2858.68pt x 1650.
+165pt>
+File: dijagrami/Baza podataka/ER model (bez atributa).png Graphic file (type pn
+g)
+<use dijagrami/Baza podataka/ER model (bez atributa).png>
+Package pdftex.def Info: dijagrami/Baza podataka/ER model (bez atributa).png  u
+sed on input line 255.
+(pdftex.def)             Requested size: 435.6108pt x 251.44206pt.
+<dijagrami/Baza podataka/REL shema.png, id=319, 2679.25969pt x 1500.35532pt>
+File: dijagrami/Baza podataka/REL shema.png Graphic file (type png)
+<use dijagrami/Baza podataka/REL shema.png>
+Package pdftex.def Info: dijagrami/Baza podataka/REL shema.png  used on input l
+ine 260.
+(pdftex.def)             Requested size: 435.6108pt x 243.93076pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[27 <./dijagrami/Baza podataka/ER model (bez atributa).png> <./dijagrami/Baza p
+odataka/REL shema.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 272--273
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 259--260
+Underfull \hbox (badness 10000) in paragraph at lines 274--275
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 261--262
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 263--264
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
-<dijagrami/UML dtoovi.png, id=320, 1099.85907pt x 359.84438pt>
+<dijagrami/UML dtoovi.png, id=329, 1099.85907pt x 359.84438pt>
 File: dijagrami/UML dtoovi.png Graphic file (type png)
 <use dijagrami/UML dtoovi.png>
-Package pdftex.def Info: dijagrami/UML dtoovi.png  used on input line 269.
+Package pdftex.def Info: dijagrami/UML dtoovi.png  used on input line 284.
 (pdftex.def)             Requested size: 435.6108pt x 142.51857pt.
-<dijagrami/UML kontroleri, servisi, repozitoriji.png, id=321, 950.04938pt x 119
+<dijagrami/UML kontroleri, servisi, repozitoriji.png, id=330, 950.04938pt x 119
 8.4775pt>
 File: dijagrami/UML kontroleri, servisi, repozitoriji.png Graphic file (type pn
 g)
 <use dijagrami/UML kontroleri, servisi, repozitoriji.png>
 Package pdftex.def Info: dijagrami/UML kontroleri, servisi, repozitoriji.png  u
-sed on input line 274.
+sed on input line 289.
 (pdftex.def)             Requested size: 435.6108pt x 549.51419pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-<dijagrami/UML modeli.png, id=322, 1245.15187pt x 1065.9825pt>
+<dijagrami/UML modeli.png, id=331, 1245.15187pt x 1065.9825pt>
 File: dijagrami/UML modeli.png Graphic file (type png)
 <use dijagrami/UML modeli.png>
-Package pdftex.def Info: dijagrami/UML modeli.png  used on input line 279.
+Package pdftex.def Info: dijagrami/UML modeli.png  used on input line 294.
 (pdftex.def)             Requested size: 435.6108pt x 372.92055pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
@@ -2143,7 +2170,9 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[27 <./dijagrami/UML dtoovi.png>])
+[28
+
+ <./dijagrami/UML dtoovi.png>])
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2152,7 +2181,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[28 <./dijagrami/UML kontroleri, servisi, repozitoriji.png>]
+[29 <./dijagrami/UML kontroleri, servisi, repozitoriji.png>]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2161,7 +2190,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[29 <./dijagrami/UML modeli.png>]
+[30 <./dijagrami/UML modeli.png>]
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
@@ -2185,7 +2214,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[30
+[31
 
 
 
@@ -2209,7 +2238,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[31
+[32
 
 
 
@@ -2225,7 +2254,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[32
+[33
 
 
 ]
@@ -2237,7 +2266,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[33]
+[34]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2251,7 +2280,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2266,7 +2295,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2281,7 +2310,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2296,7 +2325,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2311,7 +2340,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2326,7 +2355,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2341,7 +2370,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2356,7 +2385,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.126 			\end
+l.137 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2375,7 +2404,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[34]
+[35]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2384,20 +2413,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35]) 
+[36]) 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
 (./Arhitektura.aux) (./Literatura.aux) (./Dodatak.aux))
 Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: B9D8C0EC9BBB2B9935C533823C36DABE;2453.
+(rerunfilecheck)             Checksum: 72C3A0B27209529500EAA0C9EBA99678;2458.
  ) 
 Here is how much of TeX's memory you used:
- 18896 strings out of 475066
- 336801 string characters out of 5782772
- 854594 words of memory out of 5000000
- 39810 multiletter control sequences out of 15000+600000
+ 18947 strings out of 474971
+ 338386 string characters out of 5780121
+ 857161 words of memory out of 5000000
+ 39947 multiletter control sequences out of 15000+600000
  517168 words of font info for 129 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,13n,117p,761b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2406,10 +2435,10 @@ f-dist/fonts/type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2022/texmf-dist/fonts
 /type1/public/kpfonts/jkpmit8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/publ
 ic/kpfonts/jkpmn8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/j
 kpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (36 pages, 785911 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (37 pages, 1345331 bytes).
 PDF statistics:
- 463 PDF objects out of 1000 (max. 8388607)
- 398 compressed objects within 4 object streams
- 156 named destinations out of 1000 (max. 500000)
- 161 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 480 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 160 named destinations out of 1000 (max. 500000)
+ 171 words of extra memory for PDF output out of 10000 (max. 10000000)
 
