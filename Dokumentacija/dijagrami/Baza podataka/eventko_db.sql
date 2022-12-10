@@ -63,7 +63,7 @@ CREATE TABLE imaUlogu
   id_korisnik BIGINT NOT NULL,
   id_uloga BIGINT NOT NULL,
   PRIMARY KEY (id_korisnik, id_uloga),
-  FOREIGN KEY (id_korisnik) REFERENCES Korisnik(id_korisnik),
+  FOREIGN KEY (id_korisnik) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE,
   FOREIGN KEY (id_uloga) REFERENCES Uloga(id_uloga)
 );
 
@@ -72,8 +72,8 @@ CREATE TABLE jePrijatelj
   id_korisnik BIGINT NOT NULL,
   id_prijatelj BIGINT NOT NULL,
   PRIMARY KEY (id_korisnik, id_prijatelj),
-  FOREIGN KEY (id_korisnik) REFERENCES Korisnik(id_korisnik),
-  FOREIGN KEY (id_prijatelj) REFERENCES Korisnik(id_korisnik)
+  FOREIGN KEY (id_korisnik) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE,
+  FOREIGN KEY (id_prijatelj) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE
 );
 
 CREATE TABLE jeBlokiranOd
@@ -81,8 +81,8 @@ CREATE TABLE jeBlokiranOd
   id_blokiran BIGINT NOT NULL,
   id_blokiran_od BIGINT NOT NULL,
   PRIMARY KEY (id_blokiran, id_blokiran_od),
-  FOREIGN KEY (id_blokiran) REFERENCES Korisnik(id_korisnik),
-  FOREIGN KEY (id_blokiran_od) REFERENCES Korisnik(id_korisnik)
+  FOREIGN KEY (id_blokiran) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE,
+  FOREIGN KEY (id_blokiran_od) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE
 );
 
 CREATE TABLE Dogadjaj
@@ -105,12 +105,12 @@ CREATE TABLE Dogadjaj
 
 CREATE TABLE pohadja
 (
-  recenzija SMALLINT NOT NULL,
+  recenzija SMALLINT,
   id_pohadjatelj BIGINT NOT NULL,
   id_dogadjaj BIGINT NOT NULL,
   PRIMARY KEY (id_pohadjatelj, id_dogadjaj),
-  FOREIGN KEY (id_pohadjatelj) REFERENCES Korisnik(id_korisnik),
-  FOREIGN KEY (id_dogadjaj) REFERENCES Dogadjaj(id_dogadjaj),
+  FOREIGN KEY (id_pohadjatelj) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE,
+  FOREIGN KEY (id_dogadjaj) REFERENCES Dogadjaj(id_dogadjaj) ON DELETE CASCADE,
   CHECK ((recenzija = 1) OR (recenzija = -1) OR (recenzija = 0)) 
 );
 
@@ -119,8 +119,8 @@ CREATE TABLE imaOznaku
   id_dogadjaj BIGINT NOT NULL,
   id_oznaka INT NOT NULL,
   PRIMARY KEY (id_dogadjaj, id_oznaka),
-  FOREIGN KEY (id_dogadjaj) REFERENCES Dogadjaj(id_dogadjaj),
-  FOREIGN KEY (id_oznaka) REFERENCES Oznaka(id_oznaka)
+  FOREIGN KEY (id_dogadjaj) REFERENCES Dogadjaj(id_dogadjaj) ON DELETE CASCADE,
+  FOREIGN KEY (id_oznaka) REFERENCES Oznaka(id_oznaka) 
 );
 
 

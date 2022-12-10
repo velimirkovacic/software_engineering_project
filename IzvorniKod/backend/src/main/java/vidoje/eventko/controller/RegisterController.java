@@ -6,10 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vidoje.eventko.domain.User;
 import vidoje.eventko.dto.RegisterRequestDTO;
-import vidoje.eventko.dto.RegisterResponseDTO;
-import vidoje.eventko.repos.UserRepo;
+import vidoje.eventko.dto.MessageResponseDTO;
 import vidoje.eventko.service.UserService;
-import vidoje.eventko.service.impl.UserServiceJpa;
 
 import javax.validation.Valid;
 import java.security.NoSuchAlgorithmException;
@@ -23,18 +21,18 @@ public class RegisterController {
     public UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<RegisterResponseDTO> performRegister(@Valid @RequestBody RegisterRequestDTO dto) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    public ResponseEntity<MessageResponseDTO> performRegister(@Valid @RequestBody RegisterRequestDTO dto) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
         User newUser = new User(dto.getUsername(), dto.getEmail(), dto.getNickname(), dto.getPassword());
         try {
             if(userService.exists(newUser)) {
-                return new ResponseEntity<RegisterResponseDTO>(new RegisterResponseDTO("Korisnik s tim e-mailom ili korisničkim imenom već postoji"), HttpStatus.BAD_REQUEST);
+                return new ResponseEntity<MessageResponseDTO>(new MessageResponseDTO("Korisnik s tim e-mailom ili korisničkim imenom već postoji"), HttpStatus.BAD_REQUEST);
             } else {
                 userService.add(newUser);
-                return ResponseEntity.ok(new RegisterResponseDTO("Uspješna registracija"));
+                return ResponseEntity.ok(new MessageResponseDTO("Uspješna registracija"));
             }
         } catch(Exception ex) {
-            return new ResponseEntity<RegisterResponseDTO>(new RegisterResponseDTO("Neuspješna registracija, nepoznata pogreška"), HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<MessageResponseDTO>(new MessageResponseDTO("Neuspješna registracija, nepoznata pogreška"), HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }

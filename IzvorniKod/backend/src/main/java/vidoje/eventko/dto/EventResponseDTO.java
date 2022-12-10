@@ -4,25 +4,25 @@ import vidoje.eventko.domain.Event;
 
 import java.util.List;
 
-public class EventReposnseDTO {
-    private List<Event> eventiKorisnika;
+public class EventResponseDTO {
+    private List<Event> userAvailableEvents;
 
-    public List<Event> getEventiKorisnika() {
-        return eventiKorisnika;
+    public List<Event> getUserAvailableEvents() {
+        return userAvailableEvents;
     }
 
-    public void setEventiKorisnika(List<Event> eventiKorisnika) {
-        this.eventiKorisnika = eventiKorisnika;
+    public void setUserAvailableEvents(List<Event> userAvailableEvents) {
+        this.userAvailableEvents = userAvailableEvents;
     }
 
     @Override
     public String toString() {
         return "EventsReposnseDTO{" +
-                "eventiKorisnika=" + eventiKorisnika +
+                "userAvailableEvents=" + userAvailableEvents +
                 '}';
     }
 
-    public EventReposnseDTO(List<Event> eventiKorisnika) {
-        this.eventiKorisnika = eventiKorisnika;
+    public EventResponseDTO(List<Event> userAvailableEvents) {
+        this.userAvailableEvents = userAvailableEvents;
     }
 }

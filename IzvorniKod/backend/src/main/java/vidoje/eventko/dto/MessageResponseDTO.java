@@ -1,9 +1,9 @@
 package vidoje.eventko.dto;
 
-public class RegisterResponseDTO {
+public class MessageResponseDTO {
     private String message;
 
-    public RegisterResponseDTO(String message) {
+    public MessageResponseDTO(String message) {
         super();
         this.message = message;
     }

@@ -1,21 +1,39 @@
 package vidoje.eventko.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import org.hibernate.annotations.Formula;
 
 import javax.persistence.*;
-import java.sql.Date;
 import java.time.LocalDateTime;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.Set;
 
 @Entity
 @Table(name = "Dogadjaj")
 //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler", "organizer", "attendees"})
 public class Event {
+    public Event() {
+    }
+
+    public Event(String name, String location, LocalDateTime beginningTimestamp, LocalDateTime endTimestamp, String description, User organizer, EventType type, Set<Tag> tags, Boolean promoted, String coordinates) {
+        this.name = name;
+        this.location = location;
+        this.beginningTimestamp = beginningTimestamp;
+        this.endTimestamp = endTimestamp;
+        this.description = description;
+        this.organizer = organizer;
+        this.type = type;
+        this.tags = tags;
+        this.promoted = promoted;
+        if(promoted == null) {
+            this.promoted = false;
+        }
+
+        this.coordinates = coordinates;
+
+        this.attendees = new HashSet<>();
+    }
+
     @Id
     @GeneratedValue
     @Column(name = "id_dogadjaj")
@@ -36,8 +54,13 @@ public class Event {
     @Column(name = "opis", nullable = false)
     private String description;
 
+    @Column(name = "promoviran", nullable = false)
+    private Boolean promoted;
 
-    @JsonIgnore
+    @Column(name = "koordinate", nullable = false)
+    private String coordinates;
+
+
     @ManyToOne
     @JoinColumn(name = "id_organizator")
     private User organizer;
@@ -50,10 +73,43 @@ public class Event {
     @JoinTable(name = "imaoznaku", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_oznaka"))
     private Set<Tag> tags;
 
-    @JsonIgnore
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_pohadjatelj"))
     private Set<User> attendees;
+
+    @JsonIgnore
+    @OneToMany
+    @JoinColumn(name = "id_dogadjaj")
+    private Set<Attends> reviews;
+
+    public void addAttendee(User user) {
+        attendees.add(user);
+    }
+
+    public Set<Attends> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(Set<Attends> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Boolean getPromoted() {
+        return promoted;
+    }
+
+    public void setPromoted(Boolean promoted) {
+        this.promoted = promoted;
+    }
+
+    public String getCoordinates() {
+        return coordinates;
+    }
+
+    public void setCoordinates(String coordinates) {
+        this.coordinates = coordinates;
+    }
 
     public Long getId() {
         return id;

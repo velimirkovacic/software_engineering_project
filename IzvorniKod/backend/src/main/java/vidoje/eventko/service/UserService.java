@@ -1,11 +1,13 @@
 package vidoje.eventko.service;
 
 
+import vidoje.eventko.domain.Role;
 import vidoje.eventko.domain.User;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.List;
+import java.util.Set;
 
 //Ovdje su definirane sve funkcije za dohvat korisničkih podataka iz baze
 public interface UserService {
@@ -32,4 +34,8 @@ public interface UserService {
      */
     boolean exists(User user);
 
+
+    User getUserByUsername(String username);
+
+    User getUserById(Long id);
 }

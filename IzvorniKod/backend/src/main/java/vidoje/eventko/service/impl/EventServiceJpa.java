@@ -14,8 +14,28 @@ public class EventServiceJpa implements EventService {
     private EventRepo eventRepo;
 
     @Override
+    public List<Event> listAllForUserId(Long userId) {
+        return eventRepo.findAllAvailableByUserId(userId);
+    }
+
+    @Override
+    public void add(Event event) {
+        eventRepo.save(event);
+    }
+
+    @Override
     public List<Event> listAll() {
 
         return eventRepo.findAll();
+    }
+
+    @Override
+    public void delete(Event event) {
+        eventRepo.delete2(event);
+    }
+
+    @Override
+    public Event getEventById(Long id) {
+        return eventRepo.getEventByEventId(id).get(0);
     }
 }

@@ -67,6 +67,7 @@ public class User {
     @Column(name = "nadimak", nullable = false)
     private String nickname;
 
+    @JsonIgnore
     @Column(name = "salt", nullable = false)
     private byte[] salt;
 

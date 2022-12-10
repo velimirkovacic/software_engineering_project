@@ -5,12 +5,53 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/Attends.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/AddEventRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/AlterEventRequestDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/AttendsRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/EventTypeRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/TagRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/AttendsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/EventTypeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/TagService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/AttendsServiceJpa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/EventTypeServiceJpa.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/TagServiceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Dokumentacija/dijagrami/Baza podataka/eventko_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../../Dokumentacija/dijagrami/Baza podataka/eventko_db.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/RegisterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/SessionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/SessionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/SessionController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EventRequestDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EventResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EventResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/LoginResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/LoginResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/RegisterResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/MessageResponseDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/EventRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/EventRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/UserRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/UserRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/EventServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/EventServiceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -27,7 +68,7 @@
       <map>
         <entry key="com.haulmont.jpb.jpaInspector" value="false" />
         <entry key="com.haulmont.jpb.jpaPalette" value="false" />
-        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
       </map>
     </option>
   </component>
@@ -57,6 +98,26 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="EventkoApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="vidoje.eventko.EventkoApplication" />
+      <module name="eventko" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="vidoje.eventko.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EventkoApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
