@@ -22,18 +22,27 @@ function LoginForm(props) {
         };
         fetch('/api/login', options)
             .then(response => {
+                console.log(response)
                 if (response.ok) {
-                    ReactSession.set("username", details.name);
-
+                    response.json().then(json => {
+                        console.log(json)
+                        ReactSession.set("id", json.user.id)
+                        ReactSession.set("username", json.user.username)
+                        ReactSession.set("roles", json.user.roles)
+                        ReactSession.set("suspended", json.user.suspended)
+                    })
                     if (props.onLoginForm) { //check that the instance is still mounted
                         ReactSession.set("isLoggedIn", "true");
                         props.onLoginForm();
                     }
                     navigate('/');
                 } else {
-                    setError("Neuspješna prijava");
+                    response.json().then(json => {
+                        console.log(json)
+                        setError(json.message)
+                    })
                 }
-            });
+            })
     }
 
     const navRegister = () => {
