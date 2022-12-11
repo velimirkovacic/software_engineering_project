@@ -56,7 +56,7 @@ const CreateEventForm = (props) => {
             description: details.description,
             typeId: parseInt(details.typeId.value),
             tagIds: tags,
-            promoted: details.promoted,
+            promoted: (details.promoted == true) ? true : false,
             coordinates: details.coordinates
         };
         const options = {
@@ -76,9 +76,7 @@ const CreateEventForm = (props) => {
                         props.close()
                     })
                 } else {
-                    //response.json().then(json => {
-                        //console.log(json)
-                        setError("Pogreška pri unosu")
+                    setError("Pogreška pri unosu")
                     
                 }
             })
@@ -101,7 +99,7 @@ const CreateEventForm = (props) => {
                     <label htmlFor='typeId'>Vrsta događaja: </label>
                     <Select styles={customStyles} options={typeOptions} placeholder={"Odaberite vrstu događaja..."} onChange={e => setDetails({...details, typeId:e})} value={details.typeId} />
                     <label htmlFor='tagId'>Oznake događaja: </label>
-                    <Select styles={customStyles} options={tagOptions} isMulti placeholder={"Odaberite oznake..."} onChange={e => setDetails({...details, tagId:e})} value={details.tagId} />
+                    <Select styles={customStyles} options={tagOptions} isMulti placeholder={"Odaberite oznake..."} onChange={e => setDetails({...details, tagIds:e})} value={details.tagIds} />
                     <label htmlFor='description'>Opis događaja: </label>
                     <textarea type='text' name='description' id='description' onChange={e => setDetails({...details, description:e.target.value})} value={details.description}/>
                     <label htmlFor='coordinates'>Koordinate mjesta događaja: </label>
