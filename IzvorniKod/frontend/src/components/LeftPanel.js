@@ -3,7 +3,7 @@ import Popup from 'reactjs-popup'
 
 import CreateEventForm from './CreateEventForm'
 
-function LeftPanel() {
+function LeftPanel(props) {
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
 
@@ -27,7 +27,7 @@ function LeftPanel() {
                 </div>
             </div>
             <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
-                <CreateEventForm close={closeModal}/>
+                <CreateEventForm close={closeModal} calendarRef={props.calendarRef}/>
             </Popup>
 
         </div>

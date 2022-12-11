@@ -38,6 +38,17 @@ const CreateEventForm = (props) => {
         }
     }
 
+    const addEvent = ()=> {
+        const api = props.calendarRef.current.getApi();
+        const calendarEvent = {
+            title: '[' + details.location + '] ' + details.name,
+            start: new Date(details.beginningTimestamp).toISOString(),
+            end: new Date(details.endTimestamp).toISOString(),
+            color: (details.typeId == 2) ? 'limegreen' : ((details.typeId == 3) ? 'red' : 'blueviolet')
+        }
+        api.addEvent(calendarEvent)
+    }
+
     useEffect(() => {
         checkPremium()
     }, [])
@@ -74,6 +85,7 @@ const CreateEventForm = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
+                        addEvent()
                     })
                 } else {
                     setError("Pogreška pri unosu")

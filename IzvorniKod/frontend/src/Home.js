@@ -11,9 +11,18 @@ import { ReactSession } from 'react-client-session'
 
 let calendarRef = React.createRef()
 
-const addEvents = () => {
+const addEvents = events => {
   const api = calendarRef.current.getApi();
-  //events.map((ev) => api.addEvent(ev))
+  events.map((ev) => {
+    let calendarEvent = {
+      id: ev.id,
+      title: '[' + ev.location + '] ' + ev.name,
+      start: new Date(ev.beginningTimestamp).toISOString(),
+      end: new Date(ev.endTimestamp).toISOString(),
+      color: (ev.type.id == 2) ? 'limegreen' : ((ev.type.id == 3) ? 'red' : 'blueviolet')
+    }
+    api.addEvent(calendarEvent)
+  })
 }
 
 const getEvents = () => {
@@ -25,7 +34,10 @@ const getEvents = () => {
   };
   fetch('/api/events', options)
       .then(response => {
-          console.log(response);
+        response.json().then(json => {
+          console.log(json)
+          addEvents(json.userAvailableEvents)
+        })
       });
 }
 
@@ -37,7 +49,7 @@ const Welcome = () => {
   return (
     <div className=''>
       <Navbar />
-      <LeftPanel />
+      <LeftPanel calendarRef={calendarRef}/>
       <RightPanel />
       <FullCalendar
         ref={calendarRef}
