@@ -147,10 +147,14 @@ INSERT INTO oznaka VALUES (11, 'Kviz', '#E5AA2E');
 INSERT INTO oznaka VALUES (12, 'NSFW', '#D80000');
 INSERT INTO oznaka VALUES (13, 'Halal', '#008322');
 INSERT INTO oznaka VALUES (14, 'Sport', '#F6CE74');
+INSERT INTO oznaka VALUES (15, 'Kulturno uzdizanje', '#C1DAE8');  --odlazak u galeriju, na izlozbu, u muzej...
+INSERT INTO oznaka VALUES (16, 'Politika', '#D42D04');
+INSERT INTO oznaka VALUES (17, 'Propaganda', '#F926D2');
+INSERT INTO oznaka VALUES (18, 'Biznis', '#1B7321');
+INSERT INTO oznaka VALUES (19, 'Volontiranje', '#4B45F7');
+INSERT INTO oznaka VALUES (20, 'Gejmanje', '#3E462E');  --pokriva gaming, kartanje, board games...
+INSERT INTO oznaka VALUES (21, 'Online', '#6598E0');
 
-
-
---Treba dodat još oznaka...
 
 --Spring session
 
