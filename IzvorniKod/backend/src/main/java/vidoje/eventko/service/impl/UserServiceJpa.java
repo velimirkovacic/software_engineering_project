@@ -22,9 +22,9 @@ public class UserServiceJpa implements UserService {
     private UserRepo userRepo;
 
     @Override
-    public List<User> listAll() {
+    public List<User> listAllNotBlocked(Long userId) {
 
-        return userRepo.findAll();
+        return userRepo.findAllNotBlocked(userId);
     }
 
     @Override
@@ -67,6 +67,11 @@ public class UserServiceJpa implements UserService {
             }
         }
         return null;
+    }
+
+    @Override
+    public void delete(Long userId) {
+        userRepo.delete2(userId);
     }
 
     @Override

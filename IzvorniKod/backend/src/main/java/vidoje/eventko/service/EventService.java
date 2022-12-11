@@ -1,8 +1,10 @@
 package vidoje.eventko.service;
 
 import vidoje.eventko.domain.Event;
+import vidoje.eventko.domain.Tag;
 
 import java.util.List;
+import java.util.Set;
 
 public interface EventService {
 
@@ -17,5 +19,6 @@ public interface EventService {
 
     Event getEventById(Long id);
 
-    void delete(Event event);
+    public void delete(Long eventId);
+
 }

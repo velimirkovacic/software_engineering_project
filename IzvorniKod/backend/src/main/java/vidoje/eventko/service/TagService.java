@@ -7,4 +7,6 @@ import java.util.Set;
 
 public interface TagService {
     Set<Tag> getTagsFromTagIds(List<Long> tagIds);
+
+    List<Tag> getAllTags();
 }

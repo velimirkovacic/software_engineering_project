@@ -19,4 +19,9 @@ public class TagServiceJpa implements TagService {
     public Set<Tag> getTagsFromTagIds(List<Long> tagIds) {
         return tagIds.stream().map(t -> tagRepo.getTagByTagId(t).get(0)).collect(Collectors.toSet());
     }
+
+    @Override
+    public List<Tag> getAllTags() {
+        return tagRepo.findAll();
+    }
 }

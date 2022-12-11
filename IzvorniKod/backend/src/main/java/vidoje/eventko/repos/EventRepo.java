@@ -27,5 +27,5 @@ public interface EventRepo extends JpaRepository<Event, Long> {
     @Transactional
     @Modifying
     @Query(value = "DELETE FROM dogadjaj WHERE id_dogadjaj = ?1", nativeQuery = true)
-    void delete2(Event event);
+    void delete2(Long eventId);
 }

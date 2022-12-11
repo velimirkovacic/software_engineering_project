@@ -11,7 +11,7 @@ import java.util.Set;
 
 //Ovdje su definirane sve funkcije za dohvat korisničkih podataka iz baze
 public interface UserService {
-    List<User> listAll();
+    List<User> listAllNotBlocked(Long userId);
 
     /**
      * Provjerava postoji li takav korisnik u bazi podataka
@@ -38,4 +38,6 @@ public interface UserService {
     User getUserByUsername(String username);
 
     User getUserById(Long id);
+
+    void delete(Long userId);
 }
