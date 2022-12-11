@@ -135,6 +135,15 @@ INSERT INTO uloga VALUES (4, 'Administrator', 'Korisnik koji ima mogućnost prom
 
 INSERT INTO oznaka VALUES (1, 'Kava', '#6f4e37');
 INSERT INTO oznaka VALUES (2, 'Piva', '#f28e1c');
+INSERT INTO oznaka VALUES (2, 'Učenje', '#F5D836');
+INSERT INTO oznaka VALUES (2, 'Priroda', '#62DA18');
+INSERT INTO oznaka VALUES (2, 'Izlet', '#18A5DA');
+INSERT INTO oznaka VALUES (2, 'Diskusija', '#C518DA');
+INSERT INTO oznaka VALUES (2, 'Debatiranje', '#DA3318');
+INSERT INTO oznaka VALUES (2, 'Čajanka', '#4B911C');
+
+
+
 --Treba dodat još oznaka...
 
 --Spring session
