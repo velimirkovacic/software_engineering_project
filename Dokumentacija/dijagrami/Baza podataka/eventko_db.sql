@@ -135,12 +135,18 @@ INSERT INTO uloga VALUES (4, 'Administrator', 'Korisnik koji ima mogućnost prom
 
 INSERT INTO oznaka VALUES (1, 'Kava', '#6f4e37');
 INSERT INTO oznaka VALUES (2, 'Piva', '#f28e1c');
-INSERT INTO oznaka VALUES (2, 'Učenje', '#F5D836');
-INSERT INTO oznaka VALUES (2, 'Priroda', '#62DA18');
-INSERT INTO oznaka VALUES (2, 'Izlet', '#18A5DA');
-INSERT INTO oznaka VALUES (2, 'Diskusija', '#C518DA');
-INSERT INTO oznaka VALUES (2, 'Debatiranje', '#DA3318');
-INSERT INTO oznaka VALUES (2, 'Čajanka', '#4B911C');
+INSERT INTO oznaka VALUES (3, 'Učenje', '#F5D836');
+INSERT INTO oznaka VALUES (4, 'Priroda', '#62DA18');
+INSERT INTO oznaka VALUES (5, 'Izlet', '#18A5DA');
+INSERT INTO oznaka VALUES (6, 'Diskusija', '#C518DA');
+INSERT INTO oznaka VALUES (7, 'Debatiranje', '#DA3318');
+INSERT INTO oznaka VALUES (8, 'Kino', '#B1A4B3');
+INSERT INTO oznaka VALUES (9, 'Koncert', '#F37BBD');
+INSERT INTO oznaka VALUES (10, 'Kazalište', '#349ED1');
+INSERT INTO oznaka VALUES (11, 'Kviz', '#E5AA2E');
+INSERT INTO oznaka VALUES (12, 'NSFW', '#D80000');
+INSERT INTO oznaka VALUES (13, 'Halal', '#008322');
+INSERT INTO oznaka VALUES (14, 'Sport', '#F6CE74');
 
 
 
