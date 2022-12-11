@@ -1,11 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Popup from 'reactjs-popup'
 
+import CreateEventForm from './CreateEventForm'
 
 function LeftPanel() {
+    const [open, setOpen] = useState(false);
+    const closeModal = () => setOpen(false);
+
     return (
         <div className='outerLeft'>
             <div className='inner'>
-                <button className='btnAdd'>Dodaj u kalendar</button>
+                <button className='btnAdd' onClick={() => setOpen(true)}>Dodaj u kalendar</button>
             </div>
             <div className='inner'>
                 <div className='activeUsers'>
@@ -21,6 +26,9 @@ function LeftPanel() {
                     <h4>3.</h4>
                 </div>
             </div>
+            <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
+                <CreateEventForm close={closeModal}/>
+            </Popup>
 
         </div>
     )
