@@ -5,6 +5,16 @@ function Navbar() {
     const username = ReactSession.get("username");
     function odjavi() {
         ReactSession.set("isLoggedIn", "false");
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/logout', options)
+            .then(response => {
+                console.log(response)
+            });
     }
     return (
         <nav className='nav'>
