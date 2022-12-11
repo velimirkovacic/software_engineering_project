@@ -1,11 +1,14 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import Select from 'react-select';
+import {ReactSession} from 'react-client-session'
 
 const CreateEventForm = (props) => {
 
-    const [details, setDetails] = useState({name:'', location:'', beginningTimestamp:'', endTimestamp:'', description:'', typeId:'', tagId:'', promoted:'', coordinates:''});
+    const [details, setDetails] = useState({name:'', location:'', beginningTimestamp:'', endTimestamp:'', description:'', typeId:'', tagIds:'', promoted:'', coordinates:''});
 
     const [error, setError] = useState("");
+
+    const [premium, setPremium] = useState(false);
 
     const typeOptions = [
         { value: '1', label: 'Obveza' },
@@ -27,12 +30,23 @@ const CreateEventForm = (props) => {
             fontSize: '12px'
         })
     }
+
+    const checkPremium = () => {
+        const array = [2]
+        if (array.indexOf(2) !== -1) {
+            setPremium(true)
+        }
+    }
+
+    useEffect(() => {
+        checkPremium()
+    }, [])
     
     const handleCreateEventForm = e => {
         e.preventDefault();
-        const tags = ''
-        if (details.tagId != '') {
-            tags = details.tagId.map(item => parseInt(item.value))
+        let tags = ''
+        if (details.tagIds != '') {
+            tags = details.tagIds.map(item => parseInt(item.value))
         }
         const data = {
             name: details.name,
@@ -41,7 +55,8 @@ const CreateEventForm = (props) => {
             endTimestamp: Date.parse(details.endTimestamp),
             description: details.description,
             typeId: parseInt(details.typeId.value),
-            tagId: tags,
+            tagIds: tags,
+            promoted: details.promoted,
             coordinates: details.coordinates
         };
         const options = {
@@ -61,10 +76,10 @@ const CreateEventForm = (props) => {
                         props.close()
                     })
                 } else {
-                    response.json().then(json => {
-                        console.log(json)
+                    //response.json().then(json => {
+                        //console.log(json)
                         setError("Pogreška pri unosu")
-                    })
+                    
                 }
             })
     }
@@ -74,7 +89,7 @@ const CreateEventForm = (props) => {
             <div className='form-inner'>
                 <h2>Dodaj u kalendar</h2>
                 {(error !== '') ? (<div className='errors'>{error}</div>) : ''}
-                <div className='form-group'>
+                <div className='form-group' name='event-form'>
                     <label htmlFor='name'>Naziv događaja: </label>
                     <input type='text' name='name' id='name' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/>
                     <label htmlFor='location'>Mjesto događaja: </label>
@@ -94,6 +109,7 @@ const CreateEventForm = (props) => {
                 </div>
                 <button type='submit' name='register'>Dodaj događaj</button>
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
+                {(premium == true && details.promoted == '') ? (<button type='button' name='promote' onClick={() => setDetails({...details, promoted: true})}>Promoviraj</button>) : ''}
             </div>
         </form>
   )
