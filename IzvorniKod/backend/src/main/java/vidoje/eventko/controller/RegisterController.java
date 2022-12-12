@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import vidoje.eventko.domain.User;
 import vidoje.eventko.dto.RegisterRequestDTO;
 import vidoje.eventko.dto.MessageResponseDTO;
+import vidoje.eventko.service.RoleService;
 import vidoje.eventko.service.UserService;
 
 import javax.validation.Valid;
@@ -20,10 +21,13 @@ public class RegisterController {
     @Autowired
     public UserService userService;
 
+    @Autowired
+    public RoleService roleService;
+
     @PostMapping("")
     public ResponseEntity<MessageResponseDTO> performRegister(@Valid @RequestBody RegisterRequestDTO dto) throws NoSuchAlgorithmException, InvalidKeySpecException {
 
-        User newUser = new User(dto.getUsername(), dto.getEmail(), dto.getNickname(), dto.getPassword());
+        User newUser = new User(dto.getUsername(), dto.getEmail(), dto.getNickname(), dto.getPassword(), roleService.getById(Long.valueOf(1)));
         try {
             if(userService.exists(newUser)) {
                 return new ResponseEntity<MessageResponseDTO>(new MessageResponseDTO("Korisnik s tim e-mailom ili korisničkim imenom već postoji"), HttpStatus.BAD_REQUEST);

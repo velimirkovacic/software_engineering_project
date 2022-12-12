@@ -21,4 +21,6 @@ public interface EventService {
 
     public void delete(Long eventId);
 
+    public boolean exists(Long eventId);
+
 }

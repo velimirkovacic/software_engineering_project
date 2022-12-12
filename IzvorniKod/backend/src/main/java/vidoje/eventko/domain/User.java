@@ -17,7 +17,7 @@ import java.util.Set;
 @Entity
 @Table(name = "Korisnik")
 public class User {
-    public User(String username, String email, String nickname, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
+    public User(String username, String email, String nickname, String password, Role role) throws NoSuchAlgorithmException, InvalidKeySpecException {
         this.username = username;
         this.email = email;
 
@@ -43,6 +43,7 @@ public class User {
         this.friends = new HashSet<User>();
         this.attends = new HashSet<Event>();
 
+        roles.add(role); //Uloga korisnik
     }
 
     public User() {}

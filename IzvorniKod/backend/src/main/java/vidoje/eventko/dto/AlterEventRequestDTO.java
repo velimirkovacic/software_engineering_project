@@ -1,6 +1,10 @@
 package vidoje.eventko.dto;
 
+import javax.validation.constraints.NotNull;
+
 public class AlterEventRequestDTO {
+
+    @NotNull(message = "ID eventa je obavezan")
     private Long eventId;
 
     public Long getEventId() {

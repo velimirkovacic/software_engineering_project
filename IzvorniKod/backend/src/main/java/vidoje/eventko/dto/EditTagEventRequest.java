@@ -1,10 +1,14 @@
 package vidoje.eventko.dto;
 
+import javax.validation.constraints.NotNull;
 import java.util.List;
 
 public class EditTagEventRequest {
+
+    @NotNull(message = "Lista ID-jeva tagova je obavezna (smije biti prazna)")
     private List<Long> tagIds;
 
+    @NotNull(message = "ID eventa je obavezan")
     private Long eventId;
 
     public List<Long> getTagIds() {

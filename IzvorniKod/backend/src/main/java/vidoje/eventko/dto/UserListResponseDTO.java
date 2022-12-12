@@ -4,7 +4,7 @@ import vidoje.eventko.domain.User;
 
 import java.util.List;
 
-public class UserListResponseDTO {
+public class UserListResponseDTO extends MessageResponseDTO {
     private List<User> userList;
 
     public List<User> getUserList() {
@@ -15,10 +15,8 @@ public class UserListResponseDTO {
         this.userList = userList;
     }
 
-    public UserListResponseDTO() {
-    }
-
-    public UserListResponseDTO(List<User> userList) {
+    public UserListResponseDTO(String message, List<User> userList) {
+        super(message);
         this.userList = userList;
     }
 

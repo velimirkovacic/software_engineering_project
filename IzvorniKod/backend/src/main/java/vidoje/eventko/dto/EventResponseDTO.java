@@ -4,7 +4,7 @@ import vidoje.eventko.domain.Event;
 
 import java.util.List;
 
-public class EventResponseDTO {
+public class EventResponseDTO extends MessageResponseDTO{
     private List<Event> userAvailableEvents;
 
     public List<Event> getUserAvailableEvents() {
@@ -22,7 +22,8 @@ public class EventResponseDTO {
                 '}';
     }
 
-    public EventResponseDTO(List<Event> userAvailableEvents) {
+    public EventResponseDTO(String message, List<Event> userAvailableEvents) {
+        super(message);
         this.userAvailableEvents = userAvailableEvents;
     }
 }

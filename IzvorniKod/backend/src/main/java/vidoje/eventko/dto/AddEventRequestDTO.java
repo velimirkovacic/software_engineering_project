@@ -5,27 +5,37 @@ import vidoje.eventko.domain.Tag;
 import vidoje.eventko.domain.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
 
 public class AddEventRequestDTO {
+
+    @NotNull(message = "Ime je obavezno")
     private String name;
 
+    @NotNull(message = "Lokacija je obavezna")
     private String location;
 
+    @NotNull(message = "Vrijeme početka je obavezno")
     private Long beginningTimestamp;
 
+    @NotNull(message = "Vrijeme kraja je obavezno")
     private Long endTimestamp;
 
+    @NotNull(message = "Opis je obavezan")
     private String description;
 
+    @NotNull(message = "ID vrste eventa je obavezan")
     private Long typeId;
 
+    @NotNull(message = "Lista ID tagova je obavezna (smije biti prazna lista)")
     private List<Long> tagIds;
 
     private Boolean promoted;
 
+    @NotNull(message = "Koordinate su obavezne")
     private String coordinates;
 
     public String getCoordinates() {

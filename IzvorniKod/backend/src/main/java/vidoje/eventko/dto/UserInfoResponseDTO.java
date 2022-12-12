@@ -2,7 +2,7 @@ package vidoje.eventko.dto;
 
 import vidoje.eventko.domain.User;
 
-public class UserInfoResponseDTO {
+public class UserInfoResponseDTO extends MessageResponseDTO{
     private User user;
 
     public User getUser() {
@@ -13,7 +13,8 @@ public class UserInfoResponseDTO {
         this.user = user;
     }
 
-    public UserInfoResponseDTO(User user) {
+    public UserInfoResponseDTO(String message, User user) {
+        super(message);
         this.user = user;
     }
 

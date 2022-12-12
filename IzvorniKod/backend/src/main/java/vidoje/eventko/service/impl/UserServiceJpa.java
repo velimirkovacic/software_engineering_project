@@ -78,4 +78,9 @@ public class UserServiceJpa implements UserService {
     public User getUserById(Long id) {
         return userRepo.findByUserUserId(id).get(0);
     }
+
+    @Override
+    public boolean exists(Long userId) {
+        return userRepo.existsById(userId);
+    }
 }

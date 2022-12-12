@@ -3,6 +3,7 @@ package vidoje.eventko.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.metrics.StartupStep;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import vidoje.eventko.domain.Event;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Timestamp;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/events")
@@ -38,27 +40,65 @@ public class EventController {
 
     @GetMapping("")
     public ResponseEntity<EventResponseDTO> getEvents(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
-        return ResponseEntity.ok(new EventResponseDTO(eventService.listAllForUserId(userId)));
+        return ResponseEntity.ok(new EventResponseDTO("", eventService.listAllForUserId(userId)));
     }
 
     @PostMapping("/add")
     public ResponseEntity<MessageResponseDTO> addEvent(@Valid @RequestBody AddEventRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
+
+        if(user.getSuspended() && dto.getTypeId()  == 3) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik je suspendiran, ne može stvarati javne eventove"), HttpStatus.BAD_REQUEST);
+        }
+
         Event newEvent = new Event(dto.getName(), dto.getLocation(), new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime(), new Timestamp(dto.getEndTimestamp()).toLocalDateTime(), dto.getDescription(), user, eventTypeService.getEventTypeById(dto.getTypeId()), tagService.getTagsFromTagIds(dto.getTagIds()), dto.getPromoted(), dto.getCoordinates());
 
+
         eventService.add(newEvent);
+
+        newEvent.addAttendee(user); // svatko pohadja vlastiti event
 
         return ResponseEntity.ok(new MessageResponseDTO("Uspješno unesen događaj"));
     }
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponseDTO> signupForEvent(@Valid @RequestBody AlterEventRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
 
+        if(!eventService.exists(dto.getEventId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Event s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
+
+
         Event event = eventService.getEventById(dto.getEventId());
+
+        if(user.getBlockedBy().contains(event.getOrganizer())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik je blokiran od strane organizatora eventa, ne može se prijaviti"), HttpStatus.BAD_REQUEST);
+        }
+
+        if(event.getType().getId() == 2 && user.getFriends().contains(event.getOrganizer())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije prijatelj organizatora privatnog eventa, ne može se prijaviti"), HttpStatus.BAD_REQUEST);
+        }
+
+        if(event.getType().getId() == 1) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik se ne može prijaviti na obvezu"), HttpStatus.BAD_REQUEST);
+        }
+
         event.addAttendee(user);
 
 
@@ -68,8 +108,16 @@ public class EventController {
 
     @PostMapping("/unsign")
     public ResponseEntity<MessageResponseDTO> unsignFromEvent(@Valid @RequestBody AlterEventRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
+
+        if(!eventService.exists(dto.getEventId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Event s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
 
         Event event = eventService.getEventById(dto.getEventId());
         Set<User> attendees = event.getAttendees();
@@ -82,18 +130,49 @@ public class EventController {
 
     @PostMapping("/delete")
     public ResponseEntity<MessageResponseDTO> deleteEvent(@Valid @RequestBody AlterEventRequestDTO dto, HttpServletRequest request) {
-        eventService.delete(dto.getEventId());
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
 
-        //TODO dodati provjeru vlastnosti i egzistencije eventa
+        if(!eventService.exists(dto.getEventId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Event s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+        if(eventService.getEventById(dto.getEventId()).getOrganizer().equals(user) || user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(3)) {
+            eventService.delete(dto.getEventId());
+        } else {
+            return new ResponseEntity<>(new MessageResponseDTO("Samo organizator eventa i korisnik s ulogom moderator mogu izbrisati ovaj event"), HttpStatus.BAD_REQUEST);
+
+        }
+
         return ResponseEntity.ok(new MessageResponseDTO("Event uspješno uklonjen"));
 
     }
 
     @PostMapping("/promote")
     public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody AlterEventRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        if(!eventService.exists(dto.getEventId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Event s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
         Event event = eventService.getEventById(dto.getEventId());
 
-        event.setPromoted(true);
+        Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
+        if(roleIds.contains(3) || (event.getOrganizer().equals(user) && roleIds.contains(2))) {
+            event.setPromoted(true);
+        } else {
+            return new ResponseEntity<>(new MessageResponseDTO("Samo organizator eventa s ulogom premium i korisnik s ulogom moderator mogu izbrisati ovaj event"), HttpStatus.BAD_REQUEST);
+        }
 
         return ResponseEntity.ok(new MessageResponseDTO("Event uspješno promoviran"));
 
@@ -101,14 +180,28 @@ public class EventController {
 
     @PostMapping("/edittag")
     public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody EditTagEventRequest dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        if(!eventService.exists(dto.getEventId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Event s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
+
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
 
         Event event = eventService.getEventById(dto.getEventId());
-        Set<Tag> tags = tagService.getTagsFromTagIds(dto.getTagIds());
 
-        tags.addAll(event.getTags());
-        event.setTags(tags);
+        Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
+        if(roleIds.contains(3) && event.getType().getId() == 3) {
+            Set<Tag> tags = tagService.getTagsFromTagIds(dto.getTagIds());
+
+            //tags.addAll(event.getTags());
+            event.setTags(tags);
+        } else {
+            return new ResponseEntity<>(new MessageResponseDTO("Mijenjati oznake mogu samo moderatori i samo na javnim evetovima"), HttpStatus.BAD_REQUEST);
+        }
 
         return ResponseEntity.ok(new MessageResponseDTO("Oznake uspješno dodane eventu"));
     }
