@@ -40,11 +40,24 @@ const CreateEventForm = (props) => {
 
     const addEvent = ()=> {
         const api = props.calendarRef.current.getApi();
+        let tagArray = []
+        for (let i = 0; i < details.tagIds.length; i++) {
+            tagArray.push({name: details.tagIds[i].label})
+        }
         const calendarEvent = {
             title: '[' + details.location + '] ' + details.name,
             start: new Date(details.beginningTimestamp).toISOString(),
             end: new Date(details.endTimestamp).toISOString(),
-            color: (details.typeId == 2) ? 'limegreen' : ((details.typeId == 3) ? 'red' : 'blueviolet')
+            color: (details.typeId == 2) ? 'limegreen' : ((details.typeId == 3) ? 'red' : 'blueviolet'),
+            name: details.name,
+            location: details.location,
+            organizer: {username: ReactSession.get('username')},
+            tags: tagArray,
+            description: details.description,
+            coordinates: details.coordinates,
+            attendees: [],
+            beginning: details.beginningTimestamp,
+            ending: details.endTimestamp,
         }
         api.addEvent(calendarEvent)
     }
@@ -88,8 +101,7 @@ const CreateEventForm = (props) => {
                         addEvent()
                     })
                 } else {
-                    setError("Pogreška pri unosu")
-                    
+                    setError("Pogreška pri unosu")                 
                 }
             })
     }
