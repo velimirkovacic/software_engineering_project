@@ -5,7 +5,7 @@ import {ReactSession} from 'react-client-session'
 const CreateEventForm = (props) => {
 
     const [details, setDetails] = useState({name:'', location:'', beginningTimestamp:'', endTimestamp:'', description:'', typeId:'', tagIds:'', promoted:'', coordinates:''});
-
+    
     const [error, setError] = useState("");
 
     const [premium, setPremium] = useState(false);
@@ -32,7 +32,7 @@ const CreateEventForm = (props) => {
     }
 
     const checkPremium = () => {
-        const array = [2]
+        const array = [2] //ReactSession.get('roles')
         if (array.indexOf(2) !== -1) {
             setPremium(true)
         }
@@ -131,7 +131,8 @@ const CreateEventForm = (props) => {
                 </div>
                 <button type='submit' name='register'>Dodaj događaj</button>
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
-                {(premium == true && details.promoted == '') ? (<button type='button' name='promote' onClick={() => setDetails({...details, promoted: true})}>Promoviraj</button>) : ''}
+                {(details.typeId.value == '2') ? (<button type='button' name='friends'>Pozovi prijatelje</button>) : ''}
+                {(premium == true && details.promoted == '' && details.typeId.value == '3') ? (<button type='button' name='premium' onClick={() => setDetails({...details, promoted: true})}>Promoviraj</button>) : ''}
             </div>
         </form>
   )
