@@ -33,8 +33,14 @@ public class UserController {
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
 
-        return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAllNotBlocked(userId)));
+        Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
+        if(roleIds.contains(3)) {
+            return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAll(userId)));
+        } else {
+            return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAllNotBlocked(userId)));
+        }
     }
 
     @GetMapping("")

@@ -13,6 +13,8 @@ import java.util.Set;
 public interface UserService {
     List<User> listAllNotBlocked(Long userId);
 
+    List<User> listAll(Long userId);
+
     /**
      * Provjerava postoji li takav korisnik u bazi podataka
      * @param username korisničko ime

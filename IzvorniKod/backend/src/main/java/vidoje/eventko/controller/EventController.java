@@ -14,6 +14,7 @@ import vidoje.eventko.service.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -55,6 +56,17 @@ public class EventController {
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         return ResponseEntity.ok(new EventResponseDTO("", userService.getUserById(userId).getAttends().stream().toList()));
+    }
+
+    @GetMapping("/attended")
+    public ResponseEntity<EventResponseDTO> getPastEventsForCalendar(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+        return ResponseEntity.ok(new EventResponseDTO("", user.getAttends().stream().filter(e -> e.getEndTimestamp().isAfter(LocalDateTime.now())).collect(Collectors.toList())));
     }
 
     @PostMapping("/add")
