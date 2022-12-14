@@ -4,8 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="Dodane be-fe provjere DTO-ova">
       <change beforePath="$PROJECT_DIR$/../frontend/src/components/CreateEventForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/CreateEventForm.js" afterDir="false" />
+=======
+    <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="Dodane još neka mapiranja kontrolera">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" afterDir="false" />
+>>>>>>> 0d746b29db3ea2bbf1ea429cc905c9287f73a374
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +115,13 @@
       <option name="presentableId" value="LOCAL−00002" />
       <updated>1670843890810</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL−00003" summary="Dodane još neka mapiranja kontrolera">
+      <created>1671012394953</created>
+      <option name="number" value="LOCAL−00003" />
+      <option name="presentableId" value="LOCAL−00003" />
+      <updated>1671012394953</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -123,6 +138,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dodano još be-fe funkcionalnosti" />
     <MESSAGE value="Dodane be-fe provjere DTO-ova" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodane be-fe provjere DTO-ova" />
+    <MESSAGE value="Dodane još neka mapiranja kontrolera" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodane još neka mapiranja kontrolera" />
   </component>
 </project>
