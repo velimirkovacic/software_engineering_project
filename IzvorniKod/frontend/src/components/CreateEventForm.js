@@ -108,7 +108,7 @@ const CreateEventForm = (props) => {
 
     return (           
         <form onSubmit={handleCreateEventForm}>
-            <div className='form-inner'>
+            <div className='form-inner2'>
                 <h2>Dodaj u kalendar</h2>
                 {(error !== '') ? (<div className='errors'>{error}</div>) : ''}
                 <div className='form-group' name='event-form'>
