@@ -11,7 +11,7 @@ function ProfileInfo() {
                 'Content-Type': 'application/JSON'
             }
         };
-        fetch('/home', options)
+        fetch('/', options)
             .then(response => {
                 console.log(response)
             });
@@ -20,7 +20,7 @@ function ProfileInfo() {
     return (
             <div>
             <a>OVO JE VAŠ PROFIL</a>
-            <a href="/home" onClick={povratak}>Povratak</a>
+            <a href="/" onClick={povratak}>Povratak</a>
             </div>
       );
 }

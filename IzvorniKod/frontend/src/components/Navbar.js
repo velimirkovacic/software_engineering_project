@@ -33,7 +33,7 @@ function Navbar() {
     }
     return (
         <nav className='nav'>
-            <a href="/home"><img src={myImage} alt="" /></a>
+            <a href="/"><img src={myImage} alt="" /></a>
             <div className='navComp'>
                 <ul>
                     <li><a>Obavijesti</a></li>
@@ -41,7 +41,7 @@ function Navbar() {
                     <li><a>Pohađani Eventi</a></li>
                     <div className='userInfo'>
                         <li><a href="/profile" onClick={profileDetails}>{username}</a></li>
-                        <li><a href="/home" onClick={odjavi}>Odjava</a></li>
+                        <li><a href="/" onClick={odjavi}>Odjava</a></li>
                     </div>
                 </ul>
             </div>

@@ -122,11 +122,11 @@ const EventInfo = (props) => {
                     <label>Opis događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.description}</span></label>
                     {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{ color: 'black' }}>{at.username} </span>)}</label>) : ('')}
                 </div>
-                {(props.info.extendedProps.temp == 1) ? <button type='button' name='register' onClick={() => signUpForEvent()}>Prijavi se</button> : ''}
-                {(upcoming == true && props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : (<button type='button' name='register' onClick={() => props.close()}>Zatvori</button>)
-                 (<button type='button' name='register' onClick={() => removeFromCalendar()}>Odustani</button>)}
-                {(moderator == true && props.info.extendedProps.type == 3) ? (<button type='button' name='moderator'>Uredi oznake</button>) : ''}
-                {(moderator == true) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
+                {(props.info.extendedProps.temp == 1) ? <button type='button' name='register'>Prijavi se</button> : ''}
+                {(upcoming == true) ? <button type='button' name='register'>Odjavi se</button> : ''}
+                <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
+                {(moderator == true) ? (<button type='button' name='delete'>Obriši</button>) : ''}
+                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='delete'>Obriši</button>) : ''}
             </div>
         </form>
     )

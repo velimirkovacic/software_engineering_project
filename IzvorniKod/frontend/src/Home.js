@@ -44,7 +44,7 @@ const getEvents = () => {
           'Content-Type': 'application/JSON'
       }
   };
-  fetch('/home', options)
+  fetch('/api/events', options)
       .then(response => {
         response.json().then(json => {
           console.log(json)

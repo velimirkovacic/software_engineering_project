@@ -21,7 +21,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path='/home' element={ReactSession.get("isLoggedIn") === "true" ? <Home /> : <Navigate to='/login' />} />
+        <Route path='/' element={ReactSession.get("isLoggedIn") === "true" ? <Home /> : <Navigate to ='/login' />} />
         <Route path='/login' element={<LoginForm onLoginForm={onLoginForm} />} />
         <Route path='/register' element={<Register />} />
         <Route path='/userActions' element={<UserActions />} />
