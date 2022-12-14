@@ -109,7 +109,7 @@ const EventInfo = (props) => {
 
     return (           
         <form>
-            <div className='form-inner'>
+            <div className='form-inner2'>
                 <h2>{props.info.title}</h2>
                 <div className='form-group' name='eventinfo-form'>
                     <label>Naziv događaja: <span style={{color:'black'}}>{props.info.extendedProps.name}</span></label>
@@ -123,9 +123,8 @@ const EventInfo = (props) => {
                     {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{color:'black'}}>{at.username} </span>)}</label>) : ('')}
                 </div>
                 {(props.info.extendedProps.temp == 1) ? <button type='button' name='register' onClick={() => signUpForEvent()}>Prijavi se</button> : ''}
-                {(upcoming == true && props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : ''}
-                {(props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => props.close()}>Zatvori</button> : ''}
-                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='register' onClick={() => removeFromCalendar()}>Odustani</button>) : ''}
+                {(upcoming == true && props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : (<button type='button' name='register' onClick={() => props.close()}>Zatvori</button>)
+                 (<button type='button' name='register' onClick={() => removeFromCalendar()}>Odustani</button>)}
                 {(moderator == true && props.info.extendedProps.type == 3) ? (<button type='button' name='moderator'>Uredi oznake</button>) : ''}
                 {(moderator == true) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
             </div>
