@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react';
-import {ReactSession} from 'react-client-session'
+import React, { useEffect, useState } from 'react';
+import { ReactSession } from 'react-client-session'
 
 const EventInfo = (props) => {
 
@@ -107,30 +107,29 @@ const EventInfo = (props) => {
         props.close()
     }
 
-    return (           
+    return (
         <form>
-            <div className='form-inner'>
+            <div className='form-inner2'>
                 <h2>{props.info.title}</h2>
                 <div className='form-group' name='eventinfo-form'>
-                    <label>Naziv događaja: <span style={{color:'black'}}>{props.info.extendedProps.name}</span></label>
-                    <label>Organizator: <span style={{color:'black'}}>{props.info.extendedProps.organizer.username}</span></label>
-                    <label>Oznake: {props.info.extendedProps.tags.map((tag) => <span style={{color:'black'}}>{tag.name} </span>)}</label>
-                    <label>Mjesto događaja: <span style={{color:'black'}}>{props.info.extendedProps.location}</span></label>
-                    <label>Koordinate: <span style={{color:'black'}}>{props.info.extendedProps.coordinates}</span></label>
-                    <label>Vrijeme početka: <span style={{color:'black'}}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr')}</span></label>
-                    <label>Vrijeme završetka: <span style={{color:'black'}}>{new Date(props.info.extendedProps.ending).toLocaleString('hr')}</span></label>
-                    <label>Opis događaja: <span style={{color:'black'}}>{props.info.extendedProps.description}</span></label>
-                    {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{color:'black'}}>{at.username} </span>)}</label>) : ('')}
+                    <label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
+                    <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.username}</span></label>
+                    <label>Oznake: {props.info.extendedProps.tags.map((tag) => <span style={{ color: 'black' }}>{tag.name} </span>)}</label>
+                    <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
+                    <label>Koordinate: <span style={{ color: 'black' }}>{props.info.extendedProps.coordinates}</span></label>
+                    <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr')}</span></label>
+                    <label>Vrijeme završetka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.ending).toLocaleString('hr')}</span></label>
+                    <label>Opis događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.description}</span></label>
+                    {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{ color: 'black' }}>{at.username} </span>)}</label>) : ('')}
                 </div>
                 {(props.info.extendedProps.temp == 1) ? <button type='button' name='register' onClick={() => signUpForEvent()}>Prijavi se</button> : ''}
-                {(upcoming == true && props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : ''}
-                {(props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => props.close()}>Zatvori</button> : ''}
-                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='register' onClick={() => removeFromCalendar()}>Odustani</button>) : ''}
+                {(upcoming == true && props.info.extendedProps.temp == 0) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : (<button type='button' name='register' onClick={() => props.close()}>Zatvori</button>)
+                 (<button type='button' name='register' onClick={() => removeFromCalendar()}>Odustani</button>)}
                 {(moderator == true && props.info.extendedProps.type == 3) ? (<button type='button' name='moderator'>Uredi oznake</button>) : ''}
                 {(moderator == true) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
             </div>
         </form>
-  )
+    )
 }
 
 export default EventInfo;
