@@ -4,28 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="Dodano još be-fe funkcionalnosti">
-      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/RoleRepo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/RoleServiceJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../Dokumentacija/dijagrami/Baza podataka/~$entko - opis baze podataka.docx" beforeDir="false" />
+    <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="Dodane be-fe provjere DTO-ova">
+      <change afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EditRoleUserRequestDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/RegisterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/RegisterController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/domain/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/AddEventRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/AddEventRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/AlterEventRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/AlterEventRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EditTagEventRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EditTagEventRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EventResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EventResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/UserInfoResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/UserInfoResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/UserListResponseDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/UserListResponseDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/UserRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/UserRequestDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/EventService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/EventServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/EventServiceJpa.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EditTagEventRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/dto/EditTagEventRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/EventRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/EventRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/RoleRepo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/repos/RoleRepo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/RoleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/RoleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/RoleServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/RoleServiceJpa.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -120,7 +108,13 @@
       <option name="presentableId" value="LOCAL−00001" />
       <updated>1670771808927</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL−00002" summary="Dodane be-fe provjere DTO-ova">
+      <created>1670843890810</created>
+      <option name="number" value="LOCAL−00002" />
+      <option name="presentableId" value="LOCAL−00002" />
+      <updated>1670843890810</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -136,6 +130,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Dodano još be-fe funkcionalnosti" />
-    <option name="LAST_COMMIT_MESSAGE" value="Dodano još be-fe funkcionalnosti" />
+    <MESSAGE value="Dodane be-fe provjere DTO-ova" />
+    <option name="LAST_COMMIT_MESSAGE" value="Dodane be-fe provjere DTO-ova" />
   </component>
 </project>

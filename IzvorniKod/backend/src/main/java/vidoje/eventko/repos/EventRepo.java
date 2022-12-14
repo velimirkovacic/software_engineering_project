@@ -13,11 +13,15 @@ import java.util.List;
 public interface EventRepo extends JpaRepository<Event, Long> {
 
     // Svi događaji koje je stvorio (obveze i privatni), svi privatni događaji prijatelja i svi javni događaji ljudi koji ga nisu blokirali
-    @Query(value = "SELECT * FROM dogadjaj WHERE id_organizator = ?1" +
+    @Query(value = "SELECT * FROM dogadjaj WHERE id_vrsta = 3" +
             " UNION " +
             "SELECT DISTINCT dogadjaj.* FROM dogadjaj JOIN jePrijatelj ON id_organizator = id_prijatelj WHERE id_korisnik = ?1 AND id_vrsta = 2" +
             " EXCEPT " +
-            "SELECT DISTINCT dogadjaj.* FROM dogadjaj JOIN jeBlokiranOd ON id_organizator = id_blokiran_od WHERE id_blokiran = ?1 AND id_vrsta = 3", nativeQuery = true)
+            "SELECT DISTINCT dogadjaj.* FROM dogadjaj JOIN jeBlokiranOd ON id_organizator = id_blokiran_od WHERE id_blokiran = ?1 AND id_vrsta = 3" +
+            " EXCEPT " +
+            "SELECT DISTINCT dogadjaj.* FROM dogadjaj NATURAL JOIN pohadja WHERE id_pohadjatelj = ?1", nativeQuery = true)
+
+
     List<Event> findAllAvailableByUserId(Long userId);
 
 

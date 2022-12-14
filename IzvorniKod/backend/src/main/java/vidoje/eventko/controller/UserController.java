@@ -4,8 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import vidoje.eventko.domain.Event;
+import vidoje.eventko.domain.Role;
+import vidoje.eventko.domain.Tag;
 import vidoje.eventko.domain.User;
 import vidoje.eventko.dto.*;
+import vidoje.eventko.service.RoleService;
 import vidoje.eventko.service.UserService;
 
 import javax.servlet.http.HttpServletRequest;
@@ -19,6 +23,9 @@ import java.util.stream.Collectors;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private RoleService roleService;
     @GetMapping("/users")
     public ResponseEntity<UserListResponseDTO> listUsers(HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
@@ -239,5 +246,32 @@ public class UserController {
         }
 
         return ResponseEntity.ok(new UserListResponseDTO("", user.getFriends().stream().toList()));
+    }
+
+    @PostMapping("/editroles")
+    public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody EditRoleUserRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new UserListResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+        if(!userService.exists(dto.getUserId())) {
+            return new ResponseEntity<>(new UserListResponseDTO("Drugi korisnik s tim ID-jem ne postoji", null), HttpStatus.BAD_REQUEST);
+        }
+
+        User other = userService.getUserById(dto.getUserId());
+
+        Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
+        if(roleIds.contains(4)) {
+            Set<Role> roles = roleService.getRolesFromRoleIds(dto.getRoleIds());
+
+            user.setRoles(roles);
+        } else {
+            return new ResponseEntity<>(new MessageResponseDTO("Mijenjati uloge drugim korisnicima mogu samo admini"), HttpStatus.BAD_REQUEST);
+        }
+
+        return ResponseEntity.ok(new MessageResponseDTO("Uloge korisnika uspješno izmijenjene"));
     }
 }
