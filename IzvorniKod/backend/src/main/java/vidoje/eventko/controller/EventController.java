@@ -2,7 +2,6 @@ package vidoje.eventko.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.metrics.StartupStep;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -15,6 +14,7 @@ import vidoje.eventko.service.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -38,14 +38,35 @@ public class EventController {
     //    return eventService.listAll();
     //}
 
-    @GetMapping("")
-    public ResponseEntity<EventResponseDTO> getEvents(HttpServletRequest request) {
+    @GetMapping("/signup")
+    public ResponseEntity<EventResponseDTO> getEventsForSignup(HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
             return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         return ResponseEntity.ok(new EventResponseDTO("", eventService.listAllForUserId(userId)));
+    }
+
+    @GetMapping("/calendar")
+    public ResponseEntity<EventResponseDTO> getEventsForCalendar(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        return ResponseEntity.ok(new EventResponseDTO("", userService.getUserById(userId).getAttends().stream().toList()));
+    }
+
+    @GetMapping("/attended")
+    public ResponseEntity<EventResponseDTO> getPastEventsForCalendar(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+        return ResponseEntity.ok(new EventResponseDTO("", user.getAttends().stream().filter(e -> e.getEndTimestamp().isAfter(LocalDateTime.now())).collect(Collectors.toList())));
     }
 
     @PostMapping("/add")
@@ -98,6 +119,7 @@ public class EventController {
         if(event.getType().getId() == 1) {
             return new ResponseEntity<>(new MessageResponseDTO("Korisnik se ne može prijaviti na obvezu"), HttpStatus.BAD_REQUEST);
         }
+
 
         event.addAttendee(user);
 
@@ -179,7 +201,7 @@ public class EventController {
     }
 
     @PostMapping("/edittag")
-    public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody EditTagEventRequest dto, HttpServletRequest request) {
+    public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody EditTagEventRequestDTO dto, HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
             return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
         }
@@ -202,7 +224,6 @@ public class EventController {
         } else {
             return new ResponseEntity<>(new MessageResponseDTO("Mijenjati oznake mogu samo moderatori i samo na javnim evetovima"), HttpStatus.BAD_REQUEST);
         }
-
         return ResponseEntity.ok(new MessageResponseDTO("Oznake uspješno dodane eventu"));
     }
 }

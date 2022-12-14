@@ -26,20 +26,6 @@ form {
   position: relative;
 }
 
-/*after služi samo za dodatnu stilizaciju, kreira pseudo-element koji je posljednje dijete;
-z-index specificira stogovne vrijednosti, onaj s većom vrijednosti je ispred onog s manjom*/
-form:after {
-  content: '';
-  display: block;
-  position: absolute;
-  top: -5px; 
-  bottom: -5px;
-  right: -5px;
-  left: -5px;
-  z-index: 1;
-  background-image: linear-gradient(to bottom right, #05457c, #b7c3cc);
-}
-
 form .form-inner {
   position: relative;
   display: block;
@@ -55,22 +41,82 @@ form .form-inner h2 {
   margin-bottom: 30px;
 }
 
+form .form-inner2 h2 {
+  color: #05457c;
+  font-size: 28px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
 form .form-inner .form-group {
   display: block;
   width: 300px;
   margin-bottom: 15px;
 }
 
-form .form-inner .form-group[name='event-form'] {
+form .form-inner2 .form-group {
   display: block;
   width: 450px;
   margin-bottom: 15px;
 }
 
-form .form-inner .form-group[name='eventinfo-form'] {
+/*after služi samo za dodatnu stilizaciju, kreira pseudo-element koji je posljednje dijete;
+z-index specificira stogovne vrijednosti, onaj s većom vrijednosti je ispred onog s manjom*/
+form:after {
+  content: '';
   display: block;
-  width: 432px;
-  margin-bottom: 15px;
+  position: absolute;
+  top: -5px; 
+  bottom: -5px;
+  right: -5px;
+  left: -5px;
+  z-index: 1;
+  background-image: linear-gradient(to bottom right, #05457c, #b7c3cc);
+}
+
+form .form-inner2 {
+  position: relative;
+  display: block;
+  background-color: #fff;
+  padding: 60px;
+  z-index: 2;
+  min-height:500px;
+  height:300px;
+  overflow: scroll;
+}
+
+form .form-inner2 h2 {
+  color: #05457c;
+  font-size: 50px;
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+form .form-inner2 .form-group {
+  display: block;
+  width: 250px;
+  margin-bottom: 30px;
+}
+
+/*OD TU novi event*/
+
+form .form-inner2 .form-group[name='event-form'] {
+  display: block;
+  width: 90%;
+}
+
+form .form-inner2 .form-group[name='eventinfo-form'] {
+  display: block;
+  width: 90%;
+}
+
+.form-inner2 .form-group label {
+  display: block;
+  color: #737164;
+  font-size: 12px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  transition: 0.4s;
 }
 
 .form-inner .form-group label {
@@ -86,7 +132,19 @@ form .form-inner .form-group[name='eventinfo-form'] {
   color: #05457c;
 }
 
+.form-inner2 .form-group:focus-within label {
+  color: #05457c;
+}
+
 form .form-inner .form-group input {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #e8f0fe;
+  border-radius: 8px;
+}
+
+form .form-inner2 .form-group input {
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -96,7 +154,17 @@ form .form-inner .form-group input {
 
 form .form-inner .form-group select {
   display: block;
-  width: 50%;
+  width: 80%;
+  padding: 10px 15px;
+  background-color: #e8f0fe;
+  border-radius: 8px;
+  border:#fff;
+  outline: none;
+}
+
+form .form-inner2 .form-group select {
+  display: block;
+  width: 80%;
   padding: 10px 15px;
   background-color: #e8f0fe;
   border-radius: 8px;
@@ -105,6 +173,17 @@ form .form-inner .form-group select {
 }
 
 form .form-inner .form-group textarea {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #e8f0fe;
+  border-radius: 8px;
+  border:#fff;
+  outline: none;
+}
+
+
+form .form-inner2 .form-group textarea {
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -148,6 +227,21 @@ form .form-inner label {
 
 /*css za button za signup na register stranici*/
 
+form .form-inner2 button[name='register'] {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-right: 15px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-image: linear-gradient(to right, #05457c, #487aa4);
+  background-size: 150%;
+  background-position: 0%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+}
+
 form .form-inner button[name='register'] {
   display: inline-block;
   margin-top: 10px;
@@ -163,8 +257,7 @@ form .form-inner button[name='register'] {
   font-weight: 600;
 }
 
-form .form-inner button[name='premium'] {
-  float: right;
+form .form-inner2 button[name='premium'] {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px 15px;
@@ -177,8 +270,7 @@ form .form-inner button[name='premium'] {
   font-weight: 600;
 }
 
-form .form-inner button[name='moderator'] {
-  float: right;
+form .form-inner2 button[name='moderator'] {
   margin-top: 10px;
   margin-bottom: 10px;
   margin-left: 5%;
@@ -192,13 +284,12 @@ form .form-inner button[name='moderator'] {
   font-weight: 600;
 }
 
-form .form-inner button[name='friends'] {
-  float: right;
+form .form-inner2 button[name='friends'] {
   margin-top: 10px;
   margin-bottom: 10px;
   padding: 10px 15px;
   border-radius: 8px;
-  background-image: linear-gradient(to right, #05457c, #487aa4);
+  background-image: linear-gradient(to left, #777, #487aa1);
   background-size: 200%;
   background-position: 0%;
   cursor: pointer;
@@ -210,15 +301,15 @@ form .form-inner button[name='register']:hover {
   background-position: 100%;
 }
 
-form .form-inner button[name='premium']:hover {
+form .form-inner2 button[name='premium']:hover {
   background-position: 100%;
 }
 
-form .form-inner button[name='moderator']:hover {
+form .form-inner2 button[name='moderator']:hover {
   background-position: 100%;
 }
 
-form .form-inner button[name='friends']:hover {
+form .form-inner2 button[name='friends']:hover {
   background-position: 100%;
 }
 
