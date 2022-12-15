@@ -28,6 +28,11 @@ public class UserServiceJpa implements UserService {
     }
 
     @Override
+    public List<User> listAll(Long userId) {
+        return userRepo.findAll();
+    }
+
+    @Override
     public boolean validate(String username, String password) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (username != null) {
             List<User> users = userRepo.findByUsername(username);

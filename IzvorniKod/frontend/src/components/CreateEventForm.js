@@ -32,34 +32,10 @@ const CreateEventForm = (props) => {
     }
 
     const checkPremium = () => {
-        const array = [2] //ReactSession.get('roles')
+        const array = ReactSession.get('roles').map(role => role.id)
         if (array.indexOf(2) !== -1) {
             setPremium(true)
         }
-    }
-
-    const addEvent = ()=> {
-        const api = props.calendarRef.current.getApi();
-        let tagArray = []
-        for (let i = 0; i < details.tagIds.length; i++) {
-            tagArray.push({name: details.tagIds[i].label})
-        }
-        const calendarEvent = {
-            title: '[' + details.location + '] ' + details.name,
-            start: new Date(details.beginningTimestamp).toISOString(),
-            end: new Date(details.endTimestamp).toISOString(),
-            color: (details.typeId == 2) ? 'limegreen' : ((details.typeId == 3) ? 'red' : 'blueviolet'),
-            name: details.name,
-            location: details.location,
-            organizer: {username: ReactSession.get('username')},
-            tags: tagArray,
-            description: details.description,
-            coordinates: details.coordinates,
-            attendees: [],
-            beginning: details.beginningTimestamp,
-            ending: details.endTimestamp,
-        }
-        api.addEvent(calendarEvent)
     }
 
     useEffect(() => {
@@ -68,7 +44,7 @@ const CreateEventForm = (props) => {
     
     const handleCreateEventForm = e => {
         e.preventDefault();
-        let tags = ''
+        let tags = []
         if (details.tagIds != '') {
             tags = details.tagIds.map(item => parseInt(item.value))
         }
@@ -98,7 +74,8 @@ const CreateEventForm = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
-                        addEvent()
+                        props.removeAllEvents()
+                        props.getEvents()
                     })
                 } else {
                     setError("Pogreška pri unosu")                 
@@ -131,7 +108,6 @@ const CreateEventForm = (props) => {
                 </div>
                 <button type='submit' name='register'>Dodaj događaj</button>
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
-                {(details.typeId.value == '2') ? (<button type='button' name='friends'>Pozovi prijatelje</button>) : ''}
                 {(premium == true && details.promoted == '' && details.typeId.value == '3') ? (<button type='button' name='premium' onClick={() => setDetails({...details, promoted: true})}>Promoviraj</button>) : ''}
             </div>
         </form>
