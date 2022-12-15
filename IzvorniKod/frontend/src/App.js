@@ -4,9 +4,10 @@ import Home from './Home';
 import LoginForm from './components/LoginForm';
 import Register from './Register';
 import ProfileInfo from './components/ProfileInfo';
+import Notifications from './components/Notifications';
+import AttendedEvents from './components/AttendedEvents';
 import { ReactSession } from 'react-client-session';
 import UserActions from './UserActions';
-
 
 function App() {
   ReactSession.setStoreType("localStorage");
@@ -26,6 +27,8 @@ function App() {
         <Route path='/register' element={<Register />} />
         <Route path='/userActions' element={<UserActions />} />
         <Route path='/profile' element={<ProfileInfo />} />
+        <Route path='/notifications' element={<Notifications />} />        
+        <Route path='/attended' element={<AttendedEvents />} />        
       </Routes>
     </BrowserRouter>
   );

@@ -5,6 +5,32 @@ import { ReactSession } from 'react-client-session';
 function Navbar() {
     const username = ReactSession.get("username");
 
+    function notifications() {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/notifications', options)
+            .then(response => {
+                console.log(response)
+            });
+    }
+
+    function attended() {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/attended', options)
+            .then(response => {
+                console.log(response)
+            });
+    }
+
     function profileDetails() {
         const options = {
             method: 'POST',
@@ -36,9 +62,9 @@ function Navbar() {
             <a href="/"><img src={myImage} alt="" /></a>
             <div className='navComp'>
                 <ul>
-                    <li><a>Obavijesti</a></li>
+                    <li><a href="/notifications" onClick={notifications}>Obavijesti</a></li>
                     <li><a>Moji Prijatelji</a></li>
-                    <li><a>Pohađani Eventi</a></li>
+                    <li><a href="/attended" onClick={attended}>Pohađani Eventi</a></li>
                     <div className='userInfo'>
                         <li><a href="/profile" onClick={profileDetails}>{username}</a></li>
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
