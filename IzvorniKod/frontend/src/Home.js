@@ -37,6 +37,11 @@ const addEvents = events => {
   })
 }
 
+const removeAllEvents = () => {
+  const api = calendarRef.current.getApi();
+  api.removeAllEvents()
+}
+
 const getEvents = () => {
   const options = {
       method: 'GET',
@@ -44,14 +49,14 @@ const getEvents = () => {
           'Content-Type': 'application/JSON'
       }
   };
-  fetch('/api/events', options)
+  fetch('/api/events/calendar', options)
       .then(response => {
         response.json().then(json => {
           console.log(json)
           addEvents(json.userAvailableEvents)
         })
       });
-  }
+}
 
 
 const Welcome = () => {
@@ -67,30 +72,32 @@ const Welcome = () => {
   return (
     <div className=''>
       <Navbar />
-      <LeftPanel calendarRef={calendarRef}/>
-      <RightPanel />
-      <FullCalendar
-        ref={calendarRef}
-        plugins={[timeGridPlugin]}
-        initialView='timeGridWeek'
-        allDaySlot={false}
-        slotMinTime={'7:00:00'}
-        height={500}
-        locale={hrLocale}
-        slotLabelFormat={{
+      <LeftPanel removeAllEvents={removeAllEvents} getEvents={getEvents}/>
+      <RightPanel addEvents={addEvents}/>
+      <div className='calendar'>
+        <FullCalendar
+          ref={calendarRef}
+          plugins={[timeGridPlugin]}
+          initialView='timeGridWeek'
+          allDaySlot={false}
+          slotMinTime={'7:00:00'}
+          height={500}
+          locale={hrLocale}
+          slotLabelFormat={{
             hour: 'numeric',
             minute: '2-digit'
-        }}
-        headerToolbar={{
+          }}
+          headerToolbar={{
             left: 'prev next',
             center: 'title',
             right: 'today'
-        }}
-        eventClick={function(info) {
-          setClickedEvent(info.event)
-          setOpen(true)
-        }}
-      />
+          }}
+          eventClick={function(info) {
+            setClickedEvent(info.event)
+            setOpen(true)
+          }}
+        />
+      </div>
       <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
         <EventInfo close={closeModal} info={clickedEvent} calendarRef={calendarRef}/>
       </Popup>

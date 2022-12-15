@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { ReactSession } from 'react-client-session'
+import Select from 'react-select';
 
 const EventInfo = (props) => {
 
     const [moderator, setModerator] = useState(false);
     const checkModerator = () => {
-        const array = [3] //ReactSession.get('roles')
+        const array = ReactSession.get('roles').map(role => role.id)
         if (array.indexOf(3) !== -1) {
             setModerator(true)
         }
@@ -107,6 +108,22 @@ const EventInfo = (props) => {
         props.close()
     }
 
+    const tagOptions = [
+        { value: '1', label: 'Kava' },
+        { value: '2', label: 'Piva' },
+    ];
+
+    const customStyles = {
+        control: (base) => ({
+            ...base,
+            background: '#e8f0fe',
+            borderRadius: '8px',
+            borderColor: 'white',
+            fontSize: '12px'
+        })
+    }
+
+
     return (
         <form>
             <div className='form-inner2'>
@@ -114,7 +131,8 @@ const EventInfo = (props) => {
                 <div className='form-group' name='eventinfo-form'>
                     <label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
                     <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.username}</span></label>
-                    <label>Oznake: {props.info.extendedProps.tags.map((tag) => <span style={{ color: 'black' }}>{tag.name} </span>)}</label>
+                    {(moderator != true) ? (<label>Oznake: {props.info.extendedProps.tags.map((tag) => <span style={{ color: 'black' }}>{tag.name} </span>)}</label>) : 
+                    (<Select styles={customStyles} options={tagOptions} placeholder={"Odaberite vrstu događaja..."} onChange={e => ('')}/>)}
                     <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
                     <label>Koordinate: <span style={{ color: 'black' }}>{props.info.extendedProps.coordinates}</span></label>
                     <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr')}</span></label>
@@ -122,11 +140,11 @@ const EventInfo = (props) => {
                     <label>Opis događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.description}</span></label>
                     {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{ color: 'black' }}>{at.username} </span>)}</label>) : ('')}
                 </div>
-                {(props.info.extendedProps.temp == 1) ? <button type='button' name='register'>Prijavi se</button> : ''}
-                {(upcoming == true) ? <button type='button' name='register'>Odjavi se</button> : ''}
+                {(props.info.extendedProps.temp == 1) ? <button type='button' name='register' onClick={() => signUpForEvent()}>Prijavi se</button> : ''}
+                {(upcoming == true && props.info.extendedProps.temp == 0 && props.info.extendedProps.type != 1) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : ''}
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
-                {(moderator == true) ? (<button type='button' name='delete'>Obriši</button>) : ''}
-                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='delete'>Obriši</button>) : ''}
+                {(moderator == true || props.info.extendedProps.organizer.username == ReactSession.get('username')) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
+                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='moderator' onClick={() => removeFromCalendar()}>Obriši</button>) : ''}
             </div>
         </form>
     )

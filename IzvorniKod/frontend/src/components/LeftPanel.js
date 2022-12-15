@@ -27,7 +27,7 @@ function LeftPanel(props) {
                 </div>
             </div>
             <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
-                <CreateEventForm close={closeModal} calendarRef={props.calendarRef}/>
+                <CreateEventForm close={closeModal} removeAllEvents={props.removeAllEvents} getEvents={props.getEvents}/>
             </Popup>
 
         </div>
