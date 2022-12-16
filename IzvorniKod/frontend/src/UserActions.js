@@ -12,6 +12,8 @@ function UserActions() {
         setInputText(lowerCase);
     };
 
+
+
     return (
         <div className="main">
             <h1>SUSPENDIRAJ KORISNIKA</h1>
