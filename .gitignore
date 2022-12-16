@@ -7,7 +7,7 @@
 /dokumentacija/*.synctex.gz
 /dokumentacija/*.toc
 /dokumentacija/dijagrami/*.lock
-
+IzvorniKod/backend/.idea/workspace.xml
 
 ## Core latex/pdflatex auxiliary files:
 *.aux
