@@ -3,7 +3,6 @@ import myImage from '../Slike/eventkoLogo.png'
 import { ReactSession } from 'react-client-session';
 
 function Navbar() {
-    const username = ReactSession.get("username");
 
     function notifications() {
         const options = {
@@ -66,7 +65,7 @@ function Navbar() {
                     <li><a>Moji Prijatelji</a></li>
                     <li><a href="/attended" onClick={attended}>Pohađani Eventi</a></li>
                     <div className='userInfo'>
-                        <li><a href="/profile" onClick={profileDetails}>{username}</a></li>
+                        <li><a href="/profile" onClick={profileDetails}>{ReactSession.get("nickname")}</a></li>
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
                     </div>
                 </ul>
