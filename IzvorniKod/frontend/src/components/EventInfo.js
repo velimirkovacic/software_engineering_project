@@ -135,7 +135,7 @@ const EventInfo = (props) => {
                     }
                 }
                 callback(tagOpt)
-                setSelectValue(tagOptDefault)
+                if (tagOptDefault.length > 0) {setSelectValue(tagOptDefault)}
             })
         })
     }
@@ -161,6 +161,33 @@ const EventInfo = (props) => {
         setSelectValue(options)
     }
 
+    const editTags = () => {
+        const data = {
+            eventId: props.info.id,
+            tagIds: selectValue.map(tag => tag.value)
+        };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/events/edittag', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+                        props.close()
+                        props.removeAllEvents()
+                        props.getEvents()
+                    })
+                }
+            })
+    }
+
 
     return (
         <form>
@@ -170,7 +197,7 @@ const EventInfo = (props) => {
                     <label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
                     <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.username}</span></label>
                     {(moderator != true) ? (<label>Oznake: {props.info.extendedProps.tags.map((tag) => <span id='tagovi' style={{background:tag.hexColor}}>{tag.name} </span>)}</label>) : 
-                    (<AsyncSelect styles={customStyles} isMulti defaultOptions={checkForPreLoad()} placeholder={"Uredite oznake..."} onChange={e => (handleItemSelectChange(e))} loadOptions={getTags} cacheOptions value={selectValue}/>)}
+                    (<AsyncSelect styles={customStyles} isMulti defaultOptions placeholder={"Uredite oznake..."} onChange={e => (handleItemSelectChange(e))} loadOptions={getTags} cacheOptions value={selectValue}/>)}
                     <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
                     <label>Koordinate: <span style={{ color: 'black' }}>{props.info.extendedProps.coordinates}</span></label>
                     <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
@@ -182,6 +209,7 @@ const EventInfo = (props) => {
                 {(upcoming == true && props.info.extendedProps.temp == 0 && props.info.extendedProps.type != 1) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : ''}
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
                 {(props.info.extendedProps.temp == 1) ? (<button type='button' name='register' onClick={() => removeFromCalendar()}>Ukloni</button>) : ''}
+                {(moderator == true) ? (<button type='button' name='moderator' onClick={() => editTags()}>Uredi oznake</button>) : ''}
                 {(moderator == true || props.info.extendedProps.organizer.username == ReactSession.get('username')) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
             </div>
         </form>
