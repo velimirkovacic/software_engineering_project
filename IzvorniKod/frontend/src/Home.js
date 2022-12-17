@@ -12,7 +12,7 @@ import Popup from 'reactjs-popup';
 
 let calendarRef = React.createRef()
 
-const addEvents = events => {
+const addEvents = (events, temp) => {
   const api = calendarRef.current.getApi();
   events.map((ev) => {
     let calendarEvent = {
@@ -31,7 +31,7 @@ const addEvents = events => {
       beginning: ev.beginningTimestamp,
       ending: ev.endTimestamp,
       type: ev.type.id,
-      temp: 0
+      temp: temp
     }
     api.addEvent(calendarEvent)
   })
@@ -53,7 +53,7 @@ const getEvents = () => {
       .then(response => {
         response.json().then(json => {
           console.log(json)
-          addEvents(json.userAvailableEvents)
+          addEvents(json.userAvailableEvents, 0)
         })
       });
 }
@@ -62,6 +62,7 @@ const getEvents = () => {
 const Welcome = () => {
 
   useEffect(() => {
+    removeAllEvents()
     getEvents();
   }, [])
 
@@ -99,7 +100,7 @@ const Welcome = () => {
         />
       </div>
       <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
-        <EventInfo close={closeModal} info={clickedEvent} calendarRef={calendarRef}/>
+        <EventInfo close={closeModal} info={clickedEvent} calendarRef={calendarRef} getEvents={getEvents} removeAllEvents={removeAllEvents}/>
       </Popup>
     </div>
   )

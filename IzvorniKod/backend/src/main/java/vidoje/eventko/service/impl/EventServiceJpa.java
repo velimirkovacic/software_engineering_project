@@ -46,4 +46,9 @@ public class EventServiceJpa implements EventService {
     public boolean exists(Long eventId) {
         return eventRepo.existsById(eventId);
     }
+
+    @Override
+    public List<Event> promotedEvents(Long userId) {
+        return eventRepo.getPromotedEvents(userId);
+    }
 }
