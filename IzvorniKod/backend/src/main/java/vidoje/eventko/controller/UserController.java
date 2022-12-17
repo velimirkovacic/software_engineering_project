@@ -75,6 +75,39 @@ public class UserController {
         return ResponseEntity.ok(new MessageResponseDTO("Uspješna Odjava"));
     }
 
+    @PostMapping("/nickname")
+    public ResponseEntity<MessageResponseDTO> changeNickname(@Valid @RequestBody NicknameEditDTO dto,HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna"), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+        user.setNickname(dto.getNickname());
+
+        return ResponseEntity.ok(new MessageResponseDTO("Uspješna izmjena nadimka"));
+    }
+
+    @PostMapping("/premium")
+    public ResponseEntity<MessageResponseDTO> buyPremium(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna"), HttpStatus.BAD_REQUEST);
+        }
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+        if(user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(Long.valueOf(2))) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik već ima kupljen premium"), HttpStatus.BAD_REQUEST);
+        }
+
+        Set<Role> roles = user.getRoles();
+        roles.add(roleService.getById(Long.valueOf(2)));
+        user.setRoles(roles);
+
+        return ResponseEntity.ok(new MessageResponseDTO("Uspješno kupljen premium"));
+    }
+
     @PostMapping("/friend")
     public ResponseEntity<MessageResponseDTO> addFriend(@Valid @RequestBody UserRequestDTO dto, HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
