@@ -44,4 +44,7 @@ public interface UserService {
     void delete(Long userId);
 
     boolean exists(Long userId);
+
+    List<User> getMostActiveUsers();
+
 }

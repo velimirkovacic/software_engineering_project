@@ -23,4 +23,6 @@ public interface EventService {
 
     public boolean exists(Long eventId);
 
+    List<Event> promotedEvents(Long userId);
+
 }

@@ -88,4 +88,9 @@ public class UserServiceJpa implements UserService {
     public boolean exists(Long userId) {
         return userRepo.existsById(userId);
     }
+
+    @Override
+    public List<User> getMostActiveUsers() {
+        return userRepo.find3MostActive();
+    }
 }

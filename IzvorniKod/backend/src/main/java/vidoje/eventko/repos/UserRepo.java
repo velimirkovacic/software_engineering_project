@@ -30,4 +30,8 @@ public interface UserRepo extends JpaRepository<User, Long> {
     @Modifying
     @Query(value = "DELETE FROM korisnik WHERE id_korisnik = ?1", nativeQuery = true)
     void delete2(Long userId);
+
+
+    @Query(value = "SELECT korisnik.*, COUNT(DISTINCT id_dogadjaj) FROM korisnik JOIN dogadjaj ON id_korisnik = id_organizator GROUP BY korisnik.id_korisnik ORDER BY COUNT(DISTINCT id_dogadjaj) DESC LIMIT 3", nativeQuery = true)
+    List<User> find3MostActive();
 }

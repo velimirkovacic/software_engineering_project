@@ -36,11 +36,22 @@ public class UserController {
         User user = userService.getUserById(userId);
 
         Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
-        if(roleIds.contains(3)) {
+        if(roleIds.contains(Long.valueOf(3))) {
             return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAll(userId)));
         } else {
             return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAllNotBlocked(userId)));
         }
+    }
+
+    @GetMapping("/top")
+    public ResponseEntity<UsernameListResponseDTO> top3Users(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new UsernameListResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        List<String> usernames = userService.getMostActiveUsers().stream().map(u -> u.getUsername()).collect(Collectors.toList());
+
+        return ResponseEntity.ok(new UsernameListResponseDTO("", usernames));
     }
 
     @GetMapping("")
@@ -179,7 +190,7 @@ public class UserController {
             return new ResponseEntity<>(new MessageResponseDTO("Drugi korisnik s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
         }
 
-        if(!user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(3)) {
+        if(!user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(Long.valueOf(3))) {
             return new ResponseEntity<>(new MessageResponseDTO("Samo korisnik s ulogom moderator može suspendirati druge"), HttpStatus.BAD_REQUEST);
         }
 
@@ -204,7 +215,7 @@ public class UserController {
             return new ResponseEntity<>(new MessageResponseDTO("Drugi korisnik s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
         }
 
-        if(!user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(3)) {
+        if(!user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(Long.valueOf(3))) {
             return new ResponseEntity<>(new MessageResponseDTO("Samo korisnik s ulogom moderator može odsuspendirati druge"), HttpStatus.BAD_REQUEST);
         }
 
@@ -228,7 +239,7 @@ public class UserController {
             return new ResponseEntity<>(new MessageResponseDTO("Drugi korisnik s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
         }
 
-        if(!user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(4)) {
+        if(!user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(Long.valueOf(4))) {
             return new ResponseEntity<>(new MessageResponseDTO("Samo korisnik s ulogom admin može izbrisati druge"), HttpStatus.BAD_REQUEST);
         }
 
@@ -270,7 +281,7 @@ public class UserController {
         User other = userService.getUserById(dto.getUserId());
 
         Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
-        if(roleIds.contains(4)) {
+        if(roleIds.contains(Long.valueOf(4))) {
             Set<Role> roles = roleService.getRolesFromRoleIds(dto.getRoleIds());
 
             user.setRoles(roles);

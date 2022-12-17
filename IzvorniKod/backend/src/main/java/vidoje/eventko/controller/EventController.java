@@ -45,7 +45,7 @@ public class EventController {
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
-        return ResponseEntity.ok(new EventResponseDTO("", eventService.listAllForUserId(userId)));
+        return ResponseEntity.ok(new EventResponseDTO("", eventService.listAllForUserId(userId).stream().filter(e -> e.getBeginningTimestamp().isAfter(LocalDateTime.now())).collect(Collectors.toList())));
     }
 
     @GetMapping("/calendar")
@@ -56,6 +56,16 @@ public class EventController {
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         return ResponseEntity.ok(new EventResponseDTO("", userService.getUserById(userId).getAttends().stream().toList()));
+    }
+
+    @GetMapping("/promoted")
+    public ResponseEntity<EventResponseDTO> getPromotedEvents(HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        return ResponseEntity.ok(new EventResponseDTO("", eventService.promotedEvents(userId)));
     }
 
     @GetMapping("/attended")
@@ -163,7 +173,7 @@ public class EventController {
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
 
-        if(eventService.getEventById(dto.getEventId()).getOrganizer().equals(user) || user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(3)) {
+        if(eventService.getEventById(dto.getEventId()).getOrganizer().equals(user) || user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet()).contains(Long.valueOf(3))) {
             eventService.delete(dto.getEventId());
         } else {
             return new ResponseEntity<>(new MessageResponseDTO("Samo organizator eventa i korisnik s ulogom moderator mogu izbrisati ovaj event"), HttpStatus.BAD_REQUEST);
@@ -190,7 +200,7 @@ public class EventController {
         Event event = eventService.getEventById(dto.getEventId());
 
         Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
-        if(roleIds.contains(3) || (event.getOrganizer().equals(user) && roleIds.contains(2))) {
+        if(roleIds.contains(Long.valueOf(3)) || (event.getOrganizer().equals(user) && roleIds.contains(Long.valueOf(2)))) {
             event.setPromoted(true);
         } else {
             return new ResponseEntity<>(new MessageResponseDTO("Samo organizator eventa s ulogom premium i korisnik s ulogom moderator mogu izbrisati ovaj event"), HttpStatus.BAD_REQUEST);
@@ -216,7 +226,7 @@ public class EventController {
         Event event = eventService.getEventById(dto.getEventId());
 
         Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
-        if(roleIds.contains(3) && event.getType().getId() == 3) {
+        if(roleIds.contains(Long.valueOf(3)) && event.getType().getId() == 3) {
             Set<Tag> tags = tagService.getTagsFromTagIds(dto.getTagIds());
 
             //tags.addAll(event.getTags());
