@@ -99,6 +99,16 @@ form .form-inner2 .form-group {
   margin-bottom: 30px;
 }
 
+/*ProfileInfo*/
+.form-inner .form-group label[name='profile']{
+  display: block;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  transition: 0.4s;
+}
+
 /*OD TU novi event*/
 
 form .form-inner2 .form-group[name='event-form'] {
