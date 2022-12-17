@@ -317,7 +317,7 @@ public class UserController {
         if(roleIds.contains(Long.valueOf(4))) {
             Set<Role> roles = roleService.getRolesFromRoleIds(dto.getRoleIds());
 
-            user.setRoles(roles);
+            other.setRoles(roles);
         } else {
             return new ResponseEntity<>(new MessageResponseDTO("Mijenjati uloge drugim korisnicima mogu samo admini"), HttpStatus.BAD_REQUEST);
         }

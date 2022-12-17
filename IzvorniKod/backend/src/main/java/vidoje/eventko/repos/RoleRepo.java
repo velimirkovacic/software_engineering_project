@@ -8,7 +8,7 @@ import vidoje.eventko.domain.Tag;
 import java.util.List;
 
 public interface RoleRepo extends JpaRepository<Role, Long> {
-    @Query(value = "SELECT * FROM uloge WHERE id_uloga = ?1", nativeQuery = true)
+    @Query(value = "SELECT * FROM uloga WHERE id_uloga = ?1", nativeQuery = true)
     List<Role> getRoleByRoleId(Long id);
 
 }
