@@ -18,10 +18,12 @@ function Notifications() {
     }
 
     return (
-            <div>
-            <a>Nemate novih obavijesti</a>
-            <a href="/" onClick={povratak}>Povratak</a>
+        <body>
+            <div id="container">
+                <a>Nemate novih obavijesti</a>
+                <a href="/" onClick={povratak}>Povratak</a>
             </div>
+        </body>
       );
 }
 

@@ -9,6 +9,20 @@ const SignUpForm = ({Register, errors}) => {
         Register(details);
     };
 
+    function povratak() {
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        /*zapravo vraća na home page, ali budući da nitko nije prijavljen redirectat će na login page*/
+        fetch('/', options)
+            .then(response => {
+                console.log(response)
+            });
+    }
+
   return (
     <form onSubmit={handleSignUpForm}>
         <div className='form-inner'>
@@ -31,6 +45,8 @@ const SignUpForm = ({Register, errors}) => {
                 <input type='password' name='password' id='password' onChange={e => setDetails({...details, password:e.target.value})} value={details.password}/>        
             </div> 
             <button type='submit' name='register'>Registrirajte se</button>
+            <a>ili </a>
+            <a href='/' onClick={povratak}>odustanite </a>
         </div>
     </form>
   )
