@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="Dodane be-fe provjere DTO-ova">
-      <change beforePath="$PROJECT_DIR$/../frontend/src/components/CreateEventForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/components/CreateEventForm.js" afterDir="false" />
-=======
-    <list default="true" id="fc93cbf4-18cd-4ae0-872b-f748ec65aab1" name="Changes" comment="Dodane još neka mapiranja kontrolera">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/EventController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/vidoje/eventko/service/impl/UserServiceJpa.java" afterDir="false" />
->>>>>>> 0d746b29db3ea2bbf1ea429cc905c9287f73a374
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
