@@ -80,8 +80,7 @@ form .form-inner2 {
   background-color: #fff;
   padding: 60px;
   z-index: 2;
-  min-height:500px;
-  height:300px;
+  max-height: 80vh;
   overflow: scroll;
 }
 
@@ -90,7 +89,7 @@ form .form-inner2 h2 {
   font-size: 50px;
   font-weight: 500;
   margin-bottom: 30px;
-  max-width: 80vw;
+  max-width: 50vw;
   min-width: 30vw;
 }
 
@@ -100,16 +99,30 @@ form .form-inner2 .form-group {
   margin-bottom: 30px;
 }
 
+/*ProfileInfo*/
+.form-inner .form-group label[name='profile']{
+  display: block;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  transition: 0.4s;
+}
+
 /*OD TU novi event*/
 
 form .form-inner2 .form-group[name='event-form'] {
   display: block;
   width: 100%;
+  min-width: 50vw;
+  max-width: 50vw;
 }
 
 form .form-inner2 .form-group[name='eventinfo-form'] {
   display: block;
   width: 100%;
+  min-width: 50vw;
+  max-width: 50vw;
 }
 
 .form-inner2 .form-group label {
@@ -449,7 +462,7 @@ h3, h4{
   background: #fff;
   box-shadow: 3px 3px 10px 6px rgba(0,0, 0, 0.06);
   width: 100%;
-  max-height: 50vh;
+  max-height: 80vh;
   overflow-y: scroll;
 
 }

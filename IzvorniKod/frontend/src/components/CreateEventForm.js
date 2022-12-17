@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Select from 'react-select';
+import AsyncSelect from 'react-select/async';
 import {ReactSession} from 'react-client-session'
 
 const CreateEventForm = (props) => {
@@ -16,10 +17,29 @@ const CreateEventForm = (props) => {
         { value: '3', label: 'Javni događaj' }
     ];
 
-    const tagOptions = [
-        { value: '1', label: 'Kava' },
-        { value: '2', label: 'Piva' },
-    ];
+    const getTags = (inputValue, callback) => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/tags', options)
+            .then(response => {
+              response.json().then(json => {
+                console.log(json)
+                let tagOpt = []
+                json.tags.map(tag => {
+                    let tagOption = {
+                        value: tag.id, 
+                        label: tag.name
+                    }
+                    tagOpt.push(tagOption)
+                })
+                callback(tagOpt)
+            })
+        })
+    }
 
     const customStyles = {
         control: (base) => ({
@@ -78,17 +98,18 @@ const CreateEventForm = (props) => {
                         props.getEvents()
                     })
                 } else {
-                    setError("Pogreška pri unosu")                 
+                    setError("Pogreška pri unosu")
+                    document.getElementById('eventform').scrollTo(0, 0)           
                 }
             })
     }
 
     return (           
         <form onSubmit={handleCreateEventForm}>
-            <div className='form-inner2'>
+            <div className='form-inner2' id='eventform'>
                 <h2>Dodaj u kalendar</h2>
-                {(error !== '') ? (<div className='errors'>{error}</div>) : ''}
                 <div className='form-group' name='event-form'>
+                    {(error !== '') ? (<div className='errors'>{error}</div>) : ''}
                     <label htmlFor='name'>Naziv događaja: </label>
                     <input type='text' name='name' id='name' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/>
                     <label htmlFor='location'>Mjesto događaja: </label>
@@ -100,7 +121,7 @@ const CreateEventForm = (props) => {
                     <label htmlFor='typeId'>Vrsta događaja: </label>
                     <Select styles={customStyles} options={typeOptions} placeholder={"Odaberite vrstu događaja..."} onChange={e => setDetails({...details, typeId:e})} value={details.typeId} />
                     <label htmlFor='tagId'>Oznake događaja: </label>
-                    <Select styles={customStyles} options={tagOptions} isMulti placeholder={"Odaberite oznake..."} onChange={e => setDetails({...details, tagIds:e})} value={details.tagIds} />
+                    <AsyncSelect styles={customStyles} isMulti placeholder={"Odaberite oznake..."} onChange={e => setDetails({...details, tagIds:e})} value={details.tagIds} loadOptions={getTags} cacheOptions defaultOptions/>
                     <label htmlFor='description'>Opis događaja: </label>
                     <textarea type='text' name='description' id='description' onChange={e => setDetails({...details, description:e.target.value})} value={details.description}/>
                     <label htmlFor='coordinates'>Koordinate mjesta događaja: </label>

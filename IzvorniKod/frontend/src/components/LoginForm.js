@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
 import { ReactSession } from 'react-client-session';
+
 function LoginForm(props) {
     const [details, setDetails] = useState({ name: '', password: '' });
     const navigate = useNavigate();
@@ -30,6 +31,8 @@ function LoginForm(props) {
                         ReactSession.set("username", json.user.username)
                         ReactSession.set("roles", json.user.roles)
                         ReactSession.set("suspended", json.user.suspended)
+                        ReactSession.set("nickname", json.user.nickname)
+                        ReactSession.set("email", json.user.email)
                     })
                     if (props.onLoginForm) { //check that the instance is still mounted
                         ReactSession.set("isLoggedIn", "true");

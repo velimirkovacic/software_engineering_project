@@ -62,6 +62,7 @@ const getEvents = () => {
 const Welcome = () => {
 
   useEffect(() => {
+    removeAllEvents()
     getEvents();
   }, [])
 
