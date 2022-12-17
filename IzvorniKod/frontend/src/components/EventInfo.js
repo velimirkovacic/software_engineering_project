@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { ReactSession } from 'react-client-session'
-import Select from 'react-select';
+import AsyncSelect from 'react-select/async';
 
 const EventInfo = (props) => {
 
@@ -107,10 +107,38 @@ const EventInfo = (props) => {
         props.close()
     }
 
-    const tagOptions = [
-        { value: '1', label: 'Kava' },
-        { value: '2', label: 'Piva' },
-    ];
+    const getTags = (inputValue, callback) => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/tags', options)
+            .then(response => {
+              response.json().then(json => {
+                console.log(json)
+                let tagOpt = []
+                let tagOptDefault =[]
+                json.tags.map(tag => {
+                    let tagOption = {
+                        value: tag.id, 
+                        label: tag.name
+                    }
+                    tagOpt.push(tagOption)
+                })
+                for (let i = 0; i < tagOpt.length; i++) {
+                    for (let j = 0; j < props.info.extendedProps.tags.length; j++) {
+                        if (tagOpt[i].value == props.info.extendedProps.tags[j].id) {
+                            tagOptDefault.push(tagOpt[i])
+                        }
+                    }
+                }
+                callback(tagOpt)
+                setSelectValue(tagOptDefault)
+            })
+        })
+    }
 
     const customStyles = {
         control: (base) => ({
@@ -122,6 +150,17 @@ const EventInfo = (props) => {
         })
     }
 
+    const checkForPreLoad = () => {
+        if (props.info.extendedProps.tags.length > 0) {return true}
+        return false
+    }
+
+    const [selectValue, setSelectValue] = useState('')
+
+    const handleItemSelectChange = (options) => {
+        setSelectValue(options)
+    }
+
 
     return (
         <form>
@@ -130,8 +169,8 @@ const EventInfo = (props) => {
                 <div className='form-group' name='eventinfo-form'>
                     <label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
                     <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.username}</span></label>
-                    {(moderator != true) ? (<label>Oznake: {props.info.extendedProps.tags.map((tag) => <span style={{ color: 'black' }}>{tag.name} </span>)}</label>) : 
-                    (<Select styles={customStyles} options={tagOptions} placeholder={"Odaberite vrstu događaja..."} onChange={e => ('')}/>)}
+                    {(moderator != true) ? (<label>Oznake: {props.info.extendedProps.tags.map((tag) => <span id='tagovi' style={{background:tag.hexColor}}>{tag.name} </span>)}</label>) : 
+                    (<AsyncSelect styles={customStyles} isMulti defaultOptions={checkForPreLoad()} placeholder={"Uredite oznake..."} onChange={e => (handleItemSelectChange(e))} loadOptions={getTags} cacheOptions value={selectValue}/>)}
                     <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
                     <label>Koordinate: <span style={{ color: 'black' }}>{props.info.extendedProps.coordinates}</span></label>
                     <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
@@ -142,8 +181,8 @@ const EventInfo = (props) => {
                 {(props.info.extendedProps.temp == 1) ? <button type='button' name='register' onClick={() => signUpForEvent()}>Prijavi se</button> : ''}
                 {(upcoming == true && props.info.extendedProps.temp == 0 && props.info.extendedProps.type != 1) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : ''}
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
+                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='register' onClick={() => removeFromCalendar()}>Ukloni</button>) : ''}
                 {(moderator == true || props.info.extendedProps.organizer.username == ReactSession.get('username')) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
-                {(props.info.extendedProps.temp == 1) ? (<button type='button' name='moderator' onClick={() => removeFromCalendar()}>Obriši</button>) : ''}
             </div>
         </form>
     )

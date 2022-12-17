@@ -78,7 +78,7 @@ function RightPanel(props) {
     return (
         <div className='outerRight'>
             <div className='innerRight'>
-                <h2>Javni eventi</h2>
+                <h2>Dostupni eventovi</h2>
                 <div style={{width: '85%'}}>
                     <AsyncSelect styles={customStyles} placeholder={"Odaberite događaj..."} 
                     onChange={e => setSelected(e.value)} loadOptions={getPublicEvents} cacheOptions defaultOptions
