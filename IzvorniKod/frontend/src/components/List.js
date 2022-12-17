@@ -5,6 +5,32 @@ import Button from '@mui/material/Button';
 
 
 function List(props) {
+    function suspend(id) {
+        const data = {
+            userId: id
+        };
+        console.log(data.userId)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/user/suspend', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+
+                    })
+                }
+            })
+    }
+
+
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -19,12 +45,13 @@ function List(props) {
 
     const filteredData = users.filter((el) => {
         //if no input the return the original
-        if (props.input === '') {
+        if (props.input === '' && el.suspended === false) {
             return el;
         }
         //return the item which contains the user input
         else {
-            return el.username.toLowerCase().includes(props.input)
+            if (el.suspended === false)
+                return el.username.toLowerCase().includes(props.input)
         }
     })
 
@@ -34,7 +61,7 @@ function List(props) {
                 <div className='listItem'>
                     <li key={item.id}>{item.username}
                     </li>
-                    <Button variant="contained" className='susp'>SUSPENDIRAJ</Button>
+                    <Button variant="contained" className='susp' onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
 
                 </div>
             ))}

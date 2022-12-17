@@ -27,6 +27,7 @@ const ProfileInfo = () => {
                 if (response.ok) {
                     response.json().then(json => {
                         console.log(json)
+                        ReactSession.set("nickname", json.user.nickname)
                         alert('Uspješna promjena nadimka')
                     })
                 }
