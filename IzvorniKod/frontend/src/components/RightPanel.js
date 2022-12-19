@@ -73,6 +73,7 @@ function RightPanel(props) {
 
     useEffect(() => {
         onSelectEvent();
+        setSelected('')
     }, [selected])
 
 

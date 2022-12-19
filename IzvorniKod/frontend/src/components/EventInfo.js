@@ -189,7 +189,7 @@ const EventInfo = (props) => {
                     <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.username}</span></label>
 
                     {(moderator != true) ? (<label id="flex-container-tagovi">Oznake: {props.info.extendedProps.tags.map((tag) =>  <span class="flex-item-tag" style={{background:tag.hexColor}}>{tag.name} </span>)}</label>) : 
-                    (<AsyncSelect styles={customStyles} isMulti defaultOptions={checkForPreLoad()} placeholder={"Uredite oznake..."} onChange={e => (handleItemSelectChange(e))} loadOptions={getTags} cacheOptions value={selectValue}/>)}
+                    (<AsyncSelect styles={customStyles} isMulti defaultOptions placeholder={"Uredite oznake..."} onChange={e => (handleItemSelectChange(e))} loadOptions={getTags} cacheOptions value={selectValue}/>)}
                     
 
                     <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
