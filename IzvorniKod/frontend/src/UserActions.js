@@ -4,6 +4,7 @@ import List from "./components/List"
 import { Divider } from '@mui/material';
 import "./search.css";
 import ListUnsuspend from './components/ListUnsuspend';
+import Navbar from './components/Navbar';
 
 function UserActions() {
 
@@ -22,30 +23,36 @@ function UserActions() {
     };
 
     return (
-        <div className="main">
-            <h1>Suspendiraj korisnika</h1>
-            <div className="search">
-                <TextField
-                    id="outlined-basic"
-                    onChange={inputHandler1}
-                    variant="outlined"
-                    fullWidth
-                    label="Search"
-                />
+        <div>
+            <Navbar />
+            <div className='sus'>
+                <div className='main'>
+                    <h1>Suspendiraj korisnika</h1>
+                    <div className="search">
+                        <TextField
+                            id="outlined-basic"
+                            onChange={inputHandler1}
+                            variant="outlined"
+                            fullWidth
+                            label="Search"
+                        />
+                    </div>
+                    <List input={inputText1} />
+                </div>
+                <div className='main'>
+                    <h1>Suspendirani korisnici</h1>
+                    <div className="search">
+                        <TextField
+                            id="outlined-basic"
+                            onChange={inputHandler2}
+                            variant="outlined"
+                            fullWidth
+                            label="Search"
+                        />
+                    </div>
+                    <ListUnsuspend input={inputText2} />
+                </div>
             </div>
-            <List input={inputText1} />
-            <h1>Suspendirani korisnici</h1>
-            <div className="search">
-                <TextField
-                    id="outlined-basic"
-                    onChange={inputHandler2}
-                    variant="outlined"
-                    fullWidth
-                    label="Search"
-                />
-            </div>
-            <ListUnsuspend input={inputText2} />
-
 
         </div>
     );
