@@ -41,8 +41,7 @@ const EventInfo = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
-                        props.removeAllEvents()
-                        props.getEvents()
+                        window.location.reload()
                     })
                 }
             })
@@ -67,8 +66,7 @@ const EventInfo = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
-                        props.removeAllEvents()
-                        props.getEvents()
+                        window.location.reload()
                     })
                 }
             })
@@ -93,8 +91,7 @@ const EventInfo = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
-                        props.removeAllEvents()
-                        props.getEvents()
+                        window.location.reload()
                     })
                 }
             })
@@ -150,11 +147,6 @@ const EventInfo = (props) => {
         })
     }
 
-    const checkForPreLoad = () => {
-        if (props.info.extendedProps.tags.length > 0) {return true}
-        return false
-    }
-
     const [selectValue, setSelectValue] = useState('')
 
     const handleItemSelectChange = (options) => {
@@ -181,8 +173,7 @@ const EventInfo = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
-                        props.removeAllEvents()
-                        props.getEvents()
+                        window.location.reload()
                     })
                 }
             })
