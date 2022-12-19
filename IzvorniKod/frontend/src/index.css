@@ -5,6 +5,33 @@
   font-family: sans-serif;
 }
 
+#flex-container-tagovi {
+  /* We first create a flex layout context */
+  display: flex;
+  
+  /* Then we define the flow direction 
+     and if we allow the items to wrap 
+   * Remember this is the same as:
+   * flex-direction: row;
+   * flex-wrap: wrap;
+   */
+  flex-flow: row;
+  justify-content: space-between;
+  /* Then we define how is distributed the remaining space */
+  width: 15pc;
+  padding: 0px;
+  margin: 0;
+  align-items: center;
+}
+
+.flex-item-tag {
+  padding: 4px;
+  color: black;
+  font-weight: bold;
+  
+  border-radius: 25px;
+}
+
 input, button, label {
   appearance: none;
   background: none;
@@ -97,6 +124,16 @@ form .form-inner2 .form-group {
   display: block;
   width: 250px;
   margin-bottom: 30px;
+}
+
+/*ProfileInfo*/
+.form-inner .form-group label[name='profile']{
+  display: block;
+  color: black;
+  font-size: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  transition: 0.4s;
 }
 
 /*OD TU novi event*/

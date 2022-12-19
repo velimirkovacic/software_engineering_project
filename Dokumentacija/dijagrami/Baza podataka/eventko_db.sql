@@ -98,7 +98,7 @@ CREATE TABLE Dogadjaj
   id_organizator BIGINT NOT NULL,
   id_vrsta INT NOT NULL,
   PRIMARY KEY (id_dogadjaj),
-  FOREIGN KEY (id_organizator) REFERENCES Korisnik(id_korisnik),
+  FOREIGN KEY (id_organizator) REFERENCES Korisnik(id_korisnik) ON DELETE CASCADE,
   FOREIGN KEY (id_vrsta) REFERENCES Vrsta(id_vrsta),
   CHECK (vrijeme_poc < vrijeme_kraj)
 );
@@ -181,25 +181,4 @@ CREATE TABLE SPRING_SESSION_ATTRIBUTES (
 	CONSTRAINT SPRING_SESSION_ATTRIBUTES_FK FOREIGN KEY (SESSION_PRIMARY_ID) REFERENCES SPRING_SESSION(PRIMARY_ID) ON DELETE CASCADE
 );
 
-CREATE SEQUENCE hibernate_sequence MINVALUE 2;
-
-
-
-
-
-
-
---Testni podaci
-
-
-INSERT into Korisnik VALUES (1, 'Admin', 'admin', 'admin.adminic@fer.hr',CONVERT_TO('sol', 'UTF8'), '1234', FALSE);
-INSERT into imaulogu VALUES (1, 1);
-INSERT into imaulogu VALUES (1, 2);
-INSERT into imaulogu VALUES (1, 3);
-INSERT into imaulogu VALUES (1, 4);
-
-
-INSERT INTO dogadjaj VALUES(1, 'Testni dogadjaj', 'FER', NOW(), NOW() + '23 HOURS'::INTERVAL, 'opis dogadjaja', FALSE, '0, 0', 1, 1);
-INSERT INTO pohadja VALUES (1, 1, 1);
-INSERT INTO imaoznaku VALUES (1, 1);
-
+CREATE SEQUENCE hibernate_sequence MINVALUE 1000;

@@ -11,10 +11,10 @@ public class RegisterRequestDTO {
 
 
     @NotNull(message = "Korisničko ime je obavezno.")
-    @Size(min = MIN_USERNAME_LENGTH, max = 25, message = "Korisničko ime mora imati između " + MIN_USERNAME_LENGTH + " i " + MAX_USERNAME_LENGTH + " 25 znakova.")
+    @Size(min = MIN_USERNAME_LENGTH, max = MAX_USERNAME_LENGTH, message = "Korisničko ime mora imati između " + MIN_USERNAME_LENGTH + " i " + MAX_USERNAME_LENGTH + " znakova.")
     private String username;
 
-    @Size(min = MIN_USERNAME_LENGTH, max = MAX_USERNAME_LENGTH, message = "Nadimak mora imati između " + MIN_USERNAME_LENGTH + " i " + MAX_USERNAME_LENGTH + " 25 znakova.")
+    @Size(min = MIN_USERNAME_LENGTH, max = MAX_USERNAME_LENGTH, message = "Nadimak mora imati između " + MIN_USERNAME_LENGTH + " i " + MAX_USERNAME_LENGTH + " znakova.")
     private String nickname;
 
     @NotNull(message = "Email je obavezan.")

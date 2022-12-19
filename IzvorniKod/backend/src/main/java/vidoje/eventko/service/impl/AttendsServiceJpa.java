@@ -15,4 +15,9 @@ public class AttendsServiceJpa implements AttendsService {
     public Attends getAttends(Long userId, Long eventId) {
         return attendsRepo.getAttendsByUserEventIds(userId, eventId).get(0);
     }
+
+    @Override
+    public void review(Long userId, Long eventId, Integer review) {
+        attendsRepo.review(userId, eventId, review);
+    }
 }

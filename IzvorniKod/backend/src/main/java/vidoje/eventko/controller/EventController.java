@@ -1,6 +1,7 @@
 package vidoje.eventko.controller;
 
 
+import com.sun.jdi.request.EventRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -235,5 +236,31 @@ public class EventController {
             return new ResponseEntity<>(new MessageResponseDTO("Mijenjati oznake mogu samo moderatori i samo na javnim evetovima"), HttpStatus.BAD_REQUEST);
         }
         return ResponseEntity.ok(new MessageResponseDTO("Oznake uspješno dodane eventu"));
+    }
+
+    @PostMapping("/review")
+    public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody ReviewEventRequestDTO dto, HttpServletRequest request) {
+        if (!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        if (!eventService.exists(dto.getEventId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Event s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+
+        Event event = eventService.getEventById(dto.getEventId());
+
+        if(!user.getAttends().contains(event)) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije pohađao ovaj event"), HttpStatus.BAD_REQUEST);
+        }
+
+        attendsService.review(userId, event.getId(), dto.getReview());
+
+        return ResponseEntity.ok(new MessageResponseDTO("Review uspješno dodan"));
+
     }
 }

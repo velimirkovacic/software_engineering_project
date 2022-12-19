@@ -3,7 +3,7 @@ package vidoje.eventko.dto;
 import java.util.List;
 
 public class UsernameListResponseDTO extends MessageResponseDTO {
-    List<String> usernames;
+    private List<String> usernames;
 
     public UsernameListResponseDTO(String message, List<String> usernames) {
         super(message);

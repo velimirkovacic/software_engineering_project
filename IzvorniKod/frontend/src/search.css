@@ -6,6 +6,11 @@
     flex-direction: column;
     row-gap: 20px;
 }
+.sus{
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: row;
+}
 
 h1 {
     margin: 10px;

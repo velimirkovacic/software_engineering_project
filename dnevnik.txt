@@ -39,3 +39,15 @@ Dnevnik sastajanja
 	- priprema za demonstraciju osnovnih funkcionalnosti
 	- povezivanje backenda i frontenda
 	- usklađivanje ograničenja
+
+
+Frontend i backend radni sastanak
+ - Datum: subota 17.12.2022.
+ - Prisustvovali: Velimir, Luka, Ema, Ana, Jakov
+ - Što je napravljeno:
+	- Ema je dodala karticu u navbar ako je korisnik moderator
+	- Ana je napravila prikaz novog nicknamea na home pageu
+	- Velimir je između ostalog dodao link za izmjenu nicknamea
+	- Luka je omogućio uređivanje oznaka događaja moderatorima
+	- Jakov je stilizirao prikaz oznaka kako bi bile estetski privlačne
+
