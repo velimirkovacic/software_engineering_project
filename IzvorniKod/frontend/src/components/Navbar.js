@@ -54,7 +54,7 @@ function Navbar() {
             <div className='navComp'>
                 <ul>
                     <li><a href="/notifications">Obavijesti</a></li>
-                    <li><a>Moji Prijatelji</a></li>
+                    <li><a href="/moji_prijatelji">Moji Prijatelji</a></li>
                     <li><a href="/attended">Pohađani Eventi</a></li>
                     {(userData.moderator === true) ? (<li><a href="/userActions">Upravljaj korisnicima</a></li>) : ('')}
                     {(userData.admin === true) ? (<li><a href="/admin">Administrativne ovlasti</a></li>) : ('')}

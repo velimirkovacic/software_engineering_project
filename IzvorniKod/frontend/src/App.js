@@ -9,6 +9,7 @@ import AttendedEvents from './components/AttendedEvents';
 import { ReactSession } from 'react-client-session';
 import UserActions from './UserActions';
 import Admin from './Admin';
+import MojiPrijatelji from './components/MojiPrijatelji';
 
 function App() {
   ReactSession.setStoreType("localStorage");
@@ -31,6 +32,7 @@ function App() {
         <Route path='/profile' element={<ProfileInfo />} />
         <Route path='/notifications' element={<Notifications />} />
         <Route path='/attended' element={<AttendedEvents />} />
+        <Route path='/attended' element={<MojiPrijatelji />} />
       </Routes>
     </BrowserRouter>
   );

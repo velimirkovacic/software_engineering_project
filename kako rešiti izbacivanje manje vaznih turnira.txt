@@ -1,1 +1,0 @@
-učitaj u doctionary u skripti tablice sa competition ID i detaljima za svaki competiton pa po tom keyu gledaj
