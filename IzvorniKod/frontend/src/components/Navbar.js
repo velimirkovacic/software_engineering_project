@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 function Navbar() {
 
-    const [userData, setUserData] = useState({username: '', moderator: false})
+    const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
 
     const getUserData = () => {
         const options = {
@@ -16,14 +16,17 @@ function Navbar() {
         };
         fetch('/api/user', options)
             .then(response => {
-              response.json().then(json => {
-                console.log(json)
-                const helpObject = {username: json.user.username, moderator: false}
-                if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
-                    helpObject.moderator = true
-                }
-                setUserData(helpObject)
-              })
+                response.json().then(json => {
+                    console.log(json)
+                    const helpObject = { username: json.user.username, moderator: false, admin: false }
+                    if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
+                        helpObject.moderator = true
+                    }
+                    if (json.user.roles.map(role => role.id).indexOf(4) != -1) {
+                        helpObject.admin = true
+                    }
+                    setUserData(helpObject)
+                })
             });
     }
 
@@ -54,8 +57,9 @@ function Navbar() {
                     <li><a>Moji Prijatelji</a></li>
                     <li><a href="/attended">Pohađani Eventi</a></li>
                     {(userData.moderator == true) ? (<li><a href="/userActions">Upravljaj korisnicima</a></li>) : ('')}
+                    {(userData.admin == true) ? (<li><a href="/admin">Administrativne ovlasti</a></li>) : ('')}
                     <div className='userInfo'>
-                    {(userData.username != '') ? (<li><a href="/profile">{userData.username}</a></li>) : ('')}
+                        {(userData.username != '') ? (<li><a href="/profile">{userData.username}</a></li>) : ('')}
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
                     </div>
                 </ul>
