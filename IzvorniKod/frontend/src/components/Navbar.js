@@ -5,9 +5,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 function Navbar() {
 
-
-
-
     const roles = ReactSession.get("roles");
     let isMod = false;
     console.log(roles)
@@ -17,46 +14,6 @@ function Navbar() {
             console.log("DSDFFFVDBLČ")
             console.log(isMod)
         }
-    }
-
-
-    function notifications() {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/api/user/notifications', options)
-            .then(response => {
-                console.log(response)
-            });
-    }
-
-    function attended() {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/api/user/attended', options)
-            .then(response => {
-                console.log(response)
-            });
-    }
-
-    function profileDetails() {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/api/user/profile', options)
-            .then(response => {
-                console.log(response)
-            });
     }
 
     function odjavi() {
@@ -77,12 +34,12 @@ function Navbar() {
             <a href="/"><img src={myImage} alt="" /></a>
             <div className='navComp'>
                 <ul>
-                    <li><a href="/notifications" onClick={notifications}>Obavijesti</a></li>
+                    <li><a href="/notifications">Obavijesti</a></li>
                     <li><a>Moji Prijatelji</a></li>
-                    <li><a href="/attended" onClick={attended}>Pohađani Eventi</a></li>
+                    <li><a href="/attended">Pohađani Eventi</a></li>
                     {isMod && <li><a href="/userActions">Upravljaj korisnicima</a> </li>}
                     <div className='userInfo'>
-                        <li><a href="/profile" onClick={profileDetails}>{ReactSession.get("nickname")}</a></li>
+                        <li><a href="/profile">{ReactSession.get("nickname")}</a></li>
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
                     </div>
                 </ul>
