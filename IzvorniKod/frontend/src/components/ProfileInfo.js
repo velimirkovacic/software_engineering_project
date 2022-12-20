@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom'
 import { ReactSession } from 'react-client-session';
+import Button from '@mui/material/Button';
 
 const ProfileInfo = () => {
 
@@ -20,8 +20,30 @@ const ProfileInfo = () => {
         checkPremium()
     }, [])
 
-    function promoteProfile(){
-        alert("Uplatite na iban 12345678 pa će vas admin ručno dodat LP");
+    function promoteProfile(id){
+        const data = {
+            userId: id
+        };
+        console.log(data.userId)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/user/premium', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+                        alert(json.message);
+                    })
+                }
+            })
+        alert("Uplatite na iban 12345678 LP");
     }
 
     const handleProfile = e => {
@@ -51,19 +73,6 @@ const ProfileInfo = () => {
             })
     };
 
-    function povratak() {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/', options)
-            .then(response => {
-                console.log(response)
-            });
-    }
-
     return (
         <form onSubmit={handleProfile}>
             <div className="App">
@@ -80,11 +89,11 @@ const ProfileInfo = () => {
                             <label name='profile'>E-mail: {ReactSession.get("email")}</label>
                         </div>
                         <br></br>
-                        {(premium!=true) ? (<button type='button' name='premium' onClick={promoteProfile}>Promoviraj se</button>) : ('')}
+                        {(premium!==true) ? (<Button variant="contained" name='premium' onClick={e => { e.preventDefault(); promoteProfile(ReactSession.get("id")) }} id={ReactSession.get("id")}>Promoviraj se</Button>) : ('')}
                         <br></br>
                         <br></br>
                         <button type='submit' name='register'>Spremi promjene</button>
-                        <a href='/' onClick={povratak}>Vrati se natrag </a>
+                        <a href='/'>Vrati se natrag </a>
                     </div>
             </div>
         </form>

@@ -19,7 +19,7 @@ function Navbar() {
               response.json().then(json => {
                 console.log(json)
                 const helpObject = {username: json.user.username, moderator: false}
-                if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
+                if (json.user.roles.map(role => role.id).indexOf(3) !== -1) {
                     helpObject.moderator = true
                 }
                 setUserData(helpObject)
@@ -53,9 +53,9 @@ function Navbar() {
                     <li><a href="/notifications">Obavijesti</a></li>
                     <li><a>Moji Prijatelji</a></li>
                     <li><a href="/attended">Pohađani Eventi</a></li>
-                    {(userData.moderator == true) ? (<li><a href="/userActions">Upravljaj korisnicima</a></li>) : ('')}
+                    {(userData.moderator === true) ? (<li><a href="/userActions">Upravljaj korisnicima</a></li>) : ('')}
                     <div className='userInfo'>
-                    {(userData.username != '') ? (<li><a href="/profile">{userData.username}</a></li>) : ('')}
+                    {(userData.username !== '') ? (<li><a href="/profile">{userData.username}</a></li>) : ('')}
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
                     </div>
                 </ul>

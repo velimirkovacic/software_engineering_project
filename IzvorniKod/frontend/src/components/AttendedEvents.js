@@ -4,23 +4,10 @@ import { ReactSession } from 'react-client-session';
 
 function AttendedEvents() {
 
-    function povratak() {
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/', options)
-            .then(response => {
-                console.log(response)
-            });
-    }
-
     return (
             <div>
             <a>Niste bili niti na jednom eventu</a>
-            <a href="/" onClick={povratak}>Povratak</a>
+            <a href="/">Povratak</a>
             </div>
       );
 }
