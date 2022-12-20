@@ -1,4 +1,6 @@
 import React, {useEffect, useState} from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ReactSession } from 'react-client-session';
 
 import LeftPanel from './components/LeftPanel';
 import RightPanel from './components/RightPanel';
@@ -10,56 +12,63 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import hrLocale from '@fullcalendar/core/locales/hr'
 import Popup from 'reactjs-popup';
 
-let calendarRef = React.createRef()
-
-const addEvents = (events, temp) => {
-  const api = calendarRef.current.getApi();
-  events.map((ev) => {
-    let calendarEvent = {
-      id: ev.id,
-      title: '[' + ev.location + '] ' + ev.name,
-      start: new Date(ev.beginningTimestamp).toISOString(),
-      end: new Date(ev.endTimestamp).toISOString(),
-      color: (ev.type.id == 2) ? 'limegreen' : ((ev.type.id == 3) ? 'red' : 'blueviolet'),
-      name: ev.name,
-      location: ev.location,
-      organizer: ev.organizer,
-      tags: ev.tags,
-      description: ev.description,
-      coordinates: ev.coordinates,
-      attendees: ev.attendees,
-      beginning: ev.beginningTimestamp,
-      ending: ev.endTimestamp,
-      type: ev.type.id,
-      temp: temp
-    }
-    api.addEvent(calendarEvent)
-  })
-}
-
-const removeAllEvents = () => {
-  const api = calendarRef.current.getApi();
-  api.removeAllEvents()
-}
-
-const getEvents = () => {
-  const options = {
-      method: 'GET',
-      headers: {
-          'Content-Type': 'application/JSON'
-      }
-  };
-  fetch('/api/events/calendar', options)
-      .then(response => {
-        response.json().then(json => {
-          console.log(json)
-          addEvents(json.userAvailableEvents, 0)
-        })
-      });
-}
-
 
 const Welcome = () => {
+
+  const navigate = useNavigate();
+
+  let calendarRef = React.createRef()
+
+  const addEvents = (events, temp) => {
+    const api = calendarRef.current.getApi();
+    events.map((ev) => {
+      let calendarEvent = {
+        id: ev.id,
+        title: '[' + ev.location + '] ' + ev.name,
+        start: new Date(ev.beginningTimestamp).toISOString(),
+        end: new Date(ev.endTimestamp).toISOString(),
+        color: (ev.type.id == 2) ? 'limegreen' : ((ev.type.id == 3) ? 'red' : 'blueviolet'),
+        name: ev.name,
+        location: ev.location,
+        organizer: ev.organizer,
+        tags: ev.tags,
+        description: ev.description,
+        coordinates: ev.coordinates,
+        attendees: ev.attendees,
+        beginning: ev.beginningTimestamp,
+        ending: ev.endTimestamp,
+        type: ev.type.id,
+        temp: temp
+      }
+      api.addEvent(calendarEvent)
+    })
+  }
+
+  const removeAllEvents = () => {
+    const api = calendarRef.current.getApi();
+    api.removeAllEvents()
+  }
+
+  const getEvents = () => {
+    const options = {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/JSON'
+        }
+    };
+    fetch('/api/events/calendar', options)
+        .then(response => {
+          if (response.ok) {
+            response.json().then(json => {
+              console.log(json)
+              addEvents(json.userAvailableEvents, 0)
+            })
+          } else {
+            ReactSession.set("isLoggedIn", "false");
+            navigate('/login')
+          }
+        });
+  }
 
   useEffect(() => {
     removeAllEvents()
@@ -73,7 +82,7 @@ const Welcome = () => {
   return (
     <div className=''>
       <Navbar />
-      <LeftPanel />
+      <LeftPanel addEvents={addEvents}/>
       <RightPanel addEvents={addEvents}/>
       <div className='calendar'>
         <FullCalendar

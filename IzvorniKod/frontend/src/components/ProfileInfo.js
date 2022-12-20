@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { ReactSession } from 'react-client-session';
 import Button from '@mui/material/Button';
+import { useNavigate } from 'react-router-dom';
 
 const ProfileInfo = () => {
+
+    const navigate = useNavigate();
 
     console.log(ReactSession.get("nickname"));
     const [details, setDetails] = useState({nickname:ReactSession.get("nickname")});
@@ -66,8 +69,9 @@ const ProfileInfo = () => {
                 if (response.ok) {
                     response.json().then(json => {
                         console.log(json)
-                        ReactSession.set("nickname", json.user.nickname)
+                        ReactSession.set("nickname", details.nickname)
                         alert('Uspješna promjena nadimka')
+                        navigate('/')
                     })
                 }
             })

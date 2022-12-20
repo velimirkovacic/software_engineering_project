@@ -5,7 +5,7 @@
   font-family: sans-serif;
 }
 
-#flex-container-tagovi {
+.flex-container-tagovi {
   /* We first create a flex layout context */
   display: flex;
   
@@ -449,8 +449,10 @@ nav img{
 }
 .promoEvents{
   background-color:white;
-  height: 100px;
+  max-height: 50vh;
+  min-height: 100px;
   margin: 2px;
+  overflow-y: scroll;
 }
 
 .outerLeft{
@@ -546,4 +548,15 @@ h3, h4{
   width: 350px;
  justify-items:auto;
 
+}
+
+.btnPromoEvents {
+  border-bottom: '2px solid';
+  border-color: #e8f0fe;
+  width: 100%;
+  text-align: left;
+}
+
+.btnPromoEvents:hover {
+  background-color: #e8f0fe;
 }

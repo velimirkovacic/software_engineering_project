@@ -186,9 +186,9 @@ const EventInfo = (props) => {
                 <h2>{props.info.title}</h2>
                 <div className='form-group' name='eventinfo-form'>
                     <label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
-                    <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.username}</span></label>
+                    <label>Organizator: <span style={{ color: 'black' }}>{(props.info.extendedProps.organizer.nickname != '') ? (props.info.extendedProps.organizer.nickname) : (props.info.extendedProps.organizer.username)}</span></label>
 
-                    {(moderator != true) ? (<label id="flex-container-tagovi">Oznake: {props.info.extendedProps.tags.map((tag) =>  <span class="flex-item-tag" style={{background:tag.hexColor}}>{tag.name} </span>)}</label>) : 
+                    {(moderator != true) ? (<label>Oznake: {props.info.extendedProps.tags.map((tag) =>  <span className="flex-item-tag" style={{background:tag.hexColor}}>{tag.name}</span>)}</label>) : 
                     (<AsyncSelect styles={customStyles} isMulti defaultOptions placeholder={"Uredite oznake..."} onChange={e => (handleItemSelectChange(e))} loadOptions={getTags} cacheOptions value={selectValue}/>)}
                     
 
@@ -197,7 +197,7 @@ const EventInfo = (props) => {
                     <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
                     <label>Vrijeme završetka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.ending).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
                     <label>Opis događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.description}</span></label>
-                    {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{ color: 'black' }}>{at.username} </span>)}</label>) : ('')}
+                    {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span style={{ color: 'black' }}>{(at.nickname != '') ? (at.nickname) : (at.username)} </span>)}</label>) : ('')}
                 </div>
                 {(props.info.extendedProps.temp == 1) ? <button type='button' name='register' onClick={() => signUpForEvent()}>Prijavi se</button> : ''}
                 {(upcoming == true && props.info.extendedProps.temp == 0 && props.info.extendedProps.type != 1) ? <button type='button' name='register' onClick={() => unsignForEvent()}>Odjavi se</button> : ''}
