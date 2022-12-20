@@ -94,8 +94,7 @@ const CreateEventForm = (props) => {
                     response.json().then(json => {
                         console.log(json)
                         props.close()
-                        props.removeAllEvents()
-                        props.getEvents()
+                        window.location.reload()
                     })
                 } else {
                     setError("Pogreška pri unosu")

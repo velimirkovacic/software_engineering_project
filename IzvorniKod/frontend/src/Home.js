@@ -73,7 +73,7 @@ const Welcome = () => {
   return (
     <div className=''>
       <Navbar />
-      <LeftPanel removeAllEvents={removeAllEvents} getEvents={getEvents}/>
+      <LeftPanel />
       <RightPanel addEvents={addEvents}/>
       <div className='calendar'>
         <FullCalendar
@@ -100,7 +100,7 @@ const Welcome = () => {
         />
       </div>
       <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
-        <EventInfo close={closeModal} info={clickedEvent} calendarRef={calendarRef} getEvents={getEvents} removeAllEvents={removeAllEvents}/>
+        <EventInfo close={closeModal} info={clickedEvent} calendarRef={calendarRef} />
       </Popup>
     </div>
   )

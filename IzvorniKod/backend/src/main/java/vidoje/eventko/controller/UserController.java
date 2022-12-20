@@ -37,7 +37,7 @@ public class UserController {
 
         Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
         if(roleIds.contains(Long.valueOf(3))) {
-            return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAll(userId)));
+            return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAll(userId).stream().filter(u -> !u.getId().equals(userId)).collect(Collectors.toList())));
         } else {
             return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAllNotBlocked(userId)));
         }
@@ -229,6 +229,12 @@ public class UserController {
 
 
         User other = userService.getUserById(dto.getUserId());
+
+        if(other.getSuspended()) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik je već suspendiran"), HttpStatus.BAD_REQUEST);
+
+        }
+
         other.setSuspended(true);
 
 
@@ -317,7 +323,7 @@ public class UserController {
         if(roleIds.contains(Long.valueOf(4))) {
             Set<Role> roles = roleService.getRolesFromRoleIds(dto.getRoleIds());
 
-            user.setRoles(roles);
+            other.setRoles(roles);
         } else {
             return new ResponseEntity<>(new MessageResponseDTO("Mijenjati uloge drugim korisnicima mogu samo admini"), HttpStatus.BAD_REQUEST);
         }
