@@ -32,7 +32,7 @@ function App() {
         <Route path='/profile' element={<ProfileInfo />} />
         <Route path='/notifications' element={<Notifications />} />
         <Route path='/attended' element={<AttendedEvents />} />
-        <Route path='/attended' element={<MojiPrijatelji />} />
+        <Route path='/moji_prijatelji' element={<MojiPrijatelji />} />
       </Routes>
     </BrowserRouter>
   );
