@@ -527,4 +527,23 @@ h3, h4{
 .calendar {
   margin-top: 0.5%;
 }
+.promoDel{
 
+  flex-direction: column;
+  row-gap: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+}
+
+.listItemPromo{
+  display: flex;
+  justify-content: space-between;
+  align-items:center;
+  margin: 5px;
+  width: 350px;
+ justify-items:auto;
+
+}

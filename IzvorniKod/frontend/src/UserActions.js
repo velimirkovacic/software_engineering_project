@@ -1,7 +1,6 @@
 import { React, useState } from 'react';
 import TextField from "@mui/material/TextField";
 import List from "./components/List"
-import { Divider } from '@mui/material';
 import "./search.css";
 import ListUnsuspend from './components/ListUnsuspend';
 import Navbar from './components/Navbar';
