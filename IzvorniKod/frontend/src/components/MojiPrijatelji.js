@@ -46,6 +46,27 @@ function MojiPrijatelji() {
                 console.log(response)
             });
     }
+
+    /*
+    const getPromotedEvents = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/events/promoted', options)
+            .then(response => {
+              response.json().then(json => {
+                console.log(json)
+                const helpArray = []
+                json.userAvailableEvents.map(ev => helpArray.push(ev))
+                setPromoted(helpArray)
+            })
+        })
+    }
+    */
+
     return (
         <body>
             <nav className='nav'>
