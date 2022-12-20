@@ -5,16 +5,31 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 function Navbar() {
 
-    const roles = ReactSession.get("roles");
-    let isMod = false;
-    console.log(roles)
-    for (let i = 0; i < roles.length; i++) {
-        if (roles[i].name === 'Moderator') {
-            isMod = true;
-            console.log("DSDFFFVDBLČ")
-            console.log(isMod)
-        }
+    const [userData, setUserData] = useState({username: '', moderator: false})
+
+    const getUserData = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user', options)
+            .then(response => {
+              response.json().then(json => {
+                console.log(json)
+                const helpObject = {username: json.user.username, moderator: false}
+                if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
+                    helpObject.moderator = true
+                }
+                setUserData(helpObject)
+              })
+            });
     }
+
+    useEffect(() => {
+        getUserData()
+    }, [])
 
     function odjavi() {
         ReactSession.set("isLoggedIn", "false");
@@ -29,6 +44,7 @@ function Navbar() {
                 console.log(response)
             });
     }
+
     return (
         <nav className='nav'>
             <a href="/"><img src={myImage} alt="" /></a>
@@ -37,9 +53,9 @@ function Navbar() {
                     <li><a href="/notifications">Obavijesti</a></li>
                     <li><a>Moji Prijatelji</a></li>
                     <li><a href="/attended">Pohađani Eventi</a></li>
-                    {isMod && <li><a href="/userActions">Upravljaj korisnicima</a> </li>}
+                    {(userData.moderator == true) ? (<li><a href="/userActions">Upravljaj korisnicima</a></li>) : ('')}
                     <div className='userInfo'>
-                        <li><a href="/profile">{ReactSession.get("nickname")}</a></li>
+                    {(userData.username != '') ? (<li><a href="/profile">{userData.username}</a></li>) : ('')}
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
                     </div>
                 </ul>
