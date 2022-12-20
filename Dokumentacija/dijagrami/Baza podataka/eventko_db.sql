@@ -134,7 +134,7 @@ INSERT INTO uloga VALUES (3, 'Moderator', 'Korisnik koji ima mogućnost suspendi
 INSERT INTO uloga VALUES (4, 'Administrator', 'Korisnik koji ima mogućnost promocije korisnika na moderatore i brisanja korisničkih računa');
 
 INSERT INTO oznaka VALUES (1, 'Kava', '#6f4e37');
-INSERT INTO oznaka VALUES (2, 'Piva', '#f28e1c');
+INSERT INTO oznaka VALUES (2, 'Piva', '#f2f542');
 INSERT INTO oznaka VALUES (3, 'Učenje', '#F5D836');
 INSERT INTO oznaka VALUES (4, 'Priroda', '#62DA18');
 INSERT INTO oznaka VALUES (5, 'Izlet', '#18A5DA');
