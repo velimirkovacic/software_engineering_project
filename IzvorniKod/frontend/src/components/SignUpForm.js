@@ -13,7 +13,7 @@ const SignUpForm = ({Register, errors}) => {
     <form onSubmit={handleSignUpForm}>
         <div className='form-inner'>
             <h2>Kreiraj korisnički račun</h2>
-            {(errors !== '') ? (<div className='errors'>{errors}</div>) : ''}
+            {(errors !== '') ? (<div style={{maxWidth: '300px'}}>{errors}</div>) : ''}
             <div className='form-group'>
                 <label htmlFor='name'>Korisničko ime: </label>
                 <input type='text' name='name' id='name' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/> 
@@ -31,8 +31,6 @@ const SignUpForm = ({Register, errors}) => {
                 <input type='password' name='password' id='password' onChange={e => setDetails({...details, password:e.target.value})} value={details.password}/>        
             </div> 
             <button type='submit' name='register'>Registrirajte se</button>
-            <a>ili </a>
-            <a href='/'>odustanite </a>
         </div>
     </form>
   )

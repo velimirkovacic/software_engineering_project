@@ -152,6 +152,7 @@ form .form-inner2 .form-group[name='eventinfo-form'] {
   max-width: 50vw;
 }
 
+
 .form-inner2 .form-group label {
   display: block;
   color: #737164;
@@ -577,7 +578,6 @@ button[name='register'] {
   color: #fff;
   font-weight: 600;
   height: min-content;
-  width: 120px;
   
 }
 
