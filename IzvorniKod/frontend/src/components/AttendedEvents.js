@@ -4,37 +4,14 @@ import Navbar from './Navbar';
 
 
 function AttendedEvents() {
-    const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
-
-    const getUserData = () => {
-        const options = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/api/user', options)
-            .then(response => {
-                response.json().then(json => {
-                    console.log(json)
-                    const helpObject = { username: json.user.username, moderator: false, admin: false }
-                    if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
-                        helpObject.moderator = true
-                    }
-                    if (json.user.roles.map(role => role.id).indexOf(4) != -1) {
-                        helpObject.admin = true
-                    }
-                    setUserData(helpObject)
-                })
-            });
-    }
 
     useEffect(() => {
-        getUserData()
         getAttendedEvents()
     }, [])
 
     const [attendedEvents, setAttended] = useState([]);
+    const [loaded, setLoaded] = useState(false);
+
     const getAttendedEvents = () => {
         const options = {
             method: 'GET',
@@ -49,6 +26,7 @@ function AttendedEvents() {
                     const helpArray = []
                     json.userAvailableEvents.map(ev => helpArray.push(ev))
                     setAttended(helpArray)
+                    setLoaded(true)
                 })
             })
     }
@@ -97,9 +75,14 @@ function AttendedEvents() {
                                 <div style={{ fontSize: '10pt', marginLeft: '5%', marginBottom: '10px' }}>{new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' })}</div>
                             </div>
                             <div className='likes'>
-                                <button type='submit' name='register' style={{ width: '120px', height: '30px' }} onClick={e => { e.preventDefault(); reviewEvent(ev.id, 1, ev.name) }}> Sviđa mi se</button>
-                                <button name='dislike' style={{ width: '120px', height: '30px' }} onClick={e => { e.preventDefault(); reviewEvent(ev.id, -1, ev.name) }}> Ne sviđa mi se</button></div>
-                        </div>)) : <h2 style={{ textAlign: 'center', fontWeight: 'normal', marginTop: '2%' }} > NISTE BILI NI NA JEDNOM EVENTU</h2>}
+                                <button type='submit' name='register' style={{ width: '120px' }} onClick={() => reviewEvent(ev.id, 1)}> Sviđa mi se</button>
+                                <button name='dislike' onClick={() => reviewEvent(ev.id, -1)}> Ne sviđa mi se</button></div>
+                        </div>)) : ('')}
+                    {(attendedEvents.length == 0 && loaded == true) ? (
+                        <div>
+                            <h3 style={{ marginBottom: '5px', marginLeft: '5%', marginTop: '10px' }}>Nemate pohađanih eventova</h3>
+                        </div>
+                    ) : ('')}
                 </div>
             </div>
         </body >

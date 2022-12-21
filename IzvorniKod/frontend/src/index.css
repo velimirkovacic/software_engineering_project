@@ -361,6 +361,9 @@ form .form-inner2 button[name='moderator']:hover {
   background-position: 100%;
 }
 
+div[id='expand'] {
+  display: none;
+}
 
 /* css za homepage */
 
@@ -578,8 +581,7 @@ button[name='register'] {
   color: #fff;
   font-weight: 600;
   height: min-content;
-  width: 160px;
-  margin-left: 2%;
+  max-width: 160px;
   text-align: center;
  
   

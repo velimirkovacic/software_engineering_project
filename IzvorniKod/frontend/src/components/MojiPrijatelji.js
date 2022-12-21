@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from './Navbar';
 import Button from '@mui/material/Button';
+import TextField from "@mui/material/TextField";
+import ListFriends from './ListFriends';
 
-function MojiPrijatelji() {
+function MojiPrijatelji(props) {
     const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
     const [listaFrendova, setFriends] = useState([])
 
@@ -18,7 +20,6 @@ function MojiPrijatelji() {
         fetch('/api/user', options)
             .then(response => {
                 response.json().then(json => {
-                    console.log(json)
                     const helpObject = { username: json.user.username, moderator: false, admin: false }
                     if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
                         helpObject.moderator = true
@@ -48,14 +49,13 @@ function MojiPrijatelji() {
         fetch('/api/user/friends', options)
             .then(response => {
               response.json().then(json => {
-                console.log(json)
                 const helpArray = []
                 json.userList.map(ev => helpArray.push(ev))
                 setFriends(helpArray)
             })
         })
     }
-    console.log(listaFrendova)
+    //console.log(listaFrendova)
 
 
     // funkcija za unfriendanje prijatelja
@@ -92,8 +92,20 @@ function MojiPrijatelji() {
         refreshPage()
     }
 
+        //za popis svih korisnika
+        const [inputText1, setInputText1] = useState("");
+        let inputHandler1 = (e) => {
+            var lowerCase = e.target.value.toLowerCase();
+            setInputText1(lowerCase);
+        };
 
-
+        function findUser(){
+            let div = document.getElementById('expand')
+            if (div.style.display == 'flex') {
+                div.style.display = 'none';
+            } else {
+                div.style.display = 'flex'; }
+        }
 
     return (
         <div>
@@ -111,9 +123,30 @@ function MojiPrijatelji() {
                             </li>
                             
                     </div>
-                )) : (<div>Nazalost nemate prijatelja</div>)}
-
+                )) : (   
+                        <div>Nazalost nemate prijatelja</div>
+                    )}
             </ol>
+            <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "40px"}}>
+            <button type='button' name='register' onClick={findUser}>Pretraži korisnike</button>
+            </ol>
+            <div className="App" id="expand">
+            <div className='sus'>
+                <div className='main'>
+                    <h1>Korisnici</h1>
+                    <div className="search">
+                        <TextField
+                            id="outlined-basic"
+                            onChange={inputHandler1}
+                            variant="outlined"
+                            fullWidth
+                            label="Search"
+                        />
+                    </div>
+                    <ListFriends input={inputText1} />
+                </div>
+            </div>
+            </div>
         </div>
     );
 }

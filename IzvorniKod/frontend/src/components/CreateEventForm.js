@@ -64,8 +64,35 @@ const CreateEventForm = (props) => {
     
     const handleCreateEventForm = e => {
         e.preventDefault();
-        if(new Date(details.beginningTimestamp).getTime() > new Date(details.endTimestamp)){
+        if (details.name == '') {
+            setError("Potrebno je unijeti ime eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (details.location == ''){
+            setError("Potrebno je unijeti mjesto eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (details.beginningTimestamp == '') {
+            setError("Potrebno je unijeti vrijeme početka eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (details.endTimestamp == '') {
+            setError("Potrebno je unijeti vrijeme kraja eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (details.typeId == '') {
+            setError("Potrebno je odabrati vrstu eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (details.description == '') {
+            setError("Potrebno je unijeti opis eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (details.coordinates == '') {
+            setError("Potrebno je unijeti koordinate mjesta eventa")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if(new Date(details.beginningTimestamp).getTime() > new Date(details.endTimestamp).getTime()){
             setError("Unijeli ste da event završava prije nego što počinje. Pokušavate trolovati???")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if(ReactSession.get("suspended") && parseInt(details.typeId.value)===3 ){
+            setError("Pokušali ste napraviti javni event iako ste suspendirani. Pokušavate trolovati???")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else if (new Date(details.beginningTimestamp).getTime() < new Date().getTime()) {
+            setError("Ne možete stvoriti event u prošlosti")
             document.getElementById('eventform').scrollTo(0, 0)
         } else {
             let tags = []

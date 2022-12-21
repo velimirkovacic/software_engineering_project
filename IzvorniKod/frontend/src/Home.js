@@ -40,7 +40,9 @@ const Welcome = () => {
         type: ev.type.id,
         temp: temp
       }
-      api.addEvent(calendarEvent)
+      if (api.getEventById(ev.id) == null) {
+        api.addEvent(calendarEvent)
+      }
     })
   }
 
