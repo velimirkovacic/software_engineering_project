@@ -66,7 +66,8 @@ public class EventController {
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
-        return ResponseEntity.ok(new EventResponseDTO("", eventService.promotedEvents(userId)));
+        User user = userService.getUserById(userId);
+        return ResponseEntity.ok(new EventResponseDTO("", eventService.promotedEvents(userId).stream().filter(e -> !user.getAttends().contains(e)).collect(Collectors.toList())));
     }
 
     @GetMapping("/attended")
@@ -208,7 +209,6 @@ public class EventController {
         }
 
         return ResponseEntity.ok(new MessageResponseDTO("Event uspješno promoviran"));
-
     }
 
     @PostMapping("/edittag")
