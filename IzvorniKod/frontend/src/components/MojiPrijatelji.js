@@ -60,8 +60,9 @@ function MojiPrijatelji() {
 
     // funkcija za unfriendanje prijatelja
     function refreshPage() {
-        window.location.reload(false);
         getFriends();
+        window.location.reload(false);
+
     }
 
     function unfriend(id) {
@@ -98,26 +99,21 @@ function MojiPrijatelji() {
         <div>
             <Navbar />
             <div>
+                <h2 style={{marginLeft: "10px", marginTop: "20px"}}> Lista mojih prijatelja: </h2>
+            </div>
+            <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "20px"}}>
                 {(listaFrendova.length > 0) ? (listaFrendova.map(frend => 
                     <div>
-                        <div>
-                            <h2 style={{marginLeft: "10px", marginTop: "20px"}}> Lista mojih prijatelja: </h2>
-                        </div>
-
-                        <div>
-                        <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "20px"}}>
-                            <li  key="{frend.nickname}">{frend.nickname}  
+                            <li style={{marginTop: "10px"}} key="{frend.nickname}">{frend.nickname} 
                                 <Button variant="contained" className='unfriend' style={{marginLeft: "10px"}}
                                     onClick={e => { e.preventDefault(); unfriend(frend.id) }} id={frend.username}
                                     key={frend.username}>UNFRIEND</Button>
                             </li>
                             
-                        </ol>
-                        </div>
                     </div>
                 )) : (<div>Nazalost nemate prijatelja</div>)}
 
-            </div>
+            </ol>
         </div>
     );
 }
