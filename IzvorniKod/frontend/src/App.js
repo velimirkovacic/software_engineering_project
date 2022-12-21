@@ -8,7 +8,6 @@ import Notifications from './components/Notifications';
 import AttendedEvents from './components/AttendedEvents';
 import { ReactSession } from 'react-client-session';
 import UserActions from './UserActions';
-import Admin from './Admin';
 import MojiPrijatelji from './components/MojiPrijatelji';
 
 function App() {
@@ -28,7 +27,6 @@ function App() {
         <Route path='/login' element={<LoginForm onLoginForm={onLoginForm} />} />
         <Route path='/register' element={<Register />} />
         <Route path='/userActions' element={<UserActions />} />
-        <Route path='/admin' element={<Admin />} />
         <Route path='/profile' element={<ProfileInfo />} />
         <Route path='/notifications' element={<Notifications />} />
         <Route path='/attended' element={<AttendedEvents />} />

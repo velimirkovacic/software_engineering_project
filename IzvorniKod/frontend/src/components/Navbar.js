@@ -57,7 +57,7 @@ function Navbar() {
                     <li><a href="/moji_prijatelji">Moji Prijatelji</a></li>
                     <li><a href="/attended">Pohađani Eventi</a></li>
                     {(userData.moderator === true) ? (<li><a href="/userActions">Upravljaj korisnicima</a></li>) : ('')}
-                    {(userData.admin === true) ? (<li><a href="/admin">Administrativne ovlasti</a></li>) : ('')}
+
                     <div className='userInfo'>
                         {(userData.username !== '') ? (<li><a href="/profile">{userData.username}</a></li>) : ('')}
                         <li><a href="/" onClick={odjavi}>Odjava</a></li>
