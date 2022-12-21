@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 import Navbar from './Navbar';
 function MojiPrijatelji() {
     const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
+    const [listaFrendova, setFriends] = useState([])
 
     const getUserData = () => {
         const options = {
@@ -31,18 +32,41 @@ function MojiPrijatelji() {
     }
 
     useEffect(() => {
+        getFriends()
         getUserData()
     }, [])
 
+    const getFriends = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/friends', options)
+            .then(response => {
+              response.json().then(json => {
+                console.log(json)
+                const helpArray = []
+                json.userList.map(ev => helpArray.push(ev))
+                setFriends(helpArray)
+            })
+        })
+    }
+    console.log(listaFrendova)
 
     return (
-        <body>
+        <div>
             <Navbar />
-            <div id="container">
-                <a>Nazalost nemate prijatelja</a>
-                <a href="/">Povratak</a>
+            <div>
+                {(listaFrendova.length > 0) ? (listaFrendova.map(frend => 
+                    <ol style={{marginLeft: "30px"}}>
+                        <li  key="{frend.nickname}">{frend.nickname}</li>
+                    </ol>
+                )) : (<div>Nazalost nemate prijatelja</div>)}
+
             </div>
-        </body>
+        </div>
     );
 }
 
