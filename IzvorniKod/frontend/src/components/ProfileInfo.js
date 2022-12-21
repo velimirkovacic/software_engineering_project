@@ -2,8 +2,17 @@ import React, { useState, useEffect } from 'react';
 import { ReactSession } from 'react-client-session';
 import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
+import Popup from 'reactjs-popup';
 
 const ProfileInfo = () => {
+
+    const [open, setOpen] = useState(false);
+    const closeModal = () => {
+        setOpen(false);
+        navigate('/')
+    }
+
+    const [message, setMessage] = useState('')
 
     const navigate = useNavigate();
 
@@ -42,12 +51,15 @@ const ProfileInfo = () => {
                 if (response.ok) {
                     response.json().then(json => {
                         console.log(json)
-                        alert(json.message);
+                        const roleList = ReactSession.get("roles")
+                        roleList.push({id: 2})
+                        ReactSession.set("roles", roleList)
+                        setMessage(json.message)
+                        setOpen(true)
                     })
                 }
             })
-        alert("Uplatite na iban 12345678 LP");
-    }
+        }
 
     const handleProfile = e => {
         e.preventDefault();
@@ -70,37 +82,49 @@ const ProfileInfo = () => {
                     response.json().then(json => {
                         console.log(json)
                         ReactSession.set("nickname", details.nickname)
-                        alert('Uspješna promjena nadimka')
-                        navigate('/')
+                        setMessage(json.message)
+                        setOpen(true)
                     })
                 }
             })
     };
 
     return (
-        <form onSubmit={handleProfile}>
-            <div className="App">
-                    <div className='form-inner'>
-                        <h2>Vaš korisnički profil</h2>
-                        <div className='form-group'>
-                            <label name='profile'>Nadimak: </label>
-                            <input type='text' name='nickname' id='nickname' onChange={e => setDetails({ ...details, nickname: e.target.value })} value={details.nickname}/> 
+        <div>
+            <form onSubmit={handleProfile}>
+                <div className="App">
+                        <div className='form-inner'>
+                            <h2>Vaš korisnički profil</h2>
+                            <div className='form-group'>
+                                <label name='profile'>Nadimak: </label>
+                                <input type='text' name='nickname' id='nickname' onChange={e => setDetails({ ...details, nickname: e.target.value })} value={details.nickname}/> 
+                            </div>
+                            <div className='form-group'>
+                                <label name='profile'>Korisničko ime: {ReactSession.get("username")}</label>
+                            </div>
+                            <div className='form-group'>
+                                <label name='profile'>E-mail: {ReactSession.get("email")}</label>
+                            </div>
+                            <br></br>
+                            {(premium!==true) ? (<Button variant="contained" name='premium' onClick={e => { e.preventDefault(); promoteProfile(ReactSession.get("id")) }} id={ReactSession.get("id")}>Promoviraj se</Button>) : ('')}
+                            <br></br>
+                            <br></br>
+                            <button type='submit' name='register'>Spremi</button>
+                            <button type='button' name='register' onClick={() => navigate('/')}>Odustani</button>
                         </div>
-                        <div className='form-group'>
-                            <label name='profile'>Korisničko ime: {ReactSession.get("username")}</label>
+                </div>
+            </form>
+            <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
+                <form>
+                    <div className='form-inner2' style={{padding: '50px', overflow: 'unset'}}>
+                        <div className='form-group' name='eventinfo-form' style={{minWidth: '0', marginBottom: '0'}}>
+                            <h2 style={{fontSize: '23pt'}}>{message}</h2>
+                            <button type='button' name='register' onClick={() => closeModal()}>U redu</button>
                         </div>
-                        <div className='form-group'>
-                            <label name='profile'>E-mail: {ReactSession.get("email")}</label>
-                        </div>
-                        <br></br>
-                        {(premium!==true) ? (<Button variant="contained" name='premium' onClick={e => { e.preventDefault(); promoteProfile(ReactSession.get("id")) }} id={ReactSession.get("id")}>Promoviraj se</Button>) : ('')}
-                        <br></br>
-                        <br></br>
-                        <button type='submit' name='register'>Spremi promjene</button>
-                        <a href='/'>Vrati se natrag </a>
                     </div>
-            </div>
-        </form>
+                </form>
+            </Popup>
+        </div>
       );
 }
 
