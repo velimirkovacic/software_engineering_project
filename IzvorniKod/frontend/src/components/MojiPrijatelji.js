@@ -57,7 +57,7 @@ function MojiPrijatelji() {
             <Navbar />
             <div>
                 {(listaFrendova.length > 0) ? (listaFrendova.map(frend => 
-                    <ol style={{marginLeft: "30px"}}>
+                    <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "20px"}}>
                         <li  key="{frend.nickname}">{frend.nickname}</li>
                     </ol>
                 )) : (<div>Nazalost nemate prijatelja</div>)}
