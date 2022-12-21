@@ -5,6 +5,7 @@ import { ReactSession } from 'react-client-session';
 import myImage from '../Slike/eventkoLogo.png'
 import { useEffect } from 'react';
 import Navbar from './Navbar';
+import { flexbox } from '@mui/system';
 
 function AttendedEvents() {
     const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
@@ -34,15 +35,45 @@ function AttendedEvents() {
 
     useEffect(() => {
         getUserData()
+        getAttendedEvents()
     }, [])
 
+    const [attendedEvents, setAttended] = useState([]);
+    const getAttendedEvents = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/events/attended', options)
+            .then(response => {
+                response.json().then(json => {
+                    console.log(json)
+                    const helpArray = []
+                    json.userAvailableEvents.map(ev => helpArray.push(ev))
+                    setAttended(helpArray)
+                })
+            })
+    }
 
     return (
         <body>
             <Navbar />
             <div>
-                <a>Niste bili niti na jednom eventu</a>
-                <a href="/">Povratak</a>
+                <div>
+                    <h3 style={{ marginLeft: '5%', marginBottom: '5px' }}>Pohađani eventi</h3>
+                    {(attendedEvents.length > 0) ? (attendedEvents.map(ev =>
+                        <div key={ev.id} className='attended'>
+                            <div className='event'>
+                                <h3 style={{ marginBottom: '5px', marginLeft: '5%', marginTop: '10px' }}>{'[' + ev.location + '] ' + ev.name}</h3>
+                                <div style={{ fontSize: '10pt', marginLeft: '5%' }}>{(ev.organizer.nickname != '') ? (ev.organizer.nickname) : (ev.organizer.username)}</div>
+                                <div style={{ fontSize: '10pt', marginLeft: '5%', marginBottom: '10px' }}>{new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' })}</div>
+                            </div>
+                            <div className='likes'><button type='submit' name='register'> Sviđa mi se</button>
+                                <button name='dislike'> Ne sviđa mi se</button></div>
+                        </div>)) : ('')}
+                </div>
             </div>
         </body>
     );

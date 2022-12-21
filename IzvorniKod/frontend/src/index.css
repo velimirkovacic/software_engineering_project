@@ -560,3 +560,66 @@ h3, h4{
 .btnPromoEvents:hover {
   background-color: #e8f0fe;
 }
+
+
+/* button css */
+button[name='register'] {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-right: 5%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #00477F;
+  background-size: 150%;
+  background-position: 0%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  height: min-content;
+  width: 120px;
+  
+}
+
+
+
+button[name=dislike] {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-right: 5%;
+  padding: 10px 15px;
+  border-radius: 8px;
+  background-color: #f12607f4;
+  background-size: 150%;
+  background-position: 0%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  height: min-content;
+  width: 140px;
+}
+.attended{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items:center;
+  margin-left: 50px;
+  margin-right: 50px;
+ 
+ 
+}
+button[name=register]:hover{
+  background-color: #487aa4;
+}
+
+button[name='dislike']:hover{
+  background-color:#f126079b;
+}
+.likes{
+  align-items: center;
+  display: flex;
+}
+.event{
+ width: 200px;
+}
