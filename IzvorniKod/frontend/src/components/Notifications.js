@@ -1,8 +1,4 @@
-
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import { ReactSession } from 'react-client-session';
-import myImage from '../Slike/eventkoLogo.png'
 import { useEffect } from 'react';
 import Navbar from './Navbar';
 function Notifications() {

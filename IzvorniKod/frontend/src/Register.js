@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
 import SignUpForm from './components/SignUpForm';
 import { useNavigate } from 'react-router-dom'
+import Popup from 'reactjs-popup';
 
 function Register() {
+
+    const [open, setOpen] = useState(false);
+    const closeModal = () => {
+        setOpen(false);
+        navigate('/')
+    }
 
     const [errors, setErrors] = useState('');
     let prijelaz = 'ne';
@@ -47,10 +54,8 @@ function Register() {
         setErrors("");
         if (details.name.length<2  || details.name.length>25 || imaNedozvoljenZnak(details.name) ) {
             setErrors("Username mora biti dugačak od 2 do 25 znakova i smije sadržavati samo slova, brojeve i '_' znak");
-        } else if (details.nickname.length<2  || details.nickname.length>25) {
-            setErrors("Nadimak mora biti dugačak od 2 do 25 znakova");
         } else if (emailNeispravan(details.email)) {
-            setErrors("Email adrese nije ispravna (primjer ispravnog formata ime@domena.hr)");
+            setErrors("Email adresa nije ispravna (primjer ispravnog formata ime@domena.hr)");
         } else if ( details.password.length<4) {
             setErrors("Lozinka mora biti dugačka bar 4 znaka")   
         } else {
@@ -72,8 +77,7 @@ function Register() {
                     console.log(response);
                     if (response.ok) {
                         prijelaz = 'da';
-                        alert("Uspješna registracija, možete se prijaviti...");
-                        navigate('/');
+                        setOpen(true)
                     } else {
                         setErrors("Neispravno uneseni podaci");
                     }
@@ -82,12 +86,22 @@ function Register() {
     }
 
     return (
-        <div className='App'>
-            {prijelaz==='da' ? (
-                navigate('/')
-            ) : (
+        <div>
+            <div className='App'>
+            {prijelaz==='da' ? ('') : (
                 <SignUpForm Register={Register} errors={errors} />
             )}
+            </div>
+            <Popup class="popup-overlay" open={open} position="center center" closeOnDocumentClick={0}>
+                <form>
+                    <div className='form-inner2' style={{padding: '50px', overflow: 'unset'}}>
+                        <div className='form-group' name='eventinfo-form' style={{minWidth: '0', marginBottom: '0'}}>
+                            <h2 style={{fontSize: '23pt'}}>Uspješna registracija</h2>
+                            <button type='button' name='register' onClick={() => closeModal()}>U redu</button>
+                        </div>
+                    </div>
+                </form>
+            </Popup>
         </div>
     );
 
