@@ -75,8 +75,8 @@ function AttendedEvents() {
                                 <div style={{ fontSize: '10pt', marginLeft: '5%', marginBottom: '10px' }}>{new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' })}</div>
                             </div>
                             <div className='likes'>
-                                <button type='submit' name='register' style={{ width: '120px' }} onClick={() => reviewEvent(ev.id, 1)}> Sviđa mi se</button>
-                                <button name='dislike' onClick={() => reviewEvent(ev.id, -1)}> Ne sviđa mi se</button></div>
+                                <button type='submit' name='register' style={{ width: '120px', height: '30px' }} onClick={e => { e.preventDefault(); reviewEvent(ev.id, 1, ev.name) }}> Sviđa mi se</button>
+                                <button name='dislike' style={{ width: '120px', height: '30px' }} onClick={e => { e.preventDefault(); reviewEvent(ev.id, -1, ev.name) }}> Ne sviđa mi se</button></div>
                         </div>)) : ('')}
                     {(attendedEvents.length == 0 && loaded == true) ? (
                         <div>
