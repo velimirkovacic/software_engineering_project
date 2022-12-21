@@ -77,7 +77,7 @@ public class EventController {
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
-        return ResponseEntity.ok(new EventResponseDTO("", user.getAttends().stream().filter(e -> e.getEndTimestamp().isAfter(LocalDateTime.now())).collect(Collectors.toList())));
+        return ResponseEntity.ok(new EventResponseDTO("", user.getAttends().stream().filter(e -> e.getEndTimestamp().isBefore(LocalDateTime.now())).collect(Collectors.toList())));
     }
 
     @PostMapping("/add")
