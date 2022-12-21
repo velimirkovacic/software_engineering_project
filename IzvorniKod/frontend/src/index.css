@@ -568,7 +568,7 @@ button[name='register'] {
   margin-top: 8px;
   margin-bottom: 10px;
   margin-right: 5%;
-  padding: 10px 15px;
+  
   border-radius: 8px;
   background-color: #00477F;
   background-size: 150%;
@@ -577,7 +577,10 @@ button[name='register'] {
   color: #fff;
   font-weight: 600;
   height: min-content;
-  width: 120px;
+  width: 160px;
+ margin-left: 2%;
+  text-align: center;
+ 
   
 }
 
@@ -588,7 +591,7 @@ button[name=dislike] {
   margin-top: 8px;
   margin-bottom: 10px;
   margin-right: 5%;
-  padding: 10px 15px;
+ 
   border-radius: 8px;
   background-color: #f12607f4;
   background-size: 150%;
@@ -597,7 +600,10 @@ button[name=dislike] {
   color: #fff;
   font-weight: 600;
   height: min-content;
-  width: 140px;
+  width: 180px;
+
+  text-align: center;
+
 }
 .attended{
   display: flex;

@@ -8,6 +8,17 @@ function List(props) {
         window.location.reload(false);
     }
 
+    function alreadyMod(item) {
+        let roleIds = [];
+        for (let i = 0; i < item.roles.length; i++) {
+            roleIds.push(item.roles[i].id)
+        }
+        console.log(roleIds)
+
+        return roleIds.includes(3);
+    }
+
+
 
     function suspend(id) {
         const data = {
@@ -61,6 +72,77 @@ function List(props) {
         refreshPage()
     }
 
+    function promote(id) {
+        let roles;
+        users.filter((el) => {
+            if (el.id === id) {
+                console.log("adfsadsadadsa")
+                console.log(el.roles)
+                roles = el.roles;
+            }
+        });
+
+
+        console.log(roles)
+        let roleIds = [];
+        for (let i = 0; i < roles.length; i++) {
+            roleIds.push(roles[i].id)
+        }
+        roleIds.push(3)
+
+        const data = {
+            userId: id,
+            roleIds: roleIds
+        };
+        console.log(data.roleIds)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/user/editroles', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+
+                    })
+                }
+            })
+        refreshPage()
+
+    }
+
+    function deleteUser(id) {
+        const data = {
+            userId: id
+        };
+        console.log(data.userId)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/user/delete', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+
+                    })
+                }
+            })
+        refreshPage()
+    }
+
 
     const [users, setUsers] = useState([]);
 
@@ -86,6 +168,8 @@ function List(props) {
         }
     })
 
+
+
     return (
 
         <ul>
@@ -96,8 +180,14 @@ function List(props) {
                     <div className='likes'>
 
 
-                        <Button type="button" name='register' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
-                        <Button name='dislike' variant="contained" className='susp' disabled={item.suspended === false ? true : false} onClick={e => { e.preventDefault(); unsuspend(item.id) }} id={item.id}>ODSUSPENDIRAJ</Button>
+                        <Button style={{ backgroundColor: "red" }} type="button" name='register' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
+                        <Button style={{ width: '200px' }} name='register' variant="contained" className='susp' disabled={item.suspended === false ? true : false} onClick={e => { e.preventDefault(); unsuspend(item.id) }} id={item.id}>ODSUSPENDIRAJ</Button>
+
+                        <Button style={{
+                            backgroundColor: "black",
+                            marginLeft: '80px'
+                        }} type="button" name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>Obriši</Button>
+                        <Button style={{ backgroundColor: "#f5c208" }} name='dislike' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
 
 
 

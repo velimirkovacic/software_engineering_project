@@ -120,15 +120,15 @@ function PromoteDelete(props) {
     return (
         <ul>
             {filteredData.map((item) => (
-                <div className='listItemPromo'>
+                <div className='attended'>
                     <li key={item.id}>{item.username}
                     </li>
-                    <div className='btngroup'>
-                        <Button variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>POBRIŠI</Button>
+                    <div className='likes'>
+                        <Button name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>POBRIŠI</Button>
 
                         {(alreadyMod(item)) ? <Button hover='Korisnik je vec promoviran' variant="contained" className='susp' disabled={true} id={item.id}>PROMOVIRAJ</Button>
 
-                            : <Button title='Promoviraj korisnika' variant="contained" className='susp' onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>PROMOVIRAJ</Button>
+                            : <Button name='register' title='Promoviraj korisnika' variant="contained" className='susp' onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>PROMOVIRAJ</Button>
                         }
                     </div>
                 </div>
