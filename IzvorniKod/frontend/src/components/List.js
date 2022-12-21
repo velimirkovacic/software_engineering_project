@@ -8,6 +8,32 @@ function List(props) {
         window.location.reload(false);
     }
 
+
+    const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
+
+    const getUserData = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user', options)
+            .then(response => {
+                response.json().then(json => {
+                    console.log(json)
+                    const helpObject = { username: json.user.username, moderator: false, admin: false }
+                    if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
+                        helpObject.moderator = true
+                    }
+                    if (json.user.roles.map(role => role.id).indexOf(4) != -1) {
+                        helpObject.admin = true
+                    }
+                    setUserData(helpObject)
+                })
+            });
+    }
+
     function alreadyMod(item) {
         let roleIds = [];
         for (let i = 0; i < item.roles.length; i++) {
@@ -153,6 +179,7 @@ function List(props) {
                 setUsers(users.userList)
                 console.log(users)
             })
+        getUserData()
     }, []);
 
 
@@ -182,14 +209,15 @@ function List(props) {
 
                         <Button style={{ backgroundColor: "red" }} type="button" name='register' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
                         <Button style={{ width: '200px' }} name='register' variant="contained" className='susp' disabled={item.suspended === false ? true : false} onClick={e => { e.preventDefault(); unsuspend(item.id) }} id={item.id}>ODSUSPENDIRAJ</Button>
-
-                        <Button style={{
-                            backgroundColor: "black",
-                            marginLeft: '80px'
-                        }} type="button" name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>Obriši</Button>
-                        <Button style={{ backgroundColor: "#f5c208" }} name='dislike' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
-
-
+                        {(userData.admin === true) ?
+                            <>
+                                <Button style={{
+                                    backgroundColor: "black",
+                                    marginLeft: '80px'
+                                }} type="button" name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>Obriši</Button>
+                                <Button style={{ backgroundColor: "#f5c208" }} name='dislike' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
+                            </> : ''
+                        }
 
                     </div>
                 </div>
