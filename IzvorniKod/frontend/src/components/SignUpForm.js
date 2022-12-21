@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 
 const SignUpForm = ({Register, errors}) => {
 
-    const [details, setDetails] = useState({name:'', email:'', password:''});
+    const [details, setDetails] = useState({name:'', email:'', password:'', repassword:''});
 
     const handleSignUpForm = e => {
         e.preventDefault();
@@ -30,7 +30,13 @@ const SignUpForm = ({Register, errors}) => {
                 <label htmlFor='password'>Lozinka: </label>
                 <input type='password' name='password' id='password' onChange={e => setDetails({...details, password:e.target.value})} value={details.password}/>        
             </div> 
+            <div className='form-group'>
+                <label htmlFor='password'>Ponovite lozinku: </label>
+                <input type='password' name='password' id='repassword' onChange={e => setDetails({...details, repassword:e.target.value})} value={details.repassword}/>        
+            </div> 
             <button type='submit' name='register'>Registrirajte se</button>
+            <a>ili </a>
+            <a href='/'>odustanite </a>
         </div>
     </form>
   )
