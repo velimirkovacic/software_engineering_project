@@ -33,6 +33,6 @@ public interface EventRepo extends JpaRepository<Event, Long> {
     @Query(value = "DELETE FROM dogadjaj WHERE id_dogadjaj = ?1", nativeQuery = true)
     void delete2(Long eventId);
 
-    @Query(value = "SELECT * FROM dogadjaj  WHERE promoviran = TRUE AND vrijeme_poc > current_timestamp", nativeQuery = true)
+    @Query(value = "SELECT * FROM dogadjaj  WHERE promoviran = TRUE AND vrijeme_poc > current_timestamp AND id_organizator <> ?1", nativeQuery = true)
     List<Event> getPromotedEvents(Long userId);
 }

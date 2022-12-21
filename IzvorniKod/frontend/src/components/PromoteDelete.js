@@ -1,5 +1,4 @@
 import { React, useState, useEffect } from 'react'
-import { ReactSession } from 'react-client-session';
 import "../search.css";
 import Button from '@mui/material/Button';
 

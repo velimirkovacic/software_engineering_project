@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'
-import { ReactSession } from 'react-client-session';
-import myImage from '../Slike/eventkoLogo.png'
 import { useEffect } from 'react';
 import Navbar from './Navbar';
 function MojiPrijatelji() {
     const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
+    const [listaFrendova, setFriends] = useState([])
 
     const getUserData = () => {
         const options = {
@@ -31,18 +29,49 @@ function MojiPrijatelji() {
     }
 
     useEffect(() => {
+        getFriends()
         getUserData()
     }, [])
 
+    const getFriends = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/friends', options)
+            .then(response => {
+              response.json().then(json => {
+                console.log(json)
+                const helpArray = []
+                json.userList.map(ev => helpArray.push(ev))
+                setFriends(helpArray)
+            })
+        })
+    }
+    console.log(listaFrendova)
 
     return (
-        <body>
+        <div>
             <Navbar />
-            <div id="container">
-                <a>Nazalost nemate prijatelja</a>
-                <a href="/">Povratak</a>
+            <div>
+                {(listaFrendova.length > 0) ? (listaFrendova.map(frend => 
+                    <div>
+                        <div>
+                            <h2 style={{marginLeft: "10px", marginTop: "20px"}}> Lista mojih prijatelja: </h2>
+                        </div>
+
+                        <div>
+                        <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "20px"}}>
+                            <li  key="{frend.nickname}">{frend.nickname}</li>
+                        </ol>
+                        </div>
+                    </div>
+                )) : (<div>Nazalost nemate prijatelja</div>)}
+
             </div>
-        </body>
+        </div>
     );
 }
 
