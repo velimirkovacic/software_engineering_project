@@ -20,7 +20,7 @@ function UserActions() {
             <Navbar />
             <div className='sus'>
                 <div className='main'>
-                    <h1>Suspendiranje korisnika</h1>
+                    <h1> Upravljaj korisnicima</h1>
                     <div className="search">
                         <TextField
                             id="outlined-basic"
