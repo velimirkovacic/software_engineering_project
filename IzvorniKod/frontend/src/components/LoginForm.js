@@ -90,7 +90,7 @@ function LoginForm(props) {
                 <form>
                     <div className='form-inner2' style={{padding: '50px', overflow: 'unset'}}>
                         <div className='form-group' name='eventinfo-form' style={{width:'20vw', marginBottom: '0'}}>
-                            <h2 style={{fontSize: '23pt'}}>Vaš račun je suspendiran! Nećete više imati mogućnost stvaranja javnih događaja.</h2>
+                            <p style={{fontSize: '20pt', marginBottom: '20px'}}>Vaš račun je suspendiran! Nećete više imati mogućnost stvaranja javnih događaja.</p>
                             <button type='button' name='register' onClick={() => closeModal()}>U redu</button>
                         </div>
                     </div>

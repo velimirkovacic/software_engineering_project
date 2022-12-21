@@ -118,7 +118,7 @@ const ProfileInfo = () => {
                 <form>
                     <div className='form-inner2' style={{padding: '50px', overflow: 'unset'}}>
                         <div className='form-group' name='eventinfo-form' style={{minWidth: '0', marginBottom: '0'}}>
-                            <h2 style={{fontSize: '23pt'}}>{message}</h2>
+                            <p style={{fontSize: '20pt', marginBottom: '20px'}}>{message}</p>
                             <button type='button' name='register' onClick={() => closeModal()}>U redu</button>
                         </div>
                     </div>

@@ -578,8 +578,7 @@ button[name='register'] {
   color: #fff;
   font-weight: 600;
   height: min-content;
-  width: 160px;
-  margin-left: 2%;
+  max-width: 160px;
   text-align: center;
  
   
