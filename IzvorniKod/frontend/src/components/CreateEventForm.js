@@ -64,43 +64,48 @@ const CreateEventForm = (props) => {
     
     const handleCreateEventForm = e => {
         e.preventDefault();
-        let tags = []
-        if (details.tagIds != '') {
-            tags = details.tagIds.map(item => parseInt(item.value))
+        if(new Date(details.beginningTimestamp).getTime() > new Date(details.endTimestamp)){
+            setError("Unijeli ste da event završava prije nego što počinje. Pokušavate trolovati???")
+            document.getElementById('eventform').scrollTo(0, 0)
+        } else {
+            let tags = []
+            if (details.tagIds != '') {
+                tags = details.tagIds.map(item => parseInt(item.value))
+            }
+            const data = {
+                name: details.name,
+                location: details.location,
+                beginningTimestamp: Date.parse(details.beginningTimestamp),
+                endTimestamp: Date.parse(details.endTimestamp),
+                description: details.description,
+                typeId: parseInt(details.typeId.value),
+                tagIds: tags,
+                promoted: (details.promoted == true) ? true : false,
+                coordinates: details.coordinates
+            };
+            const options = {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/JSON'
+                },
+                body: JSON.stringify(data)
+            };
+            console.log(data)
+            fetch('/api/events/add', options)
+                .then(response => {
+                    console.log(response)
+                    if (response.ok) {
+                        response.json().then(json => {
+                            console.log(json)
+                            props.close()
+                            window.location.reload()
+                        })
+                    } else {
+                        setError("Pogreška pri unosu")
+                        document.getElementById('eventform').scrollTo(0, 0)           
+                    }
+                })
         }
-        const data = {
-            name: details.name,
-            location: details.location,
-            beginningTimestamp: Date.parse(details.beginningTimestamp),
-            endTimestamp: Date.parse(details.endTimestamp),
-            description: details.description,
-            typeId: parseInt(details.typeId.value),
-            tagIds: tags,
-            promoted: (details.promoted == true) ? true : false,
-            coordinates: details.coordinates
-        };
-        const options = {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/JSON'
-            },
-            body: JSON.stringify(data)
-        };
-        console.log(data)
-        fetch('/api/events/add', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json)
-                        props.close()
-                        window.location.reload()
-                    })
-                } else {
-                    setError("Pogreška pri unosu")
-                    document.getElementById('eventform').scrollTo(0, 0)           
-                }
-            })
     }
 
     return (           
