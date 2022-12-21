@@ -58,6 +58,8 @@ function Register() {
             setErrors("Email adresa nije ispravna (primjer ispravnog formata ime@domena.hr)");
         } else if ( details.password.length<4) {
             setErrors("Lozinka mora biti dugačka bar 4 znaka")   
+        } else if (details.password!=details.repassword){
+            setErrors("Lozinke se ne podudaraju")
         } else {
             const data = {
                 username: details.name,
