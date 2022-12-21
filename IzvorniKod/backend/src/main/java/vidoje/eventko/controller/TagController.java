@@ -9,6 +9,7 @@ import vidoje.eventko.dto.TagsResponseDTO;
 import vidoje.eventko.service.TagService;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/tags")
@@ -22,6 +23,6 @@ public class TagController {
     public ResponseEntity<TagsResponseDTO> getTags(HttpServletRequest request) {
 
 
-        return ResponseEntity.ok(new TagsResponseDTO(tagService.getAllTags()));
+        return ResponseEntity.ok(new TagsResponseDTO(tagService.getAllTags().stream().sorted((t1, t2) -> (int) (t1.getId() - t2.getId())).collect(Collectors.toList())));
     }
 }

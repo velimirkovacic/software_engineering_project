@@ -289,17 +289,13 @@ public class UserController {
 
 
     @GetMapping("/friends")
-    public ResponseEntity<UserListResponseDTO> viewFriends(@Valid @RequestBody UserRequestDTO dto, HttpServletRequest request) {
+    public ResponseEntity<UserListResponseDTO> viewFriends(HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
             return new ResponseEntity<>(new UserListResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
-
-        if(!userService.exists(dto.getUserId())) {
-            return new ResponseEntity<>(new UserListResponseDTO("Drugi korisnik s tim ID-jem ne postoji", null), HttpStatus.BAD_REQUEST);
-        }
 
         return ResponseEntity.ok(new UserListResponseDTO("", user.getFriends().stream().toList()));
     }
