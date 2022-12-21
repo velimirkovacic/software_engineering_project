@@ -202,7 +202,7 @@ function List(props) {
         <ul>
             {filteredData.map((item) => (
                 <div className='attended'>
-                    <li key={item.id}>{item.username}
+                    <li style={{ width: '150px' }} key={item.id}>{item.username}
                     </li>
                     <div className='likes'>
 
