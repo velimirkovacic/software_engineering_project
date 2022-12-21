@@ -128,7 +128,7 @@ function MojiPrijatelji(props) {
                     )}
             </ol>
             <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "40px"}}>
-            <button type='button' name='register' onClick={findUser}>Pretraži korisnike</button>
+            <Button variant="contained" style={{marginLeft: "10px", background:"gray"}} onClick={findUser}>Pretraži korisnike</Button>            
             </ol>
             <div className="App" id="expand">
             <div className='sus'>

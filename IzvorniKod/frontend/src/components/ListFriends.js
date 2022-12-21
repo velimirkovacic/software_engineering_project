@@ -5,23 +5,46 @@ import Button from '@mui/material/Button';
 
 function ListFriends(props) {
 
+    const [listaFrendova, setFriends] = useState([])
     const [users, setUsers] = useState([]);
 
+    useEffect(() => {
+        getFriends()
+    }, [])
+
+    //dohvaćanje prijatelja
+    const getFriends = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/friends', options)
+            .then(response => {
+              response.json().then(json => {
+                const helpArray = []
+                json.userList.map(ev => helpArray.push(ev.id))
+                setFriends(helpArray)
+            })
+        })
+    }
+
+    //svi korisnici
     useEffect(() => {
         fetch('/api/user/users')
            .then(data => data.json())
            .then(users => {
                setUsers(users.userList)
-                console.log(users)
             })
     }, []);
 
-    console.log(users);
     const filteredData = users.filter((el) => {
-        if (props.input === '') {
+        console.log(listaFrendova.includes(el.id));
+        if (props.input === '' && !listaFrendova.includes(el.id)) {
             return el;
         }
-        else {
+        else if (!listaFrendova.includes(el.id)){
             return el.username.toLowerCase().includes(props.input)
         }
     })
@@ -44,10 +67,8 @@ function ListFriends(props) {
         };
         fetch('/api/user/friend', options)
             .then(response => {
-                console.log(response)
                 if (response.ok) {
                     response.json().then(json => {
-                        console.log(json)
                     })
                 }
             })
