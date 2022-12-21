@@ -361,6 +361,9 @@ form .form-inner2 button[name='moderator']:hover {
   background-position: 100%;
 }
 
+div[id='expand'] {
+  display: none;
+}
 
 /* css za homepage */
 
