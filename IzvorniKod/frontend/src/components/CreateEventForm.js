@@ -67,6 +67,10 @@ const CreateEventForm = (props) => {
         if(new Date(details.beginningTimestamp).getTime() > new Date(details.endTimestamp)){
             setError("Unijeli ste da event završava prije nego što počinje. Pokušavate trolovati???")
             document.getElementById('eventform').scrollTo(0, 0)
+
+        } else if(ReactSession.get("suspended") && parseInt(details.typeId.value)===3 ){
+            setError("Pokušali ste napraviti javni event iako ste suspendirani. Pokušavate trolovati???")
+            document.getElementById('eventform').scrollTo(0, 0)
         } else {
             let tags = []
             if (details.tagIds != '') {
