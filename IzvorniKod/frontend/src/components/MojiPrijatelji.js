@@ -111,7 +111,9 @@ function MojiPrijatelji() {
                             </li>
                             
                     </div>
-                )) : (<div>Nazalost nemate prijatelja</div>)}
+                )) : (   
+                        <div>Nazalost nemate prijatelja</div>
+                    )}
 
             </ol>
         </div>
