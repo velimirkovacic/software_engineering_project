@@ -207,15 +207,15 @@ function List(props) {
                     <div className='likes'>
 
 
-                        <Button style={{ backgroundColor: "red" }} type="button" name='register' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
+                        <Button style={{ width: '160px' }} type="button" name='dislike' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
                         <Button style={{ width: '200px' }} name='register' variant="contained" className='susp' disabled={item.suspended === false ? true : false} onClick={e => { e.preventDefault(); unsuspend(item.id) }} id={item.id}>ODSUSPENDIRAJ</Button>
                         {(userData.admin === true) ?
                             <>
                                 <Button style={{
-                                    backgroundColor: "black",
+                                    backgroundColor: "#3f3d3ded",
                                     marginLeft: '80px'
                                 }} type="button" name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>Obriši</Button>
-                                <Button style={{ backgroundColor: "#f5c208" }} name='dislike' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
+                                <Button name='promoviraj' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
                             </> : ''
                         }
 
