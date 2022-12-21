@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import { useEffect } from 'react';
 import Navbar from './Navbar';
+import Button from '@mui/material/Button';
+
 function MojiPrijatelji() {
     const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
     const [listaFrendova, setFriends] = useState([])
 
+    //navbar funkcija
     const getUserData = () => {
         const options = {
             method: 'GET',
@@ -33,6 +36,8 @@ function MojiPrijatelji() {
         getUserData()
     }, [])
 
+
+    //funkcija za dohvaćanje prijatelja
     const getFriends = () => {
         const options = {
             method: 'GET',
@@ -52,6 +57,43 @@ function MojiPrijatelji() {
     }
     console.log(listaFrendova)
 
+
+    // funkcija za unfriendanje prijatelja
+    function refreshPage() {
+        window.location.reload(false);
+        getFriends();
+    }
+
+    function unfriend(id) {
+        const data = {
+            userId: id
+        };
+        console.log("Evo ti ID korisnika kojeg brisem")
+        console.log(data.userId)
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/user/unfriend', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json)
+
+                    })
+                }
+            })
+        refreshPage()
+    }
+
+
+
+
     return (
         <div>
             <Navbar />
@@ -64,7 +106,12 @@ function MojiPrijatelji() {
 
                         <div>
                         <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "20px"}}>
-                            <li  key="{frend.nickname}">{frend.nickname}</li>
+                            <li  key="{frend.nickname}">{frend.nickname}  
+                                <Button variant="contained" className='unfriend' style={{marginLeft: "10px"}}
+                                    onClick={e => { e.preventDefault(); unfriend(frend.id) }} id={frend.username}
+                                    key={frend.username}>UNFRIEND</Button>
+                            </li>
+                            
                         </ol>
                         </div>
                     </div>
