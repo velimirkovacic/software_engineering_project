@@ -40,7 +40,6 @@ function ListFriends(props) {
     }, []);
 
     const filteredData = users.filter((el) => {
-        console.log(listaFrendova.includes(el.id));
         if (props.input === '' && !listaFrendova.includes(el.id)) {
             return el;
         }
@@ -75,13 +74,10 @@ function ListFriends(props) {
         refreshPage()        
     }
 
-    /* za kad ćemo htjeti blokirati korisnike
-    <Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>
     function block(id) {
         const data = {
             userId: id
         };
-        console.log(data.userId)
         const options = {
             method: 'POST',
             headers: {
@@ -95,13 +91,12 @@ function ListFriends(props) {
                 console.log(response)
                 if (response.ok) {
                     response.json().then(json => {
-                        console.log(json)
+                        console.log(json.message)
                     })
                 }
             })
         refreshPage()
     }
-    */
 
     return (
         <ul>
@@ -109,6 +104,7 @@ function ListFriends(props) {
             <div className='listItem'>
                 <li key={item.id}>{item.username}</li>
                 <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>
+                <Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>
             </div>
         ))}
         </ul>
