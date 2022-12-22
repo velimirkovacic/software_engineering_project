@@ -103,10 +103,12 @@ function ListFriends(props) {
     return (
         <ul>
         {filteredData.map((item) => (
-            <div className='listItem'>
+            <div className='attended'>
                 <li key={item.id}>{item.username}</li>
+                <div className='attended'>
                 <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>
                 <Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>
+            </div>
             </div>
         ))}
         </ul>
