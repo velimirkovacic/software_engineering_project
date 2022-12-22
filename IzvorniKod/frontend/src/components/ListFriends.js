@@ -5,23 +5,45 @@ import Button from '@mui/material/Button';
 
 function ListFriends(props) {
 
+    const [listaFrendova, setFriends] = useState([])
     const [users, setUsers] = useState([]);
 
+    useEffect(() => {
+        getFriends()
+    }, [])
+
+    //dohvaćanje prijatelja
+    const getFriends = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/friends', options)
+            .then(response => {
+              response.json().then(json => {
+                const helpArray = []
+                json.userList.map(ev => helpArray.push(ev.id))
+                setFriends(helpArray)
+            })
+        })
+    }
+
+    //svi korisnici
     useEffect(() => {
         fetch('/api/user/users')
            .then(data => data.json())
            .then(users => {
                setUsers(users.userList)
-                console.log(users)
             })
     }, []);
 
-    console.log(users);
     const filteredData = users.filter((el) => {
-        if (props.input === '') {
+        if (props.input === '' && !listaFrendova.includes(el.id)) {
             return el;
         }
-        else {
+        else if (!listaFrendova.includes(el.id)){
             return el.username.toLowerCase().includes(props.input)
         }
     })
@@ -44,23 +66,18 @@ function ListFriends(props) {
         };
         fetch('/api/user/friend', options)
             .then(response => {
-                console.log(response)
                 if (response.ok) {
                     response.json().then(json => {
-                        console.log(json)
                     })
                 }
             })
         refreshPage()        
     }
 
-    /* za kad ćemo htjeti blokirati korisnike
-    <Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>
     function block(id) {
         const data = {
             userId: id
         };
-        console.log(data.userId)
         const options = {
             method: 'POST',
             headers: {
@@ -74,13 +91,12 @@ function ListFriends(props) {
                 console.log(response)
                 if (response.ok) {
                     response.json().then(json => {
-                        console.log(json)
+                        console.log(json.message)
                     })
                 }
             })
         refreshPage()
     }
-    */
 
     return (
         <ul>
@@ -88,6 +104,7 @@ function ListFriends(props) {
             <div className='listItem'>
                 <li key={item.id}>{item.username}</li>
                 <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>
+                <Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>
             </div>
         ))}
         </ul>
