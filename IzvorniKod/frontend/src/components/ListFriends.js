@@ -36,6 +36,8 @@ function ListFriends(props) {
            .then(data => data.json())
            .then(users => {
                setUsers(users.userList)
+               console.log("OVO")
+               console.log(users.userList)
             })
     }, []);
 
