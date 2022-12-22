@@ -124,7 +124,7 @@ public class EventController {
             return new ResponseEntity<>(new MessageResponseDTO("Korisnik je blokiran od strane organizatora eventa, ne može se prijaviti"), HttpStatus.BAD_REQUEST);
         }
 
-        if(event.getType().getId() == 2 && user.getFriends().contains(event.getOrganizer())) {
+        if(event.getType().getId() == 2 && !user.getFriends().contains(event.getOrganizer())) {
             return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije prijatelj organizatora privatnog eventa, ne može se prijaviti"), HttpStatus.BAD_REQUEST);
         }
 
