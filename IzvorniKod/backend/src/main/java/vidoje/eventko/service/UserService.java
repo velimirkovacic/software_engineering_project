@@ -13,7 +13,7 @@ import java.util.Set;
 public interface UserService {
     List<User> listAllNotBlocked(Long userId);
 
-    List<User> listAll(Long userId);
+    List<User> listAll();
 
     /**
      * Provjerava postoji li takav korisnik u bazi podataka
@@ -46,5 +46,7 @@ public interface UserService {
     boolean exists(Long userId);
 
     List<User> getMostActiveUsers();
+
+    List<User> blocked(Long userId);
 
 }

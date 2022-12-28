@@ -32,6 +32,9 @@ public interface UserRepo extends JpaRepository<User, Long> {
     void delete2(Long userId);
 
 
-    @Query(value = "SELECT korisnik.*, COUNT(DISTINCT id_dogadjaj) FROM korisnik JOIN dogadjaj ON id_korisnik = id_organizator GROUP BY korisnik.id_korisnik ORDER BY COUNT(DISTINCT id_dogadjaj) DESC LIMIT 3", nativeQuery = true)
+    @Query(value = "SELECT COALESCE(SUM(recenzija), 0) AS score, korisnik.* FROM pohadja NATURAL JOIN dogadjaj JOIN korisnik ON id_organizator = id_korisnik GROUP BY korisnik.id_korisnik ORDER BY score DESC LIMIT 3", nativeQuery = true)
     List<User> find3MostActive();
+
+    @Query(value= "SELECT blokiran.* FROM jeBlokiranod JOIN korisnik AS blokiran ON blokiran.id_korisnik = id_blokiran WHERE id_blokiran_od = ?1", nativeQuery = true)
+    List<User> blocked(Long userId);
 }

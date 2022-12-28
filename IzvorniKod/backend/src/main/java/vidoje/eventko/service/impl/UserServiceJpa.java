@@ -28,7 +28,7 @@ public class UserServiceJpa implements UserService {
     }
 
     @Override
-    public List<User> listAll(Long userId) {
+    public List<User> listAll() {
         return userRepo.findAll();
     }
 
@@ -92,5 +92,10 @@ public class UserServiceJpa implements UserService {
     @Override
     public List<User> getMostActiveUsers() {
         return userRepo.find3MostActive();
+    }
+
+    @Override
+    public List<User> blocked(Long userId) {
+        return userRepo.blocked(userId);
     }
 }

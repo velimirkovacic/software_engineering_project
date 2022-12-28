@@ -1,6 +1,7 @@
 package vidoje.eventko.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.crypto.SecretKeyFactory;
@@ -42,6 +43,7 @@ public class User {
         this.blockedBy = new HashSet<User>();
         this.friends = new HashSet<User>();
         this.attends = new HashSet<Event>();
+        this.score = Integer.valueOf(0);
 
         roles.add(role); //Uloga korisnik
     }
@@ -98,6 +100,17 @@ public class User {
     @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_pohadjatelj"), inverseJoinColumns = @JoinColumn(name = "id_dogadjaj"))
     private Set<Event> attends;
 
+    @JsonInclude()
+    @Transient
+    private Integer score;
+
+    public Integer getScore() {
+        return score;
+    }
+
+    public void setScore(Integer score) {
+        this.score = score;
+    }
 
     public Long getId() {
         return id;

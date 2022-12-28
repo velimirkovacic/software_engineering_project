@@ -20,4 +20,14 @@ public class AttendsServiceJpa implements AttendsService {
     public void review(Long userId, Long eventId, Integer review) {
         attendsRepo.review(userId, eventId, review);
     }
+
+    @Override
+    public Integer score(Long userId) {
+        return attendsRepo.calculateScore(userId);
+    }
+
+    @Override
+    public Integer getReview(Long userId, Long eventId) {
+        return attendsRepo.getReview(userId, eventId);
+    }
 }

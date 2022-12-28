@@ -1,6 +1,7 @@
 package vidoje.eventko.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -28,6 +29,8 @@ public class Event {
         if(promoted == null) {
             this.promoted = false;
         }
+
+        this.review = 0;
 
         this.coordinates = coordinates;
 
@@ -78,21 +81,20 @@ public class Event {
     @JoinTable(name = "pohadja", joinColumns = @JoinColumn(name = "id_dogadjaj"), inverseJoinColumns = @JoinColumn(name = "id_pohadjatelj"))
     private Set<User> attendees;
 
-    @JsonIgnore
-    @OneToMany
-    @JoinColumn(name = "id_dogadjaj")
-    private Set<Attends> reviews;
+    @JsonInclude()
+    @Transient
+    private Integer review;
+
+    public Integer getReview() {
+        return review;
+    }
+
+    public void setReview(Integer review) {
+        this.review = review;
+    }
 
     public void addAttendee(User user) {
         attendees.add(user);
-    }
-
-    public Set<Attends> getReviews() {
-        return reviews;
-    }
-
-    public void setReviews(Set<Attends> reviews) {
-        this.reviews = reviews;
     }
 
     public Boolean getPromoted() {

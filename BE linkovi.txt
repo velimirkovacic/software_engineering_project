@@ -1,0 +1,126 @@
+Sve putanje počinju s /api
+
+* označava opcionalnost
+
+Mora se paziti na velika i mala slova atributa
+
+
+POST /register
+	Prima: username, nickname*, email, password
+	Vraća: message
+
+POST /login
+	Prima: username, password
+	Vraća: message, objekt User objekt
+	Stvara fe i be sesiju
+
+POST /user/logout (OBAVEZNO PRI ODLOGIRAVANJU -> uništava sesiju između fe i be)
+
+GET /events/calendar
+	Vraća: lista evenata koji se pojavljuju u kalendaru (na koje je prijavljen)
+GET /events/singup
+	Vraća: lista evenata na koje se može prijaviti
+GET /events/attended
+	Vraća: lista evenata na kojima je bio (koji su završili prije trenutačnog vremena) 
+
+POST /events/add
+Prima: name, location, beginningTimestamp (u milisekundama), endTimestamp (u milisekundama), description, typeId, lista tagIds, promoted*, coordinates 
+Vraća: message
+
+POST /events/signup
+	Prima: eventId
+	Vraća: message
+
+POST /events/unsign
+	Prima: eventId
+	Vraća: message
+
+
+POST /events/delete
+	Prima: eventId
+	Vraća: message
+
+
+POST /events/promote
+	Prima: eventId
+	Vraća: message
+
+
+POST /events/edittag
+	Prima: eventId, lista tagIds
+	Vraća: message
+
+GET /tags
+	Vraća: lista objekata Tag (svi dostupni tagovi/oznake evenata)
+
+GET /user/users
+	Vraća: lista korisnika koji nisu blokirali trenutačno ulogiranog osim ako je on moderator (onda vidi sve)
+
+GET /user
+	Vraća: objekt usera (kao pri ulogiravanju)
+
+POST /user/friend
+	Prima: userId (korisnika kojeg se dodaje kao prijatelja)
+	Vraća: message
+
+GET /user/friends
+	Vraća: lista prijatelja korisnika
+
+POST /user/unfriend
+	Prima: userId korisnika kojeg se uklanja kao prijatelja
+	Vraća: message
+
+POST /user/block
+	Prima: userId korisnika kojeg se blokira
+	Vraća: message
+
+POST /user/suspend
+	Prima: userId korisnika kojeg se suspendira
+	Vraća: message
+
+POST /user/unsuspend
+	Prima: userId korisnika kojeg se suspendira
+	Vraća: message
+
+POST /user/delete
+	Prima: userId korisnika kojeg se uklanja
+	Vraća: message
+
+POST /user/editroles
+	Prima: lista roleIds
+	Vraća: message
+
+GET /user/top
+	Vraća: message, usernames (lista 3 korisničkih imena najaktivnijih korisnika, prvi u listi je najaktivniji)
+
+GET /events/promoted
+	Vraća: userAvailableEvents (lista evenata koji su promovirani i kojima može pristupiti)
+
+POST /user/premium (kupnja premiuma)
+	Vraća: message
+
+POST /user/nickname
+	Prima: nickname (mora odgovarati svim prethodnim uvjetima)
+	Vraća: message
+
+POST /events/review
+	Prima: eventId, review (-1 ili 1 ili 0)
+	Vraća: message
+
+-------------------------------ˇˇ--NOVI--ˇˇ----------------------------
+
+POST /user/unblock
+	Prima: userId korisnika kojeg se odblokira
+	Vraća: message
+
+GET /user/blocked
+	Vraća: message, lista blokiranih korisnika
+
+
+POST /events/edit
+	Prima: eventId, ostali atributi isti kao i pri stvaranju eventa 
+
+
+atribut "score" u objektu User, vrijednost je jednaka njegovom scoreu
+
+atribut "review" u objektu Event, vrijednost 1, 0, -1 ovisno o lajkanju ili dislajkanju (vrijedi samo pri pozivu /events/attended, IGNORIRATI INAČE)

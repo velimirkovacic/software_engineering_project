@@ -10,6 +10,7 @@ import vidoje.eventko.domain.User;
 import vidoje.eventko.dto.LoginRequestDTO;
 import vidoje.eventko.dto.LoginResponseDTO;
 import vidoje.eventko.repos.UserRepo;
+import vidoje.eventko.service.AttendsService;
 import vidoje.eventko.service.UserService;
 import vidoje.eventko.service.impl.UserServiceJpa;
 
@@ -24,12 +25,17 @@ import java.security.spec.InvalidKeySpecException;
 //@CrossOrigin(origins = "http://localhost:3000")
 public class LoginController {
     @Autowired
-    public UserService userService;
+    private UserService userService;
+
+    @Autowired
+    private AttendsService attendsService;
 
     @PostMapping("")
     public ResponseEntity<LoginResponseDTO> performLogin(@Valid @RequestBody LoginRequestDTO loginRequestDTO, HttpSession session) throws NoSuchAlgorithmException, InvalidKeySpecException {
         if (userService.validate(loginRequestDTO.getUsername(), loginRequestDTO.getPassword())) {
             User user = userService.getUserByUsername(loginRequestDTO.getUsername());
+            user.setScore(attendsService.score(user.getId()));
+
             session.setAttribute("USER_ID", Long.valueOf(user.getId()));
             return ResponseEntity.ok(new LoginResponseDTO("Uspješna prijava", user));
         }

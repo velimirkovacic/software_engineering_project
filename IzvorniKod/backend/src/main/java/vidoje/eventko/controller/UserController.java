@@ -4,11 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import vidoje.eventko.domain.Event;
-import vidoje.eventko.domain.Role;
-import vidoje.eventko.domain.Tag;
-import vidoje.eventko.domain.User;
+import vidoje.eventko.domain.*;
 import vidoje.eventko.dto.*;
+import vidoje.eventko.service.AttendsService;
 import vidoje.eventko.service.RoleService;
 import vidoje.eventko.service.UserService;
 
@@ -26,6 +24,11 @@ public class UserController {
 
     @Autowired
     private RoleService roleService;
+
+    @Autowired
+    private AttendsService attendsService;
+
+
     @GetMapping("/users")
     public ResponseEntity<UserListResponseDTO> listUsers(HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
@@ -36,8 +39,13 @@ public class UserController {
         User user = userService.getUserById(userId);
 
         Set<Long> roleIds = user.getRoles().stream().map(r -> r.getId()).collect(Collectors.toSet());
+
+
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
+
         if(roleIds.contains(Long.valueOf(3))) {
-            return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAll(userId).stream().filter(u -> !u.getId().equals(userId)).collect(Collectors.toList())));
+            return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAll().stream().filter(u -> !u.getId().equals(userId)).collect(Collectors.toList())));
         } else {
             return  ResponseEntity.ok(new UserListResponseDTO("", userService.listAllNotBlocked(userId)));
         }
@@ -61,8 +69,11 @@ public class UserController {
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+        user.setScore(attendsService.score(user.getId()));
 
-        return ResponseEntity.ok(new UserInfoResponseDTO("", userService.getUserById(userId)));
+
+        return ResponseEntity.ok(new UserInfoResponseDTO("", user));
     }
 
     @PostMapping("/logout")
@@ -210,6 +221,33 @@ public class UserController {
         return ResponseEntity.ok(new MessageResponseDTO("Korisnik je blokiran"));
     }
 
+
+    @PostMapping("/unblock")
+    public ResponseEntity<MessageResponseDTO> unblockUser(@Valid @RequestBody UserRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna"), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+        if(!userService.exists(dto.getUserId())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Drugi korisnik s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
+        }
+
+        User other = userService.getUserById(dto.getUserId());
+
+        if(!other.getBlockedBy().contains(user)) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije blokirao drugog"), HttpStatus.BAD_REQUEST);
+        }
+
+        Set<User> blockedBy = other.getBlockedBy();
+        blockedBy.remove(user);
+        other.setBlockedBy(blockedBy);
+
+        return ResponseEntity.ok(new MessageResponseDTO("Korisnik je odblokiran"));
+    }
+
     @PostMapping("/suspend")
     public ResponseEntity<MessageResponseDTO> suspendUser(@Valid @RequestBody UserRequestDTO dto, HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
@@ -297,11 +335,14 @@ public class UserController {
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
 
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
+
         return ResponseEntity.ok(new UserListResponseDTO("", user.getFriends().stream().toList()));
     }
 
-    @PostMapping("/editroles")
-    public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody EditRoleUserRequestDTO dto, HttpServletRequest request) {
+    @GetMapping("/blocked")
+    public ResponseEntity<UserListResponseDTO> getBlocked(HttpServletRequest request) {
         if(!request.isRequestedSessionIdValid()) {
             return new ResponseEntity<>(new UserListResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
         }
@@ -309,8 +350,23 @@ public class UserController {
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
 
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
+
+        return ResponseEntity.ok(new UserListResponseDTO("", userService.blocked(user.getId())));
+    }
+
+    @PostMapping("/editroles")
+    public ResponseEntity<MessageResponseDTO> promoteEvent(@Valid @RequestBody EditRoleUserRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna"), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
         if(!userService.exists(dto.getUserId())) {
-            return new ResponseEntity<>(new UserListResponseDTO("Drugi korisnik s tim ID-jem ne postoji", null), HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>(new MessageResponseDTO("Drugi korisnik s tim ID-jem ne postoji"), HttpStatus.BAD_REQUEST);
         }
 
         User other = userService.getUserById(dto.getUserId());

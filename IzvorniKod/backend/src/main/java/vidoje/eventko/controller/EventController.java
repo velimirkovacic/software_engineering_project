@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -78,7 +79,11 @@ public class EventController {
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
-        return ResponseEntity.ok(new EventResponseDTO("", user.getAttends().stream().filter(e -> e.getEndTimestamp().isBefore(LocalDateTime.now())).collect(Collectors.toList())));
+        List<Event> attendedEvents = user.getAttends().stream().filter(e -> e.getEndTimestamp().isBefore(LocalDateTime.now())).collect(Collectors.toList());
+
+        attendedEvents.stream().forEach(e -> e.setReview(attendsService.getReview(userId, e.getId())));
+
+        return ResponseEntity.ok(new EventResponseDTO("", attendedEvents));
     }
 
     @PostMapping("/add")
@@ -103,6 +108,40 @@ public class EventController {
 
         return ResponseEntity.ok(new MessageResponseDTO("Uspješno unesen događaj"));
     }
+
+    @PostMapping("/edit")
+    public ResponseEntity<MessageResponseDTO> editEvent(@Valid @RequestBody EditEventRequestDTO dto, HttpServletRequest request) {
+        if(!request.isRequestedSessionIdValid()) {
+            return new ResponseEntity<>(new EventResponseDTO("Korisnik nije ulogiran i/ili FE-BE sesija nije aktivna", null), HttpStatus.BAD_REQUEST);
+        }
+
+        Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        User user = userService.getUserById(userId);
+
+        Event event = eventService.getEventById(dto.getEventId());
+
+        if(!event.getOrganizer().equals(user)) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik ne može uređivati tuđi event"), HttpStatus.BAD_REQUEST);
+        }
+
+        if(event.getBeginningTimestamp().isBefore(LocalDateTime.now())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Korisnik ne može uređivati event koji je počeo u prošlosti"), HttpStatus.BAD_REQUEST);
+        }
+
+        event.setName(dto.getName());
+        event.setLocation(dto.getLocation());
+        event.setBeginningTimestamp(new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime());
+        event.setEndTimestamp(new Timestamp(dto.getEndTimestamp()).toLocalDateTime());
+        event.setDescription(dto.getDescription());
+        event.setOrganizer(user);
+        event.setType(eventTypeService.getEventTypeById(dto.getTypeId()));
+        event.setTags(tagService.getTagsFromTagIds(dto.getTagIds()));
+        event.setPromoted(dto.getPromoted());
+        event.setCoordinates(dto.getCoordinates());
+
+        return ResponseEntity.ok(new MessageResponseDTO("Uspješno unesen događaj"));
+    }
+
 
     @PostMapping("/signup")
     public ResponseEntity<MessageResponseDTO> signupForEvent(@Valid @RequestBody AlterEventRequestDTO dto, HttpServletRequest request) {
@@ -259,6 +298,8 @@ public class EventController {
         }
 
         attendsService.review(userId, event.getId(), dto.getReview());
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
 
         return ResponseEntity.ok(new MessageResponseDTO("Review uspješno dodan"));
 
