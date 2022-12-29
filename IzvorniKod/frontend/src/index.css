@@ -28,7 +28,7 @@
   padding: 4px;
   color: black;
   font-weight: bold;
-  
+  display: inline-block;
   border-radius: 25px;
 }
 
@@ -107,7 +107,7 @@ form .form-inner2 {
   background-color: #fff;
   padding: 60px;
   z-index: 2;
-  max-height: 80vh;
+  max-height: 90vh;
   overflow: scroll;
 }
 
@@ -317,7 +317,7 @@ form .form-inner button[name='premium'] {
 
 form .form-inner2 button[name='premium'] {
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 8px;
   margin-bottom: 10px;
   margin-right: 5%;
   padding: 10px 15px;

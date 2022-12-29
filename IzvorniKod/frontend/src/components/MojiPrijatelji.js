@@ -5,36 +5,12 @@ import Button from '@mui/material/Button';
 import TextField from "@mui/material/TextField";
 import ListFriends from './ListFriends';
 
-function MojiPrijatelji(props) {
-    const [userData, setUserData] = useState({ username: '', moderator: false, admin: false })
+function MojiPrijatelji() {
     const [listaFrendova, setFriends] = useState([])
-
-    //navbar funkcija
-    const getUserData = () => {
-        const options = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/api/user', options)
-            .then(response => {
-                response.json().then(json => {
-                    const helpObject = { username: json.user.username, moderator: false, admin: false }
-                    if (json.user.roles.map(role => role.id).indexOf(3) != -1) {
-                        helpObject.moderator = true
-                    }
-                    if (json.user.roles.map(role => role.id).indexOf(4) != -1) {
-                        helpObject.admin = true
-                    }
-                    setUserData(helpObject)
-                })
-            });
-    }
+    const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
         getFriends()
-        getUserData()
     }, [])
 
 
@@ -52,6 +28,7 @@ function MojiPrijatelji(props) {
                 const helpArray = []
                 json.userList.map(ev => helpArray.push(ev))
                 setFriends(helpArray)
+                setLoaded(true)
             })
         })
     }
@@ -123,9 +100,8 @@ function MojiPrijatelji(props) {
                             </li>
                             
                     </div>
-                )) : (   
-                        <div>Nazalost nemate prijatelja</div>
-                    )}
+                )) : ('')}
+                {(listaFrendova.length == 0 && loaded == true) ? (<div>Nažalost nemate prijatelja</div>) : ('')}
             </ol>
             <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "40px"}}>
             <Button variant="contained" style={{marginLeft: "10px", background:"gray"}} onClick={findUser}>Pretraži korisnike</Button>            

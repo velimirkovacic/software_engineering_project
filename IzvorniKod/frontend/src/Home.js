@@ -38,6 +38,7 @@ const Welcome = () => {
         beginning: ev.beginningTimestamp,
         ending: ev.endTimestamp,
         type: ev.type.id,
+        promoted: ev.promoted,
         temp: temp
       }
       if (api.getEventById(ev.id) == null) {
