@@ -30,7 +30,7 @@ public class Event {
             this.promoted = false;
         }
 
-        this.review = 0;
+        this.review = Long.valueOf(0);
 
         this.coordinates = coordinates;
 
@@ -83,13 +83,13 @@ public class Event {
 
     @JsonInclude()
     @Transient
-    private Integer review;
+    private Long review;
 
-    public Integer getReview() {
+    public Long getReview() {
         return review;
     }
 
-    public void setReview(Integer review) {
+    public void setReview(Long review) {
         this.review = review;
     }
 

@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 import vidoje.eventko.domain.Attends;
 
+import javax.persistence.Tuple;
 import java.util.List;
 
 public interface AttendsRepo extends JpaRepository<Attends, Attends.AttendsKey> {
@@ -23,4 +24,7 @@ public interface AttendsRepo extends JpaRepository<Attends, Attends.AttendsKey> 
 
     @Query(value = "SELECT COALESCE(recenzija, 0) FROM pohadja WHERE id_pohadjatelj = ?1 AND id_dogadjaj = ?2", nativeQuery = true)
     Integer getReview(Long userId, Long eventId);
+
+    @Query(value = "SELECT id_dogadjaj, COALESCE(recenzija, 0) AS recenzija FROM pohadja WHERE id_pohadjatelj = ?1", nativeQuery = true)
+    List<Tuple> getReviews(Long userId);
 }

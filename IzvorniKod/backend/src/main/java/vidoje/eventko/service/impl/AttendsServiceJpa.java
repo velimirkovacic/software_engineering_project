@@ -6,6 +6,10 @@ import vidoje.eventko.domain.Attends;
 import vidoje.eventko.repos.AttendsRepo;
 import vidoje.eventko.service.AttendsService;
 
+import java.math.BigInteger;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 @Service
 public class AttendsServiceJpa implements AttendsService {
     @Autowired
@@ -29,5 +33,13 @@ public class AttendsServiceJpa implements AttendsService {
     @Override
     public Integer getReview(Long userId, Long eventId) {
         return attendsRepo.getReview(userId, eventId);
+    }
+
+    @Override
+    public Map<Long, Long> getReviews(Long userId) {
+        return attendsRepo.getReviews(userId).stream().collect(Collectors.toMap(
+                tuple -> ((BigInteger) (tuple.get("id_dogadjaj"))).longValue(),
+                tuple -> ((Integer) tuple.get("recenzija")).longValue()
+        ));
     }
 }

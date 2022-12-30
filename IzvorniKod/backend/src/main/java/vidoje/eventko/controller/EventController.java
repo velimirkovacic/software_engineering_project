@@ -16,7 +16,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -47,6 +49,8 @@ public class EventController {
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
         return ResponseEntity.ok(new EventResponseDTO("", eventService.listAllForUserId(userId).stream().filter(e -> e.getBeginningTimestamp().isAfter(LocalDateTime.now())).collect(Collectors.toList())));
     }
 
@@ -57,6 +61,8 @@ public class EventController {
         }
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
         return ResponseEntity.ok(new EventResponseDTO("", userService.getUserById(userId).getAttends().stream().toList()));
     }
 
@@ -68,6 +74,8 @@ public class EventController {
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
+        userService.listAll().stream().forEach(u -> u.setScore(attendsService.score(u.getId())));
+
         return ResponseEntity.ok(new EventResponseDTO("", eventService.promotedEvents(userId).stream().filter(e -> !user.getAttends().contains(e)).collect(Collectors.toList())));
     }
 
@@ -79,9 +87,14 @@ public class EventController {
 
         Long userId = (Long) request.getSession().getAttribute("USER_ID");
         User user = userService.getUserById(userId);
-        List<Event> attendedEvents = user.getAttends().stream().filter(e -> e.getEndTimestamp().isBefore(LocalDateTime.now())).collect(Collectors.toList());
 
-        attendedEvents.stream().forEach(e -> e.setReview(attendsService.getReview(userId, e.getId())));
+        List<Event> attendedEvents = user.getAttends().stream().filter(e -> e.getEndTimestamp().isBefore(LocalDateTime.now())).sorted(Comparator.comparing(Event::getEndTimestamp).reversed()).collect(Collectors.toList());
+        Map<Long, Long> reviews = attendsService.getReviews(userId);
+
+        attendedEvents.stream().forEach(e -> {
+            e.setReview(reviews.get(e.getId()));
+            e.getOrganizer().setScore(attendsService.score(e.getOrganizer().getId()));
+        });
 
         return ResponseEntity.ok(new EventResponseDTO("", attendedEvents));
     }
