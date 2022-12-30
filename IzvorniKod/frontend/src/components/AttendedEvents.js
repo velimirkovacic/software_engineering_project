@@ -30,7 +30,7 @@ function AttendedEvents() {
                 })
             })
     }
-    function reviewEvent(eventId, grade, eventName) {
+    function reviewEvent(eventId, grade) {
         const data = {
             eventId: eventId,
             review: grade
@@ -49,20 +49,14 @@ function AttendedEvents() {
                 if (response.ok) {
                     response.json().then(json => {
                         console.log(json)
+                        getAttendedEvents()
                     })
                 }
             })
-        if (grade === 1) {
-            alert("Označili ste event " + eventName + ' sa \'Sviđa mi se\'')
-        }
-        if (grade === -1) {
-            alert("Označili ste event " + eventName + ' sa \'Ne sviđa mi se\'')
-        }
-
     }
 
     return (
-        <body>
+        <div>
             <Navbar />
             <div>
                 <div style={{ margin: 'auto', width: '80%' }}>
@@ -74,9 +68,25 @@ function AttendedEvents() {
                                 <div style={{ fontSize: '10pt', marginLeft: '5%' }}>{(ev.organizer.nickname != '') ? (ev.organizer.nickname) : (ev.organizer.username)}</div>
                                 <div style={{ fontSize: '10pt', marginLeft: '5%', marginBottom: '10px' }}>{new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' })}</div>
                             </div>
-                            <div className='likes'>
-                                <button type='submit' name='register' style={{ width: '120px', height: '30px' }} onClick={e => { e.preventDefault(); reviewEvent(ev.id, 1, ev.name) }}> Sviđa mi se</button>
-                                <button name='dislike' style={{ width: '120px', height: '30px' }} onClick={e => { e.preventDefault(); reviewEvent(ev.id, -1, ev.name) }}> Ne sviđa mi se</button></div>
+                                {(ev.review == 0) ? (
+                                    <div className='likes'>
+                                    <button type='submit' name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={() => reviewEvent(ev.id, 1)}> Sviđa mi se</button>
+                                    <button name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={() => reviewEvent(ev.id, -1) }> Ne sviđa mi se</button>
+                                    </div>
+                                ) : ('')}
+                                {(ev.review == 1) ? (
+                                    <div className='likes'>
+                                    <button type='submit' name='register' style={{ width: '120px', height: '30px' }} onClick={() => reviewEvent(ev.id, 0, ev.name) }> Sviđa mi se</button>
+                                    <button name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={() => reviewEvent(ev.id, -1, ev.name) }> Ne sviđa mi se</button>
+                                    </div>
+                                ) : ('')}
+                                {(ev.review == -1) ? (
+                                    <div className='likes'>
+                                    <button type='submit' name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={() => reviewEvent(ev.id, 1, ev.name) }> Sviđa mi se</button>
+                                    <button name='dislike' style={{ width: '120px', height: '30px' }} onClick={() => reviewEvent(ev.id, 0, ev.name) }> Ne sviđa mi se</button>
+                                    </div>
+                                ) : ('')}
+
                         </div>)) : ('')}
                     {(attendedEvents.length == 0 && loaded == true) ? (
                         <div>
@@ -85,7 +95,7 @@ function AttendedEvents() {
                     ) : ('')}
                 </div>
             </div>
-        </body >
+        </div>
     );
 }
 

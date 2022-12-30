@@ -588,6 +588,26 @@ button[name='register'] {
   
 }
 
+button[name='registerGrey'] {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-right: 5%;
+  
+  border-radius: 8px;
+  background-color: #beb2b1bd;
+  background-size: 150%;
+  background-position: 0%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  height: min-content;
+  max-width: 160px;
+  text-align: center;
+ 
+  
+}
+
 
 
 button[name=dislike] {
@@ -609,6 +629,27 @@ button[name=dislike] {
   text-align: center;
 
 }
+
+button[name=dislikeGrey] {
+  display: inline-block;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  margin-right: 5%;
+ 
+  border-radius: 8px;
+  background-color: #beb2b1bd;
+  background-size: 150%;
+  background-position: 0%;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 600;
+  height: min-content;
+  width: 180px;
+
+  text-align: center;
+
+}
+
 button[name=promoviraj] {
   display: inline-block;
   margin-top: 8px;
@@ -641,6 +682,14 @@ button[name=promoviraj] {
 }
 button[name=register]:hover{
   background-color: #487aa4;
+}
+
+button[name=registerGrey]:hover{
+  background-color: #00477F;
+}
+
+button[name='dislikeGrey']:hover{
+  background-color: #f12607bd;
 }
 
 button[name='dislike']:hover{
