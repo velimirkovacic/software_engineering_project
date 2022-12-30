@@ -26,6 +26,7 @@ function Navbar() {
                         helpObject.admin = true
                     }
                     setUserData(helpObject)
+                    ReactSession.set('score', json.user.score)
                 })
             });
     }

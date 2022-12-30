@@ -105,6 +105,9 @@ const ProfileInfo = () => {
                             <div className='form-group'>
                                 <label name='profile'>E-mail: {ReactSession.get("email")}</label>
                             </div>
+                            <div className='form-group'>
+                                <label name='profile'>Korisnički score: {ReactSession.get("score")}</label>
+                            </div>
                             <br></br>
                             {(premium!==true) ? (<Button variant="contained" name='premium' onClick={e => { e.preventDefault(); promoteProfile(ReactSession.get("id")) }} id={ReactSession.get("id")}>Promoviraj se</Button>) : ('')}
                             <br></br>

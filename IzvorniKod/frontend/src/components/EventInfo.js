@@ -4,10 +4,12 @@ import AsyncSelect from 'react-select/async';
 
 const EventInfo = (props) => {
 
-    const [details, setDetails] = useState({name: props.info.extendedProps.name, location: props.info.extendedProps.location,
+    const initialState = {name: props.info.extendedProps.name, location: props.info.extendedProps.location,
         beginningTimestamp: props.info.extendedProps.beginning, endTimestamp:props.info.extendedProps.ending,
         description: props.info.extendedProps.description, promoted: props.info.extendedProps.promoted,
-        coordinates: props.info.extendedProps.coordinates});
+        coordinates: props.info.extendedProps.coordinates}
+        
+    const [details, setDetails] = useState(initialState)
     const [error, setError] = useState('');
 
     const [editOrganizer, setEditOrg] = useState(false)
@@ -315,7 +317,7 @@ const EventInfo = (props) => {
                         <label>Vrijeme završetka: </label>
                         <input type='datetime-local' onChange={e => setDetails({...details, endTimestamp:e.target.value})} value={details.endTimestamp}/>
                         <label>Opis događaja: </label>
-                        <input type='textarea' onChange={e => setDetails({...details, description:e.target.value})} value={details.description}/>
+                        <textarea type='text' onChange={e => setDetails({...details, description:e.target.value})} value={details.description}/>
                     </div>) : 
                     (<div>
                         <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
@@ -336,8 +338,8 @@ const EventInfo = (props) => {
                 {(props.info.extendedProps.organizer.username == ReactSession.get('username') && editOrganizer == false && upcoming == true) ? (<button type='button' name='moderator' onClick={() => setEditOrg(true)}>Uredi</button>) : ''}
                 {(moderator == true && props.info.extendedProps.organizer.username != ReactSession.get('username') && editModerator == false && upcoming == true) ? (<button type='button' name='moderator' onClick={() => setEditMod(true)}>Uredi</button>) : ''}
                 
-                {(editOrganizer == true) ? (<button type='button' name='register' onClick={() => {setEditOrg(false); setError('')}}>Odustani</button>) : ('')}
-                {(editModerator == true) ? (<button type='button' name='register' onClick={() => {setEditMod(false); setError('')}}>Odustani</button>) : ('')}
+                {(editOrganizer == true) ? (<button type='button' name='register' onClick={() => {setEditOrg(false); setError(''); setDetails(initialState)}}>Odbaci</button>) : ('')}
+                {(editModerator == true) ? (<button type='button' name='register' onClick={() => {setEditMod(false); setError(''); setDetails(initialState)}}>Odbaci</button>) : ('')}
                 {(editOrganizer == true) ? (<button type='button' name='moderator' onClick={() => editEvent()}>Spremi promjene</button>) : ''}
                 {(editModerator == true) ? (<button type='button' name='moderator' onClick={() => editTags()}>Spremi promjene</button>) : ''}
                 
