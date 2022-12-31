@@ -12,6 +12,15 @@ function AttendedEvents() {
     const [attendedEvents, setAttended] = useState([]);
     const [loaded, setLoaded] = useState(false);
 
+    const [reviews, setReviews] = useState([])
+    const [eventIds, setEventIds] = useState([])
+
+    const changeReviewState = (id, review) => {
+        const helpArray = reviews.slice()
+        helpArray[eventIds.indexOf(id)] = review
+        setReviews(helpArray)
+    }
+
     const [disable, setDisable] = useState(false)
 
     const getAttendedEvents = () => {
@@ -28,8 +37,13 @@ function AttendedEvents() {
                     const helpArray = []
                     json.userAvailableEvents.map(ev => helpArray.push(ev))
                     setAttended(helpArray)
+                    const helpArray2 = []
+                    json.userAvailableEvents.map(ev => helpArray2.push(ev.review))
+                    setReviews(helpArray2)
+                    const helpArray3 = []
+                    json.userAvailableEvents.map(ev => helpArray3.push(ev.id))
+                    setEventIds(helpArray3)
                     setLoaded(true)
-                    setDisable(false)
                 })
             })
     }
@@ -46,11 +60,7 @@ function AttendedEvents() {
             body: JSON.stringify(data)
         };
         console.log(data)
-        setDisable(true)
         fetch('/api/events/review', options)
-            .then(response => {
-                getAttendedEvents()
-            })
     }
 
     return (
@@ -63,25 +73,25 @@ function AttendedEvents() {
                         <div key={ev.id} className='attended'>
                             <div className='event'>
                                 <h3 style={{ marginBottom: '5px', marginLeft: '5%', marginTop: '10px' }}>{'[' + ev.location + '] ' + ev.name}</h3>
-                                <div style={{ fontSize: '10pt', marginLeft: '5%' }}>{(ev.organizer.nickname != '') ? (ev.organizer.nickname + ' (' + ev.organizer.score + ')') : (ev.organizer.username + ' (' + ev.organizer.score + ')')}</div>
+                                <div style={{ fontSize: '10pt', marginLeft: '5%' }}>{(ev.organizer.nickname != '') ? (ev.organizer.nickname) : (ev.organizer.username)}</div>
                                 <div style={{ fontSize: '10pt', marginLeft: '5%', marginBottom: '10px' }}>{new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' })}</div>
                             </div>
-                                {(ev.review == 0) ? (
+                                {(reviews[eventIds.indexOf(ev.id)] == 0) ? (
                                     <div className='likes'>
-                                    <button disabled={disable} name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={e => {reviewEvent(ev.id, 1); e.target.name='register'}}> Sviđa mi se</button>
-                                    <button disabled={disable} name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={e => {reviewEvent(ev.id, -1); e.target.name='dislike' }}> Ne sviđa mi se</button>
+                                    <button name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 1); changeReviewState(ev.id, 1)}}> Sviđa mi se</button>
+                                    <button name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, -1); changeReviewState(ev.id, -1)}}> Ne sviđa mi se</button>
                                     </div>
                                 ) : ('')}
-                                {(ev.review == 1) ? (
+                                {(reviews[eventIds.indexOf(ev.id)] == 1) ? (
                                     <div className='likes'>
-                                    <button disabled={disable} id={ev.id + 0.1} name='register' style={{ width: '120px', height: '30px' }} onClick={e => {reviewEvent(ev.id, 0); e.target.name='registerGrey'}}> Sviđa mi se</button>
-                                    <button disabled={disable} name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={e => {reviewEvent(ev.id, -1); e.target.name='dislike'; document.getElementById(ev.id + 0.1).name='registerGrey' }}> Ne sviđa mi se</button>
+                                    <button name='register' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 0); changeReviewState(ev.id, 0)}}> Sviđa mi se</button>
+                                    <button name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, -1); changeReviewState(ev.id, -1)}}> Ne sviđa mi se</button>
                                     </div>
                                 ) : ('')}
-                                {(ev.review == -1) ? (
+                                {(reviews[eventIds.indexOf(ev.id)] == -1) ? (
                                     <div className='likes'>
-                                    <button disabled={disable} name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={e => {reviewEvent(ev.id, 1); e.target.name='register'; document.getElementById(ev.id + 0.2).name='dislikeGrey'  }}> Sviđa mi se</button>
-                                    <button disabled={disable} id={ev.id + 0.2} name='dislike' style={{ width: '120px', height: '30px' }} onClick={e => {reviewEvent(ev.id, 0); e.target.name='dislikeGrey' }}> Ne sviđa mi se</button>
+                                    <button name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 1); changeReviewState(ev.id, 1)}}> Sviđa mi se</button>
+                                    <button name='dislike' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 0); changeReviewState(ev.id, 0)}}> Ne sviđa mi se</button>
                                     </div>
                                 ) : ('')}
 
