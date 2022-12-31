@@ -42,7 +42,7 @@ function RightPanel(props) {
                     let publicEvent = {
                         value: ev.id, 
                         label: '[' + ev.location + '] ' + ev.name,
-                        organizer: (ev.organizer.nickname != '') ? (ev.organizer.nickname) : (ev.organizer.username),
+                        organizer: (ev.organizer.nickname != '') ? (ev.organizer.nickname + ' (' + ev.organizer.score + ')') : (ev.organizer.username + ' (' + ev.organizer.score + ')'),
                         time: new Date(ev.beginningTimestamp).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'}),
                         color: (ev.type.id == 3) ? 'red' : 'limegreen'
                     }

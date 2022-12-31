@@ -299,7 +299,7 @@ const EventInfo = (props) => {
                     (<div><label>Naziv događaja: </label>
                     <input type='text' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/></div>) : 
                     (<div><label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
-                    <label>Organizator: <span style={{ color: 'black' }}>{(props.info.extendedProps.organizer.nickname != '') ? (props.info.extendedProps.organizer.nickname) : (props.info.extendedProps.organizer.username)}</span></label></div>)}
+                    <label>Organizator: <span style={{ color: 'black' }}>{(props.info.extendedProps.organizer.nickname != '') ? (props.info.extendedProps.organizer.nickname + ' (' + props.info.extendedProps.organizer.score + ')') : (props.info.extendedProps.organizer.username + ' (' + props.info.extendedProps.organizer.score + ')')}</span></label></div>)}
 
 
                     {(editOrganizer == true || editModerator == true) ?
@@ -344,7 +344,7 @@ const EventInfo = (props) => {
                 {(editModerator == true) ? (<button type='button' name='moderator' onClick={() => editTags()}>Spremi promjene</button>) : ''}
                 
                 {(editOrganizer != true && editModerator != true && (moderator == true || props.info.extendedProps.organizer.username == ReactSession.get('username'))) ? (<button type='button' name='moderator' onClick={() => removeEvent()}>Obriši</button>) : ''}
-                {(editOrganizer != true && upcoming == true && premium == true && details.promoted == false) ? (<button type='button' name='premium' onClick={() => promoteEvent()}>Promoviraj</button>) : ''}
+                {(editOrganizer != true && upcoming == true && premium == true && details.promoted == false && props.info.extendedProps.organizer.username == ReactSession.get('username')) ? (<button type='button' name='premium' onClick={() => promoteEvent()}>Promoviraj</button>) : ''}
             </div>
         </form>
     )

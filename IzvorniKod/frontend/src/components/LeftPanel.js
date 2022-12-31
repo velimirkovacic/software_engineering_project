@@ -69,7 +69,7 @@ function LeftPanel(props) {
                     {(promotedEvents.length > 0) ? (promotedEvents.map(ev =>
                             <button key={ev.id} onClick={() => onSelectEvent(ev.id)} className='btnPromoEvents'>
                                 <h3 style={{marginBottom: '5px', marginLeft: '5%', marginTop: '10px'}}>{'[' + ev.location + '] ' + ev.name}</h3>
-                                <div style={{fontSize: '10pt', marginLeft: '5%'}}>{(ev.organizer.nickname != '') ? (ev.organizer.nickname) : (ev.organizer.username)}</div>
+                                <div style={{fontSize: '10pt', marginLeft: '5%'}}>{(ev.organizer.nickname != '') ? (ev.organizer.nickname + ' (' + ev.organizer.score + ')') : (ev.organizer.username + ' (' + ev.organizer.score + ')')}</div>
                                 <div style={{fontSize: '10pt', marginLeft: '5%', marginBottom: '10px'}}>{new Date(ev.beginningTimestamp).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</div>
                             </button>)) : ('')}
                 </div>
