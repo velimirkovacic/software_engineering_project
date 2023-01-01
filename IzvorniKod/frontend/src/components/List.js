@@ -60,16 +60,11 @@ function List(props) {
         };
         console.log(data)
         fetch('/api/user/suspend', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json)
 
-                    })
-                }
-            })
-        refreshPage()
+        const helpArray = []
+        users.map(user => helpArray.push(user))
+        helpArray[userIds.indexOf(id)].suspended = true
+        setUsers(helpArray)
     }
 
     function unsuspend(id) {
@@ -86,16 +81,11 @@ function List(props) {
         };
         console.log(data)
         fetch('/api/user/unsuspend', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json)
 
-                    })
-                }
-            })
-        refreshPage()
+        const helpArray = []
+        users.map(user => helpArray.push(user))
+        helpArray[userIds.indexOf(id)].suspended = false
+        setUsers(helpArray)
     }
 
     function promote(id) {
@@ -130,16 +120,13 @@ function List(props) {
         };
         console.log(data)
         fetch('/api/user/editroles', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json)
 
-                    })
-                }
-            })
-        refreshPage()
+        const helpArray = []
+        users.map(user => helpArray.push(user))
+        const helpArray2 = []
+        roleIds.map(roleId => helpArray2.push({id: roleId}))
+        helpArray[userIds.indexOf(id)].roles = helpArray2
+        setUsers(helpArray)
 
     }
 
@@ -157,20 +144,21 @@ function List(props) {
         };
         console.log(data)
         fetch('/api/user/delete', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json)
 
-                    })
-                }
-            })
-        refreshPage()
+        const helpArray = []
+        users.map(user => helpArray.push(user))
+        helpArray.splice(userIds.indexOf(id), 1)
+        setUsers(helpArray)
+
+        const helpArray2 = []
+        userIds.map(userId => helpArray2.push(userId))
+        helpArray2.splice(userIds.indexOf(id), 1)
+        setUserIds(helpArray2)
     }
 
 
     const [users, setUsers] = useState([]);
+    const [userIds, setUserIds] = useState([])
 
     useEffect(() => {
         fetch('/api/user/users')
@@ -178,6 +166,10 @@ function List(props) {
             .then(users => {
                 setUsers(users.userList)
                 console.log(users)
+
+                const helpArray = []
+                users.userList.map(user => helpArray.push(user.id))
+                setUserIds(helpArray)
             })
         getUserData()
     }, []);
