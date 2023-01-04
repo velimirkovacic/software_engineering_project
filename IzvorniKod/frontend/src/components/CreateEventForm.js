@@ -82,9 +82,6 @@ const CreateEventForm = (props) => {
         } else if (details.description == '') {
             setError("Potrebno je unijeti opis eventa")
             document.getElementById('eventform').scrollTo(0, 0)
-        } else if (details.coordinates == '') {
-            setError("Potrebno je unijeti koordinate mjesta eventa")
-            document.getElementById('eventform').scrollTo(0, 0)
         } else if(new Date(details.beginningTimestamp).getTime() > new Date(details.endTimestamp).getTime()){
             setError("Unijeli ste da event završava prije nego što počinje. Pokušavate trolovati???")
             document.getElementById('eventform').scrollTo(0, 0)
@@ -155,8 +152,6 @@ const CreateEventForm = (props) => {
                     <AsyncSelect styles={customStyles} isMulti placeholder={"Odaberite oznake..."} onChange={e => setDetails({...details, tagIds:e})} value={details.tagIds} loadOptions={getTags} cacheOptions defaultOptions/>
                     <label htmlFor='description'>Opis događaja: </label>
                     <textarea type='text' name='description' id='description' onChange={e => setDetails({...details, description:e.target.value})} value={details.description}/>
-                    <label htmlFor='coordinates'>Koordinate mjesta događaja: </label>
-                    <input type='text' name='coordinates' id='coordinates' onChange={e => setDetails({...details, coordinates:e.target.value})} value={details.coordinates}/>
                 </div>
                 <button type='submit' name='register'>Dodaj događaj</button>
                 <button type='button' name='register' onClick={() => props.close()}>Odustani</button>
