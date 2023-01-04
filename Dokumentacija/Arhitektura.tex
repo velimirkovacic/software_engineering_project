@@ -271,40 +271,32 @@
 			
 			\indent Na naredne tri slike nalaze se dijagrami razreda podijeljeni logički po srodnosti. Neki razredi povezani su i s onima na odvojenim slikama što se da zaključiti po nazivima njihovih metoda. \\
 			
-			\indent Razredi na slici 4.6 uokvireni plavom bojom su kontroleri. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects})  prema frontendu u obliku JSON datoteka s html statusnim kodom. Pozivaju funkcije servisa. Razlikuju se kontroleri za korisnike, događaje te postupke prijave i registracije. Sami DTO razredi nalaze se na slici 4.5, a to su zahtjevi i odgovori za prijavu i registraciju.\\
+			\indent Razredi na slici 4.6 u gornjem redu su kontroleri. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects}) prema frontendu u obliku JSON datoteka s html statusnim kodom. Pozivaju funkcije servisa. Razlikuju se kontroleri za korisnike, događaje te postupke prijave i registracije. Sami DTO razredi nalaze se na slici 4.5, a to su zahtjevi i odgovori za prijavu i registraciju.\\
 			
-			\indent Razredi na slici 4.6 uokvireni crvenom bojom su servisi. Služe za komunikaciju između repozitorija i kontrolera.\\
+			\indent Razredi na slici 4.6 u sredini su servisi. Služe za komunikaciju između repozitorija i kontrolera.\\
 			
-			\indent Razredi na slici 4.6 uokvireni zelenom bojom su repozitoriji. Služe za pozivanje SQL upita nad bazom podataka.\\
+			\indent Razredi na slici 4.6 u donjem redu su repozitoriji. Služe za pozivanje SQL upita nad bazom podataka.\\
 			
-			\indent Razredi na slici 4.7 su modeli. Modeliraju potrebne razrede iz baze podataka. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje.
+			\indent Razredi na slici 4.7 su modeli. Modeliraju potrebne razrede iz baze podataka. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje. \\
 			
 			
 			\begin{figure}[h]
-				\includegraphics[width=\textwidth]{dijagrami/UML dtoovi.png}
-				\caption{Dijagram razreda - dio DTO-ovi}
+				\includegraphics[width=\textwidth]{dijagrami/RAZREDNI - DTO dijagram.png}
+				\caption{Dijagram razreda - DTO-ovi}
 			\end{figure}
 		
 		    \begin{figure}[H]
-		    	\includegraphics[width=\textwidth]{dijagrami/UML kontroleri, servisi, repozitoriji.png}
-		    	\caption{Dijagram razreda - dio Kontroleri, servisi i repozitoriji}
+		    	\includegraphics[width=\textwidth]{dijagrami/RAZREDNI - Controller - Service - Repo.png}
+		    	\caption{Dijagram razreda - kontroleri, servisi i repozitoriji}
 		    \end{figure}
 			
 			\begin{figure}[H]
-				\includegraphics[width=\textwidth]{dijagrami/UML modeli.png}
-				\caption{Dijagram razreda - dio Modeli}
+				\includegraphics[width=\textwidth]{dijagrami/RAZREDNI - Dijagram modela.png}
+				\caption{Dijagram razreda - modeli}
 			\end{figure}
 		
 			\eject
-		
-			
-				\textbf{\textit{dio 2. revizije}}\\			
-			
-				\textit{Prilikom druge predaje projekta dijagram razreda i opisi moraju odgovarati stvarnom stanju implementacije}
-			
-			
-			
-				\eject
+
 		
 			\section{Dijagram stanja}
 			
