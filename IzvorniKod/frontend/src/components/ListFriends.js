@@ -7,6 +7,28 @@ function ListFriends(props) {
 
     const [listaFrendova, setFriends] = useState([])
     const [users, setUsers] = useState([]);
+    const [blocked, setBlocked] = useState([])
+
+    useEffect(() => {
+        getBlocked()
+    }, [])
+
+    const getBlocked = () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/JSON'
+            }
+        };
+        fetch('/api/user/blocked', options)
+            .then(response => {
+              response.json().then(json => {
+                const helpArray = []
+                json.userList.map(ev => helpArray.push(ev.id))
+                setBlocked(helpArray)
+            })
+        })
+    }
 
     useEffect(() => {
         getFriends()
@@ -100,6 +122,30 @@ function ListFriends(props) {
         refreshPage()
     }
 
+    function unblock(id) {
+        const data = {
+            userId: id
+        };
+        const options = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/JSON'
+            },
+            body: JSON.stringify(data)
+        };
+        console.log(data)
+        fetch('/api/user/unblock', options)
+            .then(response => {
+                console.log(response)
+                if (response.ok) {
+                    response.json().then(json => {
+                        console.log(json.message)
+                    })
+                }
+            })
+        refreshPage()
+    }
+
     return (
         <ul>
         {filteredData.map((item) => (
@@ -107,7 +153,8 @@ function ListFriends(props) {
                 <li key={item.id}>{item.username}</li>
                 <div className='attended'>
                 <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>
-                <Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>
+                {(!blocked.includes(item.id)) ? (<Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>)
+                : (<Button variant="outlined" onClick={e => { e.preventDefault(); unblock(item.id) }} id={item.id}>Odblokiraj</Button>)}
             </div>
             </div>
         ))}
