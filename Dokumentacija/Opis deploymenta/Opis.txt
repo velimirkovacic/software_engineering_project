@@ -35,6 +35,6 @@
 		Odabir grupe (vidoje) / Add new / Import git repository (odabir Eventko) / Configure Project (Slika 8) / Deploy
 		
 	- Promjena grane:
-		Dashboard / Eventko / Settings / Git / Slika 9 / Save
+		Overview / Eventko / Settings / Git / Slika 9 / Save
 	- Izmjena dodijeljene domene web stranice:
-		Dashboard / Eventko /Settings / Domains / upis željene adrese / (opcionalno) Edit := Slika 10
+		Overview / Eventko /Settings / Domains / upis željene adrese / (opcionalno) Edit := Slika 10
