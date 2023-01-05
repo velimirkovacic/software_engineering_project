@@ -296,7 +296,7 @@ const EventInfo = (props) => {
                     (<div><label>Naziv događaja: </label>
                     <input type='text' onChange={e => setDetails({...details, name:e.target.value})} value={details.name}/></div>) : 
                     (<div><label>Naziv događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.name}</span></label>
-                    <label>Organizator: <span style={{ color: 'black' }}>{(props.info.extendedProps.organizer.nickname != '') ? (props.info.extendedProps.organizer.nickname + ' (' + props.info.extendedProps.organizer.score + ')') : (props.info.extendedProps.organizer.username + ' (' + props.info.extendedProps.organizer.score + ')')}</span></label></div>)}
+                    <label>Organizator: <span style={{ color: 'black' }}>{props.info.extendedProps.organizer.nickname}</span><span style={{ color: 'grey' }}>{' @' + props.info.extendedProps.organizer.username}</span><span style={{ color: 'black' }}>{' [' + props.info.extendedProps.organizer.score +']'}</span></label></div>)}
 
 
                     {(editOrganizer == true || editModerator == true) ?
@@ -315,10 +315,11 @@ const EventInfo = (props) => {
                         <textarea type='text' onChange={e => setDetails({...details, description:e.target.value})} value={details.description}/>
                     </div>) : 
                     (<div>
-                        <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>                        <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
+                        <label>Mjesto događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.location}</span></label>
+                        <label>Vrijeme početka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.beginning).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
                         <label>Vrijeme završetka: <span style={{ color: 'black' }}>{new Date(props.info.extendedProps.ending).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</span></label>
                         <label>Opis događaja: <span style={{ color: 'black' }}>{props.info.extendedProps.description}</span></label>
-                        {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span className="flex-item-tag" style={{color: 'black', background:'lightgrey', marginRight:'5px', marginTop:'3px'}}>{(at.nickname != '') ? (at.nickname) : (at.username)}</span>)}</label>) : ('')}
+                        {(props.info.extendedProps.type != 1) ? (<label>Popis dolaznika: {props.info.extendedProps.attendees.map((at) => <span className="flex-item-tag" style={{color: 'black', background:'lightgrey', marginRight:'5px', marginTop:'3px'}}>{at.nickname}<span style={{color: 'grey', fontWeight: 'normal'}}>{' @' + at.username}</span></span>)}</label>) : ('')}
                     </div>)}
 
                 </div>

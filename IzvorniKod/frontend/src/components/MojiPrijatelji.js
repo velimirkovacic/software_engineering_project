@@ -7,6 +7,7 @@ import ListFriends from './ListFriends';
 
 function MojiPrijatelji() {
     const [listaFrendova, setFriends] = useState([])
+    const [userIds, setUserIds] = useState([])
     const [loaded, setLoaded] = useState(false)
 
     useEffect(() => {
@@ -28,6 +29,10 @@ function MojiPrijatelji() {
                 const helpArray = []
                 json.userList.map(ev => helpArray.push(ev))
                 setFriends(helpArray)
+
+                const helpArray2 = []
+                json.userList.map(user => helpArray2.push(user.id))
+                setUserIds(helpArray2)
                 setLoaded(true)
             })
         })
@@ -57,16 +62,15 @@ function MojiPrijatelji() {
         };
         console.log(data)
         fetch('/api/user/unfriend', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json)
-
-                    })
-                }
-            })
-        refreshPage()
+        
+        const helpArray = []
+        listaFrendova.map(user => helpArray.push(user))
+        if (helpArray.length > 1) {
+            helpArray.splice(userIds.indexOf(id), 1)
+            setFriends(helpArray)
+        } else {
+            setFriends([])
+        }
     }
 
         //za popis svih korisnika
@@ -88,16 +92,16 @@ function MojiPrijatelji() {
         <div>
             <Navbar />
             <div>
-                <h2 style={{marginLeft: "10px", marginTop: "20px"}}> Lista mojih prijatelja: </h2>
+                <h2 style={{marginLeft: "50px", marginTop: "20px"}}> Lista mojih prijatelja: </h2>
             </div>
             <ol style={{marginLeft: "50px", marginTop: "20px", fontSize: "20px"}}>
                 {(listaFrendova.length > 0) ? (listaFrendova.map(frend => 
                     <div>
-                            <li style={{marginTop: "10px"}} key="{frend.nickname}">{frend.nickname} 
+                            <div style={{marginTop: "10px"}} key="{frend.nickname}">{frend.nickname}<span style={{color: 'grey'}}>{' @' + frend.username}</span>
                                 <Button variant="contained" className='unfriend' style={{marginLeft: "10px"}}
                                     onClick={e => { e.preventDefault(); unfriend(frend.id) }} id={frend.username}
                                     key={frend.username}>UNFRIEND</Button>
-                            </li>
+                            </div>
                             
                     </div>
                 )) : ('')}
@@ -119,7 +123,7 @@ function MojiPrijatelji() {
                             label="Search"
                         />
                     </div>
-                    <ListFriends input={inputText1} />
+                    <ListFriends input={inputText1} listaFrendova={listaFrendova} setFriends={setFriends}/>
                 </div>
             </div>
             </div>

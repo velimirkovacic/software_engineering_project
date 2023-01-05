@@ -4,9 +4,8 @@ import Button from '@mui/material/Button';
 
 
 function ListFriends(props) {
-
-    const [listaFrendova, setFriends] = useState([])
     const [users, setUsers] = useState([]);
+    const [userIds, setUserIds] = useState([]);
     const [blocked, setBlocked] = useState([])
 
     useEffect(() => {
@@ -30,28 +29,6 @@ function ListFriends(props) {
         })
     }
 
-    useEffect(() => {
-        getFriends()
-    }, [])
-
-    //dohvaćanje prijatelja
-    const getFriends = () => {
-        const options = {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/JSON'
-            }
-        };
-        fetch('/api/user/friends', options)
-            .then(response => {
-              response.json().then(json => {
-                const helpArray = []
-                json.userList.map(ev => helpArray.push(ev.id))
-                setFriends(helpArray)
-            })
-        })
-    }
-
     //svi korisnici
     useEffect(() => {
         fetch('/api/user/users')
@@ -60,15 +37,21 @@ function ListFriends(props) {
                setUsers(users.userList)
                console.log("OVO")
                console.log(users.userList)
+
+               const helpArray = []
+                users.userList.map(user => helpArray.push(user.id))
+                setUserIds(helpArray)
             })
     }, []);
 
     const filteredData = users.filter((el) => {
-        if (props.input === '' && !listaFrendova.includes(el.id)) {
+        const frendovi = []
+        props.listaFrendova.map(frend => frendovi.push(frend.id))
+        if (props.input === '' && !frendovi.includes(el.id)) {
             return el;
         }
-        else if (!listaFrendova.includes(el.id)){
-            return el.username.toLowerCase().includes(props.input)
+        else if (!frendovi.includes(el.id)){
+            return (el.username.toLowerCase().includes(props.input) || el.nickname.toLowerCase().includes(props.input))
         }
     })
 
@@ -89,13 +72,11 @@ function ListFriends(props) {
             body: JSON.stringify(data)
         };
         fetch('/api/user/friend', options)
-            .then(response => {
-                if (response.ok) {
-                    response.json().then(json => {
-                    })
-                }
-            })
-        refreshPage()        
+        
+        const helpArray = []
+        props.listaFrendova.map(user => helpArray.push(user))
+        helpArray.push(users[userIds.indexOf(id)])
+        props.setFriends(helpArray)
     }
 
     function block(id) {
@@ -111,15 +92,11 @@ function ListFriends(props) {
         };
         console.log(data)
         fetch('/api/user/block', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json.message)
-                    })
-                }
-            })
-        refreshPage()
+
+        const helpArray = []
+        blocked.map(user => helpArray.push(user))
+        helpArray.push(id)
+        setBlocked(helpArray)
     }
 
     function unblock(id) {
@@ -135,15 +112,11 @@ function ListFriends(props) {
         };
         console.log(data)
         fetch('/api/user/unblock', options)
-            .then(response => {
-                console.log(response)
-                if (response.ok) {
-                    response.json().then(json => {
-                        console.log(json.message)
-                    })
-                }
-            })
-        refreshPage()
+        
+        const helpArray = []
+        blocked.map(user => helpArray.push(user))
+        helpArray.splice(blocked.indexOf(id), 1)
+        setBlocked(helpArray)
     }
 
     return (
@@ -151,7 +124,7 @@ function ListFriends(props) {
         {filteredData.map((item) => (
             <div className='attended'>
                 <div className='block'>
-                <li key={item.id}>{item.username}</li>
+                <li key={item.id}>{item.nickname}<span style={{color: 'grey'}}>{' @' + item.username}</span></li>
                 </div>
                 <div className='search'>
                 <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>

@@ -183,7 +183,7 @@ function List(props) {
         //return the item which contains the user input
         else {
 
-            return el.username.toLowerCase().includes(props.input)
+            return (el.username.toLowerCase().includes(props.input) || el.nickname.toLowerCase().includes(props.input))
         }
     })
 
@@ -193,22 +193,22 @@ function List(props) {
 
         <ul>
             {filteredData.map((item) => (
-                <div className='attended'>
-                    <li style={{ width: '150px' }} key={item.id}>{item.username}
+                <div className='attended' style={{marginBottom: '10px'}}>
+                    <li style={{ width: '300px' }} key={item.id}>{item.nickname}<div><span style={{color: 'grey'}}>{' @' + item.username}</span>{' [' + item.score + ']'}</div>
                     </li>
                     <div className='likes'>
 
 
-                        <Button style={{ width: '170px' }} type="button" name='dislike' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
-                        <Button style={{ width: '200px' }} name='register' variant="contained" className='susp' disabled={item.suspended === false ? true : false} onClick={e => { e.preventDefault(); unsuspend(item.id) }} id={item.id}>ODSUSPENDIRAJ</Button>
+                        <Button style={{ width: '170px' }} size='small' type="button" name='dislike' variant="contained" className='susp' disabled={item.suspended === true ? true : false} onClick={e => { e.preventDefault(); suspend(item.id) }} id={item.id}>SUSPENDIRAJ</Button>
+                        <Button style={{ width: '200px' }} size='small' name='register' variant="contained" className='susp' disabled={item.suspended === false ? true : false} onClick={e => { e.preventDefault(); unsuspend(item.id) }} id={item.id}>ODSUSPENDIRAJ</Button>
                         {(userData.admin === true) ?
                             <>
                                 <Button style={{
                                     backgroundColor: "#3f3d3ded",
                                     marginLeft: '80px',
                                     width: '100px'
-                                }} type="button" name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>Obriši</Button>
-                                <Button name='promoviraj' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
+                                }} size='small' type="button" name='register' variant="contained" className='susp' onClick={e => { e.preventDefault(); deleteUser(item.id) }} id={item.id}>Obriši</Button>
+                                <Button size='small' name='promoviraj' variant="contained" className='susp' disabled={alreadyMod(item) === true ? true : false} onClick={e => { e.preventDefault(); promote(item.id) }} id={item.id}>Promoviraj</Button>
                             </> : ''
                         }
 
@@ -216,8 +216,7 @@ function List(props) {
                 </div>
             ))
             }
-
-
+            <div style={{marginBottom: '5vh'}}></div>
         </ul >
     )
 
