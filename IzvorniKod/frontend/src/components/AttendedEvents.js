@@ -68,7 +68,7 @@ function AttendedEvents() {
             <Navbar />
             <div>
                 <div style={{ margin: 'auto', width: '80%' }}>
-                    <h2 style={{ marginLeft: "10px", marginTop: "20px" }}>Pohađani eventi:</h2>
+                    <h2 style={{ marginLeft: "10px", marginTop: "20px", marginBottom: '20px' }}>Pohađani eventi:</h2>
                     {(attendedEvents.length > 0) ? (attendedEvents.map(ev =>
                         <div key={ev.id} className='attended'>
                             <div className='event'>

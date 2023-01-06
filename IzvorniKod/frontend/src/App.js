@@ -11,7 +11,7 @@ import UserActions from './UserActions';
 import MojiPrijatelji from './components/MojiPrijatelji';
 
 function App() {
-  ReactSession.setStoreType("localStorage");
+  ReactSession.setStoreType("sessionStorage");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

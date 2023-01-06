@@ -20,7 +20,7 @@ function UserActions() {
             <Navbar />
             <div className='sus'>
                 <div className='main'>
-                    <h1> Upravljaj korisnicima</h1>
+                    <h1 style={{marginTop: '20px'}}> Upravljaj korisnicima</h1>
                     <div className="search">
                         <TextField
                             id="outlined-basic"

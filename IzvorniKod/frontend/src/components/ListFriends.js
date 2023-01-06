@@ -126,7 +126,7 @@ function ListFriends(props) {
                 <div className='block'>
                 <li key={item.id}>{item.nickname}<span style={{color: 'grey'}}>{' @' + item.username}</span></li>
                 </div>
-                <div className='search'>
+                <div className='search' style={{width: '300px'}}>
                 <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>
                 {(!blocked.includes(item.id)) ? (<Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>)
                 : (<Button variant="outlined" onClick={e => { e.preventDefault(); unblock(item.id) }} id={item.id}>Odblokiraj</Button>)}
