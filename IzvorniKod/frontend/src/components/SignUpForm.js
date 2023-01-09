@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import { useNavigate } from 'react-router-dom'
 
 const SignUpForm = ({Register, errors}) => {
 
@@ -8,6 +9,11 @@ const SignUpForm = ({Register, errors}) => {
         e.preventDefault();
         Register(details);
     };
+
+    const navigate = useNavigate();
+    const navLogin = () => {
+        navigate('/login');
+    }
  
   return (
     <form onSubmit={handleSignUpForm}>
@@ -35,8 +41,8 @@ const SignUpForm = ({Register, errors}) => {
                 <input type='password' name='password' id='repassword' onChange={e => setDetails({...details, repassword:e.target.value})} value={details.repassword}/>        
             </div> 
             <button type='submit' name='register'>Registrirajte se</button>
-            <a>ili </a>
-            <a href='/'>odustanite </a>
+            <label htmlFor='or'>ili </label>
+            <button type='signUp' name='signup' onClick={navLogin}>odustanite </button>
         </div>
     </form>
   )

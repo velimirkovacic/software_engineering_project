@@ -50,12 +50,13 @@ const Welcome = () => {
   const currentTime = () => {
     const time = new Date()
     let hours = time.getHours()
-    let mins = time.getMinutes()
-    let secs = time.getSeconds()
+    if (hours == 1) {
+      hours = hours - 1
+    } else if (hours > 1) {
+      hours = hours - 2
+    }
     if (hours < 10) {hours = '0' + hours}
-    if (mins < 10) {mins = '0' + mins}
-    if (secs < 10) {secs = '0' + secs}
-    return hours + ':' + mins + ':' + secs
+    return hours + ':00:00'
   }
 
   const height = window.innerHeight * 0.85
@@ -97,7 +98,6 @@ const Welcome = () => {
 
   return (
     <div className=''>
-      {console.log(currentTime())}
       <Navbar />
       <LeftPanel addEvents={addEvents}/>
       <RightPanel addEvents={addEvents}/>
