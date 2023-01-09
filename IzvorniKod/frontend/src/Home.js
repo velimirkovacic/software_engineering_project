@@ -49,8 +49,16 @@ const Welcome = () => {
 
   const currentTime = () => {
     const time = new Date()
-    return time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
+    let hours = time.getHours()
+    let mins = time.getMinutes()
+    let secs = time.getSeconds()
+    if (hours < 10) {hours = '0' + hours}
+    if (mins < 10) {mins = '0' + mins}
+    if (secs < 10) {secs = '0' + secs}
+    return hours + ':' + mins + ':' + secs
   }
+
+  const height = window.innerHeight * 0.85
 
   const removeAllEvents = () => {
     const api = calendarRef.current.getApi();
@@ -89,6 +97,7 @@ const Welcome = () => {
 
   return (
     <div className=''>
+      {console.log(currentTime())}
       <Navbar />
       <LeftPanel addEvents={addEvents}/>
       <RightPanel addEvents={addEvents}/>
@@ -100,7 +109,7 @@ const Welcome = () => {
           allDaySlot={false}
           scrollTime={currentTime()}
           scrollTimeReset={false}
-          height={600}
+          height={height}
           locale={hrLocale}
           slotLabelFormat={{
             hour: 'numeric',
