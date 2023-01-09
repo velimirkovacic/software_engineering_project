@@ -47,6 +47,11 @@ const Welcome = () => {
     })
   }
 
+  const currentTime = () => {
+    const time = new Date()
+    return time.getHours() + ':' + time.getMinutes() + ':' + time.getSeconds()
+  }
+
   const removeAllEvents = () => {
     const api = calendarRef.current.getApi();
     api.removeAllEvents()
@@ -93,8 +98,9 @@ const Welcome = () => {
           plugins={[timeGridPlugin]}
           initialView='timeGridWeek'
           allDaySlot={false}
-          slotMinTime={'7:00:00'}
-          height={500}
+          scrollTime={currentTime()}
+          scrollTimeReset={false}
+          height={600}
           locale={hrLocale}
           slotLabelFormat={{
             hour: 'numeric',
