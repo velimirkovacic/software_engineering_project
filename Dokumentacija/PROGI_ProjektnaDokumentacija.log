@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  9 JAN 2023 23:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  10 JAN 2023 18:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -983,7 +983,7 @@ LaTeX Font Info:    Trying to load font information for T1+jkp on input line 11
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/t1jkp.fd
 File: t1jkp.fd 2007/01/24 Fontinst v1.928 font definitions for T1/jkp.
 ))
-Package hyperref Info: Option `colorlinks' set `true' on input line 44.
+Package hyperref Info: Option `colorlinks' set `true' on input line 45.
 
 (./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -991,50 +991,50 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 44.
 (./Dodatak.aux))
 \openout1 = `PROGI_ProjektnaDokumentacija.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 89.
-LaTeX Font Info:    Trying to load font information for OML+jkp on input line 8
-9.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 90.
+LaTeX Font Info:    Trying to load font information for OML+jkp on input line 9
+0.
  (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 89.
-LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 8
-9.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 90.
+LaTeX Font Info:    Trying to load font information for OMS+jkp on input line 9
+0.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 89.
-LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 8
-9.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 90.
+LaTeX Font Info:    Trying to load font information for OMX+jkp on input line 9
+0.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 89.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 90.
 LaTeX Font Info:    Trying to load font information for U+jkpexa on input line 
-89.
+90.
 
 (c:/texlive/2022/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 89.
-LaTeX Font Info:    ... okay on input line 89.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 90.
+LaTeX Font Info:    ... okay on input line 90.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 89.
+(lastpage)             ! on input line 90.
 
 (c:/texlive/2022/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1100,7 +1100,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 89.
+Package hyperref Info: Link coloring ON on input line 90.
 (./PROGI_ProjektnaDokumentacija.out) (./PROGI_ProjektnaDokumentacija.out)
 \@outlinefile=\write3
 \openout3 = `PROGI_ProjektnaDokumentacija.out'.
@@ -1162,7 +1162,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ... Prikaz aktivnosti grupe}{50}{chapter*.27}
+l.29 ... Prikaz aktivnosti grupe}{51}{chapter*.28}
                                                   % [1
 
 ])
@@ -1250,6 +1250,11 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 []\T1/jkp/m/n/12 18.11.2022. 
  []
 
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 10.01.2023. 
+ []
+
 > Step: build the whole table.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
@@ -1309,6 +1314,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 30--30
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 []\T1/jkp/m/n/12 18.11.2022. 
+ []
+
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 10.01.2023. 
  []
 
 )
@@ -2126,11 +2136,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 278--279
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
-
- []
-
 <dijagrami/RAZREDNI - DTO dijagram.png, id=406, 3044.37375pt x 755.82375pt>
 File: dijagrami/RAZREDNI - DTO dijagram.png Graphic file (type png)
 <use dijagrami/RAZREDNI - DTO dijagram.png>
@@ -2199,9 +2204,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [34 <./dijagrami/Dijagram stanja - administrator.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 314--315
-
- []
+<dijagrami/Dijagram aktivnosti - stvaranje događaja.png, id=438, 792.71156pt x
+ 1310.64656pt>
+File: dijagrami/Dijagram aktivnosti - stvaranje događaja.png Graphic file (typ
+e png)
+<use dijagrami/Dijagram aktivnosti - stvaranje događaja.png>
+Package pdftex.def Info: dijagrami/Dijagram aktivnosti - stvaranje događaja.pn
+g  used on input line 315.
+(pdftex.def)             Requested size: 345.15334pt x 570.66876pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2211,8 +2221,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[35]
-Underfull \hbox (badness 10000) in paragraph at lines 321--322
+[35 <./dijagrami/Dijagram aktivnosti - stvaranje događaja.png>]
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[36]
+Underfull \hbox (badness 10000) in paragraph at lines 325--326
 
  []
 
@@ -2225,7 +2244,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[36]
+[37]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -2238,7 +2257,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[37
+[38
 
 
 
@@ -2265,7 +2284,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38]
+[39]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2274,12 +2293,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[39]
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 57--58
 
  []
 
-<Opis deploymenta/Slika1.png, id=470, 1058.15324pt x 560.0925pt>
+<Opis deploymenta/Slika1.png, id=478, 1058.15324pt x 560.0925pt>
 File: Opis deploymenta/Slika1.png Graphic file (type png)
 <use Opis deploymenta/Slika1.png>
 Package pdftex.def Info: Opis deploymenta/Slika1.png  used on input line 69.
@@ -2292,13 +2311,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[40 <./Opis deploymenta/Slika1.png>]
-<Opis deploymenta/Slika2.png, id=479, 873.2625pt x 534.19576pt>
+[41 <./Opis deploymenta/Slika1.png>]
+<Opis deploymenta/Slika2.png, id=487, 873.2625pt x 534.19576pt>
 File: Opis deploymenta/Slika2.png Graphic file (type png)
 <use Opis deploymenta/Slika2.png>
 Package pdftex.def Info: Opis deploymenta/Slika2.png  used on input line 80.
 (pdftex.def)             Requested size: 435.6108pt x 266.46959pt.
-<Opis deploymenta/Slika3.png, id=480, 413.74574pt x 453.49425pt>
+<Opis deploymenta/Slika3.png, id=488, 413.74574pt x 453.49425pt>
 File: Opis deploymenta/Slika3.png Graphic file (type png)
 <use Opis deploymenta/Slika3.png>
 Package pdftex.def Info: Opis deploymenta/Slika3.png  used on input line 91.
@@ -2312,13 +2331,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41 <./Opis deploymenta/Slika2.png>]
+[42 <./Opis deploymenta/Slika2.png>]
 Overfull \hbox (2.61644pt too wide) in paragraph at lines 97--98
 []\T1/jkp/m/n/12 U src/main/resources/application.properties upi-su-jemo na-red
 be sa slike 
  []
 
-<Opis deploymenta/Slika4.png, id=490, 714.87074pt x 106.59825pt>
+<Opis deploymenta/Slika4.png, id=499, 714.87074pt x 106.59825pt>
 File: Opis deploymenta/Slika4.png Graphic file (type png)
 <use Opis deploymenta/Slika4.png>
 Package pdftex.def Info: Opis deploymenta/Slika4.png  used on input line 100.
@@ -2331,17 +2350,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42 <./Opis deploymenta/Slika3.png> <./Opis deploymenta/Slika4.png>]
+[43 <./Opis deploymenta/Slika3.png> <./Opis deploymenta/Slika4.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 106--107
 
  []
 
-<Opis deploymenta/Slika5.png, id=502, 886.512pt x 608.87476pt>
+<Opis deploymenta/Slika5.png, id=510, 886.512pt x 608.87476pt>
 File: Opis deploymenta/Slika5.png Graphic file (type png)
 <use Opis deploymenta/Slika5.png>
 Package pdftex.def Info: Opis deploymenta/Slika5.png  used on input line 113.
 (pdftex.def)             Requested size: 435.6108pt x 299.1874pt.
-<Opis deploymenta/Slika6.png, id=503, 1054.53975pt x 612.48825pt>
+<Opis deploymenta/Slika6.png, id=511, 1054.53975pt x 612.48825pt>
 File: Opis deploymenta/Slika6.png Graphic file (type png)
 <use Opis deploymenta/Slika6.png>
 Package pdftex.def Info: Opis deploymenta/Slika6.png  used on input line 124.
@@ -2354,12 +2373,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43 <./Opis deploymenta/Slika5.png>]
+[44 <./Opis deploymenta/Slika5.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 128--129
 
  []
 
-<Opis deploymenta/Slika7.png, id=511, 790.75426pt x 353.52075pt>
+<Opis deploymenta/Slika7.png, id=519, 790.75426pt x 353.52075pt>
 File: Opis deploymenta/Slika7.png Graphic file (type png)
 <use Opis deploymenta/Slika7.png>
 Package pdftex.def Info: Opis deploymenta/Slika7.png  used on input line 137.
@@ -2372,13 +2391,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44 <./Opis deploymenta/Slika6.png> <./Opis deploymenta/Slika7.png>]
-<Opis deploymenta/Slika8.png, id=521, 1012.9845pt x 486.01575pt>
+[45 <./Opis deploymenta/Slika6.png> <./Opis deploymenta/Slika7.png>]
+<Opis deploymenta/Slika8.png, id=529, 1012.9845pt x 486.01575pt>
 File: Opis deploymenta/Slika8.png Graphic file (type png)
 <use Opis deploymenta/Slika8.png>
 Package pdftex.def Info: Opis deploymenta/Slika8.png  used on input line 151.
 (pdftex.def)             Requested size: 435.6108pt x 208.99753pt.
-<Opis deploymenta/Slika9.png, id=522, 772.0845pt x 246.9225pt>
+<Opis deploymenta/Slika9.png, id=530, 772.0845pt x 246.9225pt>
 File: Opis deploymenta/Slika9.png Graphic file (type png)
 <use Opis deploymenta/Slika9.png>
 Package pdftex.def Info: Opis deploymenta/Slika9.png  used on input line 161.
@@ -2392,8 +2411,8 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45 <./Opis deploymenta/Slika8.png> <./Opis deploymenta/Slika9.png>]
-<Opis deploymenta/Slika10.png, id=534, 781.11826pt x 407.72325pt>
+[46 <./Opis deploymenta/Slika8.png> <./Opis deploymenta/Slika9.png>]
+<Opis deploymenta/Slika10.png, id=542, 781.11826pt x 407.72325pt>
 File: Opis deploymenta/Slika10.png Graphic file (type png)
 <use Opis deploymenta/Slika10.png>
 Package pdftex.def Info: Opis deploymenta/Slika10.png  used on input line 172.
@@ -2407,7 +2426,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[46 <./Opis deploymenta/Slika10.png>])
+[47 <./Opis deploymenta/Slika10.png>])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -2425,7 +2444,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47
+[48
 
 
 
@@ -2448,7 +2467,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48
+[49
 
 
 
@@ -2472,7 +2491,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[49
+[50
 
 
 
@@ -2488,7 +2507,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50
+[51
 
 
 ]
@@ -2500,7 +2519,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51]
+[52]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2638,7 +2657,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52]
+[53]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2647,7 +2666,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53]
+[54]
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
@@ -2661,7 +2680,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54] 
+[55] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -2669,14 +2688,14 @@ AED: lastpage setting LastPage
 (./Dodatak.aux))
 Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
 anged.
-(rerunfilecheck)             Checksum: 7C3E854466A0E7F8E885A42AA235EAAD;4427.
+(rerunfilecheck)             Checksum: 355BAC9059A20F88C63AE381E0E7010E;4427.
  ) 
 Here is how much of TeX's memory you used:
- 19468 strings out of 474971
- 347258 string characters out of 5780121
- 858411 words of memory out of 5000000
- 40374 multiletter control sequences out of 15000+600000
- 594277 words of font info for 173 fonts, out of 8000000 for 9000
+ 19477 strings out of 474971
+ 347690 string characters out of 5780121
+ 858714 words of memory out of 5000000
+ 40380 multiletter control sequences out of 15000+600000
+ 594342 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,117p,850b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
@@ -2693,10 +2712,10 @@ blic/kpfonts/jkpbite.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts
 dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2022/texmf-dist/fonts/t
 ype1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/k
 pfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (55 pages, 2383691 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (56 pages, 2473924 bytes).
 PDF statistics:
- 720 PDF objects out of 1000 (max. 8388607)
- 598 compressed objects within 6 object streams
- 208 named destinations out of 1000 (max. 500000)
- 314 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 730 PDF objects out of 1000 (max. 8388607)
+ 604 compressed objects within 7 object streams
+ 210 named destinations out of 1000 (max. 500000)
+ 319 words of extra memory for PDF output out of 10000 (max. 10000000)
 
