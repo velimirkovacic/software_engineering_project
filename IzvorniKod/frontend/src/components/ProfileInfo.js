@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { ReactSession } from 'react-client-session';
-import Button from '@mui/material/Button';
 import { useNavigate } from 'react-router-dom';
 import Popup from 'reactjs-popup';
+import PaymentInput from './PaymentInput';
 
 const ProfileInfo = () => {
 
     const [open, setOpen] = useState(false);
+    const [open2, setOpen2] = useState(false);
     const closeModal = () => {
         setOpen(false);
         navigate('/')
@@ -109,11 +110,11 @@ const ProfileInfo = () => {
                                 <label name='profile'>Korisnički score: {ReactSession.get("score")}</label>
                             </div>
                             <br></br>
-                            {(premium!==true) ? (<Button variant="contained" name='premium' onClick={e => { e.preventDefault(); promoteProfile(ReactSession.get("id")) }} id={ReactSession.get("id")}>Promoviraj se</Button>) : ('')}
+                            {(premium!==true) ? (<button name='premium' onClick={e => { e.preventDefault(); setOpen2(true) }}>Kupnja premium računa</button>) : ('')}
                             <br></br>
                             <br></br>
                             <button type='submit' name='register'>Spremi</button>
-                            <button type='button' name='register' onClick={() => navigate('/')}>Odustani</button>
+                            <button type='button' name='register' style={{marginLeft: '4px'}} onClick={() => navigate('/')}>Odustani</button>
                         </div>
                 </div>
             </form>
@@ -126,6 +127,9 @@ const ProfileInfo = () => {
                         </div>
                     </div>
                 </form>
+            </Popup>
+            <Popup class="popup-overlay" open={open2} position="center center" closeOnDocumentClick={0}>
+                <PaymentInput setOpen={setOpen} setOpen2={setOpen2} promoteProfile={promoteProfile}/>
             </Popup>
         </div>
       );

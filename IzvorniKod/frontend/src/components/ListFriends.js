@@ -133,6 +133,7 @@ function ListFriends(props) {
             </div>
             </div>
         ))}
+        <div style={{marginBottom: '40px'}}></div>
         </ul>
     )
 }
