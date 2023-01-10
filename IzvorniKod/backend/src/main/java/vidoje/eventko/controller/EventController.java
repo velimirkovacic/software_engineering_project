@@ -112,7 +112,14 @@ public class EventController {
             return new ResponseEntity<>(new MessageResponseDTO("Korisnik je suspendiran, ne može stvarati javne eventove"), HttpStatus.BAD_REQUEST);
         }
 
-        Event newEvent = new Event(dto.getName(), dto.getLocation(), new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime(), new Timestamp(dto.getEndTimestamp()).toLocalDateTime(), dto.getDescription(), user, eventTypeService.getEventTypeById(dto.getTypeId()), tagService.getTagsFromTagIds(dto.getTagIds()), dto.getPromoted(), dto.getCoordinates());
+        if ((new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime()).isAfter(new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Vrijeme početka je poslije vremena kraja"), HttpStatus.BAD_REQUEST);
+        }
+
+        if ((new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime()).isBefore(LocalDateTime.now())) {
+            return new ResponseEntity<>(new MessageResponseDTO("Nije moguće stvaranje eventa u prošlosti"), HttpStatus.BAD_REQUEST);
+        }
+        Event newEvent = new Event(dto.getName(), dto.getLocation(), (new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime()).plusHours(1), (new Timestamp(dto.getEndTimestamp()).toLocalDateTime()).plusHours(1), dto.getDescription(), user, eventTypeService.getEventTypeById(dto.getTypeId()), tagService.getTagsFromTagIds(dto.getTagIds()), dto.getPromoted(), dto.getCoordinates());
 
 
         eventService.add(newEvent);
@@ -143,8 +150,8 @@ public class EventController {
 
         event.setName(dto.getName());
         event.setLocation(dto.getLocation());
-        event.setBeginningTimestamp(new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime());
-        event.setEndTimestamp(new Timestamp(dto.getEndTimestamp()).toLocalDateTime());
+        event.setBeginningTimestamp((new Timestamp(dto.getBeginningTimestamp()).toLocalDateTime()).plusHours(1));
+        event.setEndTimestamp((new Timestamp(dto.getEndTimestamp()).toLocalDateTime()).plusHours(1));
         event.setDescription(dto.getDescription());
         event.setOrganizer(user);
         event.setType(eventTypeService.getEventTypeById(dto.getTypeId()));

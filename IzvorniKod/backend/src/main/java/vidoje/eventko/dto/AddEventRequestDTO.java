@@ -5,7 +5,10 @@ import vidoje.eventko.domain.Tag;
 import vidoje.eventko.domain.User;
 
 import javax.persistence.*;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Set;
@@ -13,9 +16,12 @@ import java.util.Set;
 public class AddEventRequestDTO {
 
     @NotNull(message = "Ime je obavezno")
+    @Size(max = 255, message = "Ime predugo, max = 255 znakova")
     private String name;
 
     @NotNull(message = "Lokacija je obavezna")
+    @Size(max = 255, message = "Naziv lokacije predug, max = 255 znakova")
+
     private String location;
 
     @NotNull(message = "Vrijeme početka je obavezno")
@@ -25,9 +31,13 @@ public class AddEventRequestDTO {
     private Long endTimestamp;
 
     @NotNull(message = "Opis je obavezan")
+    @Size(max = 255, message = "Opis predug, max = 255 znakova")
+
     private String description;
 
     @NotNull(message = "ID vrste eventa je obavezan")
+    @Min(value = 1, message = "1 = obveza, 2 = privatni, 3 = javni")
+    @Max(value = 3)
     private Long typeId;
 
     @NotNull(message = "Lista ID tagova je obavezna (smije biti prazna lista)")
