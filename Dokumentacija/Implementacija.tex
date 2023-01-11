@@ -23,45 +23,64 @@
 			
 			
 			
+			
+			
 			\subsection{Ispitivanje sustava}
 			
-			 \textit{Potrebno je provesti i opisati ispitivanje sustava koristeći radni okvir Selenium\footnote{\url{https://www.seleniumhq.org/}}. Razraditi \textbf{minimalno 4 ispitna slučaja} u kojima će se ispitati redovni slučajevi, rubni uvjeti te poziv funkcionalnosti koja nije implementirana/izaziva pogrešku kako bi se vidjelo na koji način sustav reagira kada nešto nije u potpunosti ostvareno. Ispitni slučaj se treba sastojati od ulaza (npr. korisničko ime i lozinka), očekivanog izlaza ili rezultata, koraka ispitivanja i dobivenog izlaza ili rezultata.\\ }
 			 
-			 \textit{Izradu ispitnih slučajeva pomoću radnog okvira Selenium moguće je provesti pomoću jednog od sljedeća dva alata:}
-			 \begin{itemize}
-			 	\item \textit{dodatak za preglednik \textbf{Selenium IDE} - snimanje korisnikovih akcija radi automatskog ponavljanja ispita	}
-			 	\item \textit{\textbf{Selenium WebDriver} - podrška za pisanje ispita u jezicima Java, C\#, PHP koristeći posebno programsko sučelje.}
-			 \end{itemize}
-		 	\textit{Detalji o korištenju alata Selenium bit će prikazani na posebnom predavanju tijekom semestra.}
+			 
 		 	
+		 	\indent U nastavku su priloženi testovi za ispitivanje sustava u radnom okviru Selenium. Testni slučajevi su napravljeni uz pomoć dodatka za preglednik Selenium IDE. Provedeni su testovi za točnu registraciju, krivu prijavu, odjavu sa profila, dodavanje događaja, te adminove mogućnosti suspendiranja i odsuspendiranja korisnika.
+		 	
+		 	\indent Za test točne registracije koriste se ulazni podaci "registracija1" za korisničko ime, "registracija1" za nadimak, "registracija1@gmail.com" za e-mail, te "registracija1" za lozinku i ponovljenu lozinku(prije registracije ne postoji korisnik sa istim podacima). Nakon toga se stisne gumb registriraj nakon kojeg su podaci spremljeni i moramo se vratiti na stranicu prijava. Tamo upišemo "registracija1" u polja korisničko ime i zaporka i onda uspješno ulazimo na početnu stranicu.
 		 	\begin{figure}[H]
-		 		\includegraphics[width=\textwidth]{Dijagrami/Dijagram Razmještaja.png}
-		 		\caption{Dijagram razmještaja}
+		 		\includegraphics[width=\textwidth]{Slike/RegistracijaTest.png}
+		 		\caption{Točna registracija}
 		 	\end{figure}
 	 	
+	 		\indent Za test krive prijave koriste se ulazni podaci "VIDOJE" za korisničko ime i "VIDOJE" za zaporku(za vrijeme prijave ne postoji korisnik sa istim podacima). Pritiskom na gumb prijavi pojavljuje se poruka "Neuspješna prijava" koja se može vidjeti na drugoj slici.
+	 		
 	 		\begin{figure}[H]
-	 			\includegraphics[width=\textwidth]{Dijagrami/Dijagram Razmještaja.png}
-	 			\caption{Dijagram razmještaja}
+	 			\includegraphics[width=\textwidth]{Slike/KrivaPrijava.png}
+	 			\caption{Krivi podaci za prijavu}
 	 		\end{figure}
  		
  			\begin{figure}[H]
- 				\includegraphics[width=\textwidth]{Dijagrami/Dijagram Razmještaja.png}
- 				\caption{Dijagram razmještaja}
+ 				\includegraphics[width=\textwidth]{Slike/Neuspješna prijava.png}
+ 				\caption{Neuspješna prijava}
+ 			\end{figure}
+ 		
+ 			\indent Za test odjave sa profila koriste se ulazni podaci "admin" za korisničko ime i "1234" za zaporku(postoji korisnik sa upisanim ulaznim podacima). Nakon toga se nalazimo na početnoj stranici te stisnemo tekst "Odjava" u desnom gornjem kutu i vraćeni smo na stranicu za prijavu.
+ 			
+ 			\begin{figure}[H]
+ 				\includegraphics[width=\textwidth]{Slike/OdjavaSaProfila.png}
+ 				\caption{Odjava sa profila}
+ 			\end{figure}
+ 		
+ 			\indent Za test dodavanja događaja koriste se ulazni podaci "admin" za korisničko ime i "1234" za zaporku(postoji korisnik sa upisanim ulaznim podacima). Nakon toga se nalazimo na početnoj stranici te stisnemo "Dodaj u kalendar" u lijevom gornjem kutu. Nakon toga se otvara prozor za koji se koriste ulazni podaci "Event" za naziv događaja, "Zagreb" za mjesto događaja, "1.2.2023 i 20:21" se odabire za početak događaja i "2.2.2023 i 20:21" se odabire za kraj događaja, te "Javni događaj" se odabire za vrstu događaja, "Kava" se odabire za oznaku događaja i "Ucenje" za opis događaja. Stvoren je novi događaj i vidljiv je u kalendaru kao na drugoj slici.
+ 			\begin{figure}[H]
+ 				\includegraphics[width=\textwidth]{Slike/DodavanjeEventova.png}
+ 				\caption{Dodavanje novog događaja}
  			\end{figure}
  		
  			\begin{figure}[H]
- 				\includegraphics[width=\textwidth]{Dijagrami/Dijagram Razmještaja.png}
- 				\caption{Dijagram razmještaja}
+ 				\includegraphics[width=\textwidth]{Slike/Kalendar.png}
+ 				\caption{Stvoren novi događaj u kalendaru}
+ 			\end{figure}
+ 			
+ 			\indent Za test suspendiranje korisnika koriste se ulazni podaci "admin" za korisničko ime i "1234" za zaporku(postoji korisnik sa upisanim ulaznim podacima te ima i ovlasti admina). Nakon toga se nalazimo na početnoj stranici te stisnemo "Upravljaj korisnicima". Stisnemo gumb suspendiraj i željeni korisnik je suspendiran.
+ 			
+ 			\begin{figure}[H]
+ 				\includegraphics[width=\textwidth]{Slike/AdminSuspendirajSelenium.png}
+ 				\caption{Admin suspendiranje}
  			\end{figure}
  		
- 			\begin{figure}[H]
- 				\includegraphics[width=\textwidth]{Dijagrami/Dijagram Razmještaja.png}
- 				\caption{Dijagram razmještaja}
- 			\end{figure}
  		
+ 			\indent Za test odsuspendiranja korisnika koriste se ulazni podaci "admin" za korisničko ime i "1234" za zaporku(postoji korisnik sa upisanim ulaznim podacima te ima i ovlasti admina). Nakon toga se nalazimo na početnoj stranici te stisnemo "Upravljaj korisnicima". Stisnemo gumb odsuspendiraj i željeni korisnik je odsuspendiran.
+ 			
  			\begin{figure}[H]
- 				\includegraphics[width=\textwidth]{Dijagrami/Dijagram Razmještaja.png}
- 				\caption{Dijagram razmještaja}
+ 				\includegraphics[width=\textwidth]{Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png}
+ 				\caption{Admin odsuspendiranje}
  			\end{figure}
  		
 		 	
