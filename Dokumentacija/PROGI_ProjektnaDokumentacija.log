@@ -1,5 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  11 JAN 2023 20:32
-
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.4)  11 JAN 2023 23:56
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1163,7 +1162,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ... Prikaz aktivnosti grupe}{45}{chapter*.16}
+l.29 ... Prikaz aktivnosti grupe}{51}{chapter*.29}
                                                   % [1
 
 ])
@@ -1193,7 +1192,7 @@ Poglavlje 1.
 > Step: calculate cell and line sizes.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkoviï¿½,
+[]\T1/jkp/m/n/12 Perkovi¢,
  []
 
 
@@ -1203,7 +1202,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkoviï¿½,
+[]\T1/jkp/m/n/12 Perkovi¢,
  []
 
 
@@ -1213,12 +1212,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
+[]\T1/jkp/m/n/12 Kova£i¢,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-viï¿½,
+\T1/jkp/m/n/12 Per-ko-vi¢,
  []
 
 
@@ -1228,7 +1227,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkoviï¿½,
+[]\T1/jkp/m/n/12 Perkovi¢,
  []
 
 
@@ -1238,12 +1237,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
+[]\T1/jkp/m/n/12 Kova£i¢,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-viï¿½,
+\T1/jkp/m/n/12 Per-ko-vi¢,
  []
 
 
@@ -1259,7 +1258,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 > Step: build the whole table.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkoviï¿½,
+[]\T1/jkp/m/n/12 Perkovi¢,
  []
 
 
@@ -1269,7 +1268,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkoviï¿½,
+[]\T1/jkp/m/n/12 Perkovi¢,
  []
 
 
@@ -1279,12 +1278,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
+[]\T1/jkp/m/n/12 Kova£i¢,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-viï¿½,
+\T1/jkp/m/n/12 Per-ko-vi¢,
  []
 
 
@@ -1294,7 +1293,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkoviï¿½,
+[]\T1/jkp/m/n/12 Perkovi¢,
  []
 
 
@@ -1304,12 +1303,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
+[]\T1/jkp/m/n/12 Kova£i¢,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-viï¿½,
+\T1/jkp/m/n/12 Per-ko-vi¢,
  []
 
 
@@ -1530,7 +1529,6 @@ Package pdftex.def Info: dijagrami/Dijagram obrazaca uporabe.png  used on input
 (pdftex.def)             Requested size: 435.6108pt x 429.1129pt.
 
 
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1610,7 +1608,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [20 <./slike/Prijava.png>]
 Overfull \hbox (23.0035pt too wide) in paragraph at lines 525--526
 []\T1/jkp/m/n/12 Sustav treba biti im-ple-men-ti-ran kao web apli-ka-cija ko-ri
-s-teï¿½i objektno-orijentirane
+s-te¢i objektno-orijentirane
  []
 
 )
@@ -2274,6 +2272,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 28--29
 
  []
 
+<Dijagrami/Dijagram RazmjeÅ¡taja.png, id=464, 346.896pt x 192.72pt>
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 38.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2283,6 +2287,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [39]
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 43.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 48.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2291,15 +2306,65 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[40]
-Underfull \hbox (badness 10000) in paragraph at lines 57--58
+[40 <./Dijagrami/Dijagram RazmjeÅ¡taja.png>]
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 53.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 58.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[41]
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 63.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[42]
+File: Dijagrami/Dijagram RazmjeÅ¡taja.png Graphic file (type png)
+<use Dijagrami/Dijagram RazmjeÅ¡taja.png>
+Package pdftex.def Info: Dijagrami/Dijagram RazmjeÅ¡taja.png  used on input lin
+e 77.
+(pdftex.def)             Requested size: 435.6108pt x 242.01978pt.
+
+
+Package fancyhdr Warning: \headheight is too small (12.0pt): 
+(fancyhdr)                Make it at least 14.49998pt, for example:
+(fancyhdr)                \setlength{\headheight}{14.49998pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
+
+[43]
+Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-<Opis deploymenta/Slika1.png, id=477, 1058.15324pt x 560.0925pt>
+<Opis deploymenta/Slika1.png, id=502, 1058.15324pt x 560.0925pt>
 File: Opis deploymenta/Slika1.png Graphic file (type png)
 <use Opis deploymenta/Slika1.png>
-Package pdftex.def Info: Opis deploymenta/Slika1.png  used on input line 69.
+Package pdftex.def Info: Opis deploymenta/Slika1.png  used on input line 104.
 (pdftex.def)             Requested size: 435.6108pt x 230.57095pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2309,16 +2374,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[41 <./Opis deploymenta/Slika1.png>]
-<Opis deploymenta/Slika2.png, id=486, 873.2625pt x 534.19576pt>
+[44 <./Opis deploymenta/Slika1.png>]
+<Opis deploymenta/Slika2.png, id=511, 873.2625pt x 534.19576pt>
 File: Opis deploymenta/Slika2.png Graphic file (type png)
 <use Opis deploymenta/Slika2.png>
-Package pdftex.def Info: Opis deploymenta/Slika2.png  used on input line 80.
+Package pdftex.def Info: Opis deploymenta/Slika2.png  used on input line 115.
 (pdftex.def)             Requested size: 435.6108pt x 266.46959pt.
-<Opis deploymenta/Slika3.png, id=487, 413.74574pt x 453.49425pt>
+<Opis deploymenta/Slika3.png, id=512, 413.74574pt x 453.49425pt>
 File: Opis deploymenta/Slika3.png Graphic file (type png)
 <use Opis deploymenta/Slika3.png>
-Package pdftex.def Info: Opis deploymenta/Slika3.png  used on input line 91.
+Package pdftex.def Info: Opis deploymenta/Slika3.png  used on input line 126.
 (pdftex.def)             Requested size: 435.6108pt x 477.48392pt.
 
 
@@ -2329,16 +2394,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[42 <./Opis deploymenta/Slika2.png>]
-Overfull \hbox (2.61644pt too wide) in paragraph at lines 97--98
+[45 <./Opis deploymenta/Slika2.png>]
+Overfull \hbox (2.61644pt too wide) in paragraph at lines 132--133
 []\T1/jkp/m/n/12 U src/main/resources/application.properties upi-su-jemo na-red
 be sa slike 
  []
 
-<Opis deploymenta/Slika4.png, id=498, 714.87074pt x 106.59825pt>
+<Opis deploymenta/Slika4.png, id=522, 714.87074pt x 106.59825pt>
 File: Opis deploymenta/Slika4.png Graphic file (type png)
 <use Opis deploymenta/Slika4.png>
-Package pdftex.def Info: Opis deploymenta/Slika4.png  used on input line 100.
+Package pdftex.def Info: Opis deploymenta/Slika4.png  used on input line 135.
 (pdftex.def)             Requested size: 435.6108pt x 64.95813pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2348,20 +2413,20 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[43 <./Opis deploymenta/Slika3.png> <./Opis deploymenta/Slika4.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 106--107
+[46 <./Opis deploymenta/Slika3.png> <./Opis deploymenta/Slika4.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
-<Opis deploymenta/Slika5.png, id=509, 886.512pt x 608.87476pt>
+<Opis deploymenta/Slika5.png, id=533, 886.512pt x 608.87476pt>
 File: Opis deploymenta/Slika5.png Graphic file (type png)
 <use Opis deploymenta/Slika5.png>
-Package pdftex.def Info: Opis deploymenta/Slika5.png  used on input line 113.
+Package pdftex.def Info: Opis deploymenta/Slika5.png  used on input line 148.
 (pdftex.def)             Requested size: 435.6108pt x 299.1874pt.
-<Opis deploymenta/Slika6.png, id=510, 1054.53975pt x 612.48825pt>
+<Opis deploymenta/Slika6.png, id=534, 1054.53975pt x 612.48825pt>
 File: Opis deploymenta/Slika6.png Graphic file (type png)
 <use Opis deploymenta/Slika6.png>
-Package pdftex.def Info: Opis deploymenta/Slika6.png  used on input line 124.
+Package pdftex.def Info: Opis deploymenta/Slika6.png  used on input line 159.
 (pdftex.def)             Requested size: 435.6108pt x 253.0003pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2371,15 +2436,15 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[44 <./Opis deploymenta/Slika5.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 128--129
+[47 <./Opis deploymenta/Slika5.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 163--164
 
  []
 
-<Opis deploymenta/Slika7.png, id=518, 790.75426pt x 353.52075pt>
+<Opis deploymenta/Slika7.png, id=543, 790.75426pt x 353.52075pt>
 File: Opis deploymenta/Slika7.png Graphic file (type png)
 <use Opis deploymenta/Slika7.png>
-Package pdftex.def Info: Opis deploymenta/Slika7.png  used on input line 137.
+Package pdftex.def Info: Opis deploymenta/Slika7.png  used on input line 172.
 (pdftex.def)             Requested size: 435.6108pt x 194.74448pt.
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2389,16 +2454,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[45 <./Opis deploymenta/Slika6.png> <./Opis deploymenta/Slika7.png>]
-<Opis deploymenta/Slika8.png, id=528, 1012.9845pt x 486.01575pt>
+[48 <./Opis deploymenta/Slika6.png> <./Opis deploymenta/Slika7.png>]
+<Opis deploymenta/Slika8.png, id=554, 1012.9845pt x 486.01575pt>
 File: Opis deploymenta/Slika8.png Graphic file (type png)
 <use Opis deploymenta/Slika8.png>
-Package pdftex.def Info: Opis deploymenta/Slika8.png  used on input line 151.
+Package pdftex.def Info: Opis deploymenta/Slika8.png  used on input line 186.
 (pdftex.def)             Requested size: 435.6108pt x 208.99753pt.
-<Opis deploymenta/Slika9.png, id=529, 772.0845pt x 246.9225pt>
+<Opis deploymenta/Slika9.png, id=555, 772.0845pt x 246.9225pt>
 File: Opis deploymenta/Slika9.png Graphic file (type png)
 <use Opis deploymenta/Slika9.png>
-Package pdftex.def Info: Opis deploymenta/Slika9.png  used on input line 161.
+Package pdftex.def Info: Opis deploymenta/Slika9.png  used on input line 196.
 (pdftex.def)             Requested size: 435.6108pt x 139.31554pt.
 
 
@@ -2409,11 +2474,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[46 <./Opis deploymenta/Slika8.png> <./Opis deploymenta/Slika9.png>]
-<Opis deploymenta/Slika10.png, id=541, 781.11826pt x 407.72325pt>
+[49 <./Opis deploymenta/Slika8.png> <./Opis deploymenta/Slika9.png>]
+<Opis deploymenta/Slika10.png, id=567, 781.11826pt x 407.72325pt>
 File: Opis deploymenta/Slika10.png Graphic file (type png)
 <use Opis deploymenta/Slika10.png>
-Package pdftex.def Info: Opis deploymenta/Slika10.png  used on input line 172.
+Package pdftex.def Info: Opis deploymenta/Slika10.png  used on input line 207.
 (pdftex.def)             Requested size: 435.6108pt x 227.3778pt.
 
 
@@ -2424,7 +2489,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47 <./Opis deploymenta/Slika10.png>])
+[50 <./Opis deploymenta/Slika10.png>])
 \openout2 = `Zakljucak.aux'.
 
  (./Zakljucak.tex
@@ -2442,7 +2507,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[48
+[51
 
 
 
@@ -2452,7 +2517,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Literatura.tex
 Overfull \hbox (8.89293pt too wide) in paragraph at lines 10--11
-[]\T1/jkp/m/n/12 Programsko in-ï¿½e-njer-stvo, FER ZE-MRIS, [][]$\T1/jkptt/m/n/12
+[]\T1/jkp/m/n/12 Programsko in-ºe-njer-stvo, FER ZE-MRIS, [][]$\T1/jkptt/m/n/12
  http : / / www . fer . hr / predmet / proinz$[][] 
  []
 
@@ -2465,7 +2530,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[49
+[52
 
 
 
@@ -2473,7 +2538,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ] (./PROGI_ProjektnaDokumentacija.lof
 Overfull \hbox (4.04738pt too wide) in paragraph at lines 5--5
  [][] [][][]\T1/jkp/m/n/12 Dijagram obra-zaca upo-rabe, funk-ci-onal-nosti raz-
-li-ï¿½i-tih ko-ris-nika stra- 
+li-£i-tih ko-ris-nika stra- 
  []
 
 )
@@ -2489,7 +2554,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[50
+[53
 
 
 
@@ -2505,7 +2570,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[51
+[54
 
 
 ]
@@ -2517,7 +2582,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[52]
+[55]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -2655,7 +2720,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[53]
+[56]
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2664,7 +2729,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[54]
+[57]
 Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
@@ -2678,7 +2743,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[55] 
+[58] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
@@ -2687,15 +2752,21 @@ AED: lastpage setting LastPage
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
-anged.
-(rerunfilecheck)             Checksum: 355BAC9059A20F88C63AE381E0E7010E;4427.
+
+Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
+nged.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
+(rerunfilecheck)             Before: 03D4E8E2133BF580BD6D0B3A20F292B2;4427
+(rerunfilecheck)             After:  901C94F3467D369EF891E78DF497A048;4427.
  ) 
 Here is how much of TeX's memory you used:
- 19475 strings out of 474971
- 347830 string characters out of 5780121
- 858716 words of memory out of 5000000
- 40380 multiletter control sequences out of 15000+600000
+ 19496 strings out of 474971
+ 348281 string characters out of 5780121
+ 858768 words of memory out of 5000000
+ 40386 multiletter control sequences out of 15000+600000
  594342 words of font info for 173 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,117p,925b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2704,15 +2775,15 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{chapter*.16} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter*.29} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{chapter*.15} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter*.28} has been referenced but does not exist
 , replaced by a fixed one
 
 
-pdfTeX warning (dest): name{chapter*.14} has been referenced but does not exist
+pdfTeX warning (dest): name{chapter*.27} has been referenced but does not exist
 , replaced by a fixed one
 
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texmf-
@@ -2725,10 +2796,10 @@ blic/kpfonts/jkpbite.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts
 dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2022/texmf-dist/fonts/t
 ype1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/k
 pfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (56 pages, 2567420 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (59 pages, 2590358 bytes).
 PDF statistics:
- 729 PDF objects out of 1000 (max. 8388607)
- 603 compressed objects within 7 object streams
- 209 named destinations out of 1000 (max. 500000)
- 319 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 762 PDF objects out of 1000 (max. 8388607)
+ 631 compressed objects within 7 object streams
+ 222 named destinations out of 1000 (max. 500000)
+ 324 words of extra memory for PDF output out of 10000 (max. 10000000)
 
