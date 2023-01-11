@@ -47,12 +47,131 @@
 		
 		\section{Upute za puštanje u pogon}
 		
-			\textbf{\textit{dio 2. revizije}}\\
+			\indent Puštanje web aplikacije u pogon sastoji se od tri segmenta:
+			\begin{itemize}
+				\item Stvaranje baze podataka
+				\item Puštanje backenda u pogon
+				\item Puštanje frontenda u pogon
+			\end{itemize}
 		
-			 \textit{U ovom poglavlju potrebno je dati upute za puštanje u pogon (engl. deployment) ostvarene aplikacije. Na primjer, za web aplikacije, opisati postupak kojim se od izvornog kôda dolazi do potpuno postavljene baze podataka i poslužitelja koji odgovara na upite korisnika. Za mobilnu aplikaciju, postupak kojim se aplikacija izgradi, te postavi na neku od trgovina. Za stolnu (engl. desktop) aplikaciju, postupak kojim se aplikacija instalira na računalo. Ukoliko mobilne i stolne aplikacije komuniciraju s poslužiteljem i/ili bazom podataka, opisati i postupak njihovog postavljanja. Pri izradi uputa preporučuje se \textbf{naglasiti korake instalacije uporabom natuknica} te koristiti što je više moguće \textbf{slike ekrana} (engl. screenshots) kako bi upute bile jasne i jednostavne za slijediti.}
+			\noindent \textbf{Stvaranje baze podataka}\\
 			
+			\indent Baza podataka besplatno je spremljena na web-oblaku render.com. Ona se postavlja i osposobljava sljedećim koracima:
 			
-			 \textit{Dovršenu aplikaciju potrebno je pokrenuti na javno dostupnom poslužitelju. Studentima se preporuča korištenje neke od sljedećih besplatnih usluga: \href{https://aws.amazon.com/}{Amazon AWS}, \href{https://azure.microsoft.com/en-us/}{Microsoft Azure} ili \href{https://www.heroku.com/}{Heroku}. Mobilne aplikacije trebaju biti objavljene na F-Droid, Google Play ili Amazon App trgovini.}
+			\begin{packed_enum}
+				\item Stvaranje nove baze
+				\begin{itemize}
+					\item Za početak je potrebno (nakon registracije na render.com) odabrati opciju \textit{New} te na padajućem izborniku \textit{PostgreSQL}
+					\item Pojavljuje se izbornik koji ispunjavamo kao na slici ispod
+					\item Biramo \textit{Create Database}
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika1.png}
+					\caption{Stvaranje nove PostgreSQL baze}
+				\end{figure}
+				\eject
 			
+				\item Dohvat podataka za spajanje
+				\begin{itemize}
+					\item Redom biramo \textit{Dashboard} -> \textit{Eventko - baza podataka} -> \textit{Info}
+					\item Skrolamo do izbora \textit{Connections} gdje vidimo informacije potrebne za spajanje na bazu (slika ispod).
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika2.png}
+					\caption{Dohvat podataka za spajanje baze}
+				\end{figure}
 			
-			\eject 
+				\item Spajanje putem pgAdmina
+				\begin{itemize}
+					\item Izabiremo \textit{Object} -> \textit{Create} -> \textit{Server}
+					\item Na kartici \textit{General} unosimo ime servera kojeg otvaramo u pgAdminu
+					\item Na kartici \textit{Connection} unosimo podatke kao na slici i spremamo ih sa \textit{Save}
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika3.png}
+					\caption{Unos podataka za spajanje baze}
+				\end{figure}
+			
+				\item Spajanje iz backenda
+				\begin{itemize}
+					\item U src/main/resources/application.properties upisujemo naredbe sa slike
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika4.png}
+					\caption{Spajanje baze iz backenda}
+				\end{figure}
+			\end{packed_enum}
+			\eject
+			
+			\noindent \textbf{Puštanje backenda u pogon}\\
+			
+			\indent Backend dio projekta također koristi render.com za puštanje u pogon. Preduvjeti za to su:		\begin{itemize}
+				\item Dodavanje Dockerfilea prikazanog na slici ispod
+				\item Povezivanje s GitLabom na renderu
+			\end{itemize}
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{Opis deploymenta/Slika5.png}
+				\caption{Potrebni Dockerfile}
+			\end{figure}
+		
+			\indent Stvaranje backenda postižemo na sljedeći način:
+			\begin{itemize}
+				\item Odabiremo na render.com \textit{New} -> \textit{Web Service}
+				\item Odabiremo željeni GitLab repozitorij
+				\item Dalje unosimo podatke kao na slici ispod i potvrđujemo s \textit{Create Web Service}
+			\end{itemize}
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{Opis deploymenta/Slika6.png}
+				\caption{Stvaranje novog web servisa}
+			\end{figure}
+		
+			\noindent \textbf{Puštanje frontenda u pogon}\\
+			
+			\indent Frontend dio projekta puštamo u pogon servisom vercel.com. Preduvjeti za to su:
+			\begin{itemize}
+				\item Dodavanje vercel.json datoteke u projekt (slika ispod) radi mapiranja putanja prema backendu
+				\item Povezivanje s GitLabom i stvaranje grupe na vercelu
+			\end{itemize}
+		
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{Opis deploymenta/Slika7.png}
+				\caption{Potrebna vercel.json datoteka}
+			\end{figure}
+			\eject
+			
+			\indent Za puštanje frontenda u pogon provode se sljedeći koraci:
+			\begin{packed_enum}
+				\item Stvaranje
+				\begin{itemize}
+					\item Odabiremo grupu \textit{Vidoje} od ponuđenih iz našeg GitLab računa
+					\item Biramo redom \textit{Add new} pa \textit{Import git repository}, pri čemu biramo repozitorij Eventko
+					\item Odabiremo \textit{Configure Project}, ispunjavamo polja kao na slici ispod i završavamo s \textit{Deploy}
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika8.png}
+					\caption{Stvaranje React aplikacije i puštanje u pogon}
+				\end{figure}
+				
+				\item Promjena grane
+				\begin{itemize}
+					\item Biramo redom \textit{Overview} -> \textit{Eventko} -> \textit{Settings} -> \textit{Git}
+					\item Mijenjamo granu iz \textit{main} u \textit{develop} kao na slici ispod te spremamo sa \textit{Save}
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika9.png}
+					\caption{Promjena razvojne grane}
+				\end{figure}
+				\eject
+				
+				\item Izmjena dodijeljene domene web-stranice (opcionalno)
+				\begin{itemize}
+					\item Biramo redom \textit{Overview} -> \textit{Eventko} -> \textit{Settings} -> \textit{Domains}
+					\item Unosimo novu željenu domenu kao na slici ispod i spremamo sa \textit{Save}
+				\end{itemize}
+				\begin{figure}[H]
+					\includegraphics[width=\textwidth]{Opis deploymenta/Slika10.png}
+					\caption{Promjena domene web-stranice}
+				\end{figure}
+			\end{packed_enum}
+			
+			\eject
