@@ -316,7 +316,7 @@
 					\caption{Dijagram aktivnosti za stvaranje novog događaja}
 				\end{figure}
 			
-				\indent Nači toe to
+				\indent Dijagramom aktivnosti modeliran je tijek zadataka i poslova pri korisnikovom stvaranju novog događaja. Format podataka koji se provjerava na frontendu mora sadržavati stavke \textit{name, location, beginningTimestamp, endTimeStamp, description, typeId, tagIds}, svi podaci moraju biti predviđenog tipa, a \textit{typeId} mora biti 1, 2 ili 3. Ukoliko je korisnik trenutno suspendiran, a pokušava stvoriti javni događaj, to će mu biti onemogućeno. Vremenska ograničenja provjeravaju se na backendu i automatski na bazi podataka kako ne bi bilo moguće stvoriti događaj u prošlosti niti postaviti datum i vrijeme početka nakon datuma i vremena završetka. Ukoliko su sve provjere uspješne događaj se stvara u bazi podataka, a korisniku se pokazuje ažurirana početna stranica s njegovim novim događajem upisanim u kalendar.
 			
 				\eject
 				

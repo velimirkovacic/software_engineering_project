@@ -8,63 +8,63 @@
 			\item polje za unos korisničkog imena profila
 			\item polje za unos lozinke korisničkog profila
 			\item gumb za prijavu
-			\item gumb za izradu novog računa (\textit{sign up})
+			\item gumb za izradu novog računa (\textit{register})
 		\end{packed_item}
 		
-		\indent Tijekom prvog pokretanja profil još nije napravljen tako da je potrebno stisnuti gumb \textit{Izradi račun} kako bi se napravio novi korisnički profil. Nakon pritiska gumba aplikacija prebacuje korisnika na novu stranicu na kojoj je prikazan prozor s poljima za unos potrebnih podataka za izradu novog profila, kao i gumbi za registraciju ili za povratak na stranicu za prijavu. Za registraciju novog profila potrebni su sljedeći podaci:
+		\indent Tijekom prvog pokretanja profil još nije napravljen tako da je potrebno stisnuti gumb \textit{registrirajte se} kako bi se napravio novi korisnički profil. Nakon pritiska gumba aplikacija prebacuje korisnika na novu stranicu na kojoj je prikazan prozor s poljima za unos potrebnih podataka za izradu novog profila, kao i gumbi za registraciju ili za povratak na stranicu za prijavu. Za registraciju novog profila potrebni su sljedeći podaci:
 		
 		\begin{packed_item}
 			\item korisničko ime
 			\item nadimak (neobavezno)
-			\item lozinka
-			\item ponovljena lozinka
 			\item e-mail adresa
+			\item lozinka
+			\item ponovljena lozinka			
 		\end{packed_item}
 	
-		\indent Nakon što su podaci uspješno uneseni potrebno je stisnuti gumb "Izradi" kako bi se novi korisnički profil generirao. Po uspješnom stvaranju korisnik je prebačen natrag na stranicu za prijavu te se može prijaviti svojim novim korisničkim računom. Nakon uspješne prijave aplikacija vodi korisnika na početnu stranicu. \\
+		\indent Nakon što su podaci uspješno uneseni potrebno je stisnuti gumb \textit{Registrirajte se} kako bi se novi korisnički profil generirao. Po uspješnom stvaranju korisnik je prebačen natrag na stranicu za prijavu te se može prijaviti svojim novim korisničkim računom. Nakon uspješne prijave aplikacija vodi korisnika na početnu stranicu. \\
 		
 		\indent Na početnoj stranici prikazana je alatna traka na kojoj su redom nanizani sljedeći objekti:
 		
 		\begin{packed_item}
 			\item logotip aplikacije Eventko
-			\item Obavijesti
-			\item Moji prijatelji
-			\item Pohađani događaji
-			\item Moj profil
+			\item Moji Prijatelji
+			\item Pohađani Eventi
 			\item Upravljanje korisnicima (samo za moderatore i administratore)
+			\item Korisničko ime ulogiranog korisnika
 			\item Odjava
 		\end{packed_item}
 	
-		\indent Ispod alatne trake prikazan je gumb \textit{Stvori novi događaj} kojim je moguće kreiranje novog javnog ili privatnog događaja te osobne obaveze. Odabir otvara novi prozorčić u koji je potrebno unijeti sljedeće podatke:
+		\indent Ispod alatne trake prikazan je gumb \textit{Dodaj u kalendar} kojim je moguće kreiranje novog javnog ili privatnog događaja te osobne obaveze. Odabir otvara novi prozorčić u koji je potrebno unijeti sljedeće podatke:
 		
 		\begin{packed_item}
+			\item Naziv događaja
+			\item Mjesto događaja
+			\item Datum i vrijeme početka
+			\item Datum i vrijeme kraja
 			\item Vrsta događaja
-			\item Naslov
-			\item Lokacija (omogućen prikaz na Google Kartama uz API)
-			\item Datum, vrijeme početka i kraja
-			\item Oznake događaja (npr. kava, učenje, društvene igre...)
+			\item Oznake događaja (npr. kava, učenje, kviz...)
 			\item Opis događaja
 		\end{packed_item}
 	
-		\indent Uz obrazac za unošenje korisnik vidi i listu svojih prijatelja te ih može odmah pozvati, što dodaje novi događaj u njihov kalendar. Javni događaji vidljivi su svima na desnoj strani početne stranice, privatni samo uzvanicima, a obaveze samo njihovom autoru. \\
+		\indent \textit{Vrsta događaja} padajući je izbornik s opcijama Obveza, Privatni događaj i javan događaj. Javni događaji vidljivi su svim korisnicima na desnoj strani početne stranice, privatni samo autorovim prijateljima, a obaveze samo njihovom autoru. \\
 	
-		\indent Ispod gumba \textit{Stvori novi događaj} nalaze se liste aktivnih korisnika te istaknutih događaja koje uređuju moderatori. Većinu prikaza stranice zauzima središnji kalendar na kojem su vidljive sve korisnikove obaveze te događaji kojima je odabrao prisustvovati ili koje sam organizira. Prikazuje se tekući tjedan, a moguće je listati i one nadolazeće. Klikom na događaj u kalendaru vidljive su sve informacije i oznake te opcija brisanja iz kalendara. \\
+		\indent Ispod gumba \textit{Dodaj u kalendar} nalaze se liste aktivnih korisnika te istaknutih događaja koje uređuju moderatori. Većinu prikaza stranice zauzima središnji kalendar na kojem su vidljive sve korisnikove obaveze te događaji kojima je odabrao prisustvovati ili koje sam organizira. Prikazuje se tekući tjedan, a moguće je listati i one prethodne i nadolazeće. Klikom na događaj u kalendaru vidljive su sve informacije i oznake te opcije brisanja, odjavljivanja ili uređivanja. \\
 		
-		\indent S desne strane nalazi se sekcija \textit{Javni događaji} s gumbom \textit{Izbornik} koji otvara padajući izbornik s nadolazećim javnim događajima u kojima je moguće sudjelovati. Odabir pojedinog događaja privremeno ga prikazuje u kalendaru gdje se vide njegove informacije i opcija prijave čime se trajno dodaje u korisnikov kalendar. \\
+		\indent S desne strane nalazi se sekcija \textit{Dostupni eventi} s padajućim izbornikom koji navodi nadolazeće javne događaje u kojima je moguće sudjelovati. Odabir pojedinog događaja privremeno ga prikazuje u kalendaru gdje se vide njegove informacije i opcija prijave čime se trajno dodaje u korisnikov kalendar. \\
 		
-		\indent Odabir kartice \textit{Obavijesti} prikazuje listu obavijesti inicijalno poredanih od najnovijih prema starijim. Korisnik može biti obaviješten da je privremeno ili trajno suspendiran, promaknut u moderatora i slično. \\
+		\indent Klik na logotip aplikacije uvijek vraća korisnika na početnu stranicu. \\
 		
-		\indent Odabir kartice \textit{Moji prijatelji} otvara stranicu koja prikazuje listu trenutnih prijatelja korisnika, a s desne strane nalazi se gumb za pretraživanje korisnika po korisničkom imenu te gumb za dodavanje prijatelja pomoću QR koda. \\
+		\indent Odabir kartice \textit{Moji Prijatelji} otvara stranicu koja prikazuje listu trenutnih prijatelja korisnika uz opciju da ih se ukloni s liste. Ispod toga nalazi se gumb \textit{Pretraži korisnike} koji otvara tražilicu korisnika po korisničkom imenu ili nadimku. \\
 		
-		\indent Odabir kartice \textit{Pohađani događaji} prebacuje korisnika na novu stranicu sa svim događajima na kojima je korisnik sudjelovao i bit će mu omogućeno da ih označi sa \textit{Sviđa mi se} ili \textit{Ne sviđa mi se}. \\
+		\indent Odabir kartice \textit{Pohađani Eventi} prebacuje korisnika na novu stranicu sa svim događajima na kojima je korisnik sudjelovao i bit će mu omogućeno da ih označi sa \textit{Sviđa mi se} ili \textit{Ne sviđa mi se}, što pozitivno ili negativno utječe na korisničku ocjenu njihovog autora, prikazanu kao broj u uglatim zagradama. \\
 		
-		\indent Odabir kartice \textit{Moj profil} otvara stranicu koja prikazuje korisnikove podatke:
+		\indent Odabir kartice s vlastitim korisničkim imenom otvara stranicu koja prikazuje korisnikove podatke:
 		
 		\begin{packed_item}
-			\item nadimak, uz opciju izmjene
-			\item korisničko ime
-			\item e-mail adresa
-			\item jedinstveni korisnički QR kod
+			\item Nadimak, uz opciju izmjene
+			\item Korisničko ime
+			\item E-mail adresa
+			\item Korisnička ocjena
 			\item ukoliko je riječ o običnom korisniku, opcija pretplate za Premium račun
 		\end{packed_item}
 		
@@ -80,13 +80,11 @@
 			\item Administrator
 		\end{packed_item}
 	
-		\eject
-	
-		\indent Pregledavač je korisnik na uvodnoj stranici za prijavu koji trenutno nije prijavljen. Običnom korisniku dostupne su sve funkcionalnosti prethodno opisane. Ostale uloge proširuju mogućnosti korisnika na način da mu svaka otključava nove značajke. \\
+		\indent Običnom korisniku dostupne su sve funkcionalnosti prethodno opisane. Ostale uloge proširuju mogućnosti korisnika na način da mu svaka otključava nove značajke. Pregledavač je korisnik na uvodnoj stranici za prijavu koji trenutno nije prijavljen. \\
 		
-		\indent Premium korisnik ima sve mogućnosti običnoga uz dodatnu opciju promoviranja određenog broja događaja koje organizira, čime se oni prikazuju na listi istaknutih događaja na lijevoj strani stranice. \\
+		\indent Premium korisnik ima sve mogućnosti običnoga uz dodatnu opciju promoviranja događaja koje organizira, čime se oni prikazuju na listi istaknutih događaja na lijevoj strani stranice. \\
 		
-		\indent Moderator ima sve mogućnosti običnoga korisnika, uz to što ima dodatnu karticu na alatnoj traci imena \textit{Upravljanje korisnicima}, koja ga prebacuje na novu stranicu na kojoj može suspendirati korisnike koji se ne ponašaju u skladu s bontonom aplikacije. Također ima opciju \textit{Izmjeni oznake} na događajima kako bi mogao dodati ili ukloniti oznake po potrebi. Konačno, ima opciju \textit{Izbriši event} ako je neki javni događaj neprimjeren. \\
+		\indent Moderator ima sve mogućnosti običnoga korisnika, uz to što ima dodatnu karticu na alatnoj traci imena \textit{Upravljanje korisnicima}, koja ga prebacuje na novu stranicu na kojoj može suspendirati korisnike koji se ne ponašaju u skladu s internetskim bontonom. Također ima opciju uređivanja oznaka na događajima kako bi mogao dodati ili ukloniti oznake po potrebi. Konačno, ima opciju \textit{Obriši} ako je neki javni događaj neprimjeren. \\
 		
 		\indent Administrator ima sve mogućnosti moderatora i običnog korisnika uz to što može na stranici za upravljanje korisnicima ili promovirati posebno vrijedne članove zajednice u moderatore, ili obrisati račune korisnika koji uporno krše pravila i nakon privremene suspenzije.
 		
