@@ -1,4 +1,5 @@
 This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  11 JAN 2023 20:32
+
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1162,7 +1163,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ... Prikaz aktivnosti grupe}{51}{chapter*.28}
+l.29 ... Prikaz aktivnosti grupe}{45}{chapter*.16}
                                                   % [1
 
 ])
@@ -1192,7 +1193,7 @@ Poglavlje 1.
 > Step: calculate cell and line sizes.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkovi¢,
+[]\T1/jkp/m/n/12 Perkoviï¿½,
  []
 
 
@@ -1202,7 +1203,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkovi¢,
+[]\T1/jkp/m/n/12 Perkoviï¿½,
  []
 
 
@@ -1212,12 +1213,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kova£i¢,
+[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-vi¢,
+\T1/jkp/m/n/12 Per-ko-viï¿½,
  []
 
 
@@ -1227,7 +1228,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkovi¢,
+[]\T1/jkp/m/n/12 Perkoviï¿½,
  []
 
 
@@ -1237,12 +1238,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kova£i¢,
+[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-vi¢,
+\T1/jkp/m/n/12 Per-ko-viï¿½,
  []
 
 
@@ -1258,7 +1259,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 > Step: build the whole table.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkovi¢,
+[]\T1/jkp/m/n/12 Perkoviï¿½,
  []
 
 
@@ -1268,7 +1269,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkovi¢,
+[]\T1/jkp/m/n/12 Perkoviï¿½,
  []
 
 
@@ -1278,12 +1279,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kova£i¢,
+[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-vi¢,
+\T1/jkp/m/n/12 Per-ko-viï¿½,
  []
 
 
@@ -1293,7 +1294,7 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Perkovi¢,
+[]\T1/jkp/m/n/12 Perkoviï¿½,
  []
 
 
@@ -1303,12 +1304,12 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-[]\T1/jkp/m/n/12 Kova£i¢,
+[]\T1/jkp/m/n/12 Kovaï¿½iï¿½,
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
-\T1/jkp/m/n/12 Per-ko-vi¢,
+\T1/jkp/m/n/12 Per-ko-viï¿½,
  []
 
 
@@ -1529,6 +1530,7 @@ Package pdftex.def Info: dijagrami/Dijagram obrazaca uporabe.png  used on input
 (pdftex.def)             Requested size: 435.6108pt x 429.1129pt.
 
 
+
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -1608,7 +1610,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [20 <./slike/Prijava.png>]
 Overfull \hbox (23.0035pt too wide) in paragraph at lines 525--526
 []\T1/jkp/m/n/12 Sustav treba biti im-ple-men-ti-ran kao web apli-ka-cija ko-ri
-s-te¢i objektno-orijentirane
+s-teï¿½i objektno-orijentirane
  []
 
 )
@@ -2450,7 +2452,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Literatura.tex
 Overfull \hbox (8.89293pt too wide) in paragraph at lines 10--11
-[]\T1/jkp/m/n/12 Programsko in-ºe-njer-stvo, FER ZE-MRIS, [][]$\T1/jkptt/m/n/12
+[]\T1/jkp/m/n/12 Programsko in-ï¿½e-njer-stvo, FER ZE-MRIS, [][]$\T1/jkptt/m/n/12
  http : / / www . fer . hr / predmet / proinz$[][] 
  []
 
@@ -2471,7 +2473,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 ] (./PROGI_ProjektnaDokumentacija.lof
 Overfull \hbox (4.04738pt too wide) in paragraph at lines 5--5
  [][] [][][]\T1/jkp/m/n/12 Dijagram obra-zaca upo-rabe, funk-ci-onal-nosti raz-
-li-£i-tih ko-ris-nika stra- 
+li-ï¿½i-tih ko-ris-nika stra- 
  []
 
 )
@@ -2682,6 +2684,9 @@ AED: lastpage setting LastPage
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
 (./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
 (./Dodatak.aux))
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
 anged.
 (rerunfilecheck)             Checksum: 355BAC9059A20F88C63AE381E0E7010E;4427.
@@ -2696,6 +2701,18 @@ Here is how much of TeX's memory you used:
  84i,12n,117p,925b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter*.16} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter*.15} has been referenced but does not exist
+, replaced by a fixed one
+
+
+pdfTeX warning (dest): name{chapter*.14} has been referenced but does not exist
 , replaced by a fixed one
 
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texmf-

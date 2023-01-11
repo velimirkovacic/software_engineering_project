@@ -17,7 +17,7 @@ import java.util.List;
 @Service
 public class UserServiceJpa implements UserService {
     @Autowired
-    private UserRepo userRepo;
+    public UserRepo userRepo;
 
     @Override
     public List<User> listAll() {
