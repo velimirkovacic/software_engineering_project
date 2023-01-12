@@ -269,30 +269,45 @@
 			
 		\section{Dijagram razreda}
 			
-			\indent Na naredne tri slike nalaze se dijagrami razreda podijeljeni logički po srodnosti. Neki razredi povezani su i s onima na odvojenim slikama što se da zaključiti po nazivima njihovih metoda. \\
+			\indent Na narednim slikama nalaze se dijagrami razreda podijeljeni logički po srodnosti. Neki razredi povezani su i s onima na odvojenim slikama što se da zaključiti po nazivima njihovih metoda. \\
 			
-			\indent Razredi na slici 4.6 u gornjem redu su kontroleri. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects}) prema frontendu u obliku JSON datoteka s html statusnim kodom. Pozivaju funkcije servisa. Razlikuju se kontroleri za korisnike, događaje te postupke prijave i registracije. Sami DTO razredi nalaze se na slici 4.5, a to su zahtjevi i odgovori za prijavu i registraciju. \\
+			\indent Razredi na slici 4.7 u gornjem redu su kontroleri, detaljnije prikazani na slici 4.8. Njihove metode služe za primanje i slanje DTO-ova (\textit{Data Transfer Objects}) prema frontendu u obliku JSON datoteka s html statusnim kodom. Pozivaju funkcije servisa. Razlikuju se kontroleri za korisnike, događaje, oznake te postupke prijave i registracije. Sami DTO razredi nalaze se na slici 4.5, a to su zahtjevi i odgovori za prijavu i registraciju. \\
 			
-			\indent Razredi na slici 4.6 u sredini su servisi. Služe za komunikaciju između repozitorija i kontrolera. \\
+			\indent Razredi na slici 4.7 u sredini su servisi, prikazani detaljnije na slici 4.9. Služe za komunikaciju između repozitorija i kontrolera. \\
 			
-			\indent Razredi na slici 4.6 u donjem redu su repozitoriji. Služe za pozivanje SQL upita nad bazom podataka. \\
+			\indent Razredi na slici 4.7 u donjem redu su repozitoriji, prikazani detaljnije na slici 4.10. Služe za pozivanje SQL upita nad bazom podataka. \\
 			
-			\indent Razredi na slici 4.7 su modeli. Modeliraju potrebne razrede iz baze podataka. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje.
-			
+			\indent Razredi na slici 4.6 su modeli. Modeliraju potrebne razrede iz baze podataka. Razred \textit{User} predstavlja korisnika aplikacije, \textit{Role} predstavlja različite uloge, \textit{Event} događaje, \textit{EventType} vrste događaja i \textit{Tag} oznake za događaje.
+			\eject
 			
 			\begin{figure}[h]
-				\includegraphics[width=\textwidth]{dijagrami/RAZREDNI - DTO dijagram.png}
+				\includegraphics[width=\textwidth]{dijagrami/Razredni/DTO dijagram.png}
 				\caption{Dijagram razreda - DTO-ovi}
 			\end{figure}
 		
 		    \begin{figure}[H]
-		    	\includegraphics[width=\textwidth]{dijagrami/RAZREDNI - Controller - Service - Repo.png}
-		    	\caption{Dijagram razreda - kontroleri, servisi i repozitoriji}
+		    	\includegraphics[width=\textwidth]{dijagrami/Razredni/Dijagram modela.png}
+		    	\caption{Dijagram razreda - modeli}
 		    \end{figure}
 			
 			\begin{figure}[H]
-				\includegraphics[width=\textwidth]{dijagrami/RAZREDNI - Dijagram modela.png}
-				\caption{Dijagram razreda - modeli}
+				\includegraphics[width=\textwidth]{dijagrami/Razredni/Controller - Service - Repo SIMPLE.png}
+				\caption{Dijagram razreda - kontroleri, servisi i repozitoriji bez metoda}
+			\end{figure}
+		
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{dijagrami/Razredni/Controller.png}
+				\caption{Dijagram razreda - kontroleri}
+			\end{figure}
+		
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{dijagrami/Razredni/Service.png}
+				\caption{Dijagram razreda - servisi}
+			\end{figure}
+		
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{dijagrami/Razredni/Repos.png}
+				\caption{Dijagram razreda - repozitoriji}
 			\end{figure}
 		
 			\eject
