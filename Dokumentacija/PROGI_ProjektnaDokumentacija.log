@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  12 JAN 2023 19:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.4)  12 JAN 2023 19:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1162,7 +1162,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ... Prikaz aktivnosti grupe}{60}{chapter*.40}
+l.29 ... Prikaz aktivnosti grupe}{63}{chapter*.43}
                                                   % [1
 
 ])
@@ -1521,7 +1521,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [15]
-<dijagrami/Dijagram obrazaca uporabe.png, id=306, 1160.08406pt x 1142.76938pt>
+<dijagrami/Dijagram obrazaca uporabe.png, id=304, 1160.08406pt x 1142.76938pt>
 File: dijagrami/Dijagram obrazaca uporabe.png Graphic file (type png)
 <use dijagrami/Dijagram obrazaca uporabe.png>
 Package pdftex.def Info: dijagrami/Dijagram obrazaca uporabe.png  used on input
@@ -1556,7 +1556,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 497--498
 
  []
 
-<slike/Registracija.png, id=316, 782.925pt x 1042.64531pt>
+<slike/Registracija.png, id=314, 782.925pt x 1042.64531pt>
 File: slike/Registracija.png Graphic file (type png)
 <use slike/Registracija.png>
 Package pdftex.def Info: slike/Registracija.png  used on input line 500.
@@ -1583,7 +1583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 506--508
 
  []
 
-<slike/Prijava.png, id=330, 377.61075pt x 480.5955pt>
+<slike/Prijava.png, id=328, 377.61075pt x 480.5955pt>
 File: slike/Prijava.png Graphic file (type png)
 <use slike/Prijava.png>
 Package pdftex.def Info: slike/Prijava.png  used on input line 510.
@@ -1625,7 +1625,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Arhitektura.tex
 Poglavlje 4.
-<slike/arhitektura_skica.png, id=348, 375.4025pt x 277.035pt>
+<slike/arhitektura_skica.png, id=346, 375.4025pt x 277.035pt>
 File: slike/arhitektura_skica.png Graphic file (type png)
 <use slike/arhitektura_skica.png>
 Package pdftex.def Info: slike/arhitektura_skica.png  used on input line 6.
@@ -2072,7 +2072,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [28]
-<dijagrami/Baza podataka/ER model.png, id=386, 4669.445pt x 3928.6775pt>
+<dijagrami/Baza podataka/ER model.png, id=384, 4669.445pt x 3928.6775pt>
 File: dijagrami/Baza podataka/ER model.png Graphic file (type png)
 <use dijagrami/Baza podataka/ER model.png>
 Package pdftex.def Info: dijagrami/Baza podataka/ER model.png  used on input li
@@ -2088,7 +2088,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [29 <./dijagrami/Baza podataka/ER model.png>]
-<dijagrami/Baza podataka/ER model (bez atributa).png, id=394, 2858.68pt x 1650.
+<dijagrami/Baza podataka/ER model (bez atributa).png, id=392, 2858.68pt x 1650.
 165pt>
 File: dijagrami/Baza podataka/ER model (bez atributa).png Graphic file (type pn
 g)
@@ -2096,7 +2096,7 @@ g)
 Package pdftex.def Info: dijagrami/Baza podataka/ER model (bez atributa).png  u
 sed on input line 255.
 (pdftex.def)             Requested size: 435.6108pt x 251.44206pt.
-<dijagrami/Baza podataka/REL shema.png, id=395, 2679.25969pt x 1500.35532pt>
+<dijagrami/Baza podataka/REL shema.png, id=393, 2679.25969pt x 1500.35532pt>
 File: dijagrami/Baza podataka/REL shema.png Graphic file (type png)
 <use dijagrami/Baza podataka/REL shema.png>
 Package pdftex.def Info: dijagrami/Baza podataka/REL shema.png  used on input l
@@ -2143,19 +2143,19 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 [31
 
 ]
-<dijagrami/Razredni/DTO dijagram.png, id=412, 3044.37375pt x 755.82375pt>
+<dijagrami/Razredni/DTO dijagram.png, id=410, 3044.37375pt x 755.82375pt>
 File: dijagrami/Razredni/DTO dijagram.png Graphic file (type png)
 <use dijagrami/Razredni/DTO dijagram.png>
 Package pdftex.def Info: dijagrami/Razredni/DTO dijagram.png  used on input lin
 e 284.
 (pdftex.def)             Requested size: 435.6108pt x 108.14424pt.
-<dijagrami/Razredni/Dijagram modela.png, id=413, 1546.27687pt x 1592.95125pt>
+<dijagrami/Razredni/Dijagram modela.png, id=411, 1546.27687pt x 1592.95125pt>
 File: dijagrami/Razredni/Dijagram modela.png Graphic file (type png)
 <use dijagrami/Razredni/Dijagram modela.png>
 Package pdftex.def Info: dijagrami/Razredni/Dijagram modela.png  used on input 
 line 289.
 (pdftex.def)             Requested size: 435.6108pt x 448.74564pt.
-<dijagrami/Razredni/Controller - Service - Repo SIMPLE.png, id=414, 1108.14pt x
+<dijagrami/Razredni/Controller - Service - Repo SIMPLE.png, id=412, 1108.14pt x
  1017.8025pt>
 File: dijagrami/Razredni/Controller - Service - Repo SIMPLE.png Graphic file (t
 ype png)
@@ -2174,13 +2174,13 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [32 <./dijagrami/Razredni/DTO dijagram.png> <./dijagrami/Razredni/Dijagram mode
 la.png>]
-<dijagrami/Razredni/Controller.png, id=424, 1518.4228pt x 566.86781pt>
+<dijagrami/Razredni/Controller.png, id=422, 1518.4228pt x 566.86781pt>
 File: dijagrami/Razredni/Controller.png Graphic file (type png)
 <use dijagrami/Razredni/Controller.png>
 Package pdftex.def Info: dijagrami/Razredni/Controller.png  used on input line 
 299.
 (pdftex.def)             Requested size: 435.6108pt x 162.62291pt.
-<dijagrami/Razredni/Service.png, id=425, 1452.92813pt x 928.21782pt>
+<dijagrami/Razredni/Service.png, id=423, 1452.92813pt x 928.21782pt>
 File: dijagrami/Razredni/Service.png Graphic file (type png)
 <use dijagrami/Razredni/Service.png>
 Package pdftex.def Info: dijagrami/Razredni/Service.png  used on input line 304
@@ -2197,7 +2197,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [33 <./dijagrami/Razredni/Controller - Service - Repo SIMPLE.png> <./dijagrami/
 Razredni/Controller.png>]
-<dijagrami/Razredni/Repos.png, id=435, 1701.35625pt x 695.59875pt>
+<dijagrami/Razredni/Repos.png, id=433, 1701.35625pt x 695.59875pt>
 File: dijagrami/Razredni/Repos.png Graphic file (type png)
 <use dijagrami/Razredni/Repos.png>
 Package pdftex.def Info: dijagrami/Razredni/Repos.png  used on input line 309.
@@ -2212,7 +2212,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [34 <./dijagrami/Razredni/Service.png> <./dijagrami/Razredni/Repos.png>]
-<dijagrami/Dijagram stanja - administrator.png, id=445, 912.40875pt x 576.65437
+<dijagrami/Dijagram stanja - administrator.png, id=443, 912.40875pt x 576.65437
 pt>
 File: dijagrami/Dijagram stanja - administrator.png Graphic file (type png)
 <use dijagrami/Dijagram stanja - administrator.png>
@@ -2229,7 +2229,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [35 <./dijagrami/Dijagram stanja - administrator.png>]
-<dijagrami/Dijagram aktivnosti - stvaranje događaja.png, id=453, 792.71156pt x
+<dijagrami/Dijagram aktivnosti - stvaranje događaja.png, id=451, 792.71156pt x
  1310.64656pt>
 File: dijagrami/Dijagram aktivnosti - stvaranje događaja.png Graphic file (typ
 e png)
@@ -2256,10 +2256,31 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 340--341
 
+! LaTeX Error: Unicode character ^^B (U+0002)
+               not set up for use with LaTeX.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.340 ...liku DTO (Data transfer object). React^^B
+                                                  view komponenta preko dost...
+
+You may provide a definition with
+\DeclareUnicodeCharacter 
+
+
+Overfull \hbox (0.31203pt too wide) in paragraph at lines 340--341
+[]\T1/jkp/m/n/12 Dijagram kom-po-nenti opi-suje or-ga-ni-za-ciju i me-�u-ovis-n
+ost kom-po-nenti, in-terne
  []
 
+<slike/Komponente.png, id=465, 724.50674pt x 516.12825pt>
+File: slike/Komponente.png Graphic file (type png)
+<use slike/Komponente.png>
+Package pdftex.def Info: slike/Komponente.png  used on input line 343.
+(pdftex.def)             Requested size: 435.6108pt x 310.31725pt.
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2269,7 +2290,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[38]
+[38 <./slike/Komponente.png>]
 \openout2 = `Implementacija.aux'.
 
  (./Implementacija.tex
@@ -2867,31 +2888,21 @@ AED: lastpage setting LastPage
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-
-Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
-nged.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
-(rerunfilecheck)             Before: A61E78827DDD2D1DD49BC06F1600909B;4453
-(rerunfilecheck)             After:  2971D10DF5EAA1CDA616CB49277342AC;4427.
+Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
+anged.
+(rerunfilecheck)             Checksum: EA41924801B84FAE5B80C22F144CD1F4;4427.
  ) 
 Here is how much of TeX's memory you used:
- 19562 strings out of 474971
- 350832 string characters out of 5780121
- 859439 words of memory out of 5000000
- 40430 multiletter control sequences out of 15000+600000
+ 19569 strings out of 474971
+ 350999 string characters out of 5780121
+ 858496 words of memory out of 5000000
+ 40436 multiletter control sequences out of 15000+600000
  564114 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 84i,12n,117p,925b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 84i,12n,117p,1280b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-pdfTeX warning (dest): name{chapter*.39} has been referenced but does not exist
-, replaced by a fixed one
-
-
-pdfTeX warning (dest): name{chapter*.38} has been referenced but does not exist
-, replaced by a fixed one
+pdfTeX warning (dest): name{page.67} has been referenced but does not exist, re
+placed by a fixed one
 
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texmf-
 dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}<c:/texlive/2022/texmf-dist/fon
@@ -2902,10 +2913,10 @@ blic/kpfonts/jkpbn8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts
 /2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2022/texmf-
 dist/fonts/type1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-dist/fonts/ty
 pe1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 3919740 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4022055 bytes).
 PDF statistics:
- 842 PDF objects out of 1000 (max. 8388607)
- 679 compressed objects within 7 object streams
+ 847 PDF objects out of 1000 (max. 8388607)
+ 682 compressed objects within 7 object streams
  235 named destinations out of 1000 (max. 500000)
- 389 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 394 words of extra memory for PDF output out of 10000 (max. 10000000)
 
