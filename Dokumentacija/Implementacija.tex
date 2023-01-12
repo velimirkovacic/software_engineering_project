@@ -13,16 +13,24 @@
 	
 		\section{Ispitivanje programskog rješenja}
 			
-			\textbf{\textit{dio 2. revizije}}\\
-			
-			 \textit{U ovom poglavlju je potrebno opisati provedbu ispitivanja implementiranih funkcionalnosti na razini komponenti i na razini cijelog sustava s prikazom odabranih ispitnih slučajeva. Studenti trebaju ispitati temeljnu funkcionalnost i rubne uvjete.}
 	
 			
 			\subsection{Ispitivanje komponenti}
-			\textit{Potrebno je provesti ispitivanje jedinica (engl. unit testing) nad razredima koji implementiraju temeljne funkcionalnosti. Razraditi \textbf{minimalno 6 ispitnih slučajeva} u kojima će se ispitati redovni slučajevi, rubni uvjeti te izazivanje pogreške (engl. exception throwing). Poželjno je stvoriti i ispitni slučaj koji koristi funkcionalnosti koje nisu implementirane. Potrebno je priložiti izvorni kôd svih ispitnih slučajeva te prikaz rezultata izvođenja ispita u razvojnom okruženju (prolaz/pad ispita). }
+			
+			\indent Napravljena je java datoteka za provođenje testova pod imenom EventkoApplicationTests.java. U njoj se nalazi 6 Junit testova koji provjeravaju: postoji li korisnik sa danim korisničkim imenom(jedno točno korisničko ime i jedno netočno), provjera postojanja korisnika preko prevelikog id-a, te funkcije za dohvaćanje id-a oznaka, imena oznaka i boje oznake. U nastavku je priložena slika sa svim položenim testovima i kod EventkoApplicationTests.java.
 			
 			
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{Slike/TestoviProsli.png}
+				\caption{Svi položeni testovi}
+			\end{figure}
 			
+			\begin{figure}[H]
+				\includegraphics[width=\textwidth]{Slike/EventkoApplicationTests.png}
+				\caption{Kod iz EventkoApplicationTests.java}
+			\end{figure}
+			
+			\eject
 			
 			
 			\subsection{Ispitivanje sustava}
