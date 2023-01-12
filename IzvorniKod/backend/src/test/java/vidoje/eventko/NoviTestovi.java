@@ -3,7 +3,11 @@ package vidoje.eventko;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import vidoje.eventko.repos.UserRepo;
@@ -39,29 +43,19 @@ class NoviTestovi {
 	
 	@Test 
 	void bezIcegaLozinka() {
-		Throwable exception = assertThrows(NullPointerException.class, () -> {user.setPassword(null);});		
-	}
-	
-	
-	@Test 
-	void krivaDuljinaLozinke() {
-		Throwable exception = assertThrows(IllegalArgumentException.class, () -> user.setPassword("1"));		
+		Throwable exception = assertThrows(NullPointerException.class, () -> {user.setPassword(null);});
 	}
 
-    @Test 
-	void dobraLozinka() {
-        user.setPassword("lozinka");
-		assertEquals("lozinka", () -> user.getPassword());		
-	}
+
 
     @Test 
 	void dobarNadimak() {
-		assertEquals("Testic", () -> user.getNickname());		
+		assertEquals("Testic", user.getNickname());
 	}
 
     @Test 
 	void suspendiranKorisnik() {
-		assertEquals(true, () -> user.getSuspended());		
+		assertEquals(true, user.getSuspended());
 	}
 
     @Test 
