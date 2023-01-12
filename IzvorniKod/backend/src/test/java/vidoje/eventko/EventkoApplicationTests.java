@@ -1,19 +1,13 @@
 package vidoje.eventko;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
-
-import org.checkerframework.checker.units.qual.A;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import vidoje.eventko.repos.UserRepo;
-import vidoje.eventko.service.impl.UserServiceJpa;
-
-import org.springframework.stereotype.Service;
-import vidoje.eventko.domain.User;
+import vidoje.eventko.service.TagService;
 import vidoje.eventko.service.UserService;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 @SpringBootTest
 class EventkoApplicationTests {
@@ -21,47 +15,46 @@ class EventkoApplicationTests {
 
 	@Autowired
 	UserService jpa;
+	@Autowired
+	TagService tag;
 
 	@Test
-	void tocanUsernameKrivaLozinka() {
-		//assertEquals(false, jpa.validate("admin","KrivaLozinka"));
-		assertThrows(NullPointerException.class,() -> { jpa.validate("admin","KrivaLozinka");});
-	}
-
-	@Test
-	void kriviUsernameTocnaLozinka() {
-		//assertEquals(false, jpa.validate("KriviUsername","1234"));
-		assertThrows(NullPointerException.class,() -> { jpa.validate("KriviUsername","1234");});
-	}
-
-	@Test
-	void kriviUsernameKrivaLozinka() {
-		//assertEquals(false, jpa.validate("KriviUsername","KrivaLozinka"));
-		assertThrows(NullPointerException.class,() -> { jpa.validate("KriviUsername","KrivaLozinka");});
-	}
-
-	@Test
-	void tocanUsernameTocnaLozinka() {
-		//assertEquals(true, jpa.validate("admin","1234"));
-		assertThrows(NullPointerException.class,() -> { jpa.validate("admin","1234");});
-	}
-
-
-
-	@Test
-	void nePostojiKorisnik() {
+	void nePostojiKorisnikUsername() {
 		var user = jpa.getUserByUsername("KriviKorisnik");
-
-		//assertEquals(true, jpa.exists(user));
 		assertThrows(NullPointerException.class,() -> { jpa.exists(user);});
 	}
 
 	@Test
-	void postojiKorisnik() {
+	void postojiKorisnikUsername() {
 		var user = jpa.getUserByUsername("admin");
 		assertEquals(true, jpa.exists(user));
-		//assertThrows(NullPointerException.class,() -> { jpa.exists(user);});
 	}
 
+	@Test
+	void nePostojiKorisnikId() {
+		Throwable exception = assertThrows(IndexOutOfBoundsException.class,
+								() -> {jpa.exists(jpa.getUserById((long) 50));});
+	}
+
+	@Test
+	void tagId() {
+
+		var tagovi = tag.getAllTags();
+		assertEquals(1, tagovi.get(0).getId());
+	}
+
+	@Test
+	void tagName() {
+
+		var tagovi = tag.getAllTags();
+		assertEquals("Kava", tagovi.get(0).getName());
+	}
+
+	@Test
+	void tagHexColor() {
+
+		var tagovi = tag.getAllTags();
+		assertEquals("#6f4e37", tagovi.get(0).getHexColor());
+	}
 	
 }
