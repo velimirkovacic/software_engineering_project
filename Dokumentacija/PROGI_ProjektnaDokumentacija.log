@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.4)  12 JAN 2023 22:39
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  13 JAN 2023 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2256,21 +2256,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [37]
-
-! LaTeX Error: Unicode character ^^B (U+0002)
-               not set up for use with LaTeX.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.340 ...liku DTO (Data transfer object). React^^B
-                                                  view komponenta preko dost...
-
-You may provide a definition with
-\DeclareUnicodeCharacter 
-
-
 Overfull \hbox (0.31203pt too wide) in paragraph at lines 340--341
 []\T1/jkp/m/n/12 Dijagram kom-po-nenti opi-suje or-ga-ni-za-ciju i me-žu-ovis-n
 ost kom-po-nenti, in-terne
@@ -2617,11 +2602,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
  (./Zakljucak.tex
 Poglavlje 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 3--4
-
- []
-
-
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
 (fancyhdr)                \setlength{\headheight}{14.49998pt}.
@@ -2732,7 +2712,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2747,7 +2727,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2762,7 +2742,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2777,7 +2757,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2792,7 +2772,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2807,7 +2787,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2822,7 +2802,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2837,7 +2817,7 @@ If that doesn't work, type X <return> to quit.
 Type <return> to continue.
  ...                                              
                                                   
-l.137 			\end
+l.138 			\end
              {longtblr}
 
 LaTeX does not know anything more about this error, sorry.
@@ -2866,7 +2846,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
@@ -2890,11 +2870,11 @@ anged.
 (rerunfilecheck)             Checksum: EA41924801B84FAE5B80C22F144CD1F4;4427.
  ) 
 Here is how much of TeX's memory you used:
- 19568 strings out of 474971
- 350992 string characters out of 5780121
- 858761 words of memory out of 5000000
- 40436 multiletter control sequences out of 15000+600000
- 564114 words of font info for 133 fonts, out of 8000000 for 9000
+ 19596 strings out of 474971
+ 352040 string characters out of 5780121
+ 861583 words of memory out of 5000000
+ 40464 multiletter control sequences out of 15000+600000
+ 564235 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,117p,1280b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texm
@@ -2906,7 +2886,7 @@ fb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmite.pfb><c:/texli
 ve/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2022/texm
 f-dist/fonts/type1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-dist/fonts/
 type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4022040 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4023926 bytes).
 PDF statistics:
  845 PDF objects out of 1000 (max. 8388607)
  680 compressed objects within 7 object streams
