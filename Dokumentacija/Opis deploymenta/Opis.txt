@@ -1,0 +1,40 @@
+1. Stvaranje baze podataka
+
+	- Servis: render.com
+	
+	- Stvaranje: 
+		New (dugme) / PostgreSQL (dropdown opcija) / Slika 1 (pogledaj Sliku 1) / Create Databse (dugme)
+	
+	- Dohvat podataka za spajanje: 
+		Dashboard (dugme) / "Eventko - baza podataka" (prisitnuti kao da je dugme) / Info (dugme) / Connections (skrolati do) / Slika 2
+	
+	- Spajanje putem pgAdmina: 
+		Object (dugme) / Create (dropdown opcija) / Server / General (unos imena samo) / Connection / Slika 3 / Save
+
+	- Spajanje iz bekenda:
+		U src/main/resources/application.properties upisati := Slika 4
+	
+2. Deployanje backenda
+
+	- Servis: render.com
+
+	- Preduvijet za deployment: 	Dodavanje Dockerfilea := Slika 5
+					Povezivanje s gitlabom na renderu
+	
+	- Stvaranje: 
+		New (dugme) / Web Service (dropdown opcija) / Odabir gitlab repozitorija / Slika 6 / Create Web Service (dugme)
+
+3. Deployment frontenda
+
+	- Servis: vercel.com
+
+	- Preduvijet za deployment: 	-Dodavanje vercel.json filea u projekt radi mapiranja putanja prema bekendu ::= Slika 7
+					-Povezivanje s gitlabom i stvaranje grupe na vercelu
+	
+	- Stvaranje:
+		Odabir grupe (vidoje) / Add new / Import git repository (odabir Eventko) / Configure Project (Slika 8) / Deploy
+		
+	- Promjena grane:
+		Overview / Eventko / Settings / Git / Slika 9 / Save
+	- Izmjena dodijeljene domene web stranice:
+		Overview / Eventko /Settings / Domains / upis željene adrese / (opcionalno) Edit := Slika 10
