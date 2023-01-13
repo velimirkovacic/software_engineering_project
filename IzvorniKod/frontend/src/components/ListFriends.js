@@ -21,24 +21,24 @@ function ListFriends(props) {
         };
         fetch('/api/user/blocked', options)
             .then(response => {
-              response.json().then(json => {
-                const helpArray = []
-                json.userList.map(ev => helpArray.push(ev.id))
-                setBlocked(helpArray)
+                response.json().then(json => {
+                    const helpArray = []
+                    json.userList.map(ev => helpArray.push(ev.id))
+                    setBlocked(helpArray)
+                })
             })
-        })
     }
 
     //svi korisnici
     useEffect(() => {
         fetch('/api/user/users')
-           .then(data => data.json())
-           .then(users => {
-               setUsers(users.userList)
-               console.log("OVO")
-               console.log(users.userList)
+            .then(data => data.json())
+            .then(users => {
+                setUsers(users.userList)
+                console.log("OVO")
+                console.log(users.userList)
 
-               const helpArray = []
+                const helpArray = []
                 users.userList.map(user => helpArray.push(user.id))
                 setUserIds(helpArray)
             })
@@ -50,7 +50,7 @@ function ListFriends(props) {
         if (props.input === '' && !frendovi.includes(el.id)) {
             return el;
         }
-        else if (!frendovi.includes(el.id)){
+        else if (!frendovi.includes(el.id)) {
             return (el.username.toLowerCase().includes(props.input) || el.nickname.toLowerCase().includes(props.input))
         }
     })
@@ -72,7 +72,7 @@ function ListFriends(props) {
             body: JSON.stringify(data)
         };
         fetch('/api/user/friend', options)
-        
+
         const helpArray = []
         props.listaFrendova.map(user => helpArray.push(user))
         helpArray.push(users[userIds.indexOf(id)])
@@ -112,7 +112,7 @@ function ListFriends(props) {
         };
         console.log(data)
         fetch('/api/user/unblock', options)
-        
+
         const helpArray = []
         blocked.map(user => helpArray.push(user))
         helpArray.splice(blocked.indexOf(id), 1)
@@ -121,19 +121,19 @@ function ListFriends(props) {
 
     return (
         <ul>
-        {filteredData.map((item) => (
-            <div className='attended'>
-                <div className='block'>
-                <li key={item.id}>{item.nickname}<span style={{color: 'grey'}}>{' @' + item.username}</span></li>
+            {filteredData.map((item) => (
+                <div className='attended'>
+                    <div className='block'>
+                        <li key={item.id}>{item.nickname}<span style={{ color: 'grey' }}>{' @' + item.username}</span></li>
+                    </div>
+                    <div className='search' style={{ width: '300px' }}>
+                        <Button variant="contained" style={{ marginRight: '10px' }} onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id} disabled={blocked.includes(item.id) ? true : false}>Dodaj</Button>
+                        {(!blocked.includes(item.id)) ? (<Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>)
+                            : (<Button variant="outlined" onClick={e => { e.preventDefault(); unblock(item.id) }} id={item.id}>Odblokiraj</Button>)}
+                    </div>
                 </div>
-                <div className='search' style={{width: '300px'}}>
-                <Button variant="contained" onClick={e => { e.preventDefault(); friend(item.id) }} id={item.id}>Dodaj</Button>
-                {(!blocked.includes(item.id)) ? (<Button variant="outlined" onClick={e => { e.preventDefault(); block(item.id) }} id={item.id}>Blokiraj</Button>)
-                : (<Button variant="outlined" onClick={e => { e.preventDefault(); unblock(item.id) }} id={item.id}>Odblokiraj</Button>)}
-            </div>
-            </div>
-        ))}
-        <div style={{marginBottom: '40px'}}></div>
+            ))}
+            <div style={{ marginBottom: '40px' }}></div>
         </ul>
     )
 }
