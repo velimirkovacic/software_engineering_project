@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  13 JAN 2023 17:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  13 JAN 2023 17:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1255,6 +1255,16 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 []\T1/jkp/m/n/12 10.01.2023. 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 Perkovi¢,
+ []
+
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 13.01.2023. 
+ []
+
 > Step: build the whole table.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
@@ -1319,6 +1329,16 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 []\T1/jkp/m/n/12 10.01.2023. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 Perkovi¢,
+ []
+
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 13.01.2023. 
  []
 
 )
@@ -2873,9 +2893,9 @@ anged.
 Here is how much of TeX's memory you used:
  19600 strings out of 474971
  352171 string characters out of 5780121
- 861583 words of memory out of 5000000
+ 861828 words of memory out of 5000000
  40469 multiletter control sequences out of 15000+600000
- 558990 words of font info for 130 fonts, out of 8000000 for 9000
+ 559055 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,117p,1280b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texm
@@ -2886,7 +2906,7 @@ ublic/kpfonts/jkpbne.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts
 b><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texliv
 e/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-
 dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4117732 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4117827 bytes).
 PDF statistics:
  845 PDF objects out of 1000 (max. 8388607)
  680 compressed objects within 7 object streams
