@@ -1,15 +1,15 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  13 JAN 2023 16:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.10.31)  13 JAN 2023 18:54
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **PROGI_ProjektnaDokumentacija.tex
 (./PROGI_ProjektnaDokumentacija.tex
-LaTeX2e <2022-11-01>
-L3 programming layer <2022-11-02>
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-10-26>
 (c:/texlive/2022/texmf-dist/tex/latex/base/report.cls
-Document Class: report 2022/07/02 v1.4n Standard LaTeX document class
+Document Class: report 2021/10/04 v1.4n Standard LaTeX document class
 (c:/texlive/2022/texmf-dist/tex/latex/base/size12.clo
-File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count185
 \c@chapter=\count186
@@ -22,12 +22,12 @@ File: size12.clo 2022/07/02 v1.4n Standard LaTeX file (size option)
 \c@table=\count193
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
-\bibindent=\dimen140
+\bibindent=\dimen138
 )
 (c:/texlive/2022/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2022/10/23 3.82 The Babel package
 \babel@savecnt=\count194
-\U@D=\dimen141
+\U@D=\dimen139
 \l@unhyphenated=\language87
 
 (c:/texlive/2022/texmf-dist/tex/generic/babel/txtbabel.def)
@@ -64,11 +64,11 @@ Package: amstext 2021/08/26 v2.01 AMS text
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks17
-\ex@=\dimen142
+\ex@=\dimen140
 ))
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen143
+\pmbraise@=\dimen141
 )
 (c:/texlive/2022/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
@@ -90,7 +90,7 @@ LaTeX Info: Redefining \big on input line 722.
 LaTeX Info: Redefining \Big on input line 723.
 LaTeX Info: Redefining \bigg on input line 724.
 LaTeX Info: Redefining \Bigg on input line 725.
-\big@size=\dimen144
+\big@size=\dimen142
 LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
 LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
 \macc@depth=\count267
@@ -108,12 +108,12 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \column@=\count272
 \maxfields@=\count273
 \andhelp@=\toks19
-\eqnshift@=\dimen145
-\alignsep@=\dimen146
-\tagshift@=\dimen147
-\tagwidth@=\dimen148
-\totwidth@=\dimen149
-\lineht@=\dimen150
+\eqnshift@=\dimen143
+\alignsep@=\dimen144
+\tagshift@=\dimen145
+\tagwidth@=\dimen146
+\totwidth@=\dimen147
+\lineht@=\dimen148
 \@envbody=\toks20
 \multlinegap=\skip50
 \multlinetaggap=\skip51
@@ -210,7 +210,7 @@ LaTeX Info: Redefining \not on input line 1043.
 (c:/texlive/2022/texmf-dist/tex/generic/mathdots/mathdots.sty
 Package: mathdots 2014/06/11 v0.9 Improve and add various macros for dots in ma
 th.
-\MDo@unit=\dimen151
+\MDo@unit=\dimen149
 \MDo@dotsbox=\box53
 \MDoprekern=\muskip17
 \MDopostkern=\muskip18
@@ -221,18 +221,18 @@ Package: titlesec 2021/07/05 v2.14 Sectioning titles
 \ttl@box=\box54
 \beforetitleunit=\skip52
 \aftertitleunit=\skip53
-\ttl@plus=\dimen152
-\ttl@minus=\dimen153
+\ttl@plus=\dimen150
+\ttl@minus=\dimen151
 \ttl@toksa=\toks22
-\titlewidth=\dimen154
-\titlewidthlast=\dimen155
-\titlewidthfirst=\dimen156
+\titlewidth=\dimen152
+\titlewidthlast=\dimen153
+\titlewidthfirst=\dimen154
 )
 (c:/texlive/2022/texmf-dist/tex/latex/tools/array.sty
-Package: array 2022/09/04 v2.5g Tabular extension package (FMi)
-\col@sep=\dimen157
+Package: array 2022/03/10 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen155
 \ar@mcellbox=\box55
-\extrarowheight=\dimen158
+\extrarowheight=\dimen156
 \NC@list=\toks23
 \extratabsurround=\skip54
 \backup@length=\skip55
@@ -247,27 +247,27 @@ Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 )
 (c:/texlive/2022/texmf-dist/tex/latex/tabularray/tabularray.sty
 (c:/texlive/2022/texmf-dist/tex/latex/l3kernel/expl3.sty
-Package: expl3 2022-11-02 L3 programming layer (loader) 
+Package: expl3 2022-10-26 L3 programming layer (loader) 
 
 (c:/texlive/2022/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-10-26 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count275
 \l__pdf_internal_box=\box57
 ))
-Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
+Package: tabularray 2022-07-01 v2022C Typeset tabulars and arrays with LaTeX3
 \l__tblr_a_int=\count276
 \l__tblr_c_int=\count277
 \l__tblr_r_int=\count278
-\l__tblr_d_dim=\dimen159
-\l__tblr_h_dim=\dimen160
-\l__tblr_o_dim=\dimen161
-\l__tblr_p_dim=\dimen162
-\l__tblr_q_dim=\dimen163
-\l__tblr_r_dim=\dimen164
-\l__tblr_s_dim=\dimen165
-\l__tblr_t_dim=\dimen166
-\l__tblr_v_dim=\dimen167
-\l__tblr_w_dim=\dimen168
+\l__tblr_d_dim=\dimen157
+\l__tblr_h_dim=\dimen158
+\l__tblr_o_dim=\dimen159
+\l__tblr_p_dim=\dimen160
+\l__tblr_q_dim=\dimen161
+\l__tblr_r_dim=\dimen162
+\l__tblr_s_dim=\dimen163
+\l__tblr_t_dim=\dimen164
+\l__tblr_v_dim=\dimen165
+\l__tblr_w_dim=\dimen166
 \l__tblr_a_box=\box58
 \l__tblr_b_box=\box59
 \l__tblr_c_box=\box60
@@ -277,10 +277,10 @@ Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
 \c@colnum=\count281
 \c@rowcount=\count282
 \c@colcount=\count283
-\abovesep=\dimen169
-\belowsep=\dimen170
-\leftsep=\dimen171
-\rightsep=\dimen172
+\abovesep=\dimen167
+\belowsep=\dimen168
+\leftsep=\dimen169
+\rightsep=\dimen170
 \g_tblr_level_int=\count284
 \g__tblr_data_row_key_count_int=\count285
 \g__tblr_data_column_key_count_int=\count286
@@ -291,27 +291,27 @@ Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
 \l__tblr_key_quotient_two_int=\count291
 \l__tblr_key_remainder_int=\count292
 \g__tblr_data_str_value_count_int=\count293
-\rulewidth=\dimen173
-\l__tblr_strut_dp_dim=\dimen174
-\l__tblr_strut_ht_dim=\dimen175
-\g__tblr_cell_wd_dim=\dimen176
-\g__tblr_cell_ht_dim=\dimen177
-\g__tblr_cell_head_dim=\dimen178
-\g__tblr_cell_foot_dim=\dimen179
-\l__column_target_dim=\dimen180
+\rulewidth=\dimen171
+\l__tblr_strut_dp_dim=\dimen172
+\l__tblr_strut_ht_dim=\dimen173
+\g__tblr_cell_wd_dim=\dimen174
+\g__tblr_cell_ht_dim=\dimen175
+\g__tblr_cell_head_dim=\dimen176
+\g__tblr_cell_foot_dim=\dimen177
+\l__column_target_dim=\dimen178
 \l__tblr_caption_box=\box62
 \l__tblr_caption_left_box=\box63
 \l__tblr_row_head_box=\box64
 \l__tblr_row_foot_box=\box65
-\l__tblr_row_head_foot_dim=\dimen181
-\tablewidth=\dimen182
+\l__tblr_row_head_foot_dim=\dimen179
+\tablewidth=\dimen180
 \l__tblr_table_firsthead_box=\box66
 \l__tblr_table_middlehead_box=\box67
 \l__tblr_table_lasthead_box=\box68
 \l__tblr_table_firstfoot_box=\box69
 \l__tblr_table_middlefoot_box=\box70
 \l__tblr_table_lastfoot_box=\box71
-\l__tblr_remain_height_dim=\dimen183
+\l__tblr_remain_height_dim=\dimen181
 \l__tblr_long_from_int=\count294
 \l__tblr_long_to_int=\count295
 \l__tblr_curr_i_int=\count296
@@ -319,30 +319,30 @@ Package: tabularray 2022-11-01 v2022D Typeset tabulars and arrays with LaTeX3
 \l__tblr_table_page_int=\count298
 \l__tblr_table_head_box=\box72
 \l__tblr_table_foot_box=\box73
-\l__tblr_table_head_foot_dim=\dimen184
-\l__tblr_table_head_body_foot_dim=\dimen185
+\l__tblr_table_head_foot_dim=\dimen182
+\l__tblr_table_head_body_foot_dim=\dimen183
 \l__tblr_table_box=\box74
 \l__tblr_table_hlines_box=\box75
 \l__tblr_hline_box=\box76
 \l__tblr_row_box=\box77
-\l__tblr_col_o_wd_dim=\dimen186
-\l__tblr_col_b_wd_dim=\dimen187
-\l__tblr_hline_leftskip_dim=\dimen188
-\l__tblr_hline_rightskip_dim=\dimen189
-\l__tblr_row_ht_dim=\dimen190
-\l__tblr_row_dp_dim=\dimen191
-\l__tblr_row_abovesep_dim=\dimen192
-\l__tblr_row_belowsep_dim=\dimen193
+\l__tblr_col_o_wd_dim=\dimen184
+\l__tblr_col_b_wd_dim=\dimen185
+\l__tblr_hline_leftskip_dim=\dimen186
+\l__tblr_hline_rightskip_dim=\dimen187
+\l__tblr_row_ht_dim=\dimen188
+\l__tblr_row_dp_dim=\dimen189
+\l__tblr_row_abovesep_dim=\dimen190
+\l__tblr_row_belowsep_dim=\dimen191
 \l__tblr_row_vlines_box=\box78
 \l__tblr_vline_box=\box79
 \l__tblr_cell_box=\box80
-\l__row_upper_dim=\dimen194
-\l__row_lower_dim=\dimen195
-\l__row_vpace_dim=\dimen196
-\l__tblr_vline_aboveskip_dim=\dimen197
-\l__tblr_vline_belowskip_dim=\dimen198
-\l__tblr_cell_wd_dim=\dimen199
-\l__tblr_cell_ht_dim=\dimen256
+\l__row_upper_dim=\dimen192
+\l__row_lower_dim=\dimen193
+\l__row_vpace_dim=\dimen194
+\l__tblr_vline_aboveskip_dim=\dimen195
+\l__tblr_vline_belowskip_dim=\dimen196
+\l__tblr_cell_wd_dim=\dimen197
+\l__tblr_cell_ht_dim=\dimen198
 \l__tblr_diag_box=\box81
 )
 (c:/texlive/2022/texmf-dist/tex/latex/graphics/color.sty
@@ -355,6 +355,8 @@ Package color Info: Driver file: pdftex.def on input line 149.
 
 (c:/texlive/2022/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
+\stockwidth=\dimen199
+\stockheight=\dimen256
 )
 (c:/texlive/2022/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 (c:/texlive/2022/texmf-dist/tex/latex/colortbl/colortbl.sty
@@ -1162,7 +1164,7 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.29 ... Prikaz aktivnosti grupe}{62}{chapter*.43}
+l.29 ... Prikaz aktivnosti grupe}{60}{chapter*.43}
                                                   % [1
 
 ])
@@ -1255,6 +1257,16 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 []\T1/jkp/m/n/12 10.01.2023. 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 Perkovi�,
+ []
+
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 13.01.2023. 
+ []
+
 > Step: build the whole table.
 
 Underfull \hbox (badness 10000) in paragraph at lines 30--30
@@ -1319,6 +1331,16 @@ Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 
 Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
 []\T1/jkp/m/n/12 10.01.2023. 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 Perkovi�,
+ []
+
+
+Overfull \hbox (6.59267pt too wide) in paragraph at lines 30--30
+[]\T1/jkp/m/n/12 13.01.2023. 
  []
 
 )
@@ -2280,6 +2302,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Implementacija.tex
 Poglavlje 5.
+LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 
+6.
+(c:/texlive/2022/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
+File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
+)
+Overfull \hbox (4.10045pt too wide) in paragraph at lines 6--7
+\T1/jkp/m/n/12 What-sApp ([][]$\T1/jkptt/m/n/12 https : / / web . whatsapp . co
+m/$[][]\T1/jkp/m/n/12 ) i Dis-cord ([][]$\T1/jkptt/m/n/12 https : / / discord .
+ com/$[][]\T1/jkp/m/n/12 ). Ko-
+ []
+
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2312,12 +2345,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-<Slike/TestoviProsli.png, id=488, 1156.32pt x 650.43pt>
+<Slike/TestoviProsli.png, id=506, 1445.4pt x 771.63281pt>
 File: Slike/TestoviProsli.png Graphic file (type png)
 <use Slike/TestoviProsli.png>
 Package pdftex.def Info: Slike/TestoviProsli.png  used on input line 122.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
-<Slike/EventkoApplicationTests.png, id=489, 427.5975pt x 534.798pt>
+(pdftex.def)             Requested size: 435.6108pt x 232.5513pt.
+<Slike/EventkoApplicationTests.png, id=507, 427.5975pt x 534.798pt>
 File: Slike/EventkoApplicationTests.png Graphic file (type png)
 <use Slike/EventkoApplicationTests.png>
 Package pdftex.def Info: Slike/EventkoApplicationTests.png  used on input line 
@@ -2342,16 +2375,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43 <./slike/EventkoApplicationTests.png>]
-<Slike/RegistracijaTest.png, id=505, 1156.32pt x 650.43pt>
+<Slike/RegistracijaTest.png, id=522, 1152.10425pt x 617.9085pt>
 File: Slike/RegistracijaTest.png Graphic file (type png)
 <use Slike/RegistracijaTest.png>
 Package pdftex.def Info: Slike/RegistracijaTest.png  used on input line 143.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
-<Slike/KrivaPrijava.png, id=506, 1156.32pt x 650.43pt>
+(pdftex.def)             Requested size: 435.6108pt x 233.6291pt.
+<Slike/KrivaPrijava.png, id=523, 1155.71774pt x 573.342pt>
 File: Slike/KrivaPrijava.png Graphic file (type png)
 <use Slike/KrivaPrijava.png>
 Package pdftex.def Info: Slike/KrivaPrijava.png  used on input line 150.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 216.10503pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2362,7 +2395,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44 <./slike/RegistracijaTest.png>]
-<Slike/Neuspješna prijava.png, id=514, 398.08725pt x 362.5545pt>
+<Slike/Neuspješna prijava.png, id=531, 398.08725pt x 362.5545pt>
 File: Slike/Neuspješna prijava.png Graphic file (type png)
 <use Slike/Neuspješna prijava.png>
 Package pdftex.def Info: Slike/Neuspješna prijava.png  used on input line 155.
@@ -2378,11 +2411,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [45 <./slike/KrivaPrijava.png>]
-<Slike/OdjavaSaProfila.png, id=522, 1156.32pt x 650.43pt>
-File: Slike/OdjavaSaProfila.png Graphic file (type png)
-<use Slike/OdjavaSaProfila.png>
-Package pdftex.def Info: Slike/OdjavaSaProfila.png  used on input line 162.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+<Slike/OdjavaSProfila.png, id=540, 1152.10425pt x 616.704pt>
+File: Slike/OdjavaSProfila.png Graphic file (type png)
+<use Slike/OdjavaSProfila.png>
+Package pdftex.def Info: Slike/OdjavaSProfila.png  used on input line 162.
+(pdftex.def)             Requested size: 435.6108pt x 233.17368pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2393,11 +2426,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46 <./Slike/Neuspješna prijava.png>]
-<Slike/DodavanjeEventova.png, id=530, 1156.32pt x 650.43pt>
+<Slike/DodavanjeEventova.png, id=548, 1152.10425pt x 615.4995pt>
 File: Slike/DodavanjeEventova.png Graphic file (type png)
 <use Slike/DodavanjeEventova.png>
 Package pdftex.def Info: Slike/DodavanjeEventova.png  used on input line 168.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 232.71826pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2407,18 +2440,18 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[47 <./slike/OdjavaSaProfila.png>]
-<Slike/Kalendar.png, id=538, 1118.37825pt x 557.08125pt>
+[47 <./slike/OdjavaSProfila.png>]
+<Slike/Kalendar.png, id=556, 1118.37825pt x 557.08125pt>
 File: Slike/Kalendar.png Graphic file (type png)
 <use Slike/Kalendar.png>
 Package pdftex.def Info: Slike/Kalendar.png  used on input line 173.
 (pdftex.def)             Requested size: 435.6108pt x 216.9803pt.
-<Slike/AdminSuspendirajSelenium.png, id=539, 1156.32pt x 650.43pt>
+<Slike/AdminSuspendirajSelenium.png, id=557, 1146.684pt x 586.5915pt>
 File: Slike/AdminSuspendirajSelenium.png Graphic file (type png)
 <use Slike/AdminSuspendirajSelenium.png>
 Package pdftex.def Info: Slike/AdminSuspendirajSelenium.png  used on input line
  180.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 222.83548pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2429,14 +2462,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [48 <./slike/DodavanjeEventova.png> <./slike/Kalendar.png>]
-<Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png, id=550, 1156.32pt x 650.43
-pt>
+<Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png, id=568, 1149.69525pt x 614
+.295pt>
 File: Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png Graphic file (type png
 )
 <use Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png>
 Package pdftex.def Info: Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png  us
 ed on input line 188.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 232.75026pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2448,7 +2481,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [49 <./slike/AdminSuspendirajSelenium.png> <./slike/AdminSuspendiranogKorisnika
 Odsuspendiraj.png>]
-<Dijagrami/Dijagram Razmještaja.png, id=561, 346.896pt x 192.72pt>
+<Dijagrami/Dijagram Razmještaja.png, id=578, 346.896pt x 192.72pt>
 File: Dijagrami/Dijagram Razmještaja.png Graphic file (type png)
 <use Dijagrami/Dijagram Razmještaja.png>
 Package pdftex.def Info: Dijagrami/Dijagram Razmještaja.png  used on input lin
@@ -2468,7 +2501,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
-<Opis deploymenta/Slika1.png, id=569, 1058.15324pt x 560.0925pt>
+<Opis deploymenta/Slika1.png, id=586, 1058.15324pt x 560.0925pt>
 File: Opis deploymenta/Slika1.png Graphic file (type png)
 <use Opis deploymenta/Slika1.png>
 Package pdftex.def Info: Opis deploymenta/Slika1.png  used on input line 229.
@@ -2482,12 +2515,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [51 <./Opis deploymenta/Slika1.png>]
-<Opis deploymenta/Slika2.png, id=578, 873.2625pt x 534.19576pt>
+<Opis deploymenta/Slika2.png, id=595, 873.2625pt x 534.19576pt>
 File: Opis deploymenta/Slika2.png Graphic file (type png)
 <use Opis deploymenta/Slika2.png>
 Package pdftex.def Info: Opis deploymenta/Slika2.png  used on input line 240.
 (pdftex.def)             Requested size: 435.6108pt x 266.46959pt.
-<Opis deploymenta/Slika3.png, id=579, 413.74574pt x 453.49425pt>
+<Opis deploymenta/Slika3.png, id=596, 413.74574pt x 453.49425pt>
 File: Opis deploymenta/Slika3.png Graphic file (type png)
 <use Opis deploymenta/Slika3.png>
 Package pdftex.def Info: Opis deploymenta/Slika3.png  used on input line 251.
@@ -2507,7 +2540,7 @@ Overfull \hbox (2.61644pt too wide) in paragraph at lines 257--258
 be sa slike 
  []
 
-<Opis deploymenta/Slika4.png, id=589, 714.87074pt x 106.59825pt>
+<Opis deploymenta/Slika4.png, id=606, 714.87074pt x 106.59825pt>
 File: Opis deploymenta/Slika4.png Graphic file (type png)
 <use Opis deploymenta/Slika4.png>
 Package pdftex.def Info: Opis deploymenta/Slika4.png  used on input line 260.
@@ -2525,12 +2558,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-<Opis deploymenta/Slika5.png, id=600, 886.512pt x 608.87476pt>
+<Opis deploymenta/Slika5.png, id=617, 886.512pt x 608.87476pt>
 File: Opis deploymenta/Slika5.png Graphic file (type png)
 <use Opis deploymenta/Slika5.png>
 Package pdftex.def Info: Opis deploymenta/Slika5.png  used on input line 273.
 (pdftex.def)             Requested size: 435.6108pt x 299.1874pt.
-<Opis deploymenta/Slika6.png, id=601, 1054.53975pt x 612.48825pt>
+<Opis deploymenta/Slika6.png, id=618, 1054.53975pt x 612.48825pt>
 File: Opis deploymenta/Slika6.png Graphic file (type png)
 <use Opis deploymenta/Slika6.png>
 Package pdftex.def Info: Opis deploymenta/Slika6.png  used on input line 284.
@@ -2548,7 +2581,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
-<Opis deploymenta/Slika7.png, id=610, 790.75426pt x 353.52075pt>
+<Opis deploymenta/Slika7.png, id=627, 790.75426pt x 353.52075pt>
 File: Opis deploymenta/Slika7.png Graphic file (type png)
 <use Opis deploymenta/Slika7.png>
 Package pdftex.def Info: Opis deploymenta/Slika7.png  used on input line 297.
@@ -2562,12 +2595,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [55 <./Opis deploymenta/Slika6.png> <./Opis deploymenta/Slika7.png>]
-<Opis deploymenta/Slika8.png, id=620, 1012.9845pt x 486.01575pt>
+<Opis deploymenta/Slika8.png, id=637, 1012.9845pt x 486.01575pt>
 File: Opis deploymenta/Slika8.png Graphic file (type png)
 <use Opis deploymenta/Slika8.png>
 Package pdftex.def Info: Opis deploymenta/Slika8.png  used on input line 311.
 (pdftex.def)             Requested size: 435.6108pt x 208.99753pt.
-<Opis deploymenta/Slika9.png, id=621, 772.0845pt x 246.9225pt>
+<Opis deploymenta/Slika9.png, id=638, 772.0845pt x 246.9225pt>
 File: Opis deploymenta/Slika9.png Graphic file (type png)
 <use Opis deploymenta/Slika9.png>
 Package pdftex.def Info: Opis deploymenta/Slika9.png  used on input line 321.
@@ -2582,7 +2615,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [56 <./Opis deploymenta/Slika8.png> <./Opis deploymenta/Slika9.png>]
-<Opis deploymenta/Slika10.png, id=633, 781.11826pt x 407.72325pt>
+<Opis deploymenta/Slika10.png, id=650, 781.11826pt x 407.72325pt>
 File: Opis deploymenta/Slika10.png Graphic file (type png)
 <use Opis deploymenta/Slika10.png>
 Package pdftex.def Info: Opis deploymenta/Slika10.png  used on input line 332.
@@ -2618,12 +2651,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
-LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 
-10.
-
-(c:/texlive/2022/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
-File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
-)
 Overfull \hbox (8.89293pt too wide) in paragraph at lines 10--11
 []\T1/jkp/m/n/12 Programsko in-�e-njer-stvo, FER ZE-MRIS, [][]$\T1/jkptt/m/n/12
  http : / / www . fer . hr / predmet / proinz$[][] 
@@ -2846,10 +2873,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [65]
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
+<slike/komitovi.png, id=765, 1062.21844pt x 1605.74907pt>
+File: slike/komitovi.png Graphic file (type png)
+<use slike/komitovi.png>
+Package pdftex.def Info: slike/komitovi.png  used on input line 146.
+(pdftex.def)             Requested size: 377.5035pt x 570.66876pt.
 )
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2859,37 +2887,45 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
-[66] 
+[66 <./slike/komitovi.png>] 
 AED: lastpage setting LastPage
 (./PROGI_ProjektnaDokumentacija.aux (./Dnevnik_promjena_dokumentacije.aux)
 (./Opis_projektnog_zadatka.aux) (./Specifikacija_programske_potpore.aux)
 (./Arhitektura.aux) (./Implementacija.aux) (./Zakljucak.aux) (./Literatura.aux)
 (./Dodatak.aux))
-Package rerunfilecheck Info: File `PROGI_ProjektnaDokumentacija.out' has not ch
-anged.
-(rerunfilecheck)             Checksum: EA41924801B84FAE5B80C22F144CD1F4;4427.
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `PROGI_ProjektnaDokumentacija.out' has cha
+nged.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `PROGI_ProjektnaDokumentacija.out':
+(rerunfilecheck)             Before: 5B56F173DF5969E6850EC048ECCFDDAE;4453
+(rerunfilecheck)             After:  EA41924801B84FAE5B80C22F144CD1F4;4427.
  ) 
 Here is how much of TeX's memory you used:
- 19596 strings out of 474971
- 352040 string characters out of 5780121
- 861583 words of memory out of 5000000
- 40464 multiletter control sequences out of 15000+600000
- 564235 words of font info for 133 fonts, out of 8000000 for 9000
+ 19590 strings out of 475066
+ 351976 string characters out of 5782772
+ 859457 words of memory out of 5000000
+ 40363 multiletter control sequences out of 15000+600000
+ 559055 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,12n,117p,1280b,1044s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {c:/texlive/2022/texmf-dist/fonts/enc/dvips/base/8r.enc}{c:/texlive/2022/texm
 f-dist/fonts/enc/dvips/kpfonts/kpfonts-expert.enc}<c:/texlive/2022/texmf-dist/f
-onts/type1/public/kpfonts/jkpbit8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/
-public/kpfonts/jkpbn8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfon
-ts/jkpbne.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmit8a.p
-fb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmite.pfb><c:/texli
-ve/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texlive/2022/texm
-f-dist/fonts/type1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-dist/fonts/
-type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4023926 bytes).
+onts/type1/public/kpfonts/jkpbn8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/p
+ublic/kpfonts/jkpbne.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts
+/jkpmit8a.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmite.pf
+b><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texliv
+e/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-
+dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
+Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 3482795 bytes).
 PDF statistics:
- 845 PDF objects out of 1000 (max. 8388607)
- 680 compressed objects within 7 object streams
- 234 named destinations out of 1000 (max. 500000)
- 394 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 862 PDF objects out of 1000 (max. 8388607)
+ 698 compressed objects within 7 object streams
+ 236 named destinations out of 1000 (max. 500000)
+ 399 words of extra memory for PDF output out of 10000 (max. 10000000)
 
