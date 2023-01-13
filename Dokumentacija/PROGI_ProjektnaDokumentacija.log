@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  13 JAN 2023 18:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022) (preloaded format=pdflatex 2022.11.3)  13 JAN 2023 18:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2300,6 +2300,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
  (./Implementacija.tex
 Poglavlje 5.
+LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 
+13.
+(c:/texlive/2022/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
+File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
+)
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
 (fancyhdr)                Make it at least 14.49998pt, for example:
@@ -2332,12 +2337,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [41]
-<Slike/TestoviProsli.png, id=488, 1156.32pt x 650.43pt>
+<Slike/TestoviProsli.png, id=490, 1445.4pt x 771.63281pt>
 File: Slike/TestoviProsli.png Graphic file (type png)
 <use Slike/TestoviProsli.png>
 Package pdftex.def Info: Slike/TestoviProsli.png  used on input line 122.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
-<Slike/EventkoApplicationTests.png, id=489, 427.5975pt x 534.798pt>
+(pdftex.def)             Requested size: 435.6108pt x 232.5513pt.
+<Slike/EventkoApplicationTests.png, id=491, 427.5975pt x 534.798pt>
 File: Slike/EventkoApplicationTests.png Graphic file (type png)
 <use Slike/EventkoApplicationTests.png>
 Package pdftex.def Info: Slike/EventkoApplicationTests.png  used on input line 
@@ -2362,16 +2367,16 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [43 <./slike/EventkoApplicationTests.png>]
-<Slike/RegistracijaTest.png, id=505, 1156.32pt x 650.43pt>
+<Slike/RegistracijaTest.png, id=506, 1152.10425pt x 617.9085pt>
 File: Slike/RegistracijaTest.png Graphic file (type png)
 <use Slike/RegistracijaTest.png>
 Package pdftex.def Info: Slike/RegistracijaTest.png  used on input line 143.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
-<Slike/KrivaPrijava.png, id=506, 1156.32pt x 650.43pt>
+(pdftex.def)             Requested size: 435.6108pt x 233.6291pt.
+<Slike/KrivaPrijava.png, id=507, 1155.71774pt x 573.342pt>
 File: Slike/KrivaPrijava.png Graphic file (type png)
 <use Slike/KrivaPrijava.png>
 Package pdftex.def Info: Slike/KrivaPrijava.png  used on input line 150.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 216.10503pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2382,7 +2387,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [44 <./slike/RegistracijaTest.png>]
-<Slike/Neuspješna prijava.png, id=514, 398.08725pt x 362.5545pt>
+<Slike/Neuspješna prijava.png, id=515, 398.08725pt x 362.5545pt>
 File: Slike/Neuspješna prijava.png Graphic file (type png)
 <use Slike/Neuspješna prijava.png>
 Package pdftex.def Info: Slike/Neuspješna prijava.png  used on input line 155.
@@ -2398,11 +2403,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [45 <./slike/KrivaPrijava.png>]
-<Slike/OdjavaSaProfila.png, id=522, 1156.32pt x 650.43pt>
+<Slike/OdjavaSaProfila.png, id=523, 1152.10425pt x 616.704pt>
 File: Slike/OdjavaSaProfila.png Graphic file (type png)
 <use Slike/OdjavaSaProfila.png>
 Package pdftex.def Info: Slike/OdjavaSaProfila.png  used on input line 162.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 233.17368pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2413,11 +2418,11 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [46 <./Slike/Neuspješna prijava.png>]
-<Slike/DodavanjeEventova.png, id=530, 1156.32pt x 650.43pt>
+<Slike/DodavanjeEventova.png, id=531, 1152.10425pt x 615.4995pt>
 File: Slike/DodavanjeEventova.png Graphic file (type png)
 <use Slike/DodavanjeEventova.png>
 Package pdftex.def Info: Slike/DodavanjeEventova.png  used on input line 168.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 232.71826pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2428,17 +2433,17 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [47 <./slike/OdjavaSaProfila.png>]
-<Slike/Kalendar.png, id=538, 1118.37825pt x 557.08125pt>
+<Slike/Kalendar.png, id=539, 1118.37825pt x 557.08125pt>
 File: Slike/Kalendar.png Graphic file (type png)
 <use Slike/Kalendar.png>
 Package pdftex.def Info: Slike/Kalendar.png  used on input line 173.
 (pdftex.def)             Requested size: 435.6108pt x 216.9803pt.
-<Slike/AdminSuspendirajSelenium.png, id=539, 1156.32pt x 650.43pt>
+<Slike/AdminSuspendirajSelenium.png, id=540, 1146.684pt x 586.5915pt>
 File: Slike/AdminSuspendirajSelenium.png Graphic file (type png)
 <use Slike/AdminSuspendirajSelenium.png>
 Package pdftex.def Info: Slike/AdminSuspendirajSelenium.png  used on input line
  180.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 222.83548pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2449,14 +2454,14 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [48 <./slike/DodavanjeEventova.png> <./slike/Kalendar.png>]
-<Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png, id=550, 1156.32pt x 650.43
-pt>
+<Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png, id=552, 1149.69525pt x 614
+.295pt>
 File: Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png Graphic file (type png
 )
 <use Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png>
 Package pdftex.def Info: Slike/AdminSuspendiranogKorisnikaOdsuspendiraj.png  us
 ed on input line 188.
-(pdftex.def)             Requested size: 435.6108pt x 245.02222pt.
+(pdftex.def)             Requested size: 435.6108pt x 232.75026pt.
 
 
 Package fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -2468,7 +2473,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 
 [49 <./slike/AdminSuspendirajSelenium.png> <./slike/AdminSuspendiranogKorisnika
 Odsuspendiraj.png>]
-<Dijagrami/Dijagram Razmještaja.png, id=561, 346.896pt x 192.72pt>
+<Dijagrami/Dijagram Razmještaja.png, id=562, 346.896pt x 192.72pt>
 File: Dijagrami/Dijagram Razmještaja.png Graphic file (type png)
 <use Dijagrami/Dijagram Razmještaja.png>
 Package pdftex.def Info: Dijagrami/Dijagram Razmještaja.png  used on input lin
@@ -2488,7 +2493,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 217--218
 
  []
 
-<Opis deploymenta/Slika1.png, id=569, 1058.15324pt x 560.0925pt>
+<Opis deploymenta/Slika1.png, id=570, 1058.15324pt x 560.0925pt>
 File: Opis deploymenta/Slika1.png Graphic file (type png)
 <use Opis deploymenta/Slika1.png>
 Package pdftex.def Info: Opis deploymenta/Slika1.png  used on input line 229.
@@ -2502,12 +2507,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [51 <./Opis deploymenta/Slika1.png>]
-<Opis deploymenta/Slika2.png, id=578, 873.2625pt x 534.19576pt>
+<Opis deploymenta/Slika2.png, id=579, 873.2625pt x 534.19576pt>
 File: Opis deploymenta/Slika2.png Graphic file (type png)
 <use Opis deploymenta/Slika2.png>
 Package pdftex.def Info: Opis deploymenta/Slika2.png  used on input line 240.
 (pdftex.def)             Requested size: 435.6108pt x 266.46959pt.
-<Opis deploymenta/Slika3.png, id=579, 413.74574pt x 453.49425pt>
+<Opis deploymenta/Slika3.png, id=580, 413.74574pt x 453.49425pt>
 File: Opis deploymenta/Slika3.png Graphic file (type png)
 <use Opis deploymenta/Slika3.png>
 Package pdftex.def Info: Opis deploymenta/Slika3.png  used on input line 251.
@@ -2527,7 +2532,7 @@ Overfull \hbox (2.61644pt too wide) in paragraph at lines 257--258
 be sa slike 
  []
 
-<Opis deploymenta/Slika4.png, id=589, 714.87074pt x 106.59825pt>
+<Opis deploymenta/Slika4.png, id=590, 714.87074pt x 106.59825pt>
 File: Opis deploymenta/Slika4.png Graphic file (type png)
 <use Opis deploymenta/Slika4.png>
 Package pdftex.def Info: Opis deploymenta/Slika4.png  used on input line 260.
@@ -2545,12 +2550,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
-<Opis deploymenta/Slika5.png, id=600, 886.512pt x 608.87476pt>
+<Opis deploymenta/Slika5.png, id=601, 886.512pt x 608.87476pt>
 File: Opis deploymenta/Slika5.png Graphic file (type png)
 <use Opis deploymenta/Slika5.png>
 Package pdftex.def Info: Opis deploymenta/Slika5.png  used on input line 273.
 (pdftex.def)             Requested size: 435.6108pt x 299.1874pt.
-<Opis deploymenta/Slika6.png, id=601, 1054.53975pt x 612.48825pt>
+<Opis deploymenta/Slika6.png, id=602, 1054.53975pt x 612.48825pt>
 File: Opis deploymenta/Slika6.png Graphic file (type png)
 <use Opis deploymenta/Slika6.png>
 Package pdftex.def Info: Opis deploymenta/Slika6.png  used on input line 284.
@@ -2568,7 +2573,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 288--289
 
  []
 
-<Opis deploymenta/Slika7.png, id=610, 790.75426pt x 353.52075pt>
+<Opis deploymenta/Slika7.png, id=611, 790.75426pt x 353.52075pt>
 File: Opis deploymenta/Slika7.png Graphic file (type png)
 <use Opis deploymenta/Slika7.png>
 Package pdftex.def Info: Opis deploymenta/Slika7.png  used on input line 297.
@@ -2582,12 +2587,12 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [55 <./Opis deploymenta/Slika6.png> <./Opis deploymenta/Slika7.png>]
-<Opis deploymenta/Slika8.png, id=620, 1012.9845pt x 486.01575pt>
+<Opis deploymenta/Slika8.png, id=621, 1012.9845pt x 486.01575pt>
 File: Opis deploymenta/Slika8.png Graphic file (type png)
 <use Opis deploymenta/Slika8.png>
 Package pdftex.def Info: Opis deploymenta/Slika8.png  used on input line 311.
 (pdftex.def)             Requested size: 435.6108pt x 208.99753pt.
-<Opis deploymenta/Slika9.png, id=621, 772.0845pt x 246.9225pt>
+<Opis deploymenta/Slika9.png, id=622, 772.0845pt x 246.9225pt>
 File: Opis deploymenta/Slika9.png Graphic file (type png)
 <use Opis deploymenta/Slika9.png>
 Package pdftex.def Info: Opis deploymenta/Slika9.png  used on input line 321.
@@ -2602,7 +2607,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [56 <./Opis deploymenta/Slika8.png> <./Opis deploymenta/Slika9.png>]
-<Opis deploymenta/Slika10.png, id=633, 781.11826pt x 407.72325pt>
+<Opis deploymenta/Slika10.png, id=634, 781.11826pt x 407.72325pt>
 File: Opis deploymenta/Slika10.png Graphic file (type png)
 <use Opis deploymenta/Slika10.png>
 Package pdftex.def Info: Opis deploymenta/Slika10.png  used on input line 332.
@@ -2638,12 +2643,6 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 \openout2 = `Literatura.aux'.
 
  (./Literatura.tex
-LaTeX Font Info:    Trying to load font information for T1+jkptt on input line 
-10.
-
-(c:/texlive/2022/texmf-dist/tex/latex/kpfonts/t1jkptt.fd
-File: t1jkptt.fd 2007/01/26 Fontinst v1.928 font definitions for T1/jkptt.
-)
 Overfull \hbox (8.89293pt too wide) in paragraph at lines 10--11
 []\T1/jkp/m/n/12 Programsko in-�e-njer-stvo, FER ZE-MRIS, [][]$\T1/jkptt/m/n/12
  http : / / www . fer . hr / predmet / proinz$[][] 
@@ -2866,7 +2865,7 @@ Package fancyhdr Warning: \headheight is too small (12.0pt):
 (fancyhdr)                \addtolength{\topmargin}{-2.49998pt}.
 
 [65]
-<slike/komitovi.png, id=750, 1062.21844pt x 1605.74907pt>
+<slike/komitovi.png, id=752, 1062.21844pt x 1605.74907pt>
 File: slike/komitovi.png Graphic file (type png)
 <use slike/komitovi.png>
 Package pdftex.def Info: slike/komitovi.png  used on input line 146.
@@ -2891,9 +2890,9 @@ anged.
 (rerunfilecheck)             Checksum: EA41924801B84FAE5B80C22F144CD1F4;4427.
  ) 
 Here is how much of TeX's memory you used:
- 19600 strings out of 474971
- 352171 string characters out of 5780121
- 861828 words of memory out of 5000000
+ 19601 strings out of 474971
+ 352179 string characters out of 5780121
+ 861855 words of memory out of 5000000
  40469 multiletter control sequences out of 15000+600000
  559055 words of font info for 130 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2906,10 +2905,10 @@ ublic/kpfonts/jkpbne.pfb><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts
 b><c:/texlive/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmn8a.pfb><c:/texliv
 e/2022/texmf-dist/fonts/type1/public/kpfonts/jkpmne.pfb><c:/texlive/2022/texmf-
 dist/fonts/type1/public/kpfonts/jkpttmn8a.pfb>
-Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 4117838 bytes).
+Output written on PROGI_ProjektnaDokumentacija.pdf (67 pages, 3482124 bytes).
 PDF statistics:
- 845 PDF objects out of 1000 (max. 8388607)
- 680 compressed objects within 7 object streams
- 235 named destinations out of 1000 (max. 500000)
+ 847 PDF objects out of 1000 (max. 8388607)
+ 683 compressed objects within 7 object streams
+ 236 named destinations out of 1000 (max. 500000)
  399 words of extra memory for PDF output out of 10000 (max. 10000000)
 

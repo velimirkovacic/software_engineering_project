@@ -213,13 +213,13 @@
 					} %definicija širine tablice, širine stupaca, poravnanje i broja redaka naslova tablice
 					\hline \multicolumn{3}{|c|}{\textbf{Pohadja}}	& tip podataka & opis varijable \\ \hline[3pt]
 					recenzija & SMALLINT NOT NULL	&  recenzija korisnika za događaj	\\ \hline
-				    \SetCell{LightGreen} id pohadjatelja	& BIGINT NOT NULL &  jedinstveni brojčani identifikator pohađatelja (korisnik.id korisnik)	\\ \hline 
-					\SetCell{LightGreen} id dogadjaja & BIGINT NOT NULL &  jedinstveni brojčani identifikator događaja (dogadjaj.id dogadjaj) \\ \hline 
+				    \SetCell{LightGreen} id pohadjatelj	& BIGINT NOT NULL &  jedinstveni brojčani identifikator pohađatelja (korisnik.id korisnik)	\\ \hline 
+					\SetCell{LightGreen} id dogadjaj & BIGINT NOT NULL &  jedinstveni brojčani identifikator događaja (dogadjaj.id dogadjaj) \\ \hline 
 					 
 				\end{longtblr}
 			
 				
-				\noindent\textbf{ImaOznaku} Ova veza sadrži sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Povezuje entitete Oznaka i Dogadaj.
+				\noindent\textbf{ImaOznaku} Ova veza sadrži sve važne informacije o oznakama određenih događaja. Sadrži atribute: id dogadjaj i id oznaka. Povezuje entitete Oznaka i Dogadaj.
 				
 				\begin{longtblr}[
 					label=none,
