@@ -33,31 +33,31 @@ function RightPanel(props) {
         };
         fetch('/api/events/signup', options)
             .then(response => {
-              response.json().then(json => {
-                console.log(json)
-                json.userAvailableEvents.map(ev => eventList.push(ev))
-                setEvents(eventList)
-                let eventOpt = []
-                json.userAvailableEvents.map(ev => {
-                    let publicEvent = {
-                        value: ev.id, 
-                        label: '[' + ev.location + '] ' + ev.name,
-                        organizer: {nickname: ev.organizer.nickname, username: ev.organizer.username, score: ev.organizer.score},
-                        time: new Date(ev.beginningTimestamp).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'}),
-                        color: (ev.type.id == 3) ? 'red' : 'limegreen'
-                    }
-                    eventOpt.push(publicEvent)
+                response.json().then(json => {
+                    console.log(json)
+                    json.userAvailableEvents.map(ev => eventList.push(ev))
+                    setEvents(eventList)
+                    let eventOpt = []
+                    json.userAvailableEvents.map(ev => {
+                        let publicEvent = {
+                            value: ev.id,
+                            label: '[' + ev.location + '] ' + ev.name,
+                            organizer: { nickname: ev.organizer.nickname, username: ev.organizer.username, score: ev.organizer.score },
+                            time: new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' }),
+                            color: (ev.type.id == 3) ? 'red' : 'limegreen'
+                        }
+                        eventOpt.push(publicEvent)
+                    })
+                    callback(eventOpt)
                 })
-                callback(eventOpt)
             })
-        })
     }
 
-    const formatOptionLabel = ({value, label, organizer, time, color}) => (
+    const formatOptionLabel = ({ value, label, organizer, time, color }) => (
         <div>
-            <div style={{marginBottom: '5px', color: color}}>{label}</div>
-            <div style={{fontSize: '10pt', marginBottom: '5px'}}>{organizer.nickname}<span style={{color: 'grey'}}>{' @' + organizer.username}</span>{' [' + organizer.score + ']'}</div>
-            <div style={{fontSize: '10pt'}}>{time}</div>
+            <div style={{ marginBottom: '5px', color: color }}>{label}</div>
+            <div style={{ fontSize: '10pt', marginBottom: '5px' }}>{organizer.nickname}<span style={{ color: 'grey' }}>{' @' + organizer.username}</span>{' [' + organizer.score + ']'}</div>
+            <div style={{ fontSize: '10pt' }}>{time}</div>
         </div>
     )
 
@@ -81,10 +81,10 @@ function RightPanel(props) {
         <div className='outerRight'>
             <div className='innerRight'>
                 <h2>Dostupni eventovi</h2>
-                <div style={{width: '85%'}}>
-                    <AsyncSelect styles={customStyles} placeholder={"Odaberite događaj..."} 
-                    onChange={e => setSelected(e.value)} loadOptions={getPublicEvents} cacheOptions defaultOptions
-                    formatOptionLabel={formatOptionLabel}/>
+                <div style={{ width: '85%' }}>
+                    <AsyncSelect styles={customStyles} placeholder={"Odaberite event..."}
+                        onChange={e => setSelected(e.value)} loadOptions={getPublicEvents} cacheOptions defaultOptions
+                        formatOptionLabel={formatOptionLabel} />
                 </div>
             </div>
         </div>
