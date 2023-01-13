@@ -53,7 +53,7 @@
 
 				
 				
-				\noindent\textbf{Korisnik} Ovaj entitet sadržava sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ovaj entitet u vezi je Many-to-Many s Uloga preko veze imaUlogu, u vezi Many-to-Many s Korisnik preko veze jePrijatelj, u vezi Many-to-Many s Korisnik preko veze JeBlokiranOd, te u vezi  One-to-Many s entitetom Događaj preko i u vezi Many-to-Many s entitetom Dogadjaj preko veze Pohadja.
+				\noindent\textbf{Korisnik} Ovaj entitet sadrži sve važne informacije o korisniku aplikacije. Sadrži atribute: id korisnika, nadimak, korisničko ime, email, salt, lozinka i suspendiran. Ova tablica u vezi je Many-to-Many s Uloga preko tablice imaUlogu, u vezi Many-to-Many s Korisnik preko jePrijatelj, u vezi Many-to-Many s Korisnik preko JeBlokiranOd, u vezi One-to-Many s Događaj preko organizira i u vezi Many-to-Many s Dogadjaj preko Pohadja.
 				
 				\begin{longtblr}[
 					label=none,
@@ -75,7 +75,7 @@
 				\end{longtblr}
 			
 			
-				\noindent\textbf{Uloga} Ovaj entitet sadržava sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je Many-to-Many s Korisnik preko veze imaUlogu.
+				\noindent\textbf{Uloga} Ovaj entitet sadrži sve važne informacije o ulogama korisnika. Sadrži atribute: id uloga, naziv uloga i opis uloga. Ovaj entitet u vezi je Many-to-Many s Korisnik preko tablice imaUlogu.
 				
 				\begin{longtblr}[
 					label=none,
@@ -92,7 +92,7 @@
 					
 				\end{longtblr}
 			
-				\noindent\textbf{Vrsta} Ovaj entitet sadržava sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je Many-to-On s entitetom Dogadjaj preko identifikatora vrste u entitetu Dogadjaj.
+				\noindent\textbf{Vrsta} Ovaj entitet sadrži sve važne informacije o vrstama događaja. Sadrži atribute: id vrsta, naziv vrsta i opis vrsta. Ovaj entitet u vezi je Many-to-One s tablicom Dogadjaj preko identifikatora vrste u entitetu Dogadjaj.
 				
 				\begin{longtblr}[
 					label=none,
@@ -109,7 +109,7 @@
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{Oznaka} Ovaj entitet sadržava sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je Many-to-Many s Oznaka preko veze imaOznaku.
+				\noindent\textbf{Oznaka} Ovaj entitet sadrži sve važne informacije o oznakama događaja. Sadrži atribute: id oznaka, naziv oznaka i boja hex. Ovaj entitet u vezi je Many-to-Many s Oznaka preko tablice imaOznaku.
 				
 				\begin{longtblr}[
 					label=none,
@@ -127,7 +127,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{ImaUlogu} Ova veza sadržava sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Povezuje entitete Korisnik i Uloga. 
+				\noindent\textbf{ImaUlogu} Ova veza sadrži sve važne informacije po kojima saznajemo koji korisnik ima koju ulogu. Sadrži atribute: id korisnik i id uloga. Povezuje entitete Korisnik i Uloga. 
 				
 				\begin{longtblr}[
 					label=none,
@@ -143,7 +143,7 @@
 					 
 				\end{longtblr}
 				
-				\noindent\textbf{JePrijatelj} Ova veza sadržava sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Povezuje entitet Korisnik sa samim sobom.
+				\noindent\textbf{JePrijatelj} Ova veza sadrži sve važne informacije o tome koji je korisnik nekom drugom korisniku prijatelj. Sadrži atribute: id korisnik i id prijatelj. Povezuje entitet Korisnik sa samim sobom.
 				
 				\begin{longtblr}[
 					label=none,
@@ -159,7 +159,7 @@
 				\end{longtblr}
 			
 			
-				\noindent\textbf{JeBlokiranOd} Ova veza sadržava sve važne informacije o tome koji je korisnik blokiran i od kojeg je korisnika blokiran. Sadrži atribute: id blokiran i id blokiran od. Povezuje entitet Korisnik sa samim sobom.
+				\noindent\textbf{JeBlokiranOd} Ova veza sadrži sve važne informacije o tome koji je korisnik blokiran i koji ga je korisnik blokirao. Sadrži atribute: id blokiran i id blokiran od. Povezuje entitet Korisnik sa samim sobom.
 				
 				\begin{longtblr}[
 					label=none,
@@ -176,7 +176,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Dogadjaj} Ovaj entitet sadržava sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je Many-to-One s entitetom Vrsta preko identifikatora vrste, u vezi Many-to-One s entitetom Korisnik preko identifikatora korisnika, u vezi Many-to-Many s entitetom Korisnik preko veze Pohadja i u vezi Many-to-Many s Oznaka preko veze imaOznaku.
+				\noindent\textbf{Dogadjaj} Ovaj entitet sadrži sve važne informacije o događaju. Sadrži atribute: id događaj, naziv, mjesto, vrijeme početka, vrijeme kraja, opis, promoviran, koordinate, id organizator i id vrsta. Ovaj entitet u vezi je Many-to-One s tablicom Vrsta preko identifikatora vrste, u vezi Many-to-One s Korisnik preko identifikatora korisnika, u vezi Many-to-Many s Korisnik preko Pohadja i u vezi Many-to-Many s Oznaka preko imaOznaku.
 				
 				\begin{longtblr}[
 					label=none,
@@ -201,7 +201,7 @@
 				\end{longtblr}
 				
 				
-				\noindent\textbf{Pohadja} Ova veza sadržava sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Povezuje entitete Korisnik i Dogadjaj.
+				\noindent\textbf{Pohadja} Ova veza sadrži sve važne informacije o tome tko je pohađao koji događaj i kako ga je ocijenio. Sadrži atribute: recenzija, id polaznika i id događaja. Povezuje entitete Korisnik i Dogadjaj.
 				
 				\begin{longtblr}[
 					label=none,
@@ -219,7 +219,7 @@
 				\end{longtblr}
 			
 				
-				\noindent\textbf{ImaOznaku} Ovaa veza sadržava sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Povezuje entitete Oznaka i Dogadajaj.
+				\noindent\textbf{ImaOznaku} Ova veza sadrži sve važne informacije o oznakama određenih događaja. Sadrži atribute: id događaj i id oznaka. Povezuje entitete Oznaka i Dogadaj.
 				
 				\begin{longtblr}[
 					label=none,
