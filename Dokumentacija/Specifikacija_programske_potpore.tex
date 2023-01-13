@@ -510,27 +510,33 @@
 				
 				
 				\noindent \textbf {Obrazac uporabe UC1 - Registracija}\\
-				\indent {Korisnik šalje zahtjev za prikaz stranice za prijavu kako bi mogao odabrati gumb za registraciju. Korisnik onda šalje zahtjev za prikaz stranice za registraciju. Upisuje podatke potrebne za izradu računa koje Web aplikacija šalje bazi podataka koja radi profil. Baza vraća potvrdu nakon izrađenog profila i korisnik je vraćen na prikaz stranice za prijavu.   } \\
 
-				\begin{figure}[h]
+				\indent {Pregledavač klikom na izbor \textit{Registriraj se} poziva prikaz stranice za registraciju. Upisuje podatke potrebne za izradu računa koje web aplikacija šalje bazi podataka te ona pomoću njih izrađuje novi korisnički profil. Baza vraća potvrdu nakon izrađenog profila i korisnik je vraćen na prikaz stranice za prijavu.   } \\
+				
+				\indent {Ukoliko je došlo do greške pri upisu podataka, korisnik ostaje na stranici prijave i pojavljuje mu se poruka o pogrešci uz podatak koji je kriv. Moguće greške pri unosa podataka mogu se desiti ako za korisničko ime koristimo znakove koji nisu u engleskoj abecedi, znamenke 0-9, "\_" ili ako je kraće od 2 znaka. Greška se može desiti za nadimak ako sadrži manje od 2 ili više od 25 znakova. E-mail adresa mora biti u formatu \textit{ime@domena.hr}. Lozinka mora sadržavati barem 4 znaka. Ta ograničenja provjeravaju se na web aplikaciji te samo ako su poštovana šalje se poruka bazi da pomoću njih stvori novi račun. Prije toga baza provjerava postoji li već korisnik s istim korisničkim imenom ili e-mail adresom.}\\ \\
+				
+				\begin{figure}[H]
 					\includegraphics[width=\textwidth]{slike/Registracija.png}
 					\caption{Sekvencijski dijagram za UC1}
 				\end{figure}
-						
-			    \indent {Ukoliko je došlo do greške pri upisu podataka, korisnik ostaje na stranici prijave i pojavljuje mu se error uz podatak koji je kriv. Moguće greške pri unosa podataka mogu se desiti ako za korisničko ime koristimo znakove koji nisu u engleskoj abecedi,brojeve 0-9, "\_" ili ako je kraće od 2 znaka. Greška se može desiti ako za nadimak ako sadrži manje od 2 ili više od 25 znakova. Email mora biti u formatu npr. ime@domena.hr. Lozinka mora sadržavati barem 4 znaka.}\\ \\
-				
+			
+				\eject
 				
 				\noindent \textbf {Obrazac uporabe UC2 - Prijava}\\
 				\indent {Korisnik šalje zahtjev za prikaz stranice za prijavu nakon kojeg upisuje potrebne podatke. Web aplikacija šalje podatke bazi podataka koja dohvaća korisnike i traži zadanog korisnika prema imenu profila. Baza podataka vraća profil korisnika nakon kojeg je korisniku prikazana početna stranica. Ukoliko dođe do greške korisnik ostaje na stranici Prijava te mu je prikazan error poruka. Greška se može desiti ako koristimo korisničko ime i lozinku koji nisu povezani jedno uz drugo ili ne postoje. }\\
 				
-				\begin{figure}[h]
+				\begin{figure}[H]
 					\includegraphics[width=\textwidth]{slike/Prijava.png}
 					\caption{Sekvencijski dijagram za UC2}
 				\end{figure}
 				
 				\eject
+				
+				
 	
 		\section{Ostali zahtjevi}
+		
+			 
 		 
 			 \begin{packed_item}
 			 \item  Sustav treba omogućiti rad više korisnika u stvarnom vremenu

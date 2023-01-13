@@ -27,6 +27,8 @@
 \restylefloat{table}
 
 \usepackage{indentfirst}
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
 
 
 \patchcmd{\chapter}{\thispagestyle{plain}}{\thispagestyle{fancy}}{}{} %redefiniranje stila stranice u paketu fancyhdr
@@ -126,10 +128,8 @@
 	\include{Opis_projektnog_zadatka}
 	\include{Specifikacija_programske_potpore}
 	\include{Arhitektura}
-	\iffalse
-		\include{Implementacija}
-		\include{Zakljucak}
-	\fi
+	\include{Implementacija}
+	\include{Zakljucak}
 	\include{Literatura}
 	
 	
