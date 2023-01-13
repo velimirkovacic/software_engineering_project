@@ -27,7 +27,7 @@ const Welcome = () => {
         title: '[' + ev.location + '] ' + ev.name,
         start: new Date(ev.beginningTimestamp).toISOString(),
         end: new Date(ev.endTimestamp).toISOString(),
-        color: (ev.type.id == 2) ? 'limegreen' : ((ev.type.id == 3) ? 'red' : 'blueviolet'),
+        color: (ev.type.id == 2) ? '#40b5ad' : ((ev.type.id == 3) ? '#05457c' : '#6f8faf'),
         name: ev.name,
         location: ev.location,
         organizer: ev.organizer,

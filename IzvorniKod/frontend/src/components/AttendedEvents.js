@@ -21,8 +21,6 @@ function AttendedEvents() {
         setReviews(helpArray)
     }
 
-    const [disable, setDisable] = useState(false)
-
     const getAttendedEvents = () => {
         const options = {
             method: 'GET',
@@ -76,19 +74,19 @@ function AttendedEvents() {
                                 <div style={{ fontSize: '10pt', marginLeft: '5%' }}>{ev.organizer.nickname}<span style={{color: 'grey'}}>{' @' + ev.organizer.username}</span></div>
                                 <div style={{ fontSize: '10pt', marginLeft: '5%', marginBottom: '10px' }}>{new Date(ev.beginningTimestamp).toLocaleString('hr', { dateStyle: 'short', timeStyle: 'short' })}</div>
                             </div>
-                                {(reviews[eventIds.indexOf(ev.id)] == 0) ? (
+                                {(reviews[eventIds.indexOf(ev.id)] == 0 && ev.type.id == 3) ? (
                                     <div className='likes'>
                                     <button name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 1); changeReviewState(ev.id, 1)}}> Sviđa mi se</button>
                                     <button name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, -1); changeReviewState(ev.id, -1)}}> Ne sviđa mi se</button>
                                     </div>
                                 ) : ('')}
-                                {(reviews[eventIds.indexOf(ev.id)] == 1) ? (
+                                {(reviews[eventIds.indexOf(ev.id)] == 1 && ev.type.id == 3) ? (
                                     <div className='likes'>
                                     <button name='register' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 0); changeReviewState(ev.id, 0)}}> Sviđa mi se</button>
                                     <button name='dislikeGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, -1); changeReviewState(ev.id, -1)}}> Ne sviđa mi se</button>
                                     </div>
                                 ) : ('')}
-                                {(reviews[eventIds.indexOf(ev.id)] == -1) ? (
+                                {(reviews[eventIds.indexOf(ev.id)] == -1 && ev.type.id == 3) ? (
                                     <div className='likes'>
                                     <button name='registerGrey' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 1); changeReviewState(ev.id, 1)}}> Sviđa mi se</button>
                                     <button name='dislike' style={{ width: '120px', height: '30px' }} onClick={() => {reviewEvent(ev.id, 0); changeReviewState(ev.id, 0)}}> Ne sviđa mi se</button>

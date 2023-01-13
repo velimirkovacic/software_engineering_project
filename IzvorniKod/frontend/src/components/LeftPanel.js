@@ -68,7 +68,7 @@ function LeftPanel(props) {
                     <h3 style={{marginLeft: '5%', marginBottom: '5px'}}>Istaknuti eventi</h3>
                     {(promotedEvents.length > 0) ? (promotedEvents.map(ev =>
                             <button key={ev.id} onClick={() => onSelectEvent(ev.id)} className='btnPromoEvents'>
-                                <h3 style={{marginBottom: '5px', marginLeft: '5%', marginTop: '10px'}}>{'[' + ev.location + '] ' + ev.name}</h3>
+                                <h3 style={{marginBottom: '5px', marginLeft: '5%', marginTop: '10px', color: '#05457c'}}>{'[' + ev.location + '] ' + ev.name}</h3>
                                 <div style={{fontSize: '10pt', marginLeft: '5%', marginBottom: '5px'}}>{ev.organizer.nickname}<span style={{color: 'grey'}}>{' @' + ev.organizer.username}</span>{' [' + ev.organizer.score + ']'}</div>
                                 <div style={{fontSize: '10pt', marginLeft: '5%', marginBottom: '10px'}}>{new Date(ev.beginningTimestamp).toLocaleString('hr', {dateStyle: 'short', timeStyle: 'short'})}</div>
                             </button>)) : ('')}
